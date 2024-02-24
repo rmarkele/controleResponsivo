@@ -87,6 +87,8 @@
     font-size: 10px;
   }
 
+
+
   /* inputs */
 .panels-wrapper{
   display: none;
@@ -240,9 +242,9 @@ input[type=checkbox]{
 
 }
 
-label[for=input-freqCorte]{
-  font-size: 12px;
-}
+/* label[for=input-freqCorte]{
+  font-size: 10px;
+} */
 
 
 .variables-nav{
@@ -280,6 +282,15 @@ label[for=input-freqCorte]{
 .variables-nav ul li.active{
   color: #fff;
   border-bottom: 2px solid #fff;
+}
+
+#controllerCheckBoxes{
+  display: flex;
+  align-items: center;
+}
+#controllerCheckBoxes label,
+#controllerCheckBoxes input{
+  font-size: 10px;
 }
 
 @media (max-width:800px) {

@@ -36,6 +36,19 @@ function geraPainelControlador(pos) {
     ]
   })
 
+  acaoDireta = createCheckbox(" " + strg.varPainelControlador[20], false);
+  acaoDireta.parent("controllerCheckBoxes");
+  acaoDireta.class("BigCheck");
+  // acaoDireta.addClass("BigCheck");
+  // acaoDireta.position(xPosNocontrol + 270, yPosNocontrol);
+  acaoDireta.changed(() => {
+    modoAcao = !modoAcao;
+  });
+
+  if (modoAcao) {
+    acaoDireta.checked(true);
+  }
+
   let freqCorteDiv = document.createElement('div');
   freqCorteDiv.innerHTML =  
     `<div class="input-wrapper">
@@ -44,7 +57,13 @@ function geraPainelControlador(pos) {
       </div>`;
   freqCorteDiv.classList.add("input-flex-row");
 
+  
+
   document.querySelector("#controllerCheckBoxes").appendChild(freqCorteDiv);
+
+
+
+
 
   TiInp = variablesList[104];
   TdInp = variablesList[105];
@@ -134,8 +153,8 @@ function controladorChanged() {
       showInput(TiInp);
       showInput(TdInp);
 
-      filtroPBCheckBox.show();
-      eliminaSurtoCheckBox.show();
+      filtroPBCheckBox.elt.style.display = 'flex';
+      eliminaSurtoCheckBox.elt.style.display = 'flex';
 
       //Variáveis Biestável
       hideVariableList(20);
@@ -163,8 +182,8 @@ function controladorChanged() {
       showInput(TiInp);
       showInput(TdInp);
       
-      filtroPBCheckBox.show();
-      eliminaSurtoCheckBox.show();
+      filtroPBCheckBox.elt.style.display = 'flex';
+      eliminaSurtoCheckBox.elt.style.display = 'flex';
 
       //Variáveis Biestável
       hideVariableList(20);
@@ -191,8 +210,8 @@ function controladorChanged() {
       showInput(TiInp);
       showInput(TdInp);
      
-      filtroPBCheckBox.show();
-      eliminaSurtoCheckBox.show();
+      filtroPBCheckBox.elt.style.display = 'flex';
+      eliminaSurtoCheckBox.elt.style.display = 'flex';
 
       //Variáveis Biestável
       hideVariableList(20);
@@ -220,8 +239,8 @@ function controladorChanged() {
       hideInput(TiInp);
       hideInput(TdInp);
 
-      filtroPBCheckBox.hide();
-      eliminaSurtoCheckBox.hide();
+      filtroPBCheckBox.elt.style.display = 'none';
+      eliminaSurtoCheckBox.elt.style.display = 'none';
 
       //Variáveis Biestável
       showVariableList(20);

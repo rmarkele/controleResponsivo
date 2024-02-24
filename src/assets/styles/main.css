@@ -22,6 +22,7 @@
 
 select{
   cursor: pointer;
+  outline: none;
 }
 
 header{
@@ -208,7 +209,6 @@ canvas{
   }
 
 
-  .myDopDown,
   .myCheckBox{
     /* font-family: Helvetica; */
     /* font-size: 15px; */
@@ -218,7 +218,6 @@ canvas{
     
   }
   
-  .myDopDown input,
   .myCheckBox input{
     transform: scale(1.5);
     margin-right: 2px;
@@ -227,11 +226,16 @@ canvas{
   .myCheckBox label{
     font-size: 10px;
   }
+
+  .BigCheck{
+    display: flex;
+    align-items: center;
+  }
   .BigCheck label{
     font-size: 12px;
   }
   
-  .myCheckBox.BigCheck input{
+  .BigCheck input{
     transform: scale(1.5);
     margin-right: 5px;
   }

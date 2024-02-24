@@ -56,18 +56,7 @@ function geraDinamômetro(pos) {
     manualControlCheckBox.checked(true);
   });
 
-  acaoDireta = createCheckbox(" " + strg.varPainelControlador[20], false);
-  acaoDireta.parent("auto-man-checkboxes");
-  acaoDireta.class("myCheckBox");
-  acaoDireta.addClass("BigCheck");
-  // acaoDireta.position(xPosNocontrol + 270, yPosNocontrol);
-  acaoDireta.changed(() => {
-    modoAcao = !modoAcao;
-  });
-
-  if (modoAcao) {
-    acaoDireta.checked(true);
-  }
+  
 
   switch (estado_inicial_controlador) {
     case 0:
