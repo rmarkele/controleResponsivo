@@ -1,4 +1,4 @@
-function geradrpDwnRegua(pos){  
+function geraShowPanel(pos){  
   
   
   BPCheck = createCheckbox(" " +strg.configRegua[1], true);

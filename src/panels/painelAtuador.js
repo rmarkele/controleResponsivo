@@ -1,4 +1,4 @@
-function geraPainelAtuador(pos){
+function geraPainelAtuador(){
   let listOfVarAtuador = strg.varPainelMotor;
 
   createPanel({

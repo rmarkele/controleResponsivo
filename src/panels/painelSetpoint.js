@@ -1,4 +1,4 @@
-function geraPainelSetpoint(pos) {
+function geraPainelSetpoint() {
   // let titleSetpoint = strg.titleSetpoint;
   let listOfVarSetpoint = strg.varPainelSetpoint;
   // painelParSetpoint = new Panel(

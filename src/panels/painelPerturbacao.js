@@ -1,4 +1,4 @@
-function geraPainelPerturbacao(pos) {
+function geraPainelPerturbacao() {
   let titlePerturb = strg.titlePert;
   // let listOfVarPerturb = [
   //   "Tipo: ",

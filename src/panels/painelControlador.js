@@ -1,5 +1,5 @@
 
-function geraPainelControlador(pos) {
+function geraPainelControlador() {
 
   createPanel({
     panelGroup: 2,
@@ -109,8 +109,6 @@ function geraPainelControlador(pos) {
   controladorChanged();
 
 
-  const xPosNocontrol = pos[0] + 50;
-  const yPosNocontrol = pos[1] - 37;
   noControlCheckBox = createCheckbox(
     " " + strg.varPainelControlador[17],
     false
