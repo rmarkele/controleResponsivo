@@ -1,0 +1,8 @@
+#graph-PV-SP,
+#graph-Fc-OP,
+#graph-FP{
+    display: block;
+    flex: 1;
+    width: 100%;
+    max-width: 800px;
+}

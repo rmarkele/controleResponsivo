@@ -1,0 +1,313 @@
+
+#timer-dynamometer{
+    max-height: 200px;
+    display: flex;
+    width: 100%;
+    flex: 2;
+    gap: 2px;
+  }
+  
+#dynamometer{
+    flex: 1;
+    /* width: 90%; */
+    /* height: 200px; */
+    border-style: inset;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#controller-actuator-outputs{
+    flex: 3;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2px;
+    max-height: 250px;
+}
+
+#controller-actuator-outputs div {
+    flex: 1;
+    border-style: inset;
+    height: 100%;
+}
+
+
+#auto-man-checkboxes{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0px 10px 5px 10px;
+}
+
+
+/* Painel Variáveis Process */
+#panel-process-variables{
+    flex: 1;
+    padding: 0px 3px;
+    /* margin-top: 40px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px; 
+    overflow: hidden;
+    font-size: 12px;
+    /* align-self: center; */
+    width: 90%;
+    /* background-color: red; */
+    
+  }
+  #panel-process-variables h4{
+    background-color: #333;
+    width: 100%;
+    padding: 2px 10px;
+    font-size: 12px;
+    font-weight: normal;
+    color: #fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    box-shadow: 1px 1px 3px #444;
+  }
+  
+  #panel-process-variables table{
+    table-layout: fixed;
+    background-color: #eee;
+    width: 100%;
+    /* margin: 5px; */
+    margin-top: 0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 1px 1px 3px #444;
+  }
+  
+  #panel-process-variables table th{
+    padding: 1px;
+    font-size: 10px;
+  }
+
+  /* inputs */
+.panels-wrapper{
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex: 1;
+  border-style: outset;
+  border-top-width: 0px;
+  gap: 5px;
+
+}
+
+.panels-wrapper.active{
+  display: flex;
+}
+
+
+
+
+#panels-group-5{
+  padding-left: 10px;
+  align-items: start;
+}
+
+.panel{
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 5px;
+  box-shadow: 1px 1px 3px #333;
+  max-height: 250px;
+}
+
+#panels-group-3 .panel,
+#panels-group-4 .panel{
+  width: 95%;
+}
+
+.panel .panel-title{
+  display: flex;
+  background-color: #999;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 5px;
+  font-size: 14px;
+  font-weight: bold;
+  gap: 5px;
+}
+
+.panel-body{
+  background-color: #eee; 
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  padding: 2px;
+  flex-wrap: wrap;
+  font-size: 12px;
+ 
+}
+
+#setpoint-panel,
+#perturbation-panel{
+  flex: 1;
+}
+
+#setpoint-panel .panel-body,
+#perturbation-panel .panel-body{
+  background-color: transparent; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+#setpoint-panel .input-flex-col,
+#perturbation-panel .input-flex-col{
+  background-color: #eee;
+  height: 100%;
+} 
+
+#setPointGraph,
+#perturbGraph{ 
+  flex:1;
+  background-color: none;
+  height: 100%;
+  /* background-color: red; */
+
+}.input-flex-row{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-flex-col{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+input[type=checkbox]{
+  cursor: pointer;
+
+}
+
+.input-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 5px;
+  font-size: 14px;
+}
+
+.input-wrapper input{
+  width: 45px;
+  border: 0;
+  border-bottom: 2px solid black;
+  background: none;
+  outline: none;
+  text-align: center;
+}
+
+.input-wrapper input:disabled,
+.input-wrapper label.disabled{
+  color: #888;
+  border-color: transparent;
+}
+
+.input-wrapper input:disabled{
+  width: 50px;
+}
+
+
+.panel-title select{
+  width: 100%;
+  font-weight: bold;
+  background-color: #999;
+  border: none;
+  font-size: 14px;
+}
+
+
+.panelCheckBoxes{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 5px 10px;
+  gap: 20px;
+
+}
+
+label[for=input-freqCorte]{
+  font-size: 12px;
+}
+
+
+.variables-nav{
+  font-size: 12px;
+  width: 100%;
+}
+#mobile-nav{
+  border-style: inset;
+}
+
+#panels-nav{
+  border-style: outset;
+  border-bottom-width: 0px;
+}
+
+.variables-nav ul{
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 2px 5px; 
+}
+
+.variables-nav ul li{
+  color: #aaa;
+  border-bottom: 2px solid #333;
+  cursor: pointer;
+}
+
+.variables-nav ul li:hover{
+  border-bottom: 2px solid #aaa;
+}
+
+.variables-nav ul li.active{
+  color: #fff;
+  border-bottom: 2px solid #fff;
+}
+
+@media (max-width:800px) {
+
+  #panel-process-variables{
+    flex: 1;
+    font-size: 10px;
+    margin-top: 10px;
+  }
+
+  #dynamometer{
+    flex: 1;
+    margin-top: 0px;
+  }
+  #controller-actuator-outputs{
+    flex:1
+  }
+
+  #auto-man-checkboxes{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0px 2px 2px 2px;
+}
+
+}
+
+@media (max-width: 670px) {
+    
+    
+  }

@@ -1,0 +1,17 @@
+#cenarios-select{
+  /* font-size: 15px; */
+  font-weight: bold;
+  border: 3px solid #000;
+  background-color: rgb(240, 240, 255);
+  height: 40px;
+}
+
+@media (max-width:800px) {
+  #cenarios-select{
+    font-size: 10px;
+    font-weight: bold;
+    border: 3px solid #000;
+    background-color: rgb(240, 240, 255);
+    height: 30px;
+  }
+}

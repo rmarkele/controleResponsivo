@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
+    <link rel="stylesheet" type="text/css" href="src/assets/styles/langSelectorStyle.css">
+    <link rel="stylesheet" type="text/css" href="src/assets/styles/selectScenario.css">
+    <link rel="stylesheet" type="text/css" href="src/assets/styles/graphs.css">
+    <link rel="stylesheet" type="text/css" href="src/assets/styles/scale.css">
+    <link rel="stylesheet" type="text/css" href="src/assets/styles/panels.css">
+    <link rel="stylesheet" type="text/css" href="src/assets/styles/timer.css">
+    <link rel="stylesheet" type="text/css" href="src/assets/styles/help.css">
+    <link rel="stylesheet" type="text/css" href="src/assets/styles/player.css">
+    <link rel="stylesheet" href="./src/assets/styles/main.css">
+    <title>Document</title>
+    <script src="./src/p5/p5.js"></script>
+    <!-- <script src="./src/p5/p5.sound.min.js"></script> -->
+    <script src="src/variables/globalVariables.js"></script>
+    
+   
+</head>
+<body>
+    <header>
+        <nav class="main-navbar">
+            <div class="lang-menu">
+                <div class="selected-lang">
+                  <img src="src/assets/images/PT-BR.png" alt="português"/>
+                  <span>Português</span>
+                </div>
+                <ul>
+                  <li data-lang = "PT-BR" data-index="0">
+                    <img src="src/assets/images/PT-BR.png" alt="português">
+                    <span class="br">Português</span>
+                  </li>
+                  <li data-lang = "EN-US" data-index="1">
+                    <img src="src/assets/images/EN-US.png" alt="português">
+                    <span class="us">English</span>
+                  </li>
+                </ul>
+            </div>
+
+            <div id="cenarios-select-container">
+                <select name="cenarios" id="cenarios-select">
+
+                </select>
+            </div>
+
+        </nav>
+    </header>
+    <main id="canvas-container">
+        <div id="process">
+          <!-- Desenho do processo aqui-->
+        </div>
+        <div id="scale-container">
+          <!-- Desenho da Régua aqui-->   
+          <div id="play-stop-reset">
+            <!-- play/stop and reset buttons -->
+            <button id="rewind-button">
+              <img src="./src/assets/images/rewind.png" alt="">
+            </button>
+            <button id="pause-button">
+              <img src="./src/assets/images/pause.png" alt="">
+            </button>
+            <button id="play-button" style="display: none;">
+              <img src="./src/assets/images/play.png" alt="">
+            </button>
+
+          </div> 
+        </div>
+        
+        <div id="control-panel">
+          <div id="mobile-navigator">
+            <nav class="variables-nav" id="mobile-nav">
+              <ul>
+                <li data-id="left">Variáveis</li>
+                <li class="active" data-id="center">Controle</li>
+                <li data-id="right">Entradas</li>
+              </ul>
+            </nav>
+          </div>
+            <div id="left" class="main-column">
+                <!-- Gráficos -->
+                <div id="graph-PV-SP">
+                  <!-- Gráfico Variável Controlada e Setpoint -->
+                </div>
+                <div id="graph-Fc-OP">
+                  <!-- Gráfico Variável Manipulada e Saída Controlador -->
+                </div>
+                <div id="graph-FP">
+                  <!-- Gráfico Perturbação -->  
+                </div>
+                <div id="panel-process-variables">
+                  <div id="timers-container">    
+                    <div id="holder-wrapper">
+                      <div id="holder">---</div>   
+                      <button class="timer-button" onclick="resetHolderDisplay()">
+                        <img src="src/assets/images/reiniciar.png" alt="">
+                      </button>                   
+                    </div>  
+                    <div id="timer-wrapper">
+                      <div id="timer">000</div>
+                      <button class="timer-button" onclick="resetTimerDisplay()">
+                        <img src="src/assets/images/reiniciar.png" alt="">
+                      </button>              
+                    </div>  
+                  </div>
+                  <!-- painel de variáveis de processo aqui -->
+                  <h4></h4>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th></th>
+                        <th id="table-SP-0" >SP</th>
+                        <th id="table-PV-0">PV</th>
+                        <th id="table-OP-0">OP</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr id="table-Percent">
+                        <th>%</th>
+                        <th class="table-SP" id="table-SP-1"></th>
+                        <th class="table-PV" id="table-PV-1"></th>
+                        <th class="table-OP" id="table-OP-1"></th>
+                      </tr>
+                      <tr id="table-PV" >
+                        <th>SI</th>
+                        <th class="table-SP" id="table-SP-2"></th>
+                        <th class="table-PV" id="table-PV-2"></th>
+                        <th class="table-OP" id="table-OP-2"></th>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+            </div>
+            <div id="center" class="main-column active">
+              <div class="flex-div" id="timer-dynamometer">
+                
+                <div id="dynamometer">
+                  <!-- Dinamômetro aqui  -->
+                  <div id="auto-man-checkboxes">
+                    <!-- checkbox de DESL AUTO e MAN -->
+                  </div>
+                </div>
+              </div>
+              <div id="controller-actuator-outputs">
+                <div id="controller-outputs"></div>
+                <div id="actuator-outputs"></div>
+              </div>
+            </div>
+            <div id="right" class="main-column">
+              <nav class="variables-nav" id="panels-nav">
+                <ul>
+                  <li class="active" data-id="1">Processo</li>
+                  <li data-id="2">OP/FC</li>
+                  <li data-id="3">SP</li>
+                  <li data-id="4">FP</li>
+                  <li data-id="5">Exibir</li>
+                  <li data-id="6">Sobre</li>
+                </ul>
+              </nav>
+              <div class="panels-wrapper active" id="panels-group-1">
+                
+              </div>
+              <div class="panels-wrapper" id="panels-group-2">
+               
+              </div>
+              <div class="panels-wrapper" id="panels-group-3">
+                  
+              </div>
+              <div class="panels-wrapper" id="panels-group-4">
+                  
+              </div>
+              <div class="panels-wrapper" id="panels-group-5">
+                <div id="forces-multiplier" class="radio-panel">
+                  <h4></h4>
+                  <div>
+                    <input type="radio" name="DCL-mult" value="0" id="x0">
+                    <label for="x0"></label>
+                  </div>
+                  <div>
+                    <input type="radio" name="DCL-mult" value="1" id="x1" checked>
+                    <label for="x1"></label>
+                  </div>
+                  <div>
+                    <input type="radio" name="DCL-mult" value="10" id="x10">
+                    <label for="x10"></label>
+                  </div>  
+                  <div>
+                    <input type="radio" name="DCL-mult" value="100" id="x100">
+                    <label for="x100"></label>
+                  </div>
+                </div>
+
+                <div id="hide-system" class="radio-panel">
+                  <input type="checkbox" name="DCL-mult" value="0" id="SystemView">
+                  <label for="SystemView"></label>
+                </div>                
+                
+              </div>
+              <div class="panels-wrapper" id="panels-group-6">
+                <div id="logo-container">
+                  <p id="logoTxt0" class="logo-container--title"></p>
+                  <p id="logoTxt1" class="logo-container--text"></p>
+                  <button id="help-button" class="logo-container--btn"></button>
+                </div>
+              </div>
+             
+            </div>
+            
+        </div>
+
+
+        <div id="light-EV" class="lights circle red">
+          <p></p>
+        </div>
+
+        <div id="ajudaDiv" class="ajuda">
+            <nav id="help-navbar"></nav>
+            <iframe id="main-iframe"></iframe>
+            <button id="close-help-button" class="closebtn">X</button>
+        </div> 
+
+    </main>
+    <div id="fps-text">
+      <div id="fps-expected"></div>
+      <div id="fps-mean"></div>
+    </div> 
+
+
+    <script src="./src/assets/window/windowResize.js"></script>
+    <script src="src/tools/signals.js"></script>
+    <script src="src/controller/saidaControlador.js"></script>
+    <script src="src/controller/biestavel.js"></script>
+    <script src="src/tools/plot.js"></script>
+    <script src="src/graphs/graphs.js"></script>
+    <script src="src/scale/drawScale.js"></script>
+    <script src="src/system/geraSistema.js"></script>
+    <script src="src/system/calculaNovaPosicao.js"></script>
+    <script src="src/system/desenhaSistema.js"></script>
+  
+    <script src="src/hmi/geraIHM.js"></script>
+    <script src="src/hmi/showIHM.js"></script>
+    <script src="src/hmi/updateIHM.js"></script>
+    <script src="src/panels/createPanel.js"></script>
+    <script src="src/panels/geraSliderSetpoint.js"></script>
+    <script src="src/panels/geraDinamometro.js"></script>
+    <script src="src/panels/painelParametros.js"></script>
+    <script src="src/player/player.js"></script>
+    <script src="src/tools/formatToExponential.js"></script>
+    <script src="src/tools/checkForNaN.js"></script>
+    <script src="src/tools/checkForUndefined.js"></script>
+    <script src="src/tools/checkForUndefinedString.js"></script>
+    <script src="src/panels/panelsNavigation.js"></script>
+    <script src="src/panels/painelEnvelope.js"></script>
+    <script src="src/panels/DropDownConfiguracoesRegua.js"></script>
+    <script src="src/panels/painelVariaveisdeProcesso.js"></script>
+    <script src="src/panels/painelControlador.js"></script>
+    <script src="src/panels/painelSaidasPID.js"></script>
+    <script src="src/panels/painelIndicadorPosicao.js"></script>
+    <script src="src/panels/painelAtuador.js"></script>
+    <script src="src/panels/painelSetpoint.js"></script>
+    <script src="src/panels/painelPerturbacao.js"></script>
+  
+    <script src="src/inputs/atualizaParametros.js"></script>
+    <script src="src/inputs/setVariableList.js"></script>
+    <script src="src/freeBodyDiagram/DCL.js"></script>
+    <script src="src/tools/myslider.js"></script>
+    <script src="src/actuator/atuador.js"></script>
+    
+    <script src="src/tools/fullScreen.js"></script>
+    <script src="src/timer/timer.js"></script>
+    <script src="src/lang/langSelector.js"></script>
+    <script src="config/Strings.js"></script>
+    <script src="src/strings/leitorStrings.js"></script>
+    <script src="src/strings/updateStrings.js"></script>
+    <script src="config/Cenarios.js"></script>
+    <script src="src/scenarios/leitorCenarios.js"></script>
+    <script src="src/scenarios/selectScenario.js"></script>
+    <script src="src/components/car.js"></script>
+    <script src="src/components/damper.js"></script>
+    <script src="src/components/spring.js"></script>
+    <script src="src/tools/vector.js"></script>
+    <script src="src/components/dynamometer.js"></script>
+    <script src="src/help/help.js"></script>
+
+    <script src="./src/variables/getDimensions.js"></script>
+    <script src="./src/sketch.js"></script>
+    
+</body>
+</html>

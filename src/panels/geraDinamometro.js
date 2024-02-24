@@ -1,0 +1,94 @@
+function geraDinamômetro(pos) {
+  const scale = 0.4;
+
+  forces = new dinamometro(pos[0], pos[1], scale * dynamometerPos[2], scale * dynamometerPos[3] ,-100, 100, 30, -20);
+  let w = 2 * forces.raio;
+  manualControl = new mySlider(
+    [ pos[0] -  scale * dynamometerPos[2],   pos[1] + scale * dynamometerPos[3] * 0.2 + 18],
+    [dynamometerPos[2] * 2 * scale, 5],
+    [-100, 100],
+    saida_controle_manual_inicial0,
+    1,
+    0
+  );
+
+  noControlCheckBox.parent("auto-man-checkboxes");
+  noControlCheckBox.class("myCheckBox");
+  noControlCheckBox.addClass("BigCheck");
+  noControlCheckBox.changed(() => {
+    noControlCheckBox.checked(true);
+    pidControlCheckBox.checked(false);
+    manualControlCheckBox.checked(false);
+    PID = 0;
+    saidaP = 0;
+    saidaI = 0;
+    saidaD = 0;
+    manualForce = 0;
+    forcaAtuador = [0, 0, 0];
+  });
+
+  pidControlCheckBox = createCheckbox(
+    " " + strg.varPainelControlador[18],
+    true
+  );
+  pidControlCheckBox.parent("auto-man-checkboxes");  
+  pidControlCheckBox.class("myCheckBox");
+  pidControlCheckBox.addClass("BigCheck");
+  pidControlCheckBox.changed(() => {
+    if (manualControlCheckBox.checked()) {
+      saidaI = manualControl.value() * (K_I > 0);
+    }
+    noControlCheckBox.checked(false);
+    pidControlCheckBox.checked(true);
+    manualControlCheckBox.checked(false);
+  });
+
+  manualControlCheckBox = createCheckbox(
+    " " + strg.varPainelControlador[19],
+    false
+  );
+  manualControlCheckBox.parent("auto-man-checkboxes");
+  manualControlCheckBox.class("myCheckBox");
+  manualControlCheckBox.addClass("BigCheck");
+  manualControlCheckBox.changed(() => {
+    noControlCheckBox.checked(false);
+    pidControlCheckBox.checked(false);
+    manualControlCheckBox.checked(true);
+  });
+
+  acaoDireta = createCheckbox(" " + strg.varPainelControlador[20], false);
+  acaoDireta.parent("auto-man-checkboxes");
+  acaoDireta.class("myCheckBox");
+  acaoDireta.addClass("BigCheck");
+  // acaoDireta.position(xPosNocontrol + 270, yPosNocontrol);
+  acaoDireta.changed(() => {
+    modoAcao = !modoAcao;
+  });
+
+  if (modoAcao) {
+    acaoDireta.checked(true);
+  }
+
+  switch (estado_inicial_controlador) {
+    case 0:
+      noControlCheckBox.checked(true);
+      pidControlCheckBox.checked(false);
+      manualControlCheckBox.checked(false);
+      break;
+    case 1:
+      noControlCheckBox.checked(false);
+      pidControlCheckBox.checked(true);
+      manualControlCheckBox.checked(false);
+      break;
+    case 2:
+      noControlCheckBox.checked(false);
+      pidControlCheckBox.checked(false);
+      manualControlCheckBox.checked(true);
+      break;
+    default:
+      noControlCheckBox.checked(false);
+      pidControlCheckBox.checked(true);
+      manualControlCheckBox.checked(false);
+      break;
+  }
+}

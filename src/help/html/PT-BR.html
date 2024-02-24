@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-br"><head>
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Simulador Did&aacute;tico Din&acirc;mico Sistema Controle Malha Fechada PID</title><meta name="description" content="Din&acirc;mico - Online">
+<meta property="og:title" content="Simulador PID">
+<meta property="og:description" content="Din&acirc;mico - Online">
+<meta name="classification" content="simulador din&acirc;mico online controle PID">
+<meta name="keywords" content="online,controle PID,din&acirc;mico,simulador">
+<meta name="author" content="Renato Markele Ferreira C&acirc;ndido e Claudio Cesar Bezerra Teles"></head>
+<body>
+<div style="font-size: 24px;"> 
+<h2 style="text-align: center;">SIMULADOR DID&Aacute;TICO DE CONTROLE EM MALHA FECHADA<br>Mk-1 v.2024.02</h2> 
+<h2 style="text-align: center;">Sistema Massa-Mola-Amortecedor</h2>
+<h3 style="text-align: center;">Renato Markele Ferreira C&acirc;ndido / Claudio Cesar Bezerra Teles</h3>
+<p style="text-align: center;">--- USO GRATUITO ---</p>
+<br>
+
+
+      <p>
+        Esse simulador pode ser acessado em
+        https://proanuncio.com.br/sc
+      </p>
+      <p></p>
+
+      <p>
+        As grandezas simuladas s&atilde;o expressas em unidades do Sistema
+        Internacional (SI).
+      </p>
+
+      <p>Nos valores num&eacute;ricos emprega-se o ponto decimal em vez de v&iacute;rgula.</p>
+
+      <p>
+        O processo controlado &eacute; um sistema de segunda ordem do tipo
+        massa-mola-amortecedor sem atrito com o ar. O(A) utilizador(a)
+pode inserir os par&acirc;metros do
+        processo, ou seja, massa m, coeficiente de amortecimento c e constante
+        da mola Ks. Os valores de c e Ks podem ser negativos. Embora a anima&ccedil;&atilde;o
+        mostre um carro dotado de rodas, a simula&ccedil;&atilde;o assume que a massa flutua
+        sobre o solo.
+      </p>
+
+      <p>
+        A vari&aacute;vel de processo (controlada) PV(t) &eacute; a posi&ccedil;&atilde;o do eixo vertical
+        da massa, medida em metros por um indicador de posi&ccedil;&atilde;o oculto. A faixa
+        de indica&ccedil;&atilde;o vai de PVmin a PVmax. O(A) utilizador(a) pode alterar esses
+        limites (em metros) e inserir um valor de erro na indica&ccedil;&atilde;o de posi&ccedil;&atilde;o
+        por meio da caixa de inser&ccedil;&atilde;o localizada no canto
+        inferior direito da tela. O processo &eacute; sujeito &agrave; for&ccedil;a perturbadora Fp(t).
+        A vari&aacute;vel manipulada &eacute; a for&ccedil;a de controle
+        Fc(t) que o elemento final de controle (motor linear) exerce no
+        processo. O modelo da
+        simula&ccedil;&atilde;o presume que todas as for&ccedil;as est&atilde;o contidas no eixo horizontal
+        da massa.
+      </p>
+
+      <p>O controlador tem as seguintes caracter&iacute;sticas:</p>
+      <ul>
+        <li>Recebe o <span style="font-style: italic;">setpoint</span> SP(t) e a vari&aacute;vel controlada PV(t);</li>
+        <li>Calcula o erro e(t) = SP(t) - PV(t);</li>
+        <li>Fornece a sa&iacute;da (<span style="font-style: italic;">output</span>) OP(t);</li>
+        <li>Permite que o(a) utilizador(a):</li>
+        <ul>
+          <li>
+            Selecione o modo de controle (PID, PID <span style="font-style: italic;">Anti-windup</span> ou Biest&aacute;vel);
+          </li>
+          <li>
+            Ajuste diretamente a for&ccedil;a de controle Fc(t) quando no modo MANUAL;
+            e
+          </li>
+          <li>Selecione A&ccedil;&atilde;o Direta (DIR) ou A&ccedil;&atilde;o Reversa.</li>
+        </ul>
+      </ul>
+
+
+      <p>
+        O diagrama de blocos abaixo mostra a intera&ccedil;&atilde;o entre processo, controle
+        e ambiente simulados.
+      </p>
+
+      <p style="text-align: center;">
+        <img style="width: 100vw; max-width: 825px; max-height: 252px;" alt="" src="../../assets/images/esquema_pt.jpeg">
+      </p>
+
+      <p>
+        A estrutura PID b&aacute;sica empregada pelo simulador &eacute; definida por meio da seguinte
+        equa&ccedil;&atilde;o:
+        <br>
+        <br>
+        OP(t) = Kp &middot;e(t) + Ki &middot; <span>&int; </span>e(t)dt + Kd
+        &middot; ė(t) + OPo. <br>
+        <br>
+        Sendo Ki = Kp/Ti e Kd = KpTd.
+      </p>
+
+      <p>
+        Ganhos Kp, Ki e Kd, constantes Ti e Td, sa&iacute;da OP(t) e pr&eacute;-carga OPo s&atilde;o
+        adimensionais. SP(t), PV(t), e(t) e banda proporcional BP (= 1/Kp)
+        tamb&eacute;m s&atilde;o adimensionais mas s&atilde;o expressos em metros por conveni&ecirc;ncia.
+        O(A) utilizador(a) pode inserir Kp, Ki, Kd, OPo e SP(t) e observar
+        as demais vari&aacute;veis. OP(t) pode variar entre -100% e 100%.
+      </p>
+
+<p>
+O desenho abaixo mostra as equa&ccedil;&otilde;es b&aacute;sicas do
+simulador. M(t) representa a curva de resposta do motor linear.
+Fcmax &eacute; a m&aacute;xima magnitude que a for&ccedil;a de controle
+Fc(t) pode alcan&ccedil;ar. </p>
+
+      <p style="text-align: center;">
+        <img style="width: 100vw; max-width: 751px; max-height: 620px;" alt="" src="../../assets/images/equacoes2.jpeg">
+      </p>
+
+      <p>
+        Essa vers&atilde;o disponibiliza quatro modos de controle em malha fechada:
+      </p>
+      <ul>
+        <li>Modo PID;</li>
+        <li>Modo <span style="font-style: italic;">Anti-windup</span> PD + I se |e| &lt; eLim;</li>
+        <li>Modo <span style="font-style: italic;">Anti-windup</span> PD + I se |D| &lt; DLim; e</li>
+        <li>Modo Biest&aacute;vel.</li>
+      </ul>
+
+      <p>Ao selecionar o modo "PID" o(a) utilizador(a) poder&aacute;:</p>
+      <ul>
+        <li>
+          Ajustar Imax para limitar a magnitude da componente integral a um
+          valor inferior a 100%;
+        </li>
+        <li>
+          Fazer a derivada ser calculada sobre a PV(t) em vez de sobre o erro
+          e(t);
+        </li>
+        <li>
+          Ajustar a frequ&ecirc;ncia de corte (em Hz) do filtro passa-baixa existente
+          na sa&iacute;da do c&aacute;lculo da componente derivativa; e
+        </li>
+        <li>Contornar o filtro passa-baixa.</li>
+      </ul>
+
+      <p>
+        Ao escolher o modo "PD + I se |e| &lt; eLim" o(a)
+        utilizador(a) pode alterar a magnitude do limiar de erro eLim (em
+        metros) que aciona o integrador. O perfil dessa condi&ccedil;&atilde;o tem formato de
+        degrau.
+      </p>
+
+      <p>
+        Ao escolher o modo "PD + I se |D| &lt; DLim" o(a)
+        utilizador(a) pode entrar com o valor do m&oacute;dulo do limiar de
+        derivada DLim (em %) que liga o integrador. O perfil dessa condi&ccedil;&atilde;o tem
+        formato de rampa.
+      </p>
+
+      <p>
+        Ao selecionar o modo "Biest&aacute;vel" o(a) utilizador(a) pode inserir o
+        valor da banda morta (em metros) e os valores m&iacute;nimo e m&aacute;ximo
+        de OP(t).
+      </p>
+
+      <p>
+        O(A) utilizador(a) pode ligar ou desligar as seguintes exibi&ccedil;&otilde;es na tela:
+      </p>
+      <ul>
+        <li>Anima&ccedil;&atilde;o;</li>
+        <li>Limites do envelope de opera&ccedil;&atilde;o - linhas s&oacute;lidas/tracejadas em vermelho;</li>
+        <li>PV(t) - linha tracejada em verde-azulado escuro;</li>
+        <li>Faixa de indica&ccedil;&atilde;o da PV(t) - em laranja;</li>
+        <li>SP(t) - linha tracejada em azul; e</li>
+        <li>Banda Proporcional BP - em verde.</li>
+      </ul>
+      As tr&ecirc;s &uacute;ltimas indica&ccedil;&otilde;es, bem como o cursor deslizante de ajuste manual do SP, 
+      somente aparecem quando o controlador est&aacute; ligado. Ao ativar a exibi&ccedil;&atilde;o do envelope 
+      de opera&ccedil;&atilde;o, o usu&aacute;rio &eacute; habilitado a alterar os limites do envelope.
+
+<p>
+O motor linear recebe o comando OP(t) e o converte em for&ccedil;a
+Fc(t) de acordo com a curva M(t) de resposta do motor, que pode ser
+ideal ou n&atilde;o-ideal. O valor de Fc(t) &eacute; limitado a variar
+entre -Fcmax e Fcmax. O(A) utilizador(a)
+pode inserir o valor de Fcmax (em newtons) e selecionar o tipo de curva
+do motor. Se escolher curva n&atilde;o-ideal, o(a) utilizador(a) pode
+inserir a inclina&ccedil;&atilde;o central da curva (sigm&oacute;ide) e
+respectiva folga (em %). O(A) utilizador(a)
+pode inserir o tempo morto do motor (em ms) e selecionar
+A&ccedil;&atilde;o Direta (DIR) ou A&ccedil;&atilde;o Reversa.
+</p>
+
+<p>
+Ao ser ligado, o controlador ativa um mostrador que, de acordo com a
+op&ccedil;&atilde;o selecionada no respectivo menu, exibe OP(t) ou Fc(t). Ao selecionar a
+exibi&ccedil;&atilde;o de Fc(t), o(a) utilizador(a) pode ver no mostrador o formato da curva M(t) de
+resposta do motor.
+</p>
+
+
+      <p>
+        O <span style="font-style: italic;">setpoint</span> SP(t) pode ser constante ou vari&aacute;vel. H&aacute; diversos tipos de
+        SP(t) dispon&iacute;veis. O(A) utilizador(a) pode selecionar uma op&ccedil;&atilde;o e
+        ajustar os limites SPmin e SPmax (em metros).
+      </p>
+
+      <p>
+        A perturba&ccedil;&atilde;o Fp(t) pode ser constante ou vari&aacute;vel. H&aacute; diversas
+        alternativas de Fp(t) dispon&iacute;veis. O(A) utilizador(a) pode escolher um
+        tipo e inserir os limites Fpmin e Fpmax, que s&atilde;o expressos em
+        percentuais de Fcmax.
+      </p>
+
+<p>
+Est&atilde;o dispon&iacute;veis os seguintes cen&aacute;rios pr&eacute;-configurados:
+</p>
+
+<ul>
+<li>Cen&aacute;rio Demonstra&ccedil;&atilde;o,</li>
+<li>Espa&ccedil;o Sideral (ES),</li>
+<li>Equil&iacute;brio Indiferente (EInd),</li>
+<li>Oscilador Ideal (OI),</li>
+<li>Processo Subamortecido (PSub),</li>
+<li>Processo com Amortecimento Cr&iacute;tico (PCrit),</li>
+<li>Processo Superamortecido (PSuper),</li>
+<li>P&ecirc;ndulo Invertido (PInv),</li>
+<li>PInv: Transi&ccedil;&atilde;o R&aacute;pida - A e B,</li>
+<li>PCrit: "Suspens&atilde;o Ativa",</li>
+<li>PCrit: "Suspens&atilde;o Ativa (2)",</li>
+<li>PCrit: Compara&ccedil;&atilde;o Biest&aacute;vel/Proporcional,</li>
+<li>PSub: Diversas Varia&ccedil;&otilde;es,</li>
+<li>PSuper: Compara&ccedil;&atilde;o Anti-windup,</li>
+<li>EInd: Elemento Final de Controle com Folga e</li>
+<li>PSub: Quest&atilde;o NRC P319.</li>
+</ul>
+
+<p>Por interm&eacute;dio do menu situado no canto superior direito da
+tela o(a) utilizador(a) pode
+escolher um cen&aacute;rio. Por meio das diversas caixas de
+inser&ccedil;&atilde;o da tela e dos respectivos cursores deslizantes
+o(a) utilizador(a) pode alterar as caracter&iacute;sticas do
+cen&aacute;rio selecionado.
+</p>
+
+      <p>
+        Quanto mais a <span style="font-style: italic;">frame rate</span> m&eacute;dia
+        (em <span style="font-style: italic;">FPS</span>) do computador do(a)
+        utilizador(a) se aproximar da esperada, mais a simula&ccedil;&atilde;o se aproximar&aacute;
+        de tempo real (ver indicadores exibidos no canto inferior esquerdo da
+        tela).
+      </p>
+
+      <p>
+        Coment&aacute;rios podem ser encaminhados aos seguintes endere&ccedil;os:
+        claudioteles12@gmail.com e renatomarkele@hotmail.com. Por favor escreva
+        SIMULADOR no assunto de sua mensagem para permitir distin&ccedil;&atilde;o
+        de <span style="font-style: italic;">spam</span>.
+      </p>
+
+      <p>Gratos!</p>
+    </div>
+  </body></html>

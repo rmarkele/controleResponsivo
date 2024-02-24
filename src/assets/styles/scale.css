@@ -1,0 +1,15 @@
+#scale-container{
+    height: var(--scale-height);
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+
+@media (max-width:850px) {
+  #scale-container{
+    justify-content: flex-start;
+    align-items: start;
+  }
+
+}

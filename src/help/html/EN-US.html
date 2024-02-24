@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>PID Closed Loop Control System Dynamic Teaching Simulator</title><meta name="description" content="Dynamic - Online">
+<meta property="og:title" content="PID Simulator">
+<meta property="og:description" content="Dynamic - Online">
+<meta name="classification" content="PID control online dynamic simulator">
+<meta name="keywords" content="PID control,online,dynamic,simulator">
+<meta name="author" content="Renato Markele Ferreira C&acirc;ndido and Claudio Cesar Bezerra Teles"></head>
+<body>
+<div style="font-size: 24px;"> 
+<h2 style="text-align: center;">CLOSED-LOOP CONTROL TEACHING SIMULATOR<br>Mk-1 v.2024.02</h2> 
+<h2 style="text-align: center;">Mass-Spring-Damper System </h2>
+<h3 style="text-align: center;">Renato Markele Ferreira C&acirc;ndido / Claudio Cesar Bezerra Teles</h3>
+<p style="text-align: center;">--- FREE USE ---</p>
+<br>
+
+      <p>
+    This simulator can be accessed at https://proanuncio.com.br/sc
+    </p>
+    
+    <p>Simulated quantities are expressed in units of the International System (SI).
+    </p>
+    
+    <p>The controlled process is an air-frictionless
+mass-spring-damper type second-order system. The user can insert the 
+    process parameters, that is, mass m, damping coefficient c and spring constant Ks. Values of c and Ks
+    can be negative. Althouh animation shows a wheeled car, the simulation assumes the mass 
+    floats over the ground.
+    </p>
+    
+    <p>The (controlled) process variable PV(t) is the mass vertical axis position,
+    measured in meters by an unshown position indicator. The indication range is from PVmin to PVmax.
+    The user can change these limits (in meters) and insert an error value in the position indication through the screen
+    lower right corner insertion box. The process is subject to the perturbation force Fp(t). The manipulated
+    variable is the control force Fc(t) the final control element
+    (linear motor) exerts on the process. The simulation model assumes all forces are contained
+    in the mass horizontal axis.
+    </p>
+
+    <p>The controller presents the following characteristics:</p>
+        <ul>
+            <li> Receives the setpoint SP(t) and the controlled variable PV(t);</li>
+            <li> Computes the error e(t) = SP(t) - PV(t);</li>
+            <li> Provides the output OP(t);</li>
+            <li> Offers the user the following options:</li>
+            <ul>
+                <li> Selecting the control mode (PID, Anti-windup PID or Bistable); </li>
+                <li> Directly adjusting the control force Fc(t) when in MANUAL mode; and </li>
+                <li> Selecting Direct Action (DIR) or Reverse Action. </li>
+            </ul>
+        </ul>
+    
+
+
+    <p>The block diagram below shows interaction between the simulated process, control and environment.
+    </p>
+
+    <p style="text-align: center;">
+        <img style="width: 100vw; max-width: 831px; max-height: 257px;" alt="" src="../../assets/images/esquema_en.jpeg">
+    </p>
+    
+    <p>The basic PID structure the controller employs is defined through the following equation: 
+    <br>
+    <br>
+    OP(t) = Kp &middot;e(t) + Ki &middot; <span>&int; </span>e(t)dt + Kd &middot; ė(t) + OPo. <br>
+    <br>
+    Where Ki = Kp/Ti and Kd = KpTd.</p>
+    
+    <p>Gains Kp, Ki and Kd, constants Ti and Td, output OP(t) and preload OPo are
+    dimensionless. SP(t), PV(t), e(t) and proportional band PB (= 1/Kp) are also dimensionless
+    but are expressed in meters for convenience. The user can insert Kp, Ki, Kd, OPo and SP(t) 
+    and watch the other variables. OP(t) can vary between -100% and 100%.
+    </p>
+    
+<p>
+The drawing below shows the simulator basic equations. M(t) represents the linear motor response curve.
+Fcmax is the maximum magnitude the control force Fc(t) can achieve.
+</p>
+
+    <p style="text-align: center;">
+        <img style="width: 100vw; max-width: 751px; max-height: 620px;" alt="" src="../../assets/images/equacoes2.jpeg">
+    </p>
+
+    <p>This version provides four closed-loop control modes:</p>
+        <ul>
+            <li> PID mode; </li>
+            <li> PD + I if |e| &lt; eTh Anti-windup mode; </li>
+            <li> PD + I if |D| &lt; DTh Anti-windup mode; and </li>
+            <li> Bistable mode. </li>
+        </ul>
+   
+    <p>By selecting the "PID" mode the user can:</p>
+        <ul>
+            <li> Adjust Imax to limit the integral component magnitude to a less-than-100% value; </li>
+            <li> Make the derivative to be computed over PV(t) instead of e(t); </li>
+            <li> Insert the derivating block output low-pass filter cutoff frequency (in Hz); and </li>
+            <li> Bypass the low-pass filter. </li>
+        </ul>
+ 
+    <p>By choosing the "PD + I if |e| &lt; eTh" mode the user can insert the error 
+    threshold magnitude eTh (in meters) that sets the integrator on. This condition is step-shaped.</p>
+    
+    <p>When choosing the "PD + I if |D| &lt; DTh" mode the user can enter the 
+    derivative threshold magnitude DTh (in %) which turns the integrator on. This condition is ramp-shaped.</p>
+    
+    <p>By selecting the "Bistable" mode the user can set the deadband (in meters) and the minimum
+    and maximum values of OP(t).</p>
+    
+    <p>The user can turn on/off the following screen displays:</p>
+        <ul>
+            <li> Animation; </li>
+            <li> Operating envelope limits - dashed/solid red lines; </li>
+            <li> PV(t) - dark teal dashed line; </li>
+            <li> PV(t) indication range - orange; </li>
+            <li> SP(t) - dashed blue line; and </li>
+            <li> Proportional Band PB - green.</li>
+        </ul>
+        The last three indications, as well as the SP manual slider,
+        only appear when the controller is turned on. By activating 
+        the operation envelope viewing, the user is enabled to change 
+        the envelope limits.
+    
+<p>
+The linear motor receives the command OP(t) and converts it into Fc(t) according to the motor response
+curve M(t), which can be ideal or non-ideal. The value of Fc(t) is limited to vary between -Fcmax and Fcmax. The user
+can enter the Fcmax value (in newtons) and choose motor curve type. When selecting non-ideal curve, the user can 
+insert the central slope of the curve (sigmoid) and its deadspace (in %). The user can insert the motor dead time 
+(in ms) and select Direct Action (DIR) or Reverse Action.
+</p>
+
+<p>
+When switched on, the controller activates a display that, according to the
+option selected on its menu, shows OP(t) or Fc(t). When selecting Fc(t) exhibition,
+the user can see on the display the shape of the motor response curve M(t).
+</p>
+
+    
+    <p>Setpoint SP(t) can be constant or variable. There are several available SP(t) types. The user
+    can select an option and insert the limits SPmin and SPmax (in meters).</p>
+    
+    <p>Perturbation Fp(t) can be constant or variable. There are several available Fp(t) alternatives.
+    The user can choose a type and enter the limits Fpmin and Fpmax, which are expressed in percentage
+    of Fcmax.
+    </p>
+    
+<p>
+The following preset scenarios are available:
+</p>
+
+<ul>
+<li>Demonstration,</li>
+<li>Outer Space (OS),</li>
+<li>Indifferent Equilibrium (IndE),</li>
+<li>Ideal Oscillator (IO),</li>
+<li>Underdampened Process (UndP),</li>
+<li>Critically-dampened Process (CritP),</li>
+<li>Overdampened Process (OverP),</li>
+<li>Inverted Pendulum (InvP),</li>
+<li>InvP: Fast Transition - A and B,</li>
+<li>CritP: "Active Suspension",</li>
+<li>CritP: "Active Suspension (2)",</li>
+<li>CritP: Bistable/Proportional Comparison,</li>
+<li>UndP: Several Variations,</li>
+<li>OverP: Anti-windup Comparison,</li>
+<li>IndE: Backlashed Final Control Element and</li>
+<li>UndP: NRC Question P319.</li>
+</ul>
+
+<p>
+Through the screen upper right corner menu the user can choose a scenario. Through the various input boxes
+on the screen - and respective sliders - the user can change characteristics of the selected scenario.  
+</p>
+   
+    <p>The closer the user's computer average frame rate (in FPS) gets to the expected frame rate,
+    the more the simulation nears real time (see indicators displayed in the screen lower left corner).
+    </p>
+    
+    <p>Comments can be sent to the following e-mail addresses: claudioteles12@gmail.com and 
+    renatomarkele@hotmail.com. Please write SIMULATOR in the subject of your message so as
+    to allow its distinction from spam.</p>
+
+    <p>Thank you!
+    </p>
+</div>
+</body></html>
