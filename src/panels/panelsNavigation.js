@@ -92,6 +92,7 @@ document.querySelectorAll("#mobile-nav ul li").forEach(elt=>{
         showleftDiv = false;
         showCenterDiv = true;
         showRightDiv = false;
+        sigmoid2Fig(kSig, histSig);
        }else if(id=='right'){
         showleftDiv = false;
         showCenterDiv = false;
