@@ -10,9 +10,10 @@
   --header-height: 50px;
   --scale-height: 60px;
   --fps-txt-height: 16px;
+  --fps-margin-top: 2px;
   --process-proportion: 0.25;
   --control-proportion: calc(1 - var(--process-proportion));
-  --canvas-height: calc(var(--vh, 1vh) * 100 - var(--header-height) - var(--fps-txt-height));
+  --canvas-height: calc(var(--vh, 1vh) * 100 - var(--header-height) - var(--fps-txt-height) - var(--fps-margin-top));
   --min-canvas-height: 530px;
   --process-height: calc(var(--canvas-height) * var(--process-proportion));
   --control-height: calc(var(--canvas-height) * var(--control-proportion) - var(--scale-height));
@@ -43,7 +44,7 @@ header{
 }
 
 #canvas-container{
-    width: 100vw;
+    width: 100%;
     max-width: 1800px;
     margin: auto;
     height: calc(100vh - var(--header-height));
@@ -316,6 +317,7 @@ canvas{
   max-width: 1800px;
   margin: auto;
   margin-top: 1px;
+  margin-bottom: 0;
 
 }
 

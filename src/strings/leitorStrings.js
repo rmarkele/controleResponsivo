@@ -134,6 +134,19 @@ function idiomaSelect() {
     "MAN"
   );
 
+  //Menu da versão mobile
+  strg.menu_mobile =  checkForUndefinedString(
+    strings[i]._menu_mobile,
+    ["Variáveis", "Controle", "Entradas"]
+  );
+
+  //Menu de navegação entre os painéis de entrada
+  strg.menu_paineis =  checkForUndefinedString(
+    strings[i]._menu_paineis,
+    ["Processo", "OP/FC", "SP", "FP", "Exibir", "Sobre"]
+  );
+
+
   //Painel Saída Controlador/Saída Motor
   strg.tituloPainelOpFc = checkForUndefinedString(
     strings[i]._titulo_painel_Op_e_Fc,
@@ -536,18 +549,6 @@ function idiomaSelect() {
       "FPS médio"
     );
   
-  
-  
-  //Botoes de Pausa/Iniciar e Resetar
-  
-  strg.btnPausarIniciar = checkForUndefinedString(
-      strings[i]._btn_pausar,
-      ["Pausar", "Iniciar"]
-    );
-  strg.btnResetar = checkForUndefinedString(
-      strings[i]._btn_reset,
-      "Resetar"
-    );
 }
 
 

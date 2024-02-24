@@ -32,6 +32,15 @@ function atualizaStrings() {
       })
       
     }
+
+    //Menu mobile
+
+    document.querySelectorAll("#mobile-nav ul li").forEach((item, index)=>{
+      item.innerHTML = strg.menu_mobile[index];
+    })
+    document.querySelectorAll("#panels-nav ul li").forEach((item, index)=>{
+      item.innerHTML = strg.menu_paineis[index];
+    })
   
     //Titulos Painéis
     document.querySelector(`#forces-multiplier h4`).innerHTML = strg.varPainelForcasAtuantes[0]+':';

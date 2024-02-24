@@ -18,6 +18,12 @@ let strings = [
 
     _ocultar_Sistema: "Ocultar Animação",
 
+    //Menu da versão mobile
+    _menu_mobile: ["Variáveis", "Controle", "Entradas"],
+
+    //Menu de navegação entre os painéis de entrada
+    _menu_paineis:["Processo", "OP/FC", "SP", "FP", "Exibir", "Sobre"],
+
     //Painel Parametros do Processo
     _titulo_painel_Processo: "Processo",
     _constante_amortecedor: "c [N.s/m]",
@@ -172,11 +178,7 @@ let strings = [
     // parâmetros de resolução de tela
     _fps_Esperado: "FPS esperado",
     _fps_medio: "FPS médio",
-    
-    //Botoes de Pausa/Iniciar e Resetar
-    _btn_pausar: ["Pausar", "Continuar"],
-    _btn_reset: "Reiniciar",
-    
+     
     
   },
 
@@ -201,6 +203,12 @@ let strings = [
       "Receiving MAN Output",
     ],
     _ocultar_Sistema: "Hide Animation",
+
+    //Menu da versão mobile
+    _menu_mobile: ["Variables", "Control", "Inputs"],
+
+    //Menu de navegação entre os painéis de entrada
+    _menu_paineis:["Process", "OP/FC", "SP", "FP", "Show", "About"],
 
     //Painel Parametros do Processo
     _titulo_painel_Processo: " Process",
@@ -355,10 +363,6 @@ let strings = [
     // parâmetros de resolução de tela
     _fps_Esperado: "Expected FPS",
     _fps_medio: "Average FPS",
-    
-     //Botoes de Pausa/Iniciar e Resetar
-    _btn_pausar: ["Pause", "Resume"],
-    _btn_reset: "Reset",
     
   },
 ];
