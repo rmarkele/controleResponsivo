@@ -94,6 +94,7 @@ function geraSinalOnChange(tipo, Fmax, Fmin, Periodo, ton) {
         [sinal[i]] = tremDeImpulsos(t / Ts, Fmax, Periodo);
       }
 
+
       break;
 
     case 6:

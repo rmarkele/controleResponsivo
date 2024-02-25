@@ -199,7 +199,7 @@ function setpointSelectEvent() {
         t = map(i, 0, setPointGraphPos[2] / plotSkip, 0, Tmax);
         [SetpointPreviewPlot[i]] = tremDeImpulsos(t / Ts, Fmax, Periodo);
       }
-
+     x
       break;
 
     case 6:

@@ -432,7 +432,7 @@ function idiomaSelect() {
     //5
     checkForUndefinedString(strings[i]._tipo_Setpoint[5], "trem de impulsos"),
     //6
-    checkForUndefinedString(strings[i]._tipo_Setpoint[5], "ruído aleatório"),
+    checkForUndefinedString(strings[i]._tipo_Setpoint[6], "ruído aleatório"),
   ];
 
   strg.varPainelSetpoint = [

@@ -1,20 +1,5 @@
 function geraPainelPerturbacao() {
   let titlePerturb = strg.titlePert;
-  // let listOfVarPerturb = [
-  //   "Tipo: ",
-  //   "Fpmax[%]:",
-  //   "Fpmin[%]:",
-  //   "Período[s]:",
-  //   "t_alto[%]:",
-  // ];
-  // painelParPerturb = new Panel(
-  //   titlePerturb,
-  //   pos[0],
-  //   pos[1],
-  //   535,
-  //   260 * yScale,
-  //   2
-  // );
 
 
   let perturbPanel = createPanel({
@@ -226,7 +211,6 @@ function mySelectEvent() {
         t = map(i, 0, perturbGraphPos[2] / plotSkip, 0, Tmax);
         [PerturbPreviewPlot[i]] = tremDeImpulsos(t / Ts, Fmax, Periodo);
       }
-
       break;
 
     case 6:
@@ -259,15 +243,6 @@ function mySelectEvent() {
       Fmin = float(variablesList[8].inp.value);
       PerturbyTickPlot = geraYAxisPreview(Fmin, Fmax);
 
-      //gera slider para perturbação manual
-      // perturbSlider = new mySlider(
-      //   [perturbGraphPos[0],  perturbGraphPos[1]],
-      //   [perturbGraphPos[2], 5],
-      //   [Fmin, Fmax],
-      //   perturbacao_manual_inicial0,
-      //   0.1,
-      //   0
-      // ); 
       perturbSlider.pos = [perturbGraphPos[0] -20,  perturbGraphPos[1] - perturbGraphPos[3] * 0.5];
       perturbSlider.size = [perturbGraphPos[2] + 10,  5];
       perturbSlider.range = [Fmin,  Fmax];
