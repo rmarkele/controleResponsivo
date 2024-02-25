@@ -93,7 +93,8 @@ function atualizaParametros(id) {
           Fmax,
           Fmin,
           Periodo,
-          ton
+          ton,
+          perturbTimeScale
         );
         PerturbyTick = geraYAxisPreview(Fmin, Fmax);
         PerturbxTick = geraXAxisPreview(max(2 * Periodo, 10));
@@ -132,7 +133,8 @@ function atualizaParametros(id) {
           Fmax,
           Fmin,
           Periodo,
-          ton
+          ton,
+          setpointTimeScale
         );
   
         

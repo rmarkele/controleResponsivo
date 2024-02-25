@@ -34,7 +34,8 @@ function plotaGraficos() {
         graph1Pos[3],
         setPointPlot,
         yTick,
-        corSP
+        corSP,
+        plotSkip
       );    
     }
     else if(controlador == 3 && pidControlCheckBox.checked()){
@@ -45,7 +46,8 @@ function plotaGraficos() {
         graph1Pos[3],
         setPointAltoPlot,
         yTick,
-        corSP
+        corSP,
+        plotSkip
       ); 
       
       plot(
@@ -55,7 +57,8 @@ function plotaGraficos() {
         graph1Pos[3],
         setPointBaixoPlot,
         yTick,
-        corSP
+        corSP,
+        plotSkip
       ); 
     }
 
@@ -85,7 +88,8 @@ function plotaGraficos() {
         graph2Pos[3],
         PIDPlot,
         PIDTick,
-        corPID
+        corPID,
+        plotSkip
       );
       
        plot(
@@ -95,7 +99,8 @@ function plotaGraficos() {
         graph2Pos[3],
         atuadorPlot,
         PIDTick,
-        corAtuador
+        corAtuador,
+        plotSkip
       );
       
     } else {
@@ -122,7 +127,8 @@ function plotaGraficos() {
         graph2Pos[3],
         manualPlot,
         PIDTick,
-        corMan
+        corMan,
+        plotSkip
       );
       
        plot(
@@ -132,7 +138,8 @@ function plotaGraficos() {
         graph2Pos[3],
         atuadorPlot,
         PIDTick,
-        corAtuador
+        corAtuador,
+        plotSkip
       );
     }
   
@@ -155,7 +162,8 @@ function plotaGraficos() {
       graph3Pos[3],
       PerturbPlot,
       PerturbyTickPlot,
-      corPert
+      corPert,
+      plotSkip
     );
   }
       
@@ -182,7 +190,8 @@ function plotaGraficos() {
       setPointGraphPos[3],
       SetpointPreviewPlot,
       SetpointyTick,
-      corSP
+      corSP,
+      setpointTimeScale
     );
     }
     
@@ -206,7 +215,8 @@ function plotaGraficos() {
         perturbGraphPos[3],
         PerturbPreviewPlot,
         PerturbyTick,
-        corPert
+        corPert,
+        perturbTimeScale
       );
     } 
   }

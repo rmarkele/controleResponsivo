@@ -31,7 +31,8 @@ document.querySelectorAll("#panels-nav ul li").forEach(elt=>{
                 Fmax,
                 Fmin,
                 Periodo,
-                ton
+                ton,
+                setpointTimeScale
             );
     
             
@@ -55,7 +56,8 @@ document.querySelectorAll("#panels-nav ul li").forEach(elt=>{
               Fmax,
               Fmin,
               Periodo,
-              ton
+              ton,
+              perturbTimeScale
             );
             PerturbyTick = geraYAxisPreview(Fmin, Fmax);
             PerturbxTick = geraXAxisPreview(max(2 * Periodo, 10));

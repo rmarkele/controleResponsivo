@@ -33,27 +33,19 @@ function geraPainelPerturbacao() {
   tipoPert.parent('perturbation-panel-title');
 
   sel = createSelect();
-  // sel.style("font-family", selFont);
-  // sel.style('font-size', '14px');
-  // sel.position(55, 20);
+
   for(let i = 0; i < strg.tiposPert.length; i++){
     sel.option(strg.tiposPert[i]);
   }  
   sel.selected(strg.tiposPert[sel0]);
   sel.changed(mySelectEvent);
-  // painelParPerturb.div.child(sel);
+
   sel.parent('perturbation-panel-title');
 
   
 
   aplicaPerturb = createButton(strg.buttonPainelPert[0]);
-  // aplicaPerturb.position(
-  //   30,
-  //   painelParPerturb.height - 40 * yScale
-  // );
-  // aplicaPerturb.size(170, 30 * yScale);
-  // aplicaPerturb.style("font-family", selFont);
-  // aplicaPerturb.style('font-size', '15px');
+ 
   document.querySelector("#perturbation-panel .input-flex-col").appendChild(aplicaPerturb.elt)
   aplicaPerturb.elt.classList.add('signal-btn');
   aplicaPerturb.elt.classList.add('perturb-btn');
@@ -121,7 +113,7 @@ function mySelectEvent() {
         Fmin = -10;
         Periodo = 0;
         ton = 0;
-        for (let i = 0; i < perturbGraphPos[2] / plotSkip; i++) {
+        for (let i = 0; i < perturbGraphPos[2] / perturbTimeScale; i++) {
           PerturbPreviewPlot[i] = 0;
         }
       }
@@ -139,8 +131,8 @@ function mySelectEvent() {
       Fmin = float(variablesList[8].inp.value);
       Periodo = float(variablesList[9].inp.value);
       Tmax = max(10, 2 * Periodo);
-      for (let i = 0; i < perturbGraphPos[2] / plotSkip; i++) {
-        t = map(i, 0, perturbGraphPos[2] / plotSkip, 0, Tmax);
+      for (let i = 0; i < perturbGraphPos[2] / perturbTimeScale; i++) {
+        t = map(i, 0, perturbGraphPos[2] / perturbTimeScale, 0, Tmax);
         [PerturbPreviewPlot[i]] = ondaSenoidal(t / Ts, Fmax, Fmin, Periodo);
       }
 
@@ -156,8 +148,8 @@ function mySelectEvent() {
       Periodo = float(variablesList[9].inp.value);
       ton = float(variablesList[10].inp.value);
       Tmax = max(10, 2 * Periodo);
-      for (let i = 0; i < perturbGraphPos[2] / plotSkip; i++) {
-        t = map(i, 0, perturbGraphPos[2] / plotSkip, 0, Tmax);
+      for (let i = 0; i < perturbGraphPos[2] / perturbTimeScale; i++) {
+        t = map(i, 0, perturbGraphPos[2] / perturbTimeScale, 0, Tmax);
         [PerturbPreviewPlot[i]] = ondaQuadrada(t / Ts, Fmax, Fmin, Periodo, ton);
       }
       break;
@@ -166,15 +158,14 @@ function mySelectEvent() {
       for (i = 7; i < 10; i++) {
         showVariableList(i);
       }
-      variablesList[10].div.hide();
       hideVariableList(10);
 
       Fmax = float(variablesList[7].inp.value);
       Fmin = float(variablesList[8].inp.value);
       Periodo = float(variablesList[9].inp.value);
       Tmax = max(10, 2 * Periodo);
-      for (let i = 0; i < perturbGraphPos[2] / plotSkip; i++) {
-        t = map(i, 0, perturbGraphPos[2] / plotSkip, 0, Tmax);
+      for (let i = 0; i < perturbGraphPos[2] / perturbTimeScale; i++) {
+        t = map(i, 0, perturbGraphPos[2] / perturbTimeScale, 0, Tmax);
         [PerturbPreviewPlot[i]] = ondaTriangular(t / Ts, Fmax, Fmin, Periodo);
       }
       break;
@@ -189,8 +180,8 @@ function mySelectEvent() {
       Fmin = float(variablesList[8].inp.value);
       Periodo = float(variablesList[9].inp.value);
       Tmax = max(10, 2 * Periodo);
-      for (let i = 0; i < perturbGraphPos[2] / plotSkip; i++) {
-        t = map(i, 0, perturbGraphPos[2] / plotSkip, 0, Tmax);
+      for (let i = 0; i < perturbGraphPos[2] / perturbTimeScale; i++) {
+        t = map(i, 0, perturbGraphPos[2] / perturbTimeScale, 0, Tmax);
         [PerturbPreviewPlot[i]] = denteDeSerra(t / Ts, Fmax, Fmin, Periodo);
       }
 
@@ -207,10 +198,11 @@ function mySelectEvent() {
       Fmin = 0;
       Periodo = float(variablesList[9].inp.value);
       Tmax = max(10, 2 * Periodo);
-      for (let i = 0; i < perturbGraphPos[2] / plotSkip; i++) {
-        t = map(i, 0, perturbGraphPos[2] / plotSkip, 0, Tmax);
+      for (let i = 0; i < perturbGraphPos[2] / perturbTimeScale; i++) {
+        t = map(i, 0, perturbGraphPos[2] / perturbTimeScale, 0, Tmax);
         [PerturbPreviewPlot[i]] = tremDeImpulsos(t / Ts, Fmax, Periodo);
       }
+
       break;
 
     case 6:
@@ -222,7 +214,7 @@ function mySelectEvent() {
 
       Fmax = float(variablesList[7].inp.value);
       Fmin = float(variablesList[8].inp.value);
-      for (let i = 0; i < perturbGraphPos[2] / plotSkip; i++) {
+      for (let i = 0; i < perturbGraphPos[2] / perturbTimeScale; i++) {
         PerturbPreviewPlot[i] = random(Fmin, Fmax);
       }
 
@@ -243,6 +235,15 @@ function mySelectEvent() {
       Fmin = float(variablesList[8].inp.value);
       PerturbyTickPlot = geraYAxisPreview(Fmin, Fmax);
 
+      //gera slider para perturbação manual
+      // perturbSlider = new mySlider(
+      //   [perturbGraphPos[0],  perturbGraphPos[1]],
+      //   [perturbGraphPos[2], 5],
+      //   [Fmin, Fmax],
+      //   perturbacao_manual_inicial0,
+      //   0.1,
+      //   0
+      // ); 
       perturbSlider.pos = [perturbGraphPos[0] -20,  perturbGraphPos[1] - perturbGraphPos[3] * 0.5];
       perturbSlider.size = [perturbGraphPos[2] + 10,  5];
       perturbSlider.range = [Fmin,  Fmax];

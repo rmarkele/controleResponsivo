@@ -132,6 +132,8 @@ let forces;
 
 // Variaveis para plotar
 let plotSkip = 1;
+let setpointTimeScale = 1;
+let perturbTimeScale = 1;
 let xPlot = [];
 let setPointPlot = [];
 let setPointAltoPlot = [];

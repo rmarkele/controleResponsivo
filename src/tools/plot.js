@@ -132,11 +132,11 @@ function createAxis(
   pop();
 }
 
-function plot(posx, posy, w, h, s1, tick1, color) {
+function plot(posx, posy, w, h, s1, tick1, color, timeScale) {
   let N = s1.length;
   let nTick1 = tick1.length;
-  if (N > w / plotSkip) {
-    s1.splice(0, Math.round(N-w/ plotSkip));
+  if (N > w / timeScale) {
+    s1.splice(0, Math.round(N-w/ timeScale));
     N = s1.length;
   }
 
@@ -149,11 +149,11 @@ function plot(posx, posy, w, h, s1, tick1, color) {
     for (let i = 0; i < N; i++) {
       let yplot = map(s1[i], tick1[0], tick1[nTick1 - 1], -0.05 * h, -0.95 * h);
       if (yplot < -h) {
-        vertex(i * plotSkip, -h);
+        vertex(i * timeScale, -h);
       } else if (yplot > 0) {
-        vertex(i * plotSkip, 0); 
+        vertex(i * timeScale, 0); 
       } else {
-        vertex(i * plotSkip, yplot);
+        vertex(i * timeScale, yplot);
       }
     }
     endShape();

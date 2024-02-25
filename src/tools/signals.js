@@ -44,7 +44,7 @@ function tremDeImpulsos(i, Fmax, Periodo) {
   return [v, step] ;
 }
 
-function geraSinalOnChange(tipo, Fmax, Fmin, Periodo, ton) {
+function geraSinalOnChange(tipo, Fmax, Fmin, Periodo, ton, timeScale) {
   const Tmax = max(10, 2 * Periodo);
   let t;
   let sinal = [];
@@ -52,45 +52,45 @@ function geraSinalOnChange(tipo, Fmax, Fmin, Periodo, ton) {
 
   switch (tipo) {
     case 0:
-      for (let i = 0; i <  wdth / plotSkip; i++) {
+      for (let i = 0; i <  wdth / timeScale; i++) {
         sinal[i] = 0;
       }
       break;
 
     case 1:
-      for (let i = 0; i <  wdth / plotSkip; i++) {
-        t = map(i, 0,  wdth / plotSkip, 0, Tmax);
+      for (let i = 0; i <  wdth / timeScale; i++) {
+        t = map(i, 0,  wdth / timeScale, 0, Tmax);
         [sinal[i]] = ondaSenoidal(t / Ts, Fmax, Fmin, Periodo);
       }
 
       break;
 
     case 2:
-      for (let i = 0; i <  wdth / plotSkip; i++) {
-        t = map(i, 0,  wdth / plotSkip, 0, Tmax);
+      for (let i = 0; i <  wdth / timeScale; i++) {
+        t = map(i, 0,  wdth / timeScale, 0, Tmax);
         [sinal[i]] = ondaQuadrada(t / Ts, Fmax, Fmin, Periodo, ton);
       }
       break;
 
     case 3:
-      for (let i = 0; i <  wdth / plotSkip; i++) {
-        t = map(i, 0,  wdth / plotSkip, 0, Tmax);
+      for (let i = 0; i <  wdth / timeScale; i++) {
+        t = map(i, 0,  wdth / timeScale, 0, Tmax);
         [sinal[i]] = ondaTriangular(t / Ts, Fmax, Fmin, Periodo);
       }
 
       break;
 
     case 4:
-      for (let i = 0; i <  wdth / plotSkip; i++) {
-        t = map(i, 0,  wdth / plotSkip, 0, Tmax);
+      for (let i = 0; i <  wdth / timeScale; i++) {
+        t = map(i, 0,  wdth / timeScale, 0, Tmax);
         [sinal[i]] = denteDeSerra(t / Ts, Fmax, Fmin, Periodo);
       }
 
       break;
 
     case 5:
-      for (let i = 0; i <  wdth / plotSkip; i++) {
-        t = map(i, 0,  wdth / plotSkip, 0, Tmax);
+      for (let i = 0; i <  wdth / timeScale; i++) {
+        t = map(i, 0,  wdth / timeScale, 0, Tmax);
         [sinal[i]] = tremDeImpulsos(t / Ts, Fmax, Periodo);
       }
 
@@ -98,7 +98,7 @@ function geraSinalOnChange(tipo, Fmax, Fmin, Periodo, ton) {
       break;
 
     case 6:
-      for (let i = 0; i <  wdth / plotSkip; i++) {
+      for (let i = 0; i <  wdth / timeScale; i++) {
         [sinal[i]] = random(Fmin, Fmax);
       }
 
