@@ -6,3 +6,24 @@
     width: 100%;
     max-width: 800px;
 }
+
+#plot-zoom{
+    display: flex;
+    gap: 20px;
+}
+
+#plot-zoom button{
+    width: 25px;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all ease 0.4s;
+}
+
+#plot-zoom button:hover{
+    transform: scale(1.2);
+}
+
+#plot-zoom button img{
+    width: 100%;
+}

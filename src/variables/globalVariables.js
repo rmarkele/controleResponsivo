@@ -131,7 +131,7 @@ let drpDwn;
 let forces;
 
 // Variaveis para plotar
-const plotSkip = 2;
+let plotSkip = 1;
 let xPlot = [];
 let setPointPlot = [];
 let setPointAltoPlot = [];
