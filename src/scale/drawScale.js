@@ -63,6 +63,10 @@ function drawScale() {
           text(posLabel, xpos, yref + posYScale + heightScale * 1.8);
         pop();
       }
+      for (let i = 2; i <= 30; i+=4) {
+        let xpos = meters2pixels(-16 + i );
+        line(xpos, yref + posYScale - heightScale * 0.7, xpos, yref + posYScale + heightScale * 0.7);
+      }
 
     }
 
