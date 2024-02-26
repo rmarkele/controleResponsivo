@@ -126,14 +126,14 @@ function draw() {
     Perturb.push((pert * PIDSat) / 100);
     Perturb.splice(0, 1);
 
-    PerturbPlot.push(pert);
+    // PerturbPlot.push(Perturb[2]);
   } else {
     let pert = perturbSlider.value();
 
     Perturb.push((pert * PIDSat) / 100);
     Perturb.splice(0, 1);
 
-    PerturbPlot.push(pert);
+    // PerturbPlot.push(Perturb[2]);
   }
 
   if (setPointMode !== 0 && !noControlCheckBox.checked()) {

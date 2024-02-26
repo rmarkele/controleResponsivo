@@ -86,11 +86,11 @@ function calculaPID() {
       calculaSaidaAtuador(atrasoPID, atrasoPIDAnterior, forcaAtuador[2])
     );
     forcaAtuador.splice(0, 1);
-    PIDPlot.push(PID);
-    manualPlot.push(PID);
+    // PIDPlot.push(PID);
+    // manualPlot.push(PID);
 
     forcaAtuadorPlot.push([forcaAtuador[2], atrasoPID]);
-    atuadorPlot.push(forcaAtuador[2]);
+    // atuadorPlot.push(forcaAtuador[2]);
     let lengAtuadorPlot = forcaAtuadorPlot.length;
     if (lengAtuadorPlot > lengAtuadorMax) {
       forcaAtuadorPlot.splice(0, lengAtuadorPlot - lengAtuadorMax);
@@ -126,11 +126,11 @@ function calculaPID() {
       calculaSaidaAtuador(atrasoPID, atrasoPIDAnterior, forcaAtuador[2])
     );
     forcaAtuador.splice(0, 1);
-    PIDPlot.push(PID);
-    manualPlot.push(PID);
+    // PIDPlot.push(PID);
+    // manualPlot.push(PID);
 
     forcaAtuadorPlot.push([forcaAtuador[2], atrasoPID]);
-    atuadorPlot.push(forcaAtuador[2]);
+    // atuadorPlot.push(forcaAtuador[2]);
     let lengAtuadorPlot = forcaAtuadorPlot.length;
     if (lengAtuadorPlot > lengAtuadorMax) {
       forcaAtuadorPlot.splice(0, lengAtuadorPlot - lengAtuadorMax);
@@ -161,11 +161,11 @@ function calculaPID() {
 
     forcaAtuador.splice(0, 1);
 
-    PIDPlot.push(manualControl.value());
-    manualPlot.push(manualControl.value());
+    // PIDPlot.push(manualControl.value());
+    // manualPlot.push(manualControl.value());
 
     forcaAtuadorPlot.push([forcaAtuador[2], atrasoPID]);
-    atuadorPlot.push(forcaAtuador[2]);
+    // atuadorPlot.push(forcaAtuador[2]);
     let lengAtuadorPlot = forcaAtuadorPlot.length;
     if (lengAtuadorPlot > lengAtuadorMax) {
       forcaAtuadorPlot.splice(0, lengAtuadorPlot - lengAtuadorMax);
@@ -182,11 +182,12 @@ function calculaPID() {
     );
     forcaAtuador.splice(0, 1);
 
-    PIDPlot.push(0);
-    manualPlot.push(0);
+    // PIDPlot.push(0);
+    // manualPlot.push(0);
 
     forcaAtuadorPlot.push([forcaAtuador[2], 0]);
-    atuadorPlot.push(forcaAtuador[2]);
+    // atuadorPlot.push(forcaAtuador[2]);
+
     let lengAtuadorPlot = forcaAtuadorPlot.length;
     if (lengAtuadorPlot > lengAtuadorMax) {
       forcaAtuadorPlot.splice(0, lengAtuadorPlot - lengAtuadorMax);

@@ -4,12 +4,30 @@ function plotaGraficos() {
   if(showleftDiv){
 
     xPlot.push(constrain(x[1]+deltaInd, xSatMin, xSatMax));
-    erroPlot.push(erro);
+    // erroPlot.push(erro);
   
     setPointPlot.push(setPoint.value());
     setPointAltoPlot.push(biestavel.setpointAlto);
     setPointBaixoPlot.push(biestavel.setpointBaixo);
-  
+    
+    PIDPlot.push(PID);
+    manualPlot.push(manualControl.value());
+    atuadorPlot.push(forcaAtuador[2]);
+
+    PerturbPlot.push(Perturb[2]);
+
+
+
+    constrainLength(setPointPlot, graph2Pos[1], plotSkip);
+    constrainLength(setPointAltoPlot, graph2Pos[1], plotSkip);
+    constrainLength(setPointBaixoPlot, graph2Pos[1], plotSkip);
+
+    constrainLength(PIDPlot, graph2Pos[2], plotSkip);
+    constrainLength(manualPlot, graph2Pos[2], plotSkip);
+    constrainLength(atuadorPlot, graph2Pos[2], plotSkip);
+    
+    constrainLength(PerturbPlot, graph3Pos[2], plotSkip);
+
     createAxis(
       graph1Pos[0],
       graph1Pos[1],
@@ -220,4 +238,11 @@ function plotaGraficos() {
       );
     } 
   }
+  }
+
+  function constrainLength(signal, w, timeScale){
+    let N = signal.length;
+    if (w > 0 && N > w / timeScale) {
+      signal.splice(0, Math.round(N-w/ timeScale));
+    }
   }

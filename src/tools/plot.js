@@ -135,10 +135,10 @@ function createAxis(
 function plot(posx, posy, w, h, s1, tick1, color, timeScale) {
   let N = s1.length;
   let nTick1 = tick1.length;
-  if (N > w / timeScale) {
-    s1.splice(0, Math.round(N-w/ timeScale));
-    N = s1.length;
-  }
+  // if (N > w / timeScale) {
+  //   s1.splice(0, Math.round(N-w/ timeScale));
+  //   N = s1.length;
+  // }
 
   push();
     noFill();
@@ -190,8 +190,9 @@ function geraYAxisPreview(Vmin, Vmax) {
 }
 
 function geraXAxisPreview(Tmax) {
-  let step = max(floor(Tmax / 4),1);
+  let step = max((Tmax / 4),1);
   let nSteps = ceil(Tmax / step);
+  console.log(step, nSteps, Tmax)
 
   let xTick = [];
   for (let i = 0; i <= nSteps; i++) {
