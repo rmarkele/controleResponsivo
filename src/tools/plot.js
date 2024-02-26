@@ -192,7 +192,6 @@ function geraYAxisPreview(Vmin, Vmax) {
 function geraXAxisPreview(Tmax) {
   let step = max((Tmax / 4),1);
   let nSteps = ceil(Tmax / step);
-  console.log(step, nSteps, Tmax)
 
   let xTick = [];
   for (let i = 0; i <= nSteps; i++) {

@@ -4,7 +4,7 @@ function plotaGraficos() {
   if(showleftDiv){
 
     xPlot.push(constrain(x[1]+deltaInd, xSatMin, xSatMax));
-    // erroPlot.push(erro);
+    erroPlot.push(erro);
   
     setPointPlot.push(setPoint.value());
     setPointAltoPlot.push(biestavel.setpointAlto);
@@ -18,9 +18,10 @@ function plotaGraficos() {
 
 
 
-    constrainLength(setPointPlot, graph2Pos[1], plotSkip);
-    constrainLength(setPointAltoPlot, graph2Pos[1], plotSkip);
-    constrainLength(setPointBaixoPlot, graph2Pos[1], plotSkip);
+    constrainLength(xPlot, graph1Pos[2], plotSkip);
+    constrainLength(setPointPlot, graph1Pos[2], plotSkip);
+    constrainLength(setPointAltoPlot, graph1Pos[2], plotSkip);
+    constrainLength(setPointBaixoPlot, graph1Pos[2], plotSkip);
 
     constrainLength(PIDPlot, graph2Pos[2], plotSkip);
     constrainLength(manualPlot, graph2Pos[2], plotSkip);
@@ -80,7 +81,16 @@ function plotaGraficos() {
       ); 
     }
 
-    plot( graph1Pos[0],  graph1Pos[1],  graph1Pos[2],  graph1Pos[3], xPlot, yTick, corPos);
+    plot( 
+      graph1Pos[0],
+      graph1Pos[1],
+      graph1Pos[2],
+      graph1Pos[3],
+      xPlot, 
+      yTick, 
+      corPos,
+      plotSkip
+    );
   
     if (pidControlCheckBox.checked()) {
       createAxis(
