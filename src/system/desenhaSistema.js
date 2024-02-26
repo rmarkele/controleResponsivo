@@ -5,20 +5,9 @@ function desenhaSistema() {
   let wref = processSize[2];
   let href = processSize[3];
 
-  let envMin = map(
-    envelope[1],
-    -16,
-    16,
-    xCar - L0,
-    xCar + L0 + Lcar
-  );
-  let envMax = map(
-    envelope[0],
-    -16,
-    16,
-    xCar - L0,
-    xCar + L0 + Lcar
-  );
+  let envMin = meters2pixels(envelope[1]);
+
+  let envMax = meters2pixels(envelope[0]);
 
   if (!hideSystem) {
     push();

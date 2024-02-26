@@ -189,11 +189,12 @@ function drawScale() {
 }
 
 function meters2pixels(m){
+  const scaleMap = width > 850? 1 : 0.7;
   return  map(
     m,
     -16,
     16,
-    xCar - L0,
-    xCar + L0 + Lcar
+    xCar - scaleMap * L0,
+    xCar + scaleMap * L0 + Lcar
   );
 }
