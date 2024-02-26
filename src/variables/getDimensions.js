@@ -68,24 +68,11 @@ function getDimensions(){
 
     let w = canvasBounds.right - canvasBounds.left;
     let h = canvasBounds.bottom - canvasBounds.top;
-    let xref = processSize[0];
-    let yref = processSize[1];
-    let wref = processSize[2];
     let href = processSize[3];
 
 
     
 
-    // if (w <= 400) {
-    //     L0 = 0.17 * w;
-    //     H0 = 0.015 * h;
-    //     Lcar = (250 / 1200) * w;
-    //     Hcar = 0.9 * href;
-    //     Hpid = 0.020 * h
-    //     Nmol = 11;
-    //     txtSize = 8;
-    //     strokeW = 1;
-    // } else 
     if (w <= 500) {
         L0 = 0.15 * w;
         H0 = 0.016 * h;
@@ -125,9 +112,9 @@ function getDimensions(){
             perturbGraphBounds.bottom - perturbGraphBounds.top ,
         ];
         perturbGraphPos[0] += 55;
-        perturbGraphPos[1] -= 50;
+        perturbGraphPos[1] -= 65;
         perturbGraphPos[2] -= 75;
-        perturbGraphPos[3] -= 75;
+        perturbGraphPos[3] -= 90;
     }
 
     let setPointGraphBounds = document.querySelector('#setPointGraph')?.getBoundingClientRect();
@@ -139,9 +126,9 @@ function getDimensions(){
             setPointGraphBounds.bottom - setPointGraphBounds.top ,
         ];
         setPointGraphPos[0] += 55;
-        setPointGraphPos[1] -= 50;
+        setPointGraphPos[1] -= 65;
         setPointGraphPos[2] -= 75;
-        setPointGraphPos[3] -= 75;
+        setPointGraphPos[3] -= 90;
     }
 
 

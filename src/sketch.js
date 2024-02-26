@@ -4,7 +4,6 @@ function setup() {
 
   let w = canvasBounds.right - canvasBounds.left;
   let h = canvasBounds.bottom - canvasBounds.top;
-  let xref = processSize[0];
   let yref = processSize[1];
 
   if(w>850){
