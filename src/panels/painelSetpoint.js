@@ -68,6 +68,7 @@ function geraPainelSetpoint() {
     updateHolder();
     if (aplicaSetpoint.html() === strg.buttonPainelSetpoint[0]) {
       aplicaSetpoint.html(strg.buttonPainelSetpoint[1]);
+      
       setPointMode = strg.tiposSetpoint.indexOf(selSet.value());
       setPointFmax = float(variablesList[11].inp.value);
       setPointFmin = float(variablesList[12].inp.value);
@@ -76,7 +77,7 @@ function geraPainelSetpoint() {
       setPointton = float(variablesList[14].inp.value);
       setPointCount = 0;
 
-      
+      setPoint.pos[0] =  meters2pixels(setPointFmin);
       setPoint.size = [meters2pixels(setPointFmax) - meters2pixels(setPointFmin), 5];
       setPoint.range = [setPointFmin, setPointFmax]; 
     } else {

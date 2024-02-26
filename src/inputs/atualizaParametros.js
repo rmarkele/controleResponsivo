@@ -140,6 +140,8 @@ function atualizaParametros(id) {
         
         SetpointxTick = geraXAxisPreview(max(2 * Periodo, 10));
         if(strg.tiposSetpoint.indexOf(selSet.value())==0){
+          setPoint.pos[0] =  meters2pixels(Fmin);
+          setPoint.value(setpoint_manual_inicial0);
           setPoint.size = [meters2pixels(Fmax) - meters2pixels(Fmin), 5];
           setPoint.range = [Fmin, Fmax];  
           setPoint.value(constrain(setPoint.value(), Fmin, Fmax));
