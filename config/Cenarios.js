@@ -62,7 +62,6 @@ let cenarios = [
     ativa_filtro_passa_baixa: 1, // 0-filtro desabilitado, 1-filtro habilitado
     frequencia_corte: 0.1, // frequencia de corte do filtro passa baixa. (em Hz)
     multiplicador_forcas_atuantes: 1,// multiplicador para as forças atuantes no carrinho. Valores possíveis: 0, 1, 10 ou 100. Valores diferentes serão tratados como 1. 
-    frameRate: 60, //taxa de frames por segundo
 
   },
 

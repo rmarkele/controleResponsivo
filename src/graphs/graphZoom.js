@@ -8,7 +8,6 @@ zoomInBtn.addEventListener('click',(e)=>{
         plotSkip = 0.2;
         zoomInBtn.disabled = true;
     }
-    console.log(plotSkip)
 });
 
 zoomOutBtn.addEventListener('click',(e)=>{
@@ -18,5 +17,4 @@ zoomOutBtn.addEventListener('click',(e)=>{
         plotSkip = 2;
         zoomOutBtn.disabled = true;
     }
-    console.log(plotSkip)
 });

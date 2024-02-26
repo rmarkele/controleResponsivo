@@ -83,7 +83,8 @@ function geraPainelPerturbacao() {
     [0, 100],
     50,
     0.1,
-    0
+    0,
+    corPert
   ); 
   perturbSlider.enabled=false;
 }

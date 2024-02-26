@@ -1,11 +1,12 @@
 class mySlider {
-    constructor(pos, size, range, val0, prec, rot, enabled=true) {
+    constructor(pos, size, range, val0, prec, rot, color, enabled=true) {
       this.pos = pos;
       this.size = size;
       this.range = range;
       this.val = val0;
       this.prec = prec;
       this.rot = rot;
+      this.color = color;
       this.enabled = enabled;
       
     }
@@ -33,11 +34,12 @@ class mySlider {
       let color1, color2;
       if (this.mouseIsOver()) {
         color1 = 229;
-        color2 = [0, 92, 200];
+        // color2 = [0, 92, 200];
       } else {
         color1 = 239;
-        color2 = [0, 117, 255];
+        // color2 = [0, 117, 255];
       }
+      color2 = this.color;
   
       fill(color1);
       rect(0, -this.size[1] / 2, this.size[0], this.size[1], 30, 30);

@@ -5,7 +5,8 @@ function geraSliderSetpoint(pos) {
     [setpoint_Fmin0, setpoint_Fmax0],
     setpoint_manual_inicial0,
     0.1,
-    0
+    0,
+    corSP
   );
 }
 

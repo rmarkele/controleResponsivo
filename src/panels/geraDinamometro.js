@@ -9,7 +9,8 @@ function geraDinamômetro(pos) {
     [-100, 100],
     saida_controle_manual_inicial0,
     1,
-    0
+    0,
+    corMan
   );
 
   noControlCheckBox.parent("auto-man-checkboxes");
