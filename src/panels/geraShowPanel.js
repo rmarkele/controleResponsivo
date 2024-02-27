@@ -60,6 +60,25 @@ function geraShowPanel(pos){
     
   });
 
+  hideSystemDiv=document.querySelector("#hide-system");
+  hideSystemCheckBox = document.querySelector("#SystemView");
+  hideSystemCheckBox.addEventListener('click',(e)=>{
+    hideSystem=e.target.checked;
+    if(hideSystem){
+      spring.showLabel(false);
+      damper.showLabel(false);
+    }else{
+      spring.showLabel(true);
+      damper.showLabel(true);
+    }
+  })
+
+  if(hideSystem){
+    hideSystemCheckBox.checked = true;
+  }else{
+    hideSystemCheckBox.checked = false;
+  }
+
   
   if (mostraBP) {
     BPCheck.checked(true);

@@ -35,17 +35,7 @@ function desenhaDCL() {
 
 function geraPainelDCL(){
 
-  hideSystemDiv=document.querySelector("#hide-system");
-  hideSystemCheckBox = document.querySelector("#SystemView");
-  hideSystemCheckBox.addEventListener('click',(e)=>{
-    hideSystem=e.target.checked;
-  })
-
-  if(hideSystem){
-    hideSystemCheckBox.checked = true;
-  }else{
-    hideSystemCheckBox.checked = false;
-  }
+ 
 
   let opts=document.querySelectorAll("input[name=DCL-mult]");
   for(let opt of opts){

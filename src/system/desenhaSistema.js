@@ -90,10 +90,11 @@ function desenhaSistema() {
         }  
     pop();
     }
-  } else {
-    spring.showLabel(false);
-    damper.showLabel(false);
-  }
+  } 
+  // else {
+  //   spring.showLabel(false);
+  //   damper.showLabel(false);
+  // }
 
   if (mostraEnvelope) {
     push();
