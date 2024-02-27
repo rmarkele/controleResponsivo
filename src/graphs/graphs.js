@@ -29,223 +29,242 @@ function plotaGraficos() {
     
     constrainLength(PerturbPlot, graph3Pos[2], plotSkip);
 
-    createAxis(
-      graph1Pos[0],
-      graph1Pos[1],
-      graph1Pos[2],
-      graph1Pos[3],
-      [],
-      yTick,
-      strg.titulo1,
-      strg.xlabel1E,
-      corPos,
-      " ",
-      yTick,
-      strg.xlabel1D,
-      corSP
-    );
+    createAxis({
+      posx: graph1Pos[0],
+      posy: graph1Pos[1],
+      w: graph1Pos[2],
+      h: graph1Pos[3],
+      xtick: [],
+      tick1: yTick,
+      title: strg.titulo1,
+      ylabel1: strg.xlabel1E,
+      color1: corPos,
+      xlabel: " ",
+      tick2: yTick,
+      ylabel2: strg.xlabel1D,
+      color2: corSP
+  });
   
     if(controlador < 3 && pidControlCheckBox.checked()){
-      plot(
-        graph1Pos[0],
-        graph1Pos[1],
-        graph1Pos[2],
-        graph1Pos[3],
-        setPointPlot,
-        yTick,
-        corSP,
-        plotSkip
-      );    
+      plot({
+        posx: graph1Pos[0],
+        posy: graph1Pos[1],
+        w: graph1Pos[2],
+        h: graph1Pos[3],
+        s1: setPointPlot,
+        tick1: yTick,
+        color: corSP,
+        timeScale: plotSkip
+      });    
     }
     else if(controlador == 3 && pidControlCheckBox.checked()){
-      plot(
-        graph1Pos[0],
-        graph1Pos[1],
-        graph1Pos[2],
-        graph1Pos[3],
-        setPointAltoPlot,
-        yTick,
-        corSP,
-        plotSkip
-      ); 
+      plot({
+        posx: graph1Pos[0],
+        posy: graph1Pos[1],
+        w: graph1Pos[2],
+        h: graph1Pos[3],
+        s1: setPointAltoPlot,
+        tick1: yTick,
+        color: corSP,
+        timeScale: plotSkip
+      }); 
       
-      plot(
-        graph1Pos[0],
-        graph1Pos[1],
-        graph1Pos[2],
-        graph1Pos[3],
-        setPointBaixoPlot,
-        yTick,
-        corSP,
-        plotSkip
-      ); 
+      plot({
+        posx: graph1Pos[0],
+        posy: graph1Pos[1],
+        w: graph1Pos[2],
+        h: graph1Pos[3],
+        s1: setPointBaixoPlot,
+        tick1: yTick,
+        color: corSP,
+        timeScale: plotSkip
+      }); 
     }
 
-    plot( 
-      graph1Pos[0],
-      graph1Pos[1],
-      graph1Pos[2],
-      graph1Pos[3],
-      xPlot, 
-      yTick, 
-      corPos,
-      plotSkip
-    );
+    plot({
+      posx: graph1Pos[0],
+      posy: graph1Pos[1],
+      w: graph1Pos[2],
+      h: graph1Pos[3],
+      s1: xPlot, 
+      tick1: yTick, 
+      color: corPos,
+      timeScale: plotSkip
+    });
   
     if (pidControlCheckBox.checked()) {
-      createAxis(
-        graph2Pos[0],
-        graph2Pos[1],
-        graph2Pos[2],
-        graph2Pos[3],
-        [],
-        PIDTick,
-        strg.titulo2,
-        strg.xlabel2E,
-        corAtuador,
-        " ",
-        PIDTick,
-        strg.xlabel2D,
-        corPID
-      );
+      createAxis({
+        posx: graph2Pos[0],
+        posy: graph2Pos[1],
+        w: graph2Pos[2],
+        h: graph2Pos[3],
+        xtick: [],
+        tick1: PIDTick,
+        title: strg.titulo2,
+        ylabel1: strg.xlabel2E,
+        color1: corAtuador,
+        xlabel: " ",
+        tick2: PIDTick,
+        ylabel2: strg.xlabel2D,
+        color2: corPID
+      });
      
-      plot(
-        graph2Pos[0],
-        graph2Pos[1],
-        graph2Pos[2],
-        graph2Pos[3],
-        PIDPlot,
-        PIDTick,
-        corPID,
-        plotSkip
-      );
+      plot({
+        posx: graph2Pos[0],
+        posy: graph2Pos[1],
+        w: graph2Pos[2],
+        h: graph2Pos[3],
+        s1: PIDPlot,
+        tick1: PIDTick,
+        color: corPID,
+        timeScale: plotSkip
+      });
       
-       plot(
-        graph2Pos[0],
-        graph2Pos[1],
-        graph2Pos[2],
-        graph2Pos[3],
-        atuadorPlot,
-        PIDTick,
-        corAtuador,
-        plotSkip
-      );
+       plot({
+        posx: graph2Pos[0],
+        posy: graph2Pos[1],
+        w: graph2Pos[2],
+        h: graph2Pos[3],
+        s1: atuadorPlot,
+        tick1: PIDTick,
+        color: corAtuador,
+        timeScale: plotSkip
+       });
       
     } else {
-      createAxis(
-        graph2Pos[0],
-        graph2Pos[1],
-        graph2Pos[2],
-        graph2Pos[3],
-        [],
-        PIDTick,
-        strg.titulo2,
-        strg.xlabel2E,
-        corAtuador,
-        " ",
-        PIDTick,
-        strg.xlabel2D,
-        corMan
-      );
+      createAxis({
+        posx: graph2Pos[0],
+        posy: graph2Pos[1],
+        w: graph2Pos[2],
+        h: graph2Pos[3],
+        xtick: [],
+        tick1: PIDTick,
+        title: strg.titulo2,
+        ylabel1: strg.xlabel2E,
+        color1: corAtuador,
+        xlabel: " ",
+        tick2: PIDTick,
+        ylabel2: strg.xlabel2D,
+        color2: corMan
+      });
      
-      plot(
-        graph2Pos[0],
-        graph2Pos[1],
-        graph2Pos[2],
-        graph2Pos[3],
-        manualPlot,
-        PIDTick,
-        corMan,
-        plotSkip
-      );
+      plot({
+        posx: graph2Pos[0],
+        posy: graph2Pos[1],
+        w: graph2Pos[2],
+        h: graph2Pos[3],
+        s1: manualPlot,
+        tick1: PIDTick,
+        color: corMan,
+        timeScale: plotSkip
+      });
       
-       plot(
-        graph2Pos[0],
-        graph2Pos[1],
-        graph2Pos[2],
-        graph2Pos[3],
-        atuadorPlot,
-        PIDTick,
-        corAtuador,
-        plotSkip
-      );
+       plot({
+        posx: graph2Pos[0],
+        posy: graph2Pos[1],
+        w: graph2Pos[2],
+        h: graph2Pos[3],
+        s1: atuadorPlot,
+        tick1: PIDTick,
+        color: corAtuador,
+        timeScale: plotSkip
+       });
     }
   
-    createAxis(
-      graph3Pos[0],
-      graph3Pos[1],
-      graph3Pos[2],
-      graph3Pos[3],
-      [],
-      PerturbyTickPlot,
-      strg.titulo3,
-      strg.xlabel3E,
-      corPert,
-      " "
-    );
-    plot(
-      graph3Pos[0],
-      graph3Pos[1],
-      graph3Pos[2],
-      graph3Pos[3],
-      PerturbPlot,
-      PerturbyTickPlot,
-      corPert,
-      plotSkip
-    );
+    createAxis({
+      posx: graph3Pos[0],
+      posy: graph3Pos[1],
+      w: graph3Pos[2],
+      h: graph3Pos[3],
+      xtick: [],
+      tick1: PerturbyTickPlot,
+      title: strg.titulo3,
+      ylabel1: strg.xlabel3E,
+      color1: corPert,
+      xlabel: " "
+    });
+    plot({
+      posx: graph3Pos[0],
+      posy: graph3Pos[1],
+      w: graph3Pos[2],
+      h: graph3Pos[3],
+      s1: PerturbPlot,
+      tick1: PerturbyTickPlot,
+      color: corPert,
+      timeScale: plotSkip
+    });
   }
       
     
   if(showRightDiv){
 
     if(mostraSetpointPrev && strg.tiposSetpoint.indexOf(selSet.value()) != 0){
-    createAxis(
-      setPointGraphPos[0],
-      setPointGraphPos[1],
-      setPointGraphPos[2],
-      setPointGraphPos[3],
-      SetpointxTick,
-      SetpointyTick,
-      strg.tituloSetpoint,
-      strg.ylabelSetpoint,
-      0,
-      strg.xlabelSetpoint
-    );
-    plot(
-      setPointGraphPos[0],
-      setPointGraphPos[1],
-      setPointGraphPos[2],
-      setPointGraphPos[3],
-      SetpointPreviewPlot,
-      SetpointyTick,
-      corSP,
-      setpointTimeScale
-    );
+      createAxis({
+        posx: setPointGraphPos[0],
+        posy: setPointGraphPos[1],
+        w: setPointGraphPos[2],
+        h: setPointGraphPos[3],
+        xtick: SetpointxTick,
+        tick1: SetpointyTick,
+        title: strg.tituloSetpoint,
+        ylabel1: strg.ylabelSetpoint,
+        color1: corSP,
+        xlabel: strg.xlabelSetpoint
+      });
+      plot({
+        posx: setPointGraphPos[0],
+        posy: setPointGraphPos[1],
+        w: setPointGraphPos[2],
+        h: setPointGraphPos[3],
+        s1: SetpointPreviewPlot,
+        tick1: SetpointyTick,
+        color: corSP,
+        timeScale: setpointTimeScale,
+        value: setPointMode!=0?[
+          map(
+            (setPointCount * Ts) % (2 * setPointPeriodo), 
+            0, 
+            2 * setPointPeriodo,
+            0,
+            SetpointPreviewPlot.length
+          ), 
+          setPoint.value()]:[]
+      });
     }
     
     if(strg.tiposPert.indexOf(sel.value()) != 7 && mostraPerturbPrev){
-      createAxis(
-        perturbGraphPos[0],
-        perturbGraphPos[1],
-        perturbGraphPos[2],
-        perturbGraphPos[3],
-        PerturbxTick,
-        PerturbyTick,
-        strg.tituloPert,
-        strg.ylabelPert,
-        0,
-        strg.xlabelPert
-      );
-      plot(
-        perturbGraphPos[0],
-        perturbGraphPos[1],
-        perturbGraphPos[2],
-        perturbGraphPos[3],
-        PerturbPreviewPlot,
-        PerturbyTick,
-        corPert,
-        perturbTimeScale
-      );
+      createAxis({
+        posx: perturbGraphPos[0],
+        posy: perturbGraphPos[1],
+        w: perturbGraphPos[2],
+        h: perturbGraphPos[3],
+        xtick: PerturbxTick,
+        tick1: PerturbyTick,
+        title: strg.tituloPert,
+        ylabel1: strg.ylabelPert,
+        color1: corPert,
+        xlabel: strg.xlabelPert
+      });
+      plot({
+        posx: perturbGraphPos[0],
+        posy: perturbGraphPos[1],
+        w: perturbGraphPos[2],
+        h: perturbGraphPos[3],
+        s1: PerturbPreviewPlot,
+        tick1: PerturbyTick,
+        color: corPert,
+        timeScale: perturbTimeScale,
+        value: perturbMode!=0?[
+          map(
+            (count * Ts) % (2 * perturbPeriodo)
+            , 
+            0, 
+            2 * perturbPeriodo, 
+            0,        
+            PerturbPreviewPlot.length ),Perturb[2]/ PIDSat * 100
+          ]:[]
+      });
+
     } 
   }
   }

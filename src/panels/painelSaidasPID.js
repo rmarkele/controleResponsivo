@@ -110,22 +110,22 @@ function plotaBiestavel(pos){
     text(strg.tituloPainelOpFc[0], pos[0] + 0.5 * (pos[2] -50 ), pos[1] + 28);
   pop()
 
-  createAxis(
-    pos[0] + 50,
-    pos[1] + pos[3] - 35,
-    pos[2] - 45 - 20,
-    pos[3] - 40 - 40,
-    [-16, -8, 0, 8, 16],
-    [-100, -50, 0, 50, 100],
-    " ",
-    strg.ylabelBiestavel,
-    corPID,
-    strg.xlabelBiestavel,
-    [],
-    "",
-    0,
-    corPos
-  );
+  createAxis({
+    posx: pos[0] + 50,
+    posy: pos[1] + pos[3] - 35,
+    w: pos[2] - 45 - 20,
+    h: pos[3] - 40 - 40,
+    xtick: [-16, -8, 0, 8, 16],
+    tick1: [-100, -50, 0, 50, 100],
+    title: " ",
+    ylabel1: strg.ylabelBiestavel,
+    color1: corPID,
+    xlabel: strg.xlabelBiestavel,
+    tick2: [],
+    ylabel2: "",
+    color2: 0,
+    corX: corPos
+  });
   biestavel2Fig(pos);
   //biestavel2Fig(-50, 50, 4);
 }
@@ -143,22 +143,22 @@ function plotaSigmoid(pos) {
     text(strg.tituloPainelOpFc[1], pos[0] + 0.5 * (pos[2] - 50), pos[1] - 25 + 30);
   pop()
 
-  createAxis(
-    pos[0] + 50,
-    pos[1] + pos[3] - 20,
-    pos[2] - 45,
-    pos[3] - 40,
-    [-100, -50, 0, 50, 100],
-    [-100, -50, 0, 50, 100],
-    " ",
-    strg.ylabelSaidaMotor,
-    corAtuador,
-    strg.xlabelSaidaMotor,
-    [],
-    "",
-    0,
-    corOP
-  );
+  createAxis({
+    posx: pos[0] + 50,
+    posy: pos[1] + pos[3] - 20,
+    w: pos[2] - 45,
+    h: pos[3] - 40,
+    xtick: [-100, -50, 0, 50, 100],
+    tick1: [-100, -50, 0, 50, 100],
+    title: " ",
+    ylabel1: strg.ylabelSaidaMotor,
+    color1: corAtuador,
+    xlabel: strg.xlabelSaidaMotor,
+    tick2: [],
+    ylabel2: "",
+    color2: 0,
+    corX: corOP
+  });
 
   image(SigFig, pos[0] + 50, pos[1] + 20  );
   push();

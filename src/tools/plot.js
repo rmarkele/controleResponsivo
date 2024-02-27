@@ -1,18 +1,20 @@
 function createAxis(
-  posx,
-  posy,
-  w,
-  h,
-  xtick,
-  tick1,
-  title,
-  ylabel1,
-  color1,
-  xlabel,
-  tick2,
-  ylabel2,
-  color2,
-  corX = 0
+  {
+    posx,
+    posy,
+    w,
+    h,
+    xtick,
+    tick1,
+    title,
+    ylabel1,
+    color1,
+    xlabel,
+    tick2,
+    ylabel2,
+    color2,
+    corX = 0
+  }
 ) {
   let nTick1 = tick1.length;
   textSize(10)
@@ -132,7 +134,7 @@ function createAxis(
   pop();
 }
 
-function plot(posx, posy, w, h, s1, tick1, color, timeScale) {
+function plot({posx, posy, w, h, s1, tick1, color, timeScale, value}) {
   let N = s1.length;
   let nTick1 = tick1.length;
   // if (N > w / timeScale) {
@@ -157,6 +159,19 @@ function plot(posx, posy, w, h, s1, tick1, color, timeScale) {
       }
     }
     endShape();
+    if(value){
+      push()
+        stroke(200)
+        line(value[0] * timeScale, 0, value[0] * timeScale, -h)
+        stroke(color);
+        strokeWeight(10)
+        point( 
+          value[0] * timeScale, 
+          map(value[1], tick1[0], tick1[nTick1 - 1], -0.05 * h, -0.95 * h)
+        );
+      pop()
+    }
+
     stroke(0);
     strokeWeight(3);
     rect(0, 0, w, -h);
