@@ -14,7 +14,7 @@ function plotaGraficos() {
     manualPlot.push(manualControl.value());
     atuadorPlot.push(forcaAtuador[2]);
 
-    PerturbPlot.push(Perturb[2]);
+    PerturbPlot.push(Perturb[2] / PIDSat * 100);
 
 
 
@@ -261,7 +261,7 @@ function plotaGraficos() {
             0, 
             2 * perturbPeriodo, 
             0,        
-            PerturbPreviewPlot.length ),Perturb[2]/ PIDSat * 100
+            PerturbPreviewPlot.length ),Perturb[2] / PIDSat * 100
           ]:[]
       });
 
