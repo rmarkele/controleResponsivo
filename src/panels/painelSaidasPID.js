@@ -13,7 +13,7 @@ function plotaPID(pos){
     textSize(12);
     textAlign(CENTER);
     textStyle(BOLD);
-    text(strg.tituloPainelOpFc[0], pos[0] + 0.5 * pos[2], pos[1] + 20);
+    text(strg.tituloPainelOpFc, pos[0] + 0.5 * pos[2], pos[1] + 20);
   pop()
   push();
   textAlign(CENTER);
@@ -23,13 +23,13 @@ function plotaPID(pos){
   text(
     [strg.saidaP_painelOpFc + nf(round(1000 * saidaP) / 1000, 0, 1) + "%"],
     pos[0] + 0.5 * pos[2],
-    pos[1] + offy
+    pos[1] + offy + 6
   );
   
   text(
     [strg.saidaI_painelOpFc + nf(round(1000 * saidaI) / 1000, 0, 1) + "%"],
     pos[0] + 0.5 * pos[2],
-    pos[1] + offy + linespace
+    pos[1] + offy + linespace + 6
   );
 
   
@@ -48,12 +48,12 @@ function plotaPID(pos){
     text(
       [strg.saidaD_painelOpFc + nf(round(1000 * saidaD) / 1000, 0, 1) + "%"],
       pos[0] + 0.5 * pos[2],
-      pos[1] + offy + 2 * linespace
+      pos[1] + offy + 2 * linespace + 6
     );
     text(
       [strg.saidaOP0_painelOpFc + nf(round(1000 * Fc0) / 1000, 0, 1) + "%"],
       pos[0] + 0.5 * pos[2],
-      pos[1] + offy + 3 * linespace
+      pos[1] + offy + 3 * linespace + 6
     );
 
     fill(corPID);

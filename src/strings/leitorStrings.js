@@ -149,23 +149,23 @@ function idiomaSelect() {
 
   //Painel Saída Controlador/Saída Motor
   strg.tituloPainelOpFc = checkForUndefinedString(
-    strings[i]._titulo_painel_Op_e_Fc,
-    ["Saída Controlador (OP)", "Saída Motor (Fc)"]
+    strings[i]._titulo_painel_Op,
+    "Saída Controlador (OP)"
   );
   strg.saidaP_painelOpFc = checkForUndefinedString(
-    strings[i]._saida_P_painel_Op_e_Fc,
+    strings[i]._saida_P_painel_Op,
     "P:"
   );
   strg.saidaI_painelOpFc = checkForUndefinedString(
-    strings[i]._saida_I_painel_Op_e_Fc,
+    strings[i]._saida_I_painel_Op,
     "I:"
   );
   strg.saidaD_painelOpFc = checkForUndefinedString(
-    strings[i]._saida_D_painel_Op_e_Fc,
+    strings[i]._saida_D_painel_Op,
     "D:"
   );
   strg.saidaOP0_painelOpFc = checkForUndefinedString(
-    strings[i]._saida_OP0_painel_Op_e_Fc,
+    strings[i]._saida_OP0_painel_Op,
     "OP0:"
   );
 

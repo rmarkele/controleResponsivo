@@ -67,11 +67,11 @@ let strings = [
     _saida_MAN_dinamometro_analogico: "MAN",
 
     //Painel Saída Controlador/Saída Motor
-    _titulo_painel_Op_e_Fc: ["Variável: OP", "Variável: Fc"],
-    _saida_P_painel_Op_e_Fc: "P: ",
-    _saida_I_painel_Op_e_Fc: "I: ",
-    _saida_D_painel_Op_e_Fc: "D: ",
-    _saida_OP0_painel_Op_e_Fc: "OPo: ",
+    _titulo_painel_Op: "Variável: OP",
+    _saida_P_painel_Op: "P: ",
+    _saida_I_painel_Op: "I: ",
+    _saida_D_painel_Op: "D: ",
+    _saida_OP0_painel_Op: "OPo: ",
 
     //Painel Var Controlador
     _titulo_painel_Var_Controlador: "Controlador",
@@ -253,11 +253,11 @@ let strings = [
     _saida_MAN_dinamometro_analogico: "MAN",
 
     //Painel Saída Controlador/Saída Motor
-    _titulo_painel_Op_e_Fc: ["Variable: OP", "Variable: Fc"],
-    _saida_P_painel_Op_e_Fc: "P: ",
-    _saida_I_painel_Op_e_Fc: "I: ",
-    _saida_D_painel_Op_e_Fc: "D: ",
-    _saida_OP0_painel_Op_e_Fc: "OPo: ",
+    _titulo_painel_Op: "Variable: OP",
+    _saida_P_painel_Op: "P: ",
+    _saida_I_painel_Op: "I: ",
+    _saida_D_painel_Op: "D: ",
+    _saida_OP0_painel_Op: "OPo: ",
 
     //Painel Var Controlador
     _titulo_painel_Var_Controlador: "Controller",

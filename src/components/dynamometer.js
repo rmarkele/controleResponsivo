@@ -29,7 +29,7 @@ class dinamometro {
           textStyle(BOLD);
           text(strg.xlabelSaidaMotor, 0, -this.h);
         pop();
-        for(let i = -100; i <= 100; i += 50){
+        for(let i = -100; i <= 100; i += 20){
           const posx = map(i, -100, 100, -this.w, this.w);
           line(posx, -limV, posx, posy);
           push();
@@ -42,7 +42,7 @@ class dinamometro {
         }
 
 
-        for(let i = -75; i <= 75; i += 50){
+        for(let i = -90; i <= 90; i += 20){
           const posx = map(i, -100, 100, -this.w, this.w);
           line(posx, -limV, posx, -limV * 0.2);
         }
