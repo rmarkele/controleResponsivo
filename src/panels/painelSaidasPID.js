@@ -13,7 +13,7 @@ function plotaPID(pos){
     textSize(12);
     textAlign(CENTER);
     textStyle(BOLD);
-    text(strg.tituloPainelOpFc[0], pos[0] + 0.5 * pos[2], pos[1] + 30);
+    text(strg.tituloPainelOpFc[0], pos[0] + 0.5 * pos[2], pos[1] + 20);
   pop()
   push();
   textAlign(CENTER);
@@ -104,21 +104,22 @@ function plotaBiestavel(pos){
     corBi = corPID.slice();
   }
 
-  push()
-    textSize(12);
-    textStyle(BOLD);
-    text(strg.tituloPainelOpFc[0], pos[0] + 0.5 * (pos[2] -50 ), pos[1] + 28);
-  pop()
+  // push()
+  //   textSize(12);
+  //   textStyle(BOLD);
+  //   text(strg.tituloPainelOpFc[0], pos[0] + 0.5 * (pos[2] -50 ), pos[1] + 28);
+  // pop()
 
   createAxis({
-    posx: pos[0] + 50,
+    posx: pos[0] + 35,
     posy: pos[1] + pos[3] - 35,
-    w: pos[2] - 45 - 20,
+    w: pos[2] - 45 - 5,
     h: pos[3] - 40 - 40,
     xtick: [-16, -8, 0, 8, 16],
     tick1: [-100, -50, 0, 50, 100],
-    title: " ",
-    ylabel1: strg.ylabelBiestavel,
+    title: strg.ylabelBiestavel,
+    titleColor: corPID,
+    // ylabel1: strg.ylabelBiestavel,
     color1: corPID,
     xlabel: strg.xlabelBiestavel,
     tick2: [],
@@ -137,21 +138,22 @@ function plotaSigmoid(pos) {
     corOP = corPID
   }
 
-  push()
-    textStyle(BOLD);
-    textSize(12);
-    text(strg.tituloPainelOpFc[1], pos[0] + 0.5 * (pos[2] - 50), pos[1] - 25 + 30);
-  pop()
+  // push()
+  //   textStyle(BOLD);
+  //   textSize(12);
+  //   text(strg.tituloPainelOpFc[1], pos[0] + 0.5 * (pos[2] - 50), pos[1] - 25 + 30);
+  // pop()
 
   createAxis({
-    posx: pos[0] + 50,
+    posx: pos[0] + 35,
     posy: pos[1] + pos[3] - 20,
-    w: pos[2] - 45,
+    w: pos[2] - 30,
     h: pos[3] - 40,
     xtick: [-100, -50, 0, 50, 100],
     tick1: [-100, -50, 0, 50, 100],
-    title: " ",
-    ylabel1: strg.ylabelSaidaMotor,
+    title: strg.ylabelSaidaMotor,
+    titleColor: corAtuador,
+    // ylabel1: strg.ylabelSaidaMotor,
     color1: corAtuador,
     xlabel: strg.xlabelSaidaMotor,
     tick2: [],
@@ -160,13 +162,13 @@ function plotaSigmoid(pos) {
     corX: corOP
   });
 
-  image(SigFig, pos[0] + 50, pos[1] + 20  );
+  image(SigFig, pos[0] + 35, pos[1] + 20  );
   push();
   translate(
-    pos[0] + 50,
+    pos[0] + 35,
     pos[1] + pos[3] - 20
   );
-  let w = pos[2] - 45;
+  let w = pos[2] - 30;
   let h = pos[3] - 40;
 
   let lengAtuadorPlot = forcaAtuadorPlot.length;

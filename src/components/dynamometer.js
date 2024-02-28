@@ -25,6 +25,7 @@ class dinamometro {
         push();
           noStroke();
           fill(0)
+          textAlign(CENTER)
           textStyle(BOLD);
           text(strg.xlabelSaidaMotor, 0, -this.h);
         pop();

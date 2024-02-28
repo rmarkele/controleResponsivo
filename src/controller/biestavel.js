@@ -2,7 +2,7 @@ function biestavel2Fig(pos) {
   let [x, yt, w, h] = pos;
   let y = yt
   let lengBiestavelPlot = biestavelPlot.length;
-  let wdth = w - 45 - 20;
+  let wdth = w - 45 - 5;
   let hgt = h - 40 -40;
   let xSPL = map(biestavel.setpointBaixo, -16, 16, 0, wdth);
   let xSPH = map(biestavel.setpointAlto, -16, 16, 0, wdth);
@@ -15,7 +15,7 @@ function biestavel2Fig(pos) {
   noFill();
   stroke(0);
   strokeWeight(2);
-  translate(x + 50, y + h - 35);
+  translate(x + 35, y + h - 35);
   if (modoAcao) {  
     line(0, yMin, xSPH, yMin);
     line(xSPH, yMin, xSPH, yMax);

@@ -13,7 +13,8 @@ function createAxis(
     tick2,
     ylabel2,
     color2,
-    corX = 0
+    corX = 0,
+    titleColor = 0
   }
 ) {
   let nTick1 = tick1.length;
@@ -95,17 +96,19 @@ function createAxis(
     push();
       strokeWeight(1);
       noStroke();
-      fill(0);
+      fill(titleColor);
       textAlign(CENTER);
       angleMode(DEGREES);
       textSize(12);
       text(title, w / 2, -h - 10);
-      push();
-        fill(color1);
-        translate(0, -h / 2);
-        rotate(-90);
-        text(ylabel1, 0, -35);
-      pop();
+      if(ylabel1){
+        push();
+          fill(color1);
+          translate(0, -h / 2);
+          rotate(-90);
+          text(ylabel1, 0, -35);
+        pop();
+      }
     pop();
 
     if (ylabel2) {
@@ -124,11 +127,12 @@ function createAxis(
     push();
       strokeWeight(1);
       noStroke();
-      fill(corX);
       textAlign(CENTER);
       angleMode(DEGREES);
       textSize(12);
+      fill(titleColor);
       text(title, w / 2, -h - 10);
+      fill(corX);
       text(xlabel, w / 2, 25);
     pop();
   pop();

@@ -67,7 +67,7 @@ function geraCaminhoAtuador(x2, x1, y1) {
 }
 
 function sigmoid2Fig(k, h) {
-  let wdth = actuatorOutputsPos[2] - 45;
+  let wdth = actuatorOutputsPos[2] - 30;
   let hgt = actuatorOutputsPos[3] - 40;
   if (atuador == 1) {
     let sigArr = geraSigmoid(k, h);
