@@ -19,7 +19,7 @@ function showIHM() {
     fill(corSP);
     strokeWeight(1);
     noStroke();
-    textSize(txtSize-1);
+    textSize(txtSize);
     textStyle(BOLD);
 
     text(

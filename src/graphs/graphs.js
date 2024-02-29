@@ -1,34 +1,34 @@
 
 function plotaGraficos() {
   
-  if(showleftDiv){
-
-    xPlot.push(constrain(x[1]+deltaInd, xSatMin, xSatMax));
-    erroPlot.push(erro);
   
-    setPointPlot.push(setPoint.value());
-    setPointAltoPlot.push(biestavel.setpointAlto);
-    setPointBaixoPlot.push(biestavel.setpointBaixo);
+  xPlot.push(constrain(x[1]+deltaInd, xSatMin, xSatMax));
+  erroPlot.push(erro);
+  
+  setPointPlot.push(setPoint.value());
+  setPointAltoPlot.push(biestavel.setpointAlto);
+  setPointBaixoPlot.push(biestavel.setpointBaixo);
+  
+  PIDPlot.push(PID);
+  manualPlot.push(manualControl.value());
+  atuadorPlot.push(forcaAtuador[2]);
+  
+  PerturbPlot.push(Perturb[2] / PIDSat * 100);
+  
+  
+
+  constrainLength(xPlot, graph1Pos[2], plotSkip);
+  constrainLength(setPointPlot, graph1Pos[2], plotSkip);
+  constrainLength(setPointAltoPlot, graph1Pos[2], plotSkip);
+  constrainLength(setPointBaixoPlot, graph1Pos[2], plotSkip);
+  
+  constrainLength(PIDPlot, graph2Pos[2], plotSkip);
+  constrainLength(manualPlot, graph2Pos[2], plotSkip);
+  constrainLength(atuadorPlot, graph2Pos[2], plotSkip);
+  
+  constrainLength(PerturbPlot, graph3Pos[2], plotSkip);
     
-    PIDPlot.push(PID);
-    manualPlot.push(manualControl.value());
-    atuadorPlot.push(forcaAtuador[2]);
-
-    PerturbPlot.push(Perturb[2] / PIDSat * 100);
-
-
-
-    constrainLength(xPlot, graph1Pos[2], plotSkip);
-    constrainLength(setPointPlot, graph1Pos[2], plotSkip);
-    constrainLength(setPointAltoPlot, graph1Pos[2], plotSkip);
-    constrainLength(setPointBaixoPlot, graph1Pos[2], plotSkip);
-
-    constrainLength(PIDPlot, graph2Pos[2], plotSkip);
-    constrainLength(manualPlot, graph2Pos[2], plotSkip);
-    constrainLength(atuadorPlot, graph2Pos[2], plotSkip);
-    
-    constrainLength(PerturbPlot, graph3Pos[2], plotSkip);
-
+  if(showleftDiv){
     createAxis({
       posx: graph1Pos[0],
       posy: graph1Pos[1],
@@ -43,7 +43,7 @@ function plotaGraficos() {
       tick2: yTick,
       ylabel2: strg.xlabel1D,
       color2: corSP
-  });
+    });
   
     if(controlador < 3 && pidControlCheckBox.checked()){
       plot({
