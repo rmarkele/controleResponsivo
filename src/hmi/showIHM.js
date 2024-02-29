@@ -3,7 +3,7 @@ function showIHM() {
   escrevePainelPVarSis();
   // painelParPID.show();
   
-  if(showCenterDiv){
+  if(showCenterDiv && showCenterDivGraphs){
     escrevePainelSaidaPID(controllerOutputsPos);
     plotaSigmoid(actuatorOutputsPos);
   }

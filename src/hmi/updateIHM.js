@@ -48,16 +48,25 @@ function updateIHM() {
         noControlCheckBox.checked(true);
         pidControlCheckBox.checked(false);
         manualControlCheckBox.checked(false);
+        showCenterDivGraphs = false;
         break;
       case 1:
         noControlCheckBox.checked(false);
         pidControlCheckBox.checked(true);
         manualControlCheckBox.checked(false);
+        showCenterDivGraphs = true;
+        document.querySelector("#controller-outputs").style.display = 'flex';
+        getDimensions();
+        sigmoid2Fig(kSig, histSig);
         break;
       case 2:
         noControlCheckBox.checked(false);
         pidControlCheckBox.checked(false);
         manualControlCheckBox.checked(true);
+        showCenterDivGraphs = true;
+        document.querySelector("#controller-outputs").style.display = 'none';
+        getDimensions();
+        sigmoid2Fig(kSig, histSig);
         break;
       default:
         noControlCheckBox.checked(false);

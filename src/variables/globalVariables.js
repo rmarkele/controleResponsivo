@@ -239,7 +239,7 @@ let dynamometerPos,  controllerOutputsPos,  actuatorOutputsPos, setPointGraphPos
 let posYScale, heightScale;
 
 let showleftDiv = true;
-let showCenterDiv = true;
+let showCenterDiv = true, showCenterDivGraphs=true;
 let showRightDiv = true;
 
 let isPlaying = true;
