@@ -20,8 +20,8 @@ function idiomaSelect() {
   //Sistema
   strg.Atuador = checkForUndefinedString(strings[i]._motor_Linear, [
     "Motor Linear",
-    "recebendo saída AUTO",
-    "recebendo saída MANUAL",
+    "AUTO",
+    "MANUAL",
   ]);
 
   strg.SystemView = checkForUndefinedString(strings[i]._ocultar_Sistema, "Ocultar Visualização do Sistema");

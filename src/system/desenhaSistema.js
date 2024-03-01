@@ -71,22 +71,24 @@ function desenhaSistema() {
       1.4 * L0,
       Hpid,
     ];
-    line(xref, yPID, xPID, yPID); //linha parede atuador
+    line(xref, yPID, xPID - LPID / 2, yPID); //linha parede atuador
     line(xPID + LPID / 2, yPID, xCar  + car.deltaX, yPID); // linha atuador carro
     push();
         textSize(txtSize);
         strokeWeight(strokeW);
+        let corRect = pidControlCheckBox.checked() ? corPID : corMan;
+        stroke(corRect)
         rectMode(CENTER);
-        fill(198, 228, 160);
         rect(xPID, yPID, LPID, HPID);
 
-        fill(0);
+        noStroke();
+        fill(0)
         textAlign(CENTER, CENTER);
-        text(strg.Atuador[0], xPID, yPID -  0.8 * HPID / 4);
-        if (pidControlCheckBox.checked()) {
-          text(strg.Atuador[1], xPID, yPID +  HPID / 4);
+        // text(strg.Atuador[0], xPID, yPID -  0.8 * HPID / 4);
+        if (pidControlCheckBox.checked()) {      
+          text(strg.Atuador[0] + " " + strg.Atuador[1], xPID, yPID  );
         } else {
-          text(strg.Atuador[2], xPID, yPID +  HPID / 4);
+          text(strg.Atuador[0] + " " + strg.Atuador[2], xPID, yPID  );
         }  
     pop();
     }

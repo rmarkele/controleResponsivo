@@ -12,8 +12,8 @@ let strings = [
     //Sistema
     _motor_Linear: [
       "Motor Linear",
-      "Recebendo Saída AUTO",
-      "Recebendo Saída MAN",
+      "AUTO",
+      "MAN",
     ],
 
     _ocultar_Sistema: "Ocultar Animação",
@@ -199,8 +199,8 @@ let strings = [
     //Sistema
     _motor_Linear: [
       "Linear Motor",
-      "Receiving AUTO Output",
-      "Receiving MAN Output",
+      "AUTO",
+      "MAN",
     ],
     _ocultar_Sistema: "Hide Animation",
 

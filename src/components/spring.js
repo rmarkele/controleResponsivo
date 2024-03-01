@@ -8,7 +8,7 @@ class mola {
         this.L = largura;
         this.label = createP(text);
         this.label.parent("canvas-container");
-        this.label.position(this.posX + 0.8 * this.L / 2, this.posY + this.H / 2 + 5);
+        this.label.position(this.posX + 0.8 * this.L / 2, this.posY + this.H / 2 + 8);
         this.label.class("component-label");
         this.text = text
     }
