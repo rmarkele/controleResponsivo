@@ -199,7 +199,7 @@ const corAtuador = [253, 0, 20];
 const corPos = "#FF6400";
 const corPosReal = [10, 100, 100];
 const corSP = [0, 0, 255];
-const corMan = [119, 136, 153];
+const corMan = [100, 100, 100];
 let canv;
 let SigFig,
   kSig = 1,

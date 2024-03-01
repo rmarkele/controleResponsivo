@@ -23,7 +23,7 @@ function getDimensions(){
         processBounds.bottom - processBounds.top - 2 * processBorder,
     ];
 
-    dynamometerPos =  getDivPos('dynamometer');
+    dynamometerPos =  getDivPos('dynamometer-container');
     dynamometerPos[1] -= 30;
     dynamometerPos[3] -= 30;
 
@@ -91,6 +91,15 @@ function getDimensions(){
         Nmol = 41;
         txtSize = 12;
         strokeW = 1;
+    } else if(w <=1000) {
+        L0 = 0.1 * w;
+        H0 = 0.02 * h;
+        Lcar = (150 / 1200) * w;
+        Hcar = 0.9 * href;
+        Hpid = 0.05 * h
+        Nmol = 61;
+        txtSize = 12;
+        strokeW = 1;
     } else {
         L0 = 0.1 * w;
         H0 = 0.02 * h;
@@ -98,10 +107,11 @@ function getDimensions(){
         Hcar = 0.9 * href;
         Hpid = 0.05 * h
         Nmol = 61;
-        txtSize = 14;
+        txtSize = 16;
         strokeW = 1;
     }
 
+    
 
     let perturbGraphBounds = document.querySelector('#perturbGraph')?.getBoundingClientRect();
     if(perturbGraphBounds){

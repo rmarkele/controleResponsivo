@@ -3,17 +3,18 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
     user-select: none;
 }
 
 :root{
-  --header-height: 50px;
+  --header-height: 40px;
   --scale-height: 60px;
-  --fps-txt-height: 16px;
+  --fps-txt-height: 25px;
   --fps-margin-top: 2px;
   --process-proportion: 0.25;
   --control-proportion: calc(1 - var(--process-proportion));
-  --canvas-height: calc(var(--vh, 1vh) * 100 - var(--header-height) - var(--fps-txt-height) - var(--fps-margin-top));
+  --canvas-height: calc(var(--vh, 1vh) * 100 - var(--header-height) - var(--fps-txt-height) - var(--fps-margin-top) );
   --min-canvas-height: 530px;
   --process-height: calc(var(--canvas-height) * var(--process-proportion));
   --control-height: calc(var(--canvas-height) * var(--control-proportion) - var(--scale-height));
@@ -119,8 +120,7 @@ canvas{
 #right{
    flex: 1;
    padding: 0 5px;
-
-   margin-top: 40px;
+   margin-top: 70px;
    display: flex;
    flex-direction: column;
 }
@@ -158,7 +158,6 @@ canvas{
 
 .radio-panel h4{
   color: black;
-  /* font-size: 14px; */
   padding: 0;
   margin-right: 5px;
   font-weight: normal;
@@ -192,7 +191,7 @@ canvas{
   margin: 0;
   font-weight: bold;
   padding: 2px 5px;
-  font-size: 10px;
+  /* font-size: 10px; */
 }
 
 
@@ -213,8 +212,6 @@ canvas{
 
 
 .myCheckBox{
-  /* font-family: Helvetica; */
-  /* font-size: 15px; */
   font-weight: bold;
   display: flex;
   align-items: center;
@@ -226,17 +223,17 @@ canvas{
   margin-right: 2px;
 }
 
-.myCheckBox label{
+/* .myCheckBox label{
   font-size: 10px;
-}
+} */
 
 .BigCheck{
   display: flex;
   align-items: center;
 }
-.BigCheck label{
+/* .BigCheck label{
   font-size: 12px;
-}
+} */
 
 .BigCheck input{
   transform: scale(1.2);
@@ -259,7 +256,6 @@ canvas{
   direction: ltr;
   display: block;
   font-family: "SF Pro Text","SF Pro Icons","AOS Icons","Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 14px;
   font-weight: 400;
   letter-spacing: -.022em;
   line-height: 1.47059;
@@ -305,9 +301,9 @@ canvas{
   border: 1px solid rgb(156, 117, 32);
 }
 
-.component-label {
+/* .component-label {
   font-size: 10px;
-}
+} */
 
 #fps-text{
   height: var(--fps-txt-height);
@@ -326,8 +322,14 @@ canvas{
 #fps-text div{
   color: #ffffff;
   flex: 1;
-  font-size: 10px;
+  /* font-size: 10px; */
   /* text-align: center; */
+}
+
+@media (max-width:1000px) {
+  *{
+    font-size: 12px;
+  }
 }
 
 @media (max-width:850px) {
@@ -336,6 +338,10 @@ canvas{
     --header-height: 30px;
     --scale-height: 70px;
     --process-proportion: 0.15;
+  }
+
+  *{
+    font-size: 12px;
   }
 
 
@@ -406,5 +412,6 @@ canvas{
         /* display: none; */
         font-size: 8px;
     }
+
     
   }

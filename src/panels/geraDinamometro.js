@@ -1,7 +1,19 @@
 function geraDinamômetro(pos) {
   const scale = 0.4;
 
-  forces = new dinamometro(pos[0], pos[1], scale * dynamometerPos[2], scale * dynamometerPos[3] ,-100, 100, 30, -20);
+  forces = new dinamometro({
+    posx: pos[0], 
+    posy: pos[1], 
+    w: scale * dynamometerPos[2], 
+    h: scale * dynamometerPos[3] ,
+    min: -100, 
+    max: 100, 
+    pot1: 30, 
+    pot2:-20,
+    titleDiv: 'dynamometer-title'
+  });
+
+
   let w = 2 * forces.raio;
   manualControl = new mySlider(
     [ pos[0] -  scale * dynamometerPos[2],   pos[1] + scale * dynamometerPos[3] * 0.2 + 18],
@@ -12,6 +24,8 @@ function geraDinamômetro(pos) {
     0,
     corMan
   );
+
+
 
   noControlCheckBox.parent("auto-man-checkboxes");
   noControlCheckBox.class("myCheckBox");
@@ -27,6 +41,7 @@ function geraDinamômetro(pos) {
     manualForce = 0;
     forcaAtuador = [0, 0, 0];
 
+    forces.controlMode(0);
     showCenterDivGraphs = false;
   
   });
@@ -49,6 +64,7 @@ function geraDinamômetro(pos) {
     document.querySelector("#controller-outputs").style.display = 'flex';
     getDimensions();
     sigmoid2Fig(kSig, histSig);
+    forces.controlMode(1);
   });
 
   manualControlCheckBox = createCheckbox(
@@ -66,6 +82,7 @@ function geraDinamômetro(pos) {
     document.querySelector("#controller-outputs").style.display = 'none';
     getDimensions();
     sigmoid2Fig(kSig, histSig);
+    forces.controlMode(2);
   });
 
   

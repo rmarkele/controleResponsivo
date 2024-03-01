@@ -18,7 +18,7 @@ function createAxis(
   }
 ) {
   let nTick1 = tick1.length;
-  textSize(10)
+  textSize(txtSize)
 
   push();
     translate(posx, posy);
@@ -88,7 +88,7 @@ function createAxis(
           noStroke();
           fill(corX);
           textAlign(CENTER);
-          text(xtick[i], tickPlot[i], 10);
+          text(xtick[i], tickPlot[i], txtSize);
         pop();
       }
     }
@@ -99,8 +99,7 @@ function createAxis(
       fill(titleColor);
       textAlign(CENTER);
       angleMode(DEGREES);
-      textSize(12);
-      text(title, w / 2, -h - 10);
+      textSize(txtSize);
       if(ylabel1){
         push();
           fill(color1);
@@ -129,11 +128,11 @@ function createAxis(
       noStroke();
       textAlign(CENTER);
       angleMode(DEGREES);
-      textSize(12);
+      textSize(txtSize);
       fill(titleColor);
-      text(title, w / 2, -h - 10);
+      text(title, w / 2, -h - 5);
       fill(corX);
-      text(xlabel, w / 2, 25);
+      text(xlabel, w / 2, 2 * txtSize);
     pop();
   pop();
 }

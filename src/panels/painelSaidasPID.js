@@ -10,14 +10,14 @@ function escrevePainelSaidaPID(pos) {
 
 function plotaPID(pos){
   push()
-    textSize(12);
+    textSize(txtSize);
     textAlign(CENTER);
     textStyle(BOLD);
     text(strg.tituloPainelOpFc, pos[0] + 0.5 * pos[2], pos[1] + 20);
   pop()
   push();
   textAlign(CENTER);
-  textSize(12);
+  textSize(txtSize);
   let offy = 45;
   let linespace = (pos[3] - offy) / 4;
   text(
@@ -104,15 +104,9 @@ function plotaBiestavel(pos){
     corBi = corPID.slice();
   }
 
-  // push()
-  //   textSize(12);
-  //   textStyle(BOLD);
-  //   text(strg.tituloPainelOpFc[0], pos[0] + 0.5 * (pos[2] -50 ), pos[1] + 28);
-  // pop()
-
   createAxis({
     posx: pos[0] + 35,
-    posy: pos[1] + pos[3] - 35,
+    posy: pos[1] + pos[3] - 45,
     w: pos[2] - 45 - 5,
     h: pos[3] - 40 - 40,
     xtick: [-16, -8, 0, 8, 16],
@@ -127,7 +121,7 @@ function plotaBiestavel(pos){
     color2: 0,
     corX: corPos
   });
-  biestavel2Fig(pos);
+  biestavel2Fig([pos[0]+35, pos[1]-45, pos[2], pos[3]]);
   //biestavel2Fig(-50, 50, 4);
 }
 
@@ -138,17 +132,17 @@ function plotaSigmoid(pos) {
     corOP = corPID
   }
 
-  // push()
-  //   textStyle(BOLD);
-  //   textSize(12);
-  //   text(strg.tituloPainelOpFc[1], pos[0] + 0.5 * (pos[2] - 50), pos[1] - 25 + 30);
-  // pop()
+  const x = pos[0] + 40;
+  const y = pos[1] + pos[3] - 30;
+  const w = pos[2] - 38;
+  const h = pos[3] - 40;
+
 
   createAxis({
-    posx: pos[0] + 35,
-    posy: pos[1] + pos[3] - 20,
-    w: pos[2] - 30,
-    h: pos[3] - 40,
+    posx: x,
+    posy: y,
+    w: w,
+    h: h,
     xtick: [-100, -50, 0, 50, 100],
     tick1: [-100, -50, 0, 50, 100],
     title: strg.ylabelSaidaMotor,
@@ -162,14 +156,10 @@ function plotaSigmoid(pos) {
     corX: corOP
   });
 
-  image(SigFig, pos[0] + 35, pos[1] + 20  );
+  image(SigFig, x, y - h );
   push();
-  translate(
-    pos[0] + 35,
-    pos[1] + pos[3] - 20
-  );
-  let w = pos[2] - 30;
-  let h = pos[3] - 40;
+  translate(x,y);
+  
 
   let lengAtuadorPlot = forcaAtuadorPlot.length;
   let yplot, xplot;
@@ -189,7 +179,6 @@ function plotaSigmoid(pos) {
     noFill();
     strokeWeight(6);
 
-    let yplotA, xplotA;
     beginShape();
     corAt[3] = 100;
     stroke(corAt);

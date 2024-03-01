@@ -1,13 +1,15 @@
 /*  logo */
 #logo-container{
-    padding:10px 0px;
+    padding:10px 5px;
     margin:0;
     border: none;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    flex: 1;
+    position: absolute;
+    top: var(--process-height);
+    /* flex: 1; */
   }
   
   #logo-container p{
@@ -17,23 +19,24 @@
   }
   
   #logo-container .logo-container--title{
-    font-size: 16px;
+    /* font-size: 16px; */
     font-weight: bold;
   }
   
   #logo-container .logo-container--text{
-    font-size: 14px;
+    /* font-size: 14px; */
   }
   
   #logo-container .logo-container--btn{
-    font-size: 16px;
-    padding: 5px 15px;
+    /* font-size: 16px; */
+    padding: 2px 5px;
     letter-spacing: 2px;
     background-color: #666;
     border: 2px solid #555;
     border-radius: 5px;
     color: #fff;
     font-weight: bold;
+    cursor: pointer;
 
 
   }
@@ -88,4 +91,15 @@
     height: 100%;
     border: none;
     /* overflow-x: hidden; */
+  }
+
+  @media (max-width:850px) {
+    #logo-container .logo-container--title{
+      display: none;
+    }
+    
+    #logo-container .logo-container--text{
+      display: none;
+    }
+  
   }

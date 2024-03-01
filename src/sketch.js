@@ -1,6 +1,7 @@
 function setup() {
   
   getDimensions();
+  textSize(txtSize);
 
   let w = canvasBounds.right - canvasBounds.left;
   let h = canvasBounds.bottom - canvasBounds.top;

@@ -8,43 +8,40 @@ class mola {
         this.L = largura;
         this.label = createP(text);
         this.label.parent("canvas-container");
-        this.label.position(this.posX + 0.8 * this.L / 2, this.posY + this.H);
+        this.label.position(this.posX + 0.8 * this.L / 2, this.posY + this.H / 2 + 5);
         this.label.class("component-label");
         this.text = text
-        //this.label.style("font-size", "18px");
     }
 
     show() {
         push();
 
         translate(this.posX, this.posY);
-        textSize(18);
         if (abs(K) > 0) {
-        //this.label.html("K<sub>s</sub> = " + K + " N/m");
-        strokeWeight(strokeW);
-        angleMode(DEGREES);
-        noFill();
-        stroke(0);
-        beginShape();
-        let Lm = this.L - (2 * this.H) / 3;
-        let Npoints = Lm / 0.1;
-        push();
-            fill(0);
-            ellipse(0, 0, 5, 5);
-            ellipse(this.L, 0, 5, 5);
-        pop();
-        for (let i = 0; i <= Npoints; i++) {
-            let x =
-            this.H / 3 +
-            0.1 * i -
-            (this.H / 3) * cos((0.1 * i * this.N * 180) / Lm);
-            let y = this.H * sin((0.1 * i * this.N * 180) / Lm);
-            vertex(x, y);
-        }
+            strokeWeight(strokeW);
+            angleMode(DEGREES);
+            noFill();
+            stroke(0);
+            beginShape();
+            let Lm = this.L - (2 * this.H) / 3;
+            let Npoints = Lm / 0.1;
+            push();
+                fill(0);
+                ellipse(0, 0, 5, 5);
+                ellipse(this.L, 0, 5, 5);
+            pop();
+            for (let i = 0; i <= Npoints; i++) {
+                let x =
+                this.H / 3 +
+                0.1 * i -
+                (this.H / 3) * cos((0.1 * i * this.N * 180) / Lm);
+                let y = this.H * sin((0.1 * i * this.N * 180) / Lm);
+                vertex(x, y);
+            }
 
-        endShape();
+            endShape();
         } else {
-        this.label.html(" ");
+            this.label.html(" ");
         }
         pop();
     }

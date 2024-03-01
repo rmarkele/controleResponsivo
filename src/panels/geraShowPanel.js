@@ -60,6 +60,10 @@ function geraShowPanel(pos){
     
   });
 
+  if(width<=850){
+    document.querySelector('#process').appendChild(EVlight);
+  }
+
   hideSystemDiv=document.querySelector("#hide-system");
   hideSystemCheckBox = document.querySelector("#SystemView");
   hideSystemCheckBox.addEventListener('click',(e)=>{

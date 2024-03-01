@@ -226,7 +226,7 @@ function plotaGraficos() {
             0, 
             2 * setPointPeriodo,
             0,
-            SetpointPreviewPlot.length
+            SetpointPreviewPlot.length - 1
           ), 
           setPoint.value()]:[]
       });
@@ -256,12 +256,12 @@ function plotaGraficos() {
         timeScale: perturbTimeScale,
         value: perturbMode!=0?[
           map(
-            (count * Ts) % (2 * perturbPeriodo)
-            , 
+            (count * Ts) % (2 * perturbPeriodo), 
             0, 
             2 * perturbPeriodo, 
             0,        
-            PerturbPreviewPlot.length ),Perturb[2] / PIDSat * 100
+            PerturbPreviewPlot.length - 1
+          ),Perturb[2] / PIDSat * 100
           ]:[]
       });
 

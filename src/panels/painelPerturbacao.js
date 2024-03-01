@@ -131,7 +131,7 @@ function mySelectEvent() {
       Fmax = float(variablesList[7].inp.value);
       Fmin = float(variablesList[8].inp.value);
       Periodo = float(variablesList[9].inp.value);
-      Tmax = max(10, 2 * Periodo);
+      Tmax = 2 * Periodo;
       for (let i = 0; i < perturbGraphPos[2] / perturbTimeScale; i++) {
         t = map(i, 0, perturbGraphPos[2] / perturbTimeScale, 0, Tmax);
         [PerturbPreviewPlot[i]] = ondaSenoidal(t / Ts, Fmax, Fmin, Periodo);
@@ -148,7 +148,7 @@ function mySelectEvent() {
       Fmin = float(variablesList[8].inp.value);
       Periodo = float(variablesList[9].inp.value);
       ton = float(variablesList[10].inp.value);
-      Tmax = max(10, 2 * Periodo);
+      Tmax = 2 * Periodo;
       for (let i = 0; i < perturbGraphPos[2] / perturbTimeScale; i++) {
         t = map(i, 0, perturbGraphPos[2] / perturbTimeScale, 0, Tmax);
         [PerturbPreviewPlot[i]] = ondaQuadrada(t / Ts, Fmax, Fmin, Periodo, ton);
@@ -164,7 +164,7 @@ function mySelectEvent() {
       Fmax = float(variablesList[7].inp.value);
       Fmin = float(variablesList[8].inp.value);
       Periodo = float(variablesList[9].inp.value);
-      Tmax = max(10, 2 * Periodo);
+      Tmax = 2 * Periodo;
       for (let i = 0; i < perturbGraphPos[2] / perturbTimeScale; i++) {
         t = map(i, 0, perturbGraphPos[2] / perturbTimeScale, 0, Tmax);
         [PerturbPreviewPlot[i]] = ondaTriangular(t / Ts, Fmax, Fmin, Periodo);
@@ -180,7 +180,7 @@ function mySelectEvent() {
       Fmax = float(variablesList[7].inp.value);
       Fmin = float(variablesList[8].inp.value);
       Periodo = float(variablesList[9].inp.value);
-      Tmax = max(10, 2 * Periodo);
+      Tmax = 2 * Periodo;
       for (let i = 0; i < perturbGraphPos[2] / perturbTimeScale; i++) {
         t = map(i, 0, perturbGraphPos[2] / perturbTimeScale, 0, Tmax);
         [PerturbPreviewPlot[i]] = denteDeSerra(t / Ts, Fmax, Fmin, Periodo);
@@ -198,7 +198,7 @@ function mySelectEvent() {
       Fmax = float(variablesList[7].inp.value);
       Fmin = 0;
       Periodo = float(variablesList[9].inp.value);
-      Tmax = max(10, 2 * Periodo);
+      Tmax = 2 * Periodo;
       for (let i = 0; i < perturbGraphPos[2] / perturbTimeScale; i++) {
         t = map(i, 0, perturbGraphPos[2] / perturbTimeScale, 0, Tmax);
         [PerturbPreviewPlot[i]] = tremDeImpulsos(t / Ts, Fmax, Periodo);
@@ -257,7 +257,7 @@ function mySelectEvent() {
   }
 
   PerturbyTick = geraYAxisPreview(Fmin, Fmax);
-  PerturbxTick = geraXAxisPreview(max(2 * Periodo, 10));
+  PerturbxTick = geraXAxisPreview(2 * Periodo);
 }
 
 function escrevePainelPerturb() {
@@ -268,7 +268,7 @@ function escrevePainelPerturb() {
     fill(corPert);
     strokeWeight(1);
     noStroke();
-    textSize(15);
+    textSize(txtSize);
     textStyle(BOLD);
     let posx = map(
       perturbSlider.value(),

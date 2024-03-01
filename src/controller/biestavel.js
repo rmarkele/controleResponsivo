@@ -15,7 +15,7 @@ function biestavel2Fig(pos) {
   noFill();
   stroke(0);
   strokeWeight(2);
-  translate(x + 35, y + h - 35);
+  translate(x , y + h );
   if (modoAcao) {  
     line(0, yMin, xSPH, yMin);
     line(xSPH, yMin, xSPH, yMax);

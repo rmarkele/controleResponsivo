@@ -48,6 +48,10 @@
                 </ul>
             </div>
 
+            <div id="light-EV" class="lights circle red">
+              <p></p>
+            </div>
+
             <div id="cenarios-select-container">
                 <select name="cenarios" id="cenarios-select">
 
@@ -58,26 +62,17 @@
     </header>
     <main id="canvas-container">
         <div id="process">
-          <div id="light-EV" class="lights circle red">
-            <p></p>
-          </div>
+          
           <!-- Desenho do processo aqui-->
         </div>
         <div id="scale-container">
+          <div id="logo-container">
+            <p id="logoTxt0" class="logo-container--title"></p>
+            <p id="logoTxt1" class="logo-container--text"></p>
+            <button id="help-button" class="logo-container--btn"></button>
+          </div>
           <!-- Desenho da Régua aqui-->   
-          <div id="play-stop-reset">
-            <!-- play/stop and reset buttons -->
-            <button id="rewind-button">
-              <img src="./src/assets/images/rewind.png" alt="">
-            </button>
-            <button id="pause-button">
-              <img src="./src/assets/images/pause.png" alt="">
-            </button>
-            <button id="play-button" style="display: none;">
-              <img src="./src/assets/images/play.png" alt="">
-            </button>
-
-          </div> 
+          
         </div>
         
         <div id="control-panel">
@@ -156,6 +151,8 @@
               <div class="flex-div" id="timer-dynamometer">
                 
                 <div id="dynamometer">
+                  <div id="dynamometer-title"></div>
+                  <div id="dynamometer-container"></div>
                   <!-- Dinamômetro aqui  -->
                   <div id="auto-man-checkboxes">
                     <!-- checkbox de DESL AUTO e MAN -->
@@ -168,6 +165,7 @@
               </div>
             </div>
             <div id="right" class="main-column">
+              
               <nav class="variables-nav" id="panels-nav">
                 <ul>
                   <li class="active" data-id="1">Processo</li>
@@ -175,7 +173,7 @@
                   <li data-id="3">SP</li>
                   <li data-id="4">FP</li>
                   <li data-id="5">Exibir</li>
-                  <li data-id="6">Sobre</li>
+                  <!-- <li data-id="6">Sobre</li> -->
                 </ul>
               </nav>
               <div class="panels-wrapper active" id="panels-group-1">
@@ -217,13 +215,13 @@
                 </div>                
                 
               </div>
-              <div class="panels-wrapper" id="panels-group-6">
+              <!-- <div class="panels-wrapper" id="panels-group-6">
                 <div id="logo-container">
                   <p id="logoTxt0" class="logo-container--title"></p>
                   <p id="logoTxt1" class="logo-container--text"></p>
                   <button id="help-button" class="logo-container--btn"></button>
                 </div>
-              </div>
+              </div> -->
              
             </div>
             
@@ -242,6 +240,18 @@
     <div id="fps-text">
       <div id="fps-expected"></div>
       <div id="fps-mean"></div>
+      <div id="play-stop-reset">
+        <button id="rewind-button">
+          <img src="./src/assets/images/rewind.png" alt="">
+        </button>
+        <button id="pause-button">
+          <img src="./src/assets/images/pause.png" alt="">
+        </button>
+        <button id="play-button" style="display: none;">
+          <img src="./src/assets/images/play.png" alt="">
+        </button>
+
+      </div> 
     </div> 
 
 

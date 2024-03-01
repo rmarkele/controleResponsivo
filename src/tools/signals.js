@@ -45,7 +45,7 @@ function tremDeImpulsos(i, Fmax, Periodo) {
 }
 
 function geraSinalOnChange(tipo, Fmax, Fmin, Periodo, ton, timeScale) {
-  const Tmax = max(10, 2 * Periodo);
+  const Tmax = 2 * Periodo;
   let t;
   let sinal = [];
   let wdth = mostraSetpointPrev?setPointGraphPos[2]:perturbGraphPos[2];

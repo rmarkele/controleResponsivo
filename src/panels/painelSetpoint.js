@@ -129,7 +129,7 @@ function setpointSelectEvent() {
       Fmax = float(variablesList[11].inp.value);
       Fmin = float(variablesList[12].inp.value);
       Periodo = float(variablesList[13].inp.value);
-      Tmax = max(10, 2 * Periodo);
+      Tmax = 2 * Periodo;
       for (let i = 0; i < setPointGraphPos[2] / setpointTimeScale; i++) {
         t = map(i, 0, setPointGraphPos[2] / setpointTimeScale, 0, Tmax);
         [SetpointPreviewPlot[i]] = ondaSenoidal(t / Ts, Fmax, Fmin, Periodo);
@@ -145,7 +145,7 @@ function setpointSelectEvent() {
       Fmin = float(variablesList[12].inp.value);
       Periodo = float(variablesList[13].inp.value);
       ton = float(variablesList[14].inp.value);
-      Tmax = max(10, 2 * Periodo);
+      Tmax = 2 * Periodo;
       for (let i = 0; i < setPointGraphPos[2] / setpointTimeScale; i++) {
         t = map(i, 0, setPointGraphPos[2] / setpointTimeScale, 0, Tmax);
         [SetpointPreviewPlot[i]] = ondaQuadrada(t / Ts, Fmax, Fmin, Periodo, ton);
@@ -161,7 +161,7 @@ function setpointSelectEvent() {
       Fmax = float(variablesList[11].inp.value);
       Fmin = float(variablesList[12].inp.value);
       Periodo = float(variablesList[13].inp.value);
-      Tmax = max(10, 2 * Periodo);
+      Tmax = 2 * Periodo;
       for (let i = 0; i < setPointGraphPos[2] / setpointTimeScale; i++) {
         t = map(i, 0, setPointGraphPos[2] / setpointTimeScale, 0, Tmax);
         [SetpointPreviewPlot[i]] = ondaTriangular(t / Ts, Fmax, Fmin, Periodo);
@@ -177,7 +177,7 @@ function setpointSelectEvent() {
       Fmax = float(variablesList[11].inp.value);
       Fmin = float(variablesList[12].inp.value);
       Periodo = float(variablesList[13].inp.value);
-      Tmax = max(10, 2 * Periodo);
+      Tmax = 2 * Periodo;
       for (let i = 0; i < setPointGraphPos[2] / setpointTimeScale; i++) {
         t = map(i, 0, setPointGraphPos[2] / setpointTimeScale, 0, Tmax);
         [SetpointPreviewPlot[i]] = denteDeSerra(t / Ts, Fmax, Fmin, Periodo);
@@ -195,7 +195,7 @@ function setpointSelectEvent() {
       Fmax = float(variablesList[11].inp.value);
       Fmin = 0;
       Periodo = float(variablesList[13].inp.value);
-      Tmax = max(10, 2 * Periodo);
+      Tmax = 2 * Periodo;
       for (let i = 0; i < setPointGraphPos[2] / setpointTimeScale; i++) {
         t = map(i, 0, setPointGraphPos[2] / setpointTimeScale, 0, Tmax);
         [SetpointPreviewPlot[i]] = tremDeImpulsos(t / Ts, Fmax, Periodo);
@@ -223,5 +223,5 @@ function setpointSelectEvent() {
       break;
   }
 
-  SetpointxTick = geraXAxisPreview(max(2 * Periodo, 10));
+  SetpointxTick = geraXAxisPreview(2 * Periodo);
 }

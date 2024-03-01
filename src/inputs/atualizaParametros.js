@@ -97,7 +97,7 @@ function atualizaParametros(id) {
           perturbTimeScale
         );
         PerturbyTick = geraYAxisPreview(Fmin, Fmax);
-        PerturbxTick = geraXAxisPreview(max(2 * Periodo, 10));
+        PerturbxTick = geraXAxisPreview(Periodo);
         perturbSlider.range = [Fmin, Fmax];
         perturbSlider.value(constrain(perturbSlider.value(), Fmin, Fmax));
         Perturb = [0, 0, 0];
@@ -138,7 +138,7 @@ function atualizaParametros(id) {
         );
   
         
-        SetpointxTick = geraXAxisPreview(max(2 * Periodo, 10));
+        SetpointxTick = geraXAxisPreview(Periodo);
         if(strg.tiposSetpoint.indexOf(selSet.value())==0){
           setPoint.pos[0] =  meters2pixels(Fmin);
           setPoint.value(setpoint_manual_inicial0);

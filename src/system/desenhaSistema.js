@@ -74,7 +74,7 @@ function desenhaSistema() {
     line(xref, yPID, xPID, yPID); //linha parede atuador
     line(xPID + LPID / 2, yPID, xCar  + car.deltaX, yPID); // linha atuador carro
     push();
-        textSize(txtSize-1);
+        textSize(txtSize);
         strokeWeight(strokeW);
         rectMode(CENTER);
         fill(198, 228, 160);

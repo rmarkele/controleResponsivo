@@ -51,6 +51,8 @@ function atualizaStrings() {
     })
   
     document.querySelector(`label[for=SystemView]`).innerHTML = strg.SystemView;
+
+    forces.title.innerHTML = strg.xlabelSaidaMotor;
     
     
     document.querySelector(`#panel-process-variables h4`).innerHTML = strg.tituloPainelVarCont;

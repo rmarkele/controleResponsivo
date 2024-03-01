@@ -193,7 +193,7 @@ function drawScale() {
 }
 
 function meters2pixels(m){
-  const scaleMap = width > 850? 1 : 0.7;
+  const scaleMap = width > 850? 1.35 : 0.7;
   return  map(
     m,
     -16,
