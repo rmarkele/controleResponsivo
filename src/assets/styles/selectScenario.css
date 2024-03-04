@@ -2,7 +2,7 @@
   font-weight: bold;
   border: 3px solid #000;
   background-color: rgb(240, 240, 255);
-  height: 40px;
+  height: 25px;
 }
 
 @media (max-width:800px) {

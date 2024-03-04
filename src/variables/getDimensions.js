@@ -47,19 +47,19 @@ function getDimensions(){
 
     graph1Pos = [
         graph1Bounds.left - canvasBounds.left + 50,
-        graph1Bounds.bottom - canvasBounds.top -8,
+        graph1Bounds.bottom - canvasBounds.top - 8,
         graph1Bounds.right - graph1Bounds.left - 100,
         graph1Bounds.bottom - graph1Bounds.top - 28,
     ];
     graph2Pos = [
         graph2Bounds.left - canvasBounds.left + 50,
-        graph2Bounds.bottom - canvasBounds.top -8,
+        graph2Bounds.bottom - canvasBounds.top - 12,
         graph2Bounds.right - graph2Bounds.left - 100,
         graph2Bounds.bottom - graph2Bounds.top - 28,
     ];
     graph3Pos = [
         graph3Bounds.left - canvasBounds.left + 50,
-        graph3Bounds.bottom - canvasBounds.top -8,
+        graph3Bounds.bottom - canvasBounds.top - 18,
         graph3Bounds.right - graph3Bounds.left - 100,
         graph3Bounds.bottom - graph3Bounds.top - 28,
     ];
@@ -107,7 +107,7 @@ function getDimensions(){
         Hcar = 0.9 * href;
         Hpid = 0.03 * h
         Nmol = 61;
-        txtSize = 16;
+        txtSize = 14;
         strokeW = 1;
     }
 

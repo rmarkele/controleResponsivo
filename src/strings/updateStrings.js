@@ -55,7 +55,7 @@ function atualizaStrings() {
     forces.title.innerHTML = strg.xlabelSaidaMotor;
     
     
-    document.querySelector(`#panel-process-variables h4`).innerHTML = strg.tituloPainelVarCont;
+    // document.querySelector(`#panel-process-variables h4`).innerHTML = strg.tituloPainelVarCont;
     processVariables[0][0].innerHTML =  strg.varPainelVarCont[0] ;
     processVariables[1][0].innerHTML =  strg.varPainelVarCont[1] ;
     processVariables[2][0].innerHTML =  strg.varPainelVarCont[2] ;

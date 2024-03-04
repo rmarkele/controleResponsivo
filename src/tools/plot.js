@@ -96,7 +96,7 @@ function createAxis(
     push();
       strokeWeight(1);
       noStroke();
-      fill(titleColor);
+      // fill(titleColor);
       textAlign(CENTER);
       angleMode(DEGREES);
       textSize(txtSize);
@@ -130,8 +130,10 @@ function createAxis(
       angleMode(DEGREES);
       textSize(txtSize);
       fill(titleColor);
-      text(title, w / 2, -h - 5);
+      textStyle(BOLD)
+      text(title, w / 2, -h - 10);
       fill(corX);
+      textStyle(NORMAL)
       text(xlabel, w / 2, 2 * txtSize);
     pop();
   pop();

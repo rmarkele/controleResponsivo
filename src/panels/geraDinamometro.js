@@ -41,7 +41,7 @@ function geraDinamômetro(pos) {
     manualForce = 0;
     forcaAtuador = [0, 0, 0];
 
-    forces.controlMode(0);
+    // forces.controlMode(0);
     showCenterDivGraphs = false;
   
   });
@@ -64,7 +64,7 @@ function geraDinamômetro(pos) {
     document.querySelector("#controller-outputs").style.display = 'flex';
     getDimensions();
     sigmoid2Fig(kSig, histSig);
-    forces.controlMode(1);
+    // forces.controlMode(1);
   });
 
   manualControlCheckBox = createCheckbox(
@@ -82,7 +82,7 @@ function geraDinamômetro(pos) {
     document.querySelector("#controller-outputs").style.display = 'none';
     getDimensions();
     sigmoid2Fig(kSig, histSig);
-    forces.controlMode(2);
+    // forces.controlMode(2);
   });
 
   

@@ -7,7 +7,7 @@ class amortecedor {
         this.L = largura;
         this.label = createP(text);
         this.label.parent("canvas-container");
-        this.label.position(this.posX + 0.8 * this.L / 2, this.posY - this.H / 2 - txtSize - 5);
+        this.label.position(this.posX, this.posY - this.H / 2 - txtSize - 5);
         this.label.class("component-label");
         this.text = text
     }

@@ -9,7 +9,7 @@ function drawScale() {
     } else {
       stroke(0);
       fill(0);
-      strokeWeight(strokeW + 1);
+      strokeWeight(strokeW + 2);
     }
     const xCarLimInf =meters2pixels(xSatMin);
     const xCarLimSup = meters2pixels(xSatMax);

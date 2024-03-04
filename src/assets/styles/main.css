@@ -3,12 +3,12 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     user-select: none;
 }
 
 :root{
-  --header-height: 40px;
+  --header-height: 30px;
   --scale-height: 60px;
   --fps-txt-height: 25px;
   --fps-margin-top: 2px;
@@ -102,6 +102,8 @@ canvas{
   border-style: inset;
   margin: 5px;
   margin-top: -58px;
+  gap: 10px;
+  padding-top: 5px;
   
 }
 

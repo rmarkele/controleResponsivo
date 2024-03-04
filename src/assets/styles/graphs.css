@@ -10,10 +10,12 @@
 #plot-zoom{
     display: flex;
     gap: 20px;
+    height: 30px;
 }
 
 #plot-zoom button{
     width: 25px;
+    height: auto;
     border: 0;
     background-color: transparent;
     cursor: pointer;

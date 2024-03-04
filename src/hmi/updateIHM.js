@@ -49,7 +49,7 @@ function updateIHM() {
         pidControlCheckBox.checked(false);
         manualControlCheckBox.checked(false);
         showCenterDivGraphs = false;
-        forces.controlMode(0);
+        // forces.controlMode(0);
         break;
       case 1:
         noControlCheckBox.checked(false);
@@ -59,7 +59,7 @@ function updateIHM() {
         document.querySelector("#controller-outputs").style.display = 'flex';
         getDimensions();
         sigmoid2Fig(kSig, histSig);
-        forces.controlMode(1);
+        // forces.controlMode(1);
         break;
       case 2:
         noControlCheckBox.checked(false);
@@ -69,7 +69,7 @@ function updateIHM() {
         document.querySelector("#controller-outputs").style.display = 'none';
         getDimensions();
         sigmoid2Fig(kSig, histSig);
-        forces.controlMode(2);
+        // forces.controlMode(2);
         break;
       default:
         noControlCheckBox.checked(false);

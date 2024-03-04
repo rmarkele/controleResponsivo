@@ -12,13 +12,13 @@ class dinamometro {
       this.title = document.createElement('div');
       this.txtMan = document.createElement('div');
 
-      this.txtAuto.style.color = `rgb(${corPID})`;
-      this.txtMan.style.color = `rgb(${corMan})`;
+      // this.txtAuto.style.color = `rgb(${corPID})`;
+      // this.txtMan.style.color = `rgb(${corMan})`;
 
       
-      document.querySelector(`#${titleDiv}`).appendChild(this.txtAuto);
+      // document.querySelector(`#${titleDiv}`).appendChild(this.txtAuto);
       document.querySelector(`#${titleDiv}`).appendChild(this.title);
-      document.querySelector(`#${titleDiv}`).appendChild(this.txtMan);
+      // document.querySelector(`#${titleDiv}`).appendChild(this.txtMan);
 
     }
     show() {
@@ -81,33 +81,33 @@ class dinamometro {
         pop();
 
 
-        this.txtAuto.innerHTML = `${strg.saidaAutoDinAn} ${String(nfs(round(this.pot1 * 100) / 100, 0, 1)).padStart(6, " ")}%`
-        this.txtMan.innerHTML = `${strg.saidaManDinAn} ${String(nfs(round(this.pot2 * 100) / 100, 0, 1)).padStart(6, " ")}%`
+        // this.txtAuto.innerHTML = `${strg.saidaAutoDinAn} ${String(nfs(round(this.pot1 * 100) / 100, 0, 1)).padStart(6, " ")}%`
+        // this.txtMan.innerHTML = `${strg.saidaManDinAn} ${String(nfs(round(this.pot2 * 100) / 100, 0, 1)).padStart(6, " ")}%`
 
       pop();
     }
 
-    controlMode(mode){
-      switch(mode){
-        case 0: 
-          this.txtAuto.style.backgroundColor = '#eee';
-          this.txtAuto.style.border = 'none';
-          this.txtMan.style.backgroundColor = '#eee';
-          this.txtMan.style.border = 'none';
-          break;
-        case 1: 
-          this.txtAuto.style.backgroundColor = '#fff';
-          this.txtAuto.style.border = `2px solid rgb(${corPID})`;
-          this.txtMan.style.backgroundColor = '#eee';
-          this.txtMan.style.border = 'none';
-          break;
-        case 2: 
-          this.txtAuto.style.backgroundColor = '#eee';
-          this.txtAuto.style.border = `none`;
-          this.txtMan.style.backgroundColor = '#fff';
-          this.txtMan.style.border = `2px solid rgb(${corMan})`;
-          break;
-      }
-    }
+    // controlMode(mode){
+    //   switch(mode){
+    //     case 0: 
+    //       this.txtAuto.style.backgroundColor = '#eee';
+    //       this.txtAuto.style.border = 'none';
+    //       this.txtMan.style.backgroundColor = '#eee';
+    //       this.txtMan.style.border = 'none';
+    //       break;
+    //     case 1: 
+    //       this.txtAuto.style.backgroundColor = '#fff';
+    //       this.txtAuto.style.border = `2px solid rgb(${corPID})`;
+    //       this.txtMan.style.backgroundColor = '#eee';
+    //       this.txtMan.style.border = 'none';
+    //       break;
+    //     case 2: 
+    //       this.txtAuto.style.backgroundColor = '#eee';
+    //       this.txtAuto.style.border = `none`;
+    //       this.txtMan.style.backgroundColor = '#fff';
+    //       this.txtMan.style.border = `2px solid rgb(${corMan})`;
+    //       break;
+    //   }
+    // }
   }
   
