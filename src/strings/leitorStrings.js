@@ -170,10 +170,6 @@ function idiomaSelect() {
   );
 
   //Painel Var Controlador
-  strg.tituloPainelVarCont = checkForUndefinedString(
-    strings[i]._titulo_painel_Var_Controlador,
-    "Var Controlador "
-  );
   strg.varPainelVarCont = [
     checkForUndefinedString(
       strings[i]._var_SP_painel_Var_Controlador,

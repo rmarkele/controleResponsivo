@@ -4,9 +4,9 @@ let strings = [
     
     //Descriçao do Simulador
     _titulo_Simulador_linha1: "CONTROLE MALHA FECHADA",
-    _titulo_Simulador_linha2: "Sist. Massa-Mola-Amortecedor",
-    _comentario_Simulador_linha1: "SIMULADOR DIDÁTICO MK-1",//SIST. MASSA-MOLA-AMORTECEDOR
-    _comentario_Simulador_linha2: "--- Uso Gratuito ---",
+    _titulo_Simulador_linha2: "",
+    _comentario_Simulador_linha1: "SIMULADOR DIDÁTICO MK-1",
+    _comentario_Simulador_linha2: "",
     _botao_saiba_mais_Simulador: "SAIBA MAIS",
 
     //Sistema
@@ -22,7 +22,7 @@ let strings = [
     _menu_mobile: ["Variáveis", "Controle", "Entradas"],
 
     //Menu de navegação entre os painéis de entrada
-    _menu_paineis:["Processo", "OP/FC", "SP", "FP", "Exibir", "Sobre"],
+    _menu_paineis:["Processo", "OP/FC", "SP", "FP", "Exibir"],
 
     //Painel Parametros do Processo
     _titulo_painel_Processo: "Processo",
@@ -74,10 +74,9 @@ let strings = [
     _saida_OP0_painel_Op: "OPo: ",
 
     //Painel Var Controlador
-    _titulo_painel_Var_Controlador: "Controlador",
-    _var_SP_painel_Var_Controlador: "SP: ",
-    _var_PV_painel_Var_Controlador: "PV: ",
-    _var_OP_painel_Var_Controlador: "OP: ",
+    _var_SP_painel_Var_Controlador: "SP[m]: ",
+    _var_PV_painel_Var_Controlador: "PV[m]: ",
+    _var_OP_painel_Var_Controlador: "OP[%]: ",
 
     //Painel de Controladores
     _titulo_painel_Controlador: [
@@ -190,9 +189,9 @@ let strings = [
     
     //Descriçao do Simulador
     _titulo_Simulador_linha1: "CLOSED-LOOP CONTROL",
-    _titulo_Simulador_linha2: "Mass-Spring-Damper System",
-    _comentario_Simulador_linha1: "TEACHING SIMULATOR MK-1",//MASS-SPRING-DAMPER SYSTEM
-    _comentario_Simulador_linha2: "--- Free Use ---",//= free use for teaching =
+    _titulo_Simulador_linha2: "",
+    _comentario_Simulador_linha1: "TEACHING SIMULATOR MK-1",
+    _comentario_Simulador_linha2: "",
     _botao_saiba_mais_Simulador: "LEARN MORE",
     
 
@@ -208,7 +207,7 @@ let strings = [
     _menu_mobile: ["Variables", "Control", "Inputs"],
 
     //Menu de navegação entre os painéis de entrada
-    _menu_paineis:["Process", "OP/FC", "SP", "FP", "Show", "About"],
+    _menu_paineis:["Process", "OP/FC", "SP", "FP", "Show"],
 
     //Painel Parametros do Processo
     _titulo_painel_Processo: " Process",
@@ -260,10 +259,9 @@ let strings = [
     _saida_OP0_painel_Op: "OPo: ",
 
     //Painel Var Controlador
-    _titulo_painel_Var_Controlador: "Controller",
-    _var_SP_painel_Var_Controlador: "SP: ",
-    _var_PV_painel_Var_Controlador: "PV: ",
-    _var_OP_painel_Var_Controlador: "OP: ",
+    _var_SP_painel_Var_Controlador: "SP[m]: ",
+    _var_PV_painel_Var_Controlador: "PV[m]: ",
+    _var_OP_painel_Var_Controlador: "OP[%]: ",
 
     //Painel de Controladores
     _titulo_painel_Controlador: [
