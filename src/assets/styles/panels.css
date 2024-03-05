@@ -340,11 +340,9 @@ input[type=checkbox]{
 
 @media (max-width:800px) {
 
-  #panel-process-variables{
-    flex: 1;
+  /* #panel-process-variables{
     font-size: 10px;
-    /* margin-top: 10px; */
-  }
+  } */
 
   #dynamometer{
     flex: 1;
