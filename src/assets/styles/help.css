@@ -41,34 +41,33 @@
 
   }
 
-  #logo-container .logo-container--btn:before{
-    /* font-size: 16px; */
+  /* #logo-container .logo-container--btn:before{
     content: "\2139 ";
     border-right: 2px solid #555;
     margin-right: 5px;
     padding-right: 5px;
-
-
-  }
+  } */
 
   #ajudaDiv .closebtn {
-    position: absolute;
-    top:-2px;
-    right: 0px;
-    z-index: 110;
-    font-size: 22px;
-    font-family: Helvetica;
-    font-weight: bold;
+    font-size: 16px;
+    height: 20px;
+    width: 20px;
+    border-radius: 0px;
     cursor: pointer;
+    color: #666;
   }
   #help-navbar {
 	background: #333;
 	color: #eee;
-	padding:16px;
+	height:20px;
 	text-align: center;
 	margin-bottom: 0px;
-	position: sticky;
+  padding: 0px;
+	/* position: sticky; */
 	top: 0;
+  display: flex;
+  justify-content: end;
+  align-items: center;
 }
   div.ajuda {
   /*   width: 1600px; */
@@ -84,7 +83,7 @@
     border-left: 3px solid black;
     line-height: 1.6;
     font-size: 20px;
-    background-color: lightblue;
+    background-color: #eee;
     overflow: hidden;
     z-index:100;
     padding-top: 0px;

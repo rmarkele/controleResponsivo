@@ -86,6 +86,37 @@
             </nav>
           </div>
             <div id="left" class="main-column">
+              <div id="panel-process-variables">
+                <div id="timers-container">    
+                  <div id="holder-wrapper">
+                    <div id="holder">---</div>   
+                    <button class="timer-button" onclick="resetHolderDisplay()">
+                      <img src="src/assets/images/reiniciar.png" alt="">
+                    </button>                   
+                  </div>  
+                  <div id="timer-wrapper">
+                    <div id="timer">000</div>
+                    <button class="timer-button" onclick="resetTimerDisplay()">
+                      <img src="src/assets/images/reiniciar.png" alt="">
+                    </button>              
+                  </div>  
+                </div>
+                <!-- painel de variáveis de processo aqui -->
+                <div class="variables-container">
+                  <div class="process-variable" id="variable-SP">
+                    <label id="label-SP">SP</label>
+                    <p id="value-SP"> 00</p>
+                  </div>
+                  <div class="process-variable" id="variable-PV">
+                    <label id="label-PV">PV</label>
+                    <p id="value-PV"> 00 </p>
+                  </div>
+                  <div class="process-variable" id="variable-OP">
+                    <label id="label-OP">OP</label>
+                    <p id="value-OP"> 00</p>
+                  </div>
+                </div>
+              </div>
                 <!-- Gráficos -->
                 <div id="graph-PV-SP">
                   <!-- Gráfico Variável Controlada e Setpoint -->
@@ -103,63 +134,6 @@
                   <button class="plot-zoom-out">
                     <img src="./src/assets/images/zoom-out.png" alt="">
                   </button>
-                </div>
-                <div id="panel-process-variables">
-                  <div id="timers-container">    
-                    <div id="holder-wrapper">
-                      <div id="holder">---</div>   
-                      <button class="timer-button" onclick="resetHolderDisplay()">
-                        <img src="src/assets/images/reiniciar.png" alt="">
-                      </button>                   
-                    </div>  
-                    <div id="timer-wrapper">
-                      <div id="timer">000</div>
-                      <button class="timer-button" onclick="resetTimerDisplay()">
-                        <img src="src/assets/images/reiniciar.png" alt="">
-                      </button>              
-                    </div>  
-                  </div>
-                  <!-- painel de variáveis de processo aqui -->
-                  <div class="variables-container">
-                    <div class="process-variable" id="variable-SP">
-                      <label id="label-SP"></label>
-                      <p id="value-SP">  </p>
-                    </div>
-                    <div class="process-variable" id="variable-PV">
-                      <label id="label-PV"></label>
-                      <p id="value-PV">  </p>
-                    </div>
-                    <div class="process-variable" id="variable-OP">
-                      <label id="label-OP"></label>
-                      <p id="value-OP">  </p>
-                    </div>
-                  </div>
-
-                  <!-- <h4></h4>
-                  <table>
-                    <thead>
-                      <tr>
-                        <th></th>
-                        <th id="table-SP-0" >SP</th>
-                        <th id="table-PV-0">PV</th>
-                        <th id="table-OP-0">OP</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr id="table-Percent">
-                        <th>%</th>
-                        <th class="table-SP" id="table-SP-1"></th>
-                        <th class="table-PV" id="table-PV-1"></th>
-                        <th class="table-OP" id="table-OP-1"></th>
-                      </tr>
-                      <tr id="table-SI" >
-                        <th>SI</th>
-                        <th class="table-SP" id="table-SP-2"></th>
-                        <th class="table-PV" id="table-PV-2"></th>
-                        <th class="table-OP" id="table-OP-2"></th>
-                      </tr>
-                    </tbody>
-                  </table> -->
                 </div>
             </div>
             <div id="center" class="main-column active">
@@ -246,13 +220,15 @@
         
 
         <div id="ajudaDiv" class="ajuda">
-            <nav id="help-navbar"></nav>
+            <nav id="help-navbar">
+              <button id="close-help-button" class="closebtn">X</button>
+            </nav>
             <iframe id="main-iframe"></iframe>
-            <button id="close-help-button" class="closebtn">X</button>
         </div> 
 
     </main>
-    <div id="fps-text">
+    
+    <footer id="fps-text">
       <div id="fps-expected"></div>
       <div id="fps-mean"></div>
       <div id="play-stop-reset">
@@ -267,7 +243,7 @@
         </button>
 
       </div> 
-    </div> 
+    </footer> 
 
 
     <script src="./src/assets/window/windowResize.js"></script>

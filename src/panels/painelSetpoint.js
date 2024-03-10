@@ -96,7 +96,6 @@ function setpointSelectEvent() {
   let Tmax, t;
 
   getDimensions();
-
   updateVariableListValue(setpoint_Fmax0,11);
   updateVariableListValue(setpoint_Fmin0,12);
   updateVariableListValue(setpoint_Periodo0,13);

@@ -3,10 +3,10 @@ let strings = [
     idioma: "PT-BR",
     
     //Descriçao do Simulador
-    _titulo_Simulador_linha1: "CONTROLE MALHA FECHADA",
-    _titulo_Simulador_linha2: "",
-    _comentario_Simulador_linha1: "SIMULADOR DIDÁTICO MK-1",
-    _comentario_Simulador_linha2: "",
+    _titulo_Simulador_linha1: "CONTROLE EM MALHA FECHADA",
+    _titulo_Simulador_linha2: " ",
+    _comentario_Simulador_linha1: "Simulador Didático Mk-1",//SIST. MASSA-MOLA-AMORTECEDOR
+    _comentario_Simulador_linha2: " ",
     _botao_saiba_mais_Simulador: "SAIBA MAIS",
 
     //Sistema
@@ -22,7 +22,7 @@ let strings = [
     _menu_mobile: ["Variáveis", "Controle", "Entradas"],
 
     //Menu de navegação entre os painéis de entrada
-    _menu_paineis:["Processo", "OP/FC", "SP", "FP", "Exibir"],
+    _menu_paineis:["Proc   IPos   Env", "ModC   Fc", "SP", "Fp", "Exibe", "Sobre"],
 
     //Painel Parametros do Processo
     _titulo_painel_Processo: "Processo",
@@ -31,16 +31,16 @@ let strings = [
     _massa_carro: "m [kg]",
 
     //Painel do Envelope de Operação
-    _titulo_painel_Envelope: "Envelope",
+    _titulo_painel_Envelope: "Envelope de Operação",
     _Env_min: "min [m]",
     _Env_max: "max [m]",
     
     // Gráficos
-    _titulo_PV_e_SP: "Variável Controlada PV(t) e Setpoint SP(t)",
+    _titulo_PV_e_SP: "Var. Controlada PV(t) e Setpoint SP(t)",
     _eixo_y_esq_PV_e_SP: "PV [m]",
     _eixo_y_dir_PV_e_SP: "SP [m]",
 
-    _titulo_Fc_e_Op: "Variável Manipulada Fc(t) e Saída Controlador OP(t)",
+    _titulo_Fc_e_Op: "Var. Manipulada Fc(t) e Saída Controlador OP(t)",
     _eixo_y_esq_Fc_e_Op: "Fc [% Fcmax]",
     _eixo_y_dir_Fc_e_Op: "OP [%]",
 
@@ -67,23 +67,24 @@ let strings = [
     _saida_MAN_dinamometro_analogico: "MAN",
 
     //Painel Saída Controlador/Saída Motor
-    _titulo_painel_Op: "Variável: OP",
+    _titulo_painel_Op: "Componentes de OP",
     _saida_P_painel_Op: "P: ",
     _saida_I_painel_Op: "I: ",
     _saida_D_painel_Op: "D: ",
     _saida_OP0_painel_Op: "OPo: ",
 
     //Painel Var Controlador
-    _var_SP_painel_Var_Controlador: "SP[m]: ",
-    _var_PV_painel_Var_Controlador: "PV[m]: ",
-    _var_OP_painel_Var_Controlador: "OP[%]: ",
+    _titulo_painel_Var_Controlador: "PODE REMOVER",
+    _var_SP_painel_Var_Controlador: "SP [m]: ",
+    _var_PV_painel_Var_Controlador: "PV [m]: ",
+    _var_OP_painel_Var_Controlador: "OP [%]: ",
 
     //Painel de Controladores
     _titulo_painel_Controlador: [
-      "Modo Controle: PID",
-      "Modo Controle: PD + I se |e| < eLim",
-      "Modo Controle: PD + I se |D| < DLim",
-      "Modo Controle: Biestável",
+      "Modo de Controle: PID",
+      "Modo de Controle: PD + I se |e| < eLim",
+      "Modo de Controle: PD + I se |D| < DLim",
+      "Modo de Controle: Biestável",
     ],
     _Kp_painel_Controlador: "Kp:",
     _Ki_painel_Controlador: "Ki:",
@@ -116,7 +117,7 @@ let strings = [
     _modo_acao_motor: "DIR",
 
     //Painel Indicador de Posição
-    _titulo_painel_Ind_Pos: "Indicador Posição",
+    _titulo_painel_Ind_Pos: "Indicador de Posição",
     _xmax_painel_Ind_Pos: "PVmax[m]:",
     _xmnin_painel_Ind_Pos: "PVmin[m]:",
     _erro_Ind_Pos: "erro[m]:",
@@ -189,9 +190,9 @@ let strings = [
     
     //Descriçao do Simulador
     _titulo_Simulador_linha1: "CLOSED-LOOP CONTROL",
-    _titulo_Simulador_linha2: "",
-    _comentario_Simulador_linha1: "TEACHING SIMULATOR MK-1",
-    _comentario_Simulador_linha2: "",
+    _titulo_Simulador_linha2: " ",
+    _comentario_Simulador_linha1: "Teaching Simulator Mk-1",//MASS-SPRING-DAMPER SYSTEM
+    _comentario_Simulador_linha2: " ",//= free use for teaching =
     _botao_saiba_mais_Simulador: "LEARN MORE",
     
 
@@ -207,7 +208,7 @@ let strings = [
     _menu_mobile: ["Variables", "Control", "Inputs"],
 
     //Menu de navegação entre os painéis de entrada
-    _menu_paineis:["Process", "OP/FC", "SP", "FP", "Show"],
+    _menu_paineis:["Proc   PInd   Env", "CMod   Fc", "SP", "Fp", "Show", "About"],
 
     //Painel Parametros do Processo
     _titulo_painel_Processo: " Process",
@@ -216,16 +217,16 @@ let strings = [
     _massa_carro: "m [kg]",
 
     //Painel Envelope de Operação
-    _titulo_painel_Envelope: "Envelope",
+    _titulo_painel_Envelope: "Operating Envelope",
     _Env_min: "min [m]",
     _Env_max: "max [m]",
 
     // Gráficos
-    _titulo_PV_e_SP: "Controlled Variable PV(t) and Setpoint SP(t)",
+    _titulo_PV_e_SP: "Controlled Variable PV(t) / Setpoint SP(t)",
     _eixo_y_esq_PV_e_SP: "PV [m]",
     _eixo_y_dir_PV_e_SP: "SP [m]",
 
-    _titulo_Fc_e_Op: "Manipulated Variable Fc(t) and Controller Output OP(t)",
+    _titulo_Fc_e_Op: "Manipulated Var. Fc(t) / Controller Output OP(t)",
     _eixo_y_esq_Fc_e_Op: "Fc [% Fcmax]",
     _eixo_y_dir_Fc_e_Op: "OP [%]",
 
@@ -252,16 +253,17 @@ let strings = [
     _saida_MAN_dinamometro_analogico: "MAN",
 
     //Painel Saída Controlador/Saída Motor
-    _titulo_painel_Op: "Variable: OP",
+    _titulo_painel_Op: "OP Components",
     _saida_P_painel_Op: "P: ",
     _saida_I_painel_Op: "I: ",
     _saida_D_painel_Op: "D: ",
     _saida_OP0_painel_Op: "OPo: ",
 
     //Painel Var Controlador
-    _var_SP_painel_Var_Controlador: "SP[m]: ",
-    _var_PV_painel_Var_Controlador: "PV[m]: ",
-    _var_OP_painel_Var_Controlador: "OP[%]: ",
+    _titulo_painel_Var_Controlador: "PODE REMOVER",
+    _var_SP_painel_Var_Controlador: "SP [m]: ",
+    _var_PV_painel_Var_Controlador: "PV [m]: ",
+    _var_OP_painel_Var_Controlador: "OP [%]: ",
 
     //Painel de Controladores
     _titulo_painel_Controlador: [

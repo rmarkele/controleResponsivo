@@ -5,28 +5,29 @@ function desenhaDCL() {
     forceAmo = ((-C * (x[1] - x[0])) / Ts);
   
     const nConstrain = 1;
-    let Fmax = PIDSat;
+    let Fmax = PIDSat; 
+    const saturationFactor = 1.5;
      
     Fpert.Lmax = Fmax; 
-    Fpert.L = constrain(multF * Perturb[2], -nConstrain * Fmax * 1.5, nConstrain * Fmax * 1.5);
+    Fpert.L = constrain(multF * Perturb[2], -nConstrain * Fmax * saturationFactor, nConstrain * Fmax * saturationFactor);
     Fpert.posX = xCar  + car.deltaX + Lcar;
     Fpert.show();
   
     Fmol.Lmax = Fmax; 
     Fmol.posX = xCar  + car.deltaX;
-    Fmol.L = constrain(multF * forceMol, -nConstrain * Fmax * 1.5, nConstrain * Fmax * 1.5); 
+    Fmol.L = constrain(multF * forceMol, -nConstrain * Fmax * saturationFactor, nConstrain * Fmax * saturationFactor); 
     Fmol.show();
   
     Famo.Lmax = Fmax; 
     Famo.posX = xCar  + car.deltaX;
-    Famo.L = constrain(multF * forceAmo, -nConstrain * Fmax * 1.5, nConstrain * Fmax * 1.5); 
+    Famo.L = constrain(multF * forceAmo, -nConstrain * Fmax * saturationFactor, nConstrain * Fmax * saturationFactor); 
     Famo.show();
     
     Fpid.Lmax = Fmax; 
     Fpid.L = constrain(
       multF * (forcaAtuador[2] / 100 * PIDSat),
-      -nConstrain * Fmax * 1.5,
-      nConstrain * Fmax * 1.5
+      -nConstrain * Fmax * saturationFactor,
+      nConstrain * Fmax * saturationFactor
     ); 
     Fpid.posX = xCar  + car.deltaX;
     Fpid.show();

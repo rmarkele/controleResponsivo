@@ -47,21 +47,21 @@ function getDimensions(){
 
     graph1Pos = [
         graph1Bounds.left - canvasBounds.left + 50,
-        graph1Bounds.bottom - canvasBounds.top - 8,
+        graph1Bounds.bottom - canvasBounds.top,
         graph1Bounds.right - graph1Bounds.left - 100,
-        graph1Bounds.bottom - graph1Bounds.top - 28,
+        graph1Bounds.height - 30,
     ];
     graph2Pos = [
         graph2Bounds.left - canvasBounds.left + 50,
-        graph2Bounds.bottom - canvasBounds.top - 12,
+        graph2Bounds.bottom - canvasBounds.top,
         graph2Bounds.right - graph2Bounds.left - 100,
-        graph2Bounds.bottom - graph2Bounds.top - 28,
+        graph2Bounds.height - 30,
     ];
     graph3Pos = [
         graph3Bounds.left - canvasBounds.left + 50,
-        graph3Bounds.bottom - canvasBounds.top - 18,
+        graph3Bounds.bottom - canvasBounds.top,
         graph3Bounds.right - graph3Bounds.left - 100,
-        graph3Bounds.bottom - graph3Bounds.top - 28,
+        graph3Bounds.height - 30,
     ];
     
 

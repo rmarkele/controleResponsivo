@@ -1,27 +1,29 @@
 /* Seletor de idioma */
 .lang-menu {
     color: #eee;
-      /* width: 140px;
-      height: 40px; */
-      text-align: left;  
-      margin-top: 0px;
-      font-weight: bold;
-      position: relative;
-      padding: 0;
+    text-align: left;  
+    margin-top: 0px;
+    font-weight: bold;
+    position: relative;
+    padding: 0;
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
   }
 .lang-menu .selected-lang {
-      display: flex;   
-      justify-content: flex-start;
-      line-height: 2;
-      cursor: pointer;
-      padding: 5px;
-  /*     padding-bottom: 20px; */
+    display: flex;   
+    justify-content: flex-start;
+    line-height: 2;
+    cursor: pointer;
+    align-items: center;
+    padding-left: 5px;
   }
 .lang-menu .selected-lang img,
 .lang-menu ul li img
  {
-      width: 43px;
-      height: 32px;
+      /* width: 43px; */
+      /* height: 32px; */
+      height: calc(var(--header-height) - 5px);
       margin-right: 10px;
   }
 

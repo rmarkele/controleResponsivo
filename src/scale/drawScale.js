@@ -95,7 +95,7 @@ function drawScale() {
       stroke(corPosReal);
       line(
         xCar  + car.deltaX + Lcar / 2,
-        yref - Hcar / 2,
+        yref - Hcar / 2 * 0.9,
         xCar  + car.deltaX + Lcar / 2,
         yref
       );
@@ -108,6 +108,7 @@ function drawScale() {
       );
     if (mostraIndPos && !noControlCheckBox.checked()) {
       stroke(corPos);
+      strokeWeight(strokeW + 2);
       if(!hideSystem){
         line(posInd, yref, posInd, yref + posYScale);
       } else{
@@ -179,7 +180,7 @@ function drawScale() {
     const indMax = meters2pixels(xSatMax);
 
     push();
-      strokeWeight(strokeW + 1);
+      strokeWeight(strokeW + 3);
       stroke(corPos);
       line(indMin, yref + posYScale - 5, indMin, yref + posYScale + 5); // linha vertical xmax
 

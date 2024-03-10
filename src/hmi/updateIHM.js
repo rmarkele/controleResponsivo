@@ -78,6 +78,7 @@ function updateIHM() {
         break;
     }
   
+  
     if (!modoAcao) {
       acaoDireta.checked(false);
     } else {

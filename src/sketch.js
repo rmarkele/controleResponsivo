@@ -32,9 +32,11 @@ function setup() {
   idiomaSelect();
 
   cenarioSelectEvent();
+  
 
   updatePar();
 
+  
   PIDTick = geraYAxisPreview(-100, 100);
   for (let i = 0; i < 5; i++) {
     yTick[i] = -16 + i * 8;
@@ -45,7 +47,7 @@ function setup() {
   updateIHM();
 
   updateComponentes();
-
+  
   //Diagrama de Corpo Livre
   Fpert = new forcaDiagrama(
     xCar + Lcar,
