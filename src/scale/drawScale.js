@@ -9,7 +9,7 @@ function drawScale() {
     } else {
       stroke(0);
       fill(0);
-      strokeWeight(strokeW + 2);
+      strokeWeight(width>850?strokeW + 2:strokeW);
     }
     const xCarLimInf =meters2pixels(xSatMin);
     const xCarLimSup = meters2pixels(xSatMax);
@@ -108,7 +108,7 @@ function drawScale() {
       );
     if (mostraIndPos && !noControlCheckBox.checked()) {
       stroke(corPos);
-      strokeWeight(strokeW + 2);
+      strokeWeight(width>850?strokeW + 2:strokeW);
       if(!hideSystem){
         line(posInd, yref, posInd, yref + posYScale);
       } else{
@@ -180,7 +180,7 @@ function drawScale() {
     const indMax = meters2pixels(xSatMax);
 
     push();
-      strokeWeight(strokeW + 3);
+      strokeWeight(width>850?strokeW + 3:strokeW + 1);
       stroke(corPos);
       line(indMin, yref + posYScale - 5, indMin, yref + posYScale + 5); // linha vertical xmax
 
