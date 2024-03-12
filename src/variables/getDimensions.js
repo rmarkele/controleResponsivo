@@ -141,7 +141,7 @@ function getDimensions(){
         setPointGraphPos[3] -= 90;
     }
 
-
+    logoContainer.style.width = `${canvasBounds.width - meters2pixels(16)}px`;
 
 }
 

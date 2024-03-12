@@ -23,7 +23,7 @@ function setup() {
 
   let canvas = createCanvas(w, h);
   canvas.parent(document.querySelector("#canvas-container"));
-
+  
   
  
   geraSistema();
@@ -75,6 +75,7 @@ function setup() {
   calculaSaidaBiestavel();
   getIndexes();
   atualizaStrings();
+  
 }
 
 function draw() {

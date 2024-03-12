@@ -1,8 +1,11 @@
-let logoTxt0 = document.querySelector("#logoTxt0");
-let logoTxt1 = document.querySelector("#logoTxt1");
-let divAjuda = document.getElementsByClassName("ajuda");
-let help = document.querySelector("#help-button");
-let closeHelp = document.querySelector("#close-help-button");
+const logoContainer = document.querySelector("#logo-container");
+const logoTxt0 = document.querySelector("#logoTxt0");
+const logoTxt1 = document.querySelector("#logoTxt1");
+const divAjuda = document.getElementsByClassName("ajuda");
+const help = document.querySelector("#help-button");
+const closeHelp = document.querySelector("#close-help-button");
+
+
 window.addEventListener("load",()=>{   
     help.addEventListener("click",() => {
         if (divAjuda[0].style.display === "block") {
@@ -30,4 +33,5 @@ function idiomaAjuda() {
         
     }
 }
+
 
