@@ -215,6 +215,14 @@ function softReset() {
   setPointCount = 0;
   stabilityCounter = 0;
   startTimer();
+  xPlot = [];
+  setPointPlot = [];
+  setPointAltoPlot = [];
+  setPointBaixoPlot = [];
+  PIDPlot = [];
+  atuadorPlot = [];
+  manualPlot = [];
+  PerturbPlot = [];
 }
 
 function calculaMedia(Arr) {
@@ -257,6 +265,19 @@ function updatePar() {
   x[1] = posicao_inicial0;
   x[0] = posicao_inicial0 - (velocidade_inicial0 * Ts) / 2;
   erro = 0;
+
+
+
+  xPlot = [];
+  setPointPlot = [];
+  setPointAltoPlot = [];
+  setPointBaixoPlot = [];
+  PIDPlot = [];
+  atuadorPlot = [];
+  manualPlot = [];
+  PerturbPlot = [];
+  
+
 }
 
 function updateComponentes() {
