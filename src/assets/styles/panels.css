@@ -1,18 +1,11 @@
 
-#timer-dynamometer{
-    max-height: 200px;
-    display: flex;
-    width: 100%;
-    flex: 2;
-    gap: 2px;
-  }
-  
 #dynamometer{
-    flex: 1;
+    height: 40%;
+    width: 100%;
     border-style: inset;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    max-height: 250px;
 }
 
 #dynamometer-title{
@@ -35,7 +28,7 @@
 }
 
 #controller-actuator-outputs{
-    flex: 3;
+    flex: 1;
     width: 100%;
     display: flex;
     align-items: center;
@@ -297,14 +290,17 @@ input[type=checkbox]{
   font-size: 10px;
 } */
 
-@media (max-width:800px) {
+@media (max-width:850px) {
+  
+  
 
-  #dynamometer{
-    flex: 1;
+  /* #dynamometer{
+    height: 30%;
     margin-top: 0px;
-  }
+
+  } */
   #controller-actuator-outputs{
-    flex:1
+   flex: 1;
   }
 
   #auto-man-checkboxes{
