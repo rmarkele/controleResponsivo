@@ -23,6 +23,16 @@ function getDimensions(){
         processBounds.bottom - processBounds.top - 2 * processBorder,
     ];
 
+    let w = canvasBounds.right - canvasBounds.left;
+    let h = canvasBounds.bottom - canvasBounds.top;
+    let href = processSize[3];
+
+    const processVariablesPanel = document.querySelector("#panel-process-variables");
+    if(w<850){
+        document.querySelector("#scale-bottom").appendChild(processVariablesPanel);
+    }
+
+
     dynamometerPos =  getDivPos('dynamometer-container');
     dynamometerPos[1] -= 30;
     dynamometerPos[3] -= 30;
@@ -66,9 +76,7 @@ function getDimensions(){
     
 
 
-    let w = canvasBounds.right - canvasBounds.left;
-    let h = canvasBounds.bottom - canvasBounds.top;
-    let href = processSize[3];
+    
 
 
     

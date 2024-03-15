@@ -68,7 +68,7 @@
     align-items: center;
     border-radius: 5px; 
     overflow: hidden;
-    width: 90%;
+    width: 100%;
     background-color: #fff;
   }
 
@@ -256,7 +256,7 @@ input[type=checkbox]{
   width: 100%;
 }
 #mobile-nav{
-  border-style: inset;
+  border-style: outset;
 }
 
 #panels-nav{

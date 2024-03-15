@@ -5,24 +5,24 @@ let strings = [
     //Descriçao do Simulador
     _titulo_Simulador_linha1: "CONTROLE EM MALHA FECHADA",
     _titulo_Simulador_linha2: " ",
-    _comentario_Simulador_linha1: "Simulador Didático Mk-1",//SIST. MASSA-MOLA-AMORTECEDOR
+    _comentario_Simulador_linha1: "Simulador Didático Mk-2",//SIST. MASSA-MOLA-AMORTECEDOR
     _comentario_Simulador_linha2: " ",
     _botao_saiba_mais_Simulador: "SAIBA MAIS",
 
     //Sistema
     _motor_Linear: [
-      "Motor Linear",
-      "AUTO",
-      "MAN",
+      "M. LINEAR",
+      "(AUTO)",
+      "(MAN)",
     ],
 
     _ocultar_Sistema: "Ocultar Animação",
 
     //Menu da versão mobile
-    _menu_mobile: ["Variáveis", "Controle", "Entradas"],
+    _menu_mobile: ["Gráficos", "Controle", "Config"],
 
     //Menu de navegação entre os painéis de entrada
-    _menu_paineis:["Proc   IPos   Env", "ModC   Fc", "SP", "Fp", "Exibe", "Sobre"],
+    _menu_paineis:["Proc   IPos   Env", "ModoC   Fc", "SP", "Fp", "Exibir", "Sobre"],
 
     //Painel Parametros do Processo
     _titulo_painel_Processo: "Processo",
@@ -198,17 +198,17 @@ let strings = [
 
     //Sistema
     _motor_Linear: [
-      "Linear Motor",
-      "AUTO",
-      "MAN",
+      "L. MOTOR",
+      "(AUTO)",
+      "(MAN)",
     ],
     _ocultar_Sistema: "Hide Animation",
 
     //Menu da versão mobile
-    _menu_mobile: ["Variables", "Control", "Inputs"],
+    _menu_mobile: ["Graphs", "Control", "Settings"],
 
     //Menu de navegação entre os painéis de entrada
-    _menu_paineis:["Proc   PInd   Env", "CMod   Fc", "SP", "Fp", "Show", "About"],
+    _menu_paineis:["Proc   PInd   Env", "CMode   Fc", "SP", "Fp", "Show", "About"],
 
     //Painel Parametros do Processo
     _titulo_painel_Processo: " Process",

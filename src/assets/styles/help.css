@@ -1,13 +1,12 @@
 /*  logo */
 #logo-container{
-    padding:10px;
+    padding:5px 10px;
     border: none;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    position: absolute;
-    top: var(--process-height);
+    height: 100%;
   }
   
   #logo-container p{
@@ -100,13 +99,13 @@
   }
 
   @media (max-width:850px) {
-    #logo-container .logo-container--title{
+    /* #logo-container .logo-container--title{
       display: none;
     }
     
     #logo-container .logo-container--text{
       display: none;
-    }
+    } */
 
     #logo-container .logo-container--btn {
       font-size: 10px;

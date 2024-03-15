@@ -1,13 +1,24 @@
 #scale-container{
     height: var(--scale-height);
     display: flex;
-    align-items: center;
-    justify-content: end;
+    flex-direction: column;
+}
+
+#scale-top{
+  flex: 1;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  
+}
+
+#scale-bottom{
+
 }
 
 
 @media (max-width:850px) {
-  #scale-container{
+  #scale-top{
     justify-content: flex-start;
     align-items: start;
   }

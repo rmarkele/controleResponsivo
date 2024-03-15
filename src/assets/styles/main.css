@@ -9,7 +9,7 @@
 
 :root{
   --header-height: 30px;
-  --scale-height: 60px;
+  --scale-height: 100px;
   --fps-txt-height: 25px;
   --fps-margin-top: 2px;
   --process-proportion: 0.25;
@@ -101,7 +101,7 @@ canvas{
   align-items: center;
   border-style: inset;
   margin: 5px;
-  margin-top: -58px;
+  margin-top: -98px;
   gap: 10px;
   padding-top: 5px;
   
@@ -116,13 +116,13 @@ canvas{
    justify-content: space-around;
    gap: 4px;
    margin-bottom: 5px;
-   margin-top: 40px;
+   margin-top: 0px;
    padding: 0 5px;
 }
 #right{
    flex: 1;
    padding: 0 5px;
-   margin-top: 40px;
+   margin-top: 0px;
    display: flex;
    flex-direction: column;
 }
@@ -338,7 +338,7 @@ canvas{
 
   :root{
     --header-height: 30px;
-    --scale-height: 70px;
+    --scale-height: 115px;
     --process-proportion: 0.15;
   }
 
@@ -368,7 +368,7 @@ canvas{
   #control-panel{
       flex-direction: column;
       align-items: center;
-      
+      margin-top: 5px;
   }
 
 
@@ -394,16 +394,15 @@ canvas{
     }
 
     
-    #center{
+    /* #center{
         order: 1;
     }
     #left{
         order: 2;
-        margin-top: 10px;
     }
     #right{
         order: 3;
-    }
+    } */
 
   }
 
