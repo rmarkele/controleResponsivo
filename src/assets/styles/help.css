@@ -77,16 +77,24 @@
   }
 
   @media (max-width:850px) {
+    
+
     #logo-container {
       font-size: 10px;
     } 
 
+    .help-body{
+      margin: 0;
+      padding: 0;
+    }
+
     .know-more{
       font-size: 18px;
+      padding: 10px;
     }
 
     .know-more .title h2{
-     font-size: 20px;
+     font-size: 18px;
     }
 
     .know-more .title h3{
