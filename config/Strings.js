@@ -3,10 +3,10 @@ let strings = [
     idioma: "PT-BR",
     
     //Descriçao do Simulador
-    _titulo_Simulador_linha1: "CONTROLE EM MALHA FECHADA",
-    _titulo_Simulador_linha2: " ",
-    _comentario_Simulador_linha1: "Simulador Didático Mk-2",//SIST. MASSA-MOLA-AMORTECEDOR
-    _comentario_Simulador_linha2: " ",
+    _titulo_Simulador_linha1: "CONTROLE MALHA",
+    _titulo_Simulador_linha2: "FECHADA",
+    _comentario_Simulador_linha1: "Simulador Mk-2",//SIST. MASSA-MOLA-AMORTECEDOR
+    _comentario_Simulador_linha2: "",
     _botao_saiba_mais_Simulador: "SAIBA MAIS",
 
     //Sistema
@@ -22,47 +22,47 @@ let strings = [
     _menu_mobile: ["Gráficos", "Controle", "Config"],
 
     //Menu de navegação entre os painéis de entrada
-    _menu_paineis:["Proc   IPos   Env", "ModoC   Fc", "SP", "Fp", "Exibir", "Sobre"],
+    _menu_paineis:["Processo   IndPos   Env", "ModoContr   MotLin", "SP", "Perturb", "Exibir", "Sobre"],
 
     //Painel Parametros do Processo
     _titulo_painel_Processo: "Processo",
-    _constante_amortecedor: "c [N.s/m]",
-    _constante_mola: "Ks [N/m]",
-    _massa_carro: "m [kg]",
+    _constante_amortecedor: "c[N.s/m]",
+    _constante_mola: "Ks[N/m]",
+    _massa_carro: "m[kg]",
 
     //Painel do Envelope de Operação
     _titulo_painel_Envelope: "Envelope de Operação",
-    _Env_min: "min [m]",
-    _Env_max: "max [m]",
+    _Env_min: "min[m]",
+    _Env_max: "max[m]",
     
     // Gráficos
     _titulo_PV_e_SP: "Var. Controlada PV(t) e Setpoint SP(t)",
-    _eixo_y_esq_PV_e_SP: "PV [m]",
-    _eixo_y_dir_PV_e_SP: "SP [m]",
+    _eixo_y_esq_PV_e_SP: "PV[m]",
+    _eixo_y_dir_PV_e_SP: "SP[m]",
 
     _titulo_Fc_e_Op: "Var. Manipulada Fc(t) e Saída Controlador OP(t)",
-    _eixo_y_esq_Fc_e_Op: "Fc [% Fcmax]",
-    _eixo_y_dir_Fc_e_Op: "OP [%]",
+    _eixo_y_esq_Fc_e_Op: "Fc[%Fcmax]",
+    _eixo_y_dir_Fc_e_Op: "OP[%]",
 
     _titulo_Perturbacao: "Perturbação Fp(t)",
-    _eixo_y_Perturbacao: "Fp [% Fcmax]",
+    _eixo_y_Perturbacao: "Fp[%Fcmax]",
 
     _titulo_formato_setpoint: "SP(t)",
     _eixo_y_formato_setpoint: "[m]",
-    _eixo_x_formato_setpoint: "t [s]",
+    _eixo_x_formato_setpoint: "t[s]",
 
     _titulo_formato_perturbacao: "Fp(t)",
-    _eixo_y_formato_perturbacao: "[% Fcmax]",
-    _eixo_x_formato_perturbacao: "t [s]",
+    _eixo_y_formato_perturbacao: "[%Fcmax]",
+    _eixo_x_formato_perturbacao: "t[s]",
 
-    _eixo_y_saida_biestavel: "OP [%]",
-    _eixo_x_saida_biestavel: "PV [m]",
+    _eixo_y_saida_biestavel: "OP[%]",
+    _eixo_x_saida_biestavel: "PV[m]",
 
-    _eixo_y_saida_motor: "Fc [% Fcmax]",
-    _eixo_x_saida_motor: "OP [%]",
+    _eixo_y_saida_motor: "Fc[%Fcmax]",
+    _eixo_x_saida_motor: "OP[%]",
 
     //Dinamômetro Analógico
-    _titulo_dinamometro_analogico: "OP [%]",
+    _titulo_dinamometro_analogico: "OP[%]",
     _saida_AUTO_dinamometro_analogico: "AUTO",
     _saida_MAN_dinamometro_analogico: "MAN",
 
@@ -75,16 +75,16 @@ let strings = [
 
     //Painel Var Controlador
     _titulo_painel_Var_Controlador: "PODE REMOVER",
-    _var_SP_painel_Var_Controlador: "SP [m]: ",
-    _var_PV_painel_Var_Controlador: "PV [m]: ",
-    _var_OP_painel_Var_Controlador: "OP [%]: ",
+    _var_SP_painel_Var_Controlador: "SP[m]: ",
+    _var_PV_painel_Var_Controlador: "PV[m]: ",
+    _var_OP_painel_Var_Controlador: "OP[%]: ",
 
     //Painel de Controladores
     _titulo_painel_Controlador: [
-      "Modo de Controle: PID",
-      "Modo de Controle: PD + I se |e| < eLim",
-      "Modo de Controle: PD + I se |D| < DLim",
-      "Modo de Controle: Biestável",
+      "Modo de Controle Selecionado: PID",
+      "Modo de Controle Selecionado: PD + I se |e| < eLim",
+      "Modo de Controle Selecionado: PD + I se |D| < DLim",
+      "Modo de Controle Selecionado: Biestável",
     ],
     _Kp_painel_Controlador: "Kp:",
     _Ki_painel_Controlador: "Ki:",
@@ -95,12 +95,12 @@ let strings = [
     _Imax_painel_Controlador: "Imax[%]:",
     _Derivada_painel_Controlador: "Derivada da PV",
     _Filtro_painel_Controlador: "Filtro PB",
-    _freq_corte_painel_Controlador: "Freq Corte [Hz]:",
+    _freq_corte_painel_Controlador: "Freq Corte[Hz]:",
     _eLim_painel_Controlador: "eLim[m]:",
     _DLim_painel_Controlador: "DLim[%]:",
     _OPmax_painel_Controlador: "OPmax[%]:",
     _OPmin_painel_Controlador: "OPmin[%]:",
-    _BandaMorta_painel_Controlador: "Banda Morta[m]:",
+    _BandaMorta_painel_Controlador: "BandaMorta[m]:",
     _setpoint_baixo_painel_Controlador: "SPB:",
     _setpoint_alto_painel_Controlador: "SPA:",
     _controle_DESL_painel_Controlador: "DESL",
@@ -109,10 +109,10 @@ let strings = [
     _controle_AD_painel_Controlador: "DIR",
 
     //Painel Motor
-    _titulo_painel_Motor: ["Motor Linear: Ideal", "Motor Linear: Não-ideal"],
+    _titulo_painel_Motor: ["Motor Linear Selecionado: Ideal", "Motor Linear Selecionado: Não-ideal"],
     _Fcmax_painel_Motor: "Fcmax[N]: ",
     _atraso_transporte_Motor: "Tmorto[ms]:",
-    _Fcmax_inc_central: "Incl. central:",
+    _Fcmax_inc_central: "InclinCentral:",
     _Fcmax_histerese: "Folga[%]:",
     _modo_acao_motor: "DIR",
 
@@ -123,7 +123,7 @@ let strings = [
     _erro_Ind_Pos: "erro[m]:",
 
     //Painel Perturbação
-    _titulo_painel_Pert: "Perturbação: ",
+    _titulo_painel_Pert: "Perturbação Selecionada: ",
     _tipo_Perturbacao: [
       "Nenhuma",
       "Onda Senoidal",
@@ -143,7 +143,7 @@ let strings = [
     
     
      //Painel Setpoint
-    _titulo_painel_Setpoint: "Setpoint: ",
+    _titulo_painel_Setpoint: "Setpoint Selecionado: ",
     _tipo_Setpoint: [
       "Cursor Manual",
       "Onda Senoidal",
@@ -189,9 +189,9 @@ let strings = [
     idioma: "EN-US",
     
     //Descriçao do Simulador
-    _titulo_Simulador_linha1: "CLOSED-LOOP CONTROL",
-    _titulo_Simulador_linha2: " ",
-    _comentario_Simulador_linha1: "Teaching Simulator Mk-1",//MASS-SPRING-DAMPER SYSTEM
+    _titulo_Simulador_linha1: "CLOSED-LOOP",
+    _titulo_Simulador_linha2: "CONTROL",
+    _comentario_Simulador_linha1: "Simulator Mk-2",//MASS-SPRING-DAMPER SYSTEM
     _comentario_Simulador_linha2: " ",//= free use for teaching =
     _botao_saiba_mais_Simulador: "LEARN MORE",
     
@@ -208,47 +208,47 @@ let strings = [
     _menu_mobile: ["Graphs", "Control", "Settings"],
 
     //Menu de navegação entre os painéis de entrada
-    _menu_paineis:["Proc   PInd   Env", "CMode   Fc", "SP", "Fp", "Show", "About"],
+    _menu_paineis:["Process   PosInd   Env", "ContrMode   LinMot", "SP", "Perturb", "Show", "About"],
 
     //Painel Parametros do Processo
     _titulo_painel_Processo: " Process",
-    _constante_amortecedor: "c [N.s/m]",
-    _constante_mola: "Ks [N/m]",
-    _massa_carro: "m [kg]",
+    _constante_amortecedor: "c[N.s/m]",
+    _constante_mola: "Ks[N/m]",
+    _massa_carro: "m[kg]",
 
     //Painel Envelope de Operação
     _titulo_painel_Envelope: "Operating Envelope",
-    _Env_min: "min [m]",
-    _Env_max: "max [m]",
+    _Env_min: "min[m]",
+    _Env_max: "max[m]",
 
     // Gráficos
     _titulo_PV_e_SP: "Controlled Variable PV(t) / Setpoint SP(t)",
-    _eixo_y_esq_PV_e_SP: "PV [m]",
-    _eixo_y_dir_PV_e_SP: "SP [m]",
+    _eixo_y_esq_PV_e_SP: "PV[m]",
+    _eixo_y_dir_PV_e_SP: "SP[m]",
 
     _titulo_Fc_e_Op: "Manipulated Var. Fc(t) / Controller Output OP(t)",
-    _eixo_y_esq_Fc_e_Op: "Fc [% Fcmax]",
-    _eixo_y_dir_Fc_e_Op: "OP [%]",
+    _eixo_y_esq_Fc_e_Op: "Fc[%Fcmax]",
+    _eixo_y_dir_Fc_e_Op: "OP[%]",
 
     _titulo_Perturbacao: "Perturbation Fp(t)",
-    _eixo_y_Perturbacao: "Fp [% Fcmax]",
+    _eixo_y_Perturbacao: "Fp[%Fcmax]",
 
     _titulo_formato_setpoint: "SP(t)",
     _eixo_y_formato_setpoint: "[m]",
-    _eixo_x_formato_setpoint: "t [s]",
+    _eixo_x_formato_setpoint: "t[s]",
 
     _titulo_formato_perturbacao: "Fp(t)",
-    _eixo_y_formato_perturbacao: "[% Fcmax] ",
-    _eixo_x_formato_perturbacao: "t [s]",
+    _eixo_y_formato_perturbacao: "[%Fcmax] ",
+    _eixo_x_formato_perturbacao: "t[s]",
 
-    _eixo_y_saida_biestavel: "OP [%]",
-    _eixo_x_saida_biestavel: "PV [m]",
+    _eixo_y_saida_biestavel: "OP[%]",
+    _eixo_x_saida_biestavel: "PV[m]",
 
-    _eixo_y_saida_motor: "Fc [% Fcmax]",
-    _eixo_x_saida_motor: "OP [%]",
+    _eixo_y_saida_motor: "Fc[%Fcmax]",
+    _eixo_x_saida_motor: "OP[%]",
 
     //Dinamômetro Analógico
-    _titulo_dinamometro_analogico: "OP [%]",
+    _titulo_dinamometro_analogico: "OP[%]",
     _saida_AUTO_dinamometro_analogico: "AUTO",
     _saida_MAN_dinamometro_analogico: "MAN",
 
@@ -261,16 +261,16 @@ let strings = [
 
     //Painel Var Controlador
     _titulo_painel_Var_Controlador: "PODE REMOVER",
-    _var_SP_painel_Var_Controlador: "SP [m]: ",
-    _var_PV_painel_Var_Controlador: "PV [m]: ",
-    _var_OP_painel_Var_Controlador: "OP [%]: ",
+    _var_SP_painel_Var_Controlador: "SP[m]: ",
+    _var_PV_painel_Var_Controlador: "PV[m]: ",
+    _var_OP_painel_Var_Controlador: "OP[%]: ",
 
     //Painel de Controladores
     _titulo_painel_Controlador: [
-      "Control Mode: PID",
-      "Control Mode: PD + I if |e| < eTh",
-      "Control Mode: PD + I if |D| < DTh",
-      "Control Mode: Bistable",
+      "Selected Control Mode: PID",
+      "Selected Control Mode: PD + I if |e| < eTh",
+      "Selected Control Mode: PD + I if |D| < DTh",
+      "Selected Control Mode: Bistable",
     ],
     _Kp_painel_Controlador: "Kp:",
     _Ki_painel_Controlador: "Ki:",
@@ -281,7 +281,7 @@ let strings = [
     _Imax_painel_Controlador: "Imax[%]:",
     _Derivada_painel_Controlador: "Derivative on PV",
     _Filtro_painel_Controlador: "LP Filter",
-    _freq_corte_painel_Controlador: "Cutoff Freq [Hz]:",
+    _freq_corte_painel_Controlador: "Cutoff Freq[Hz]:",
     _eLim_painel_Controlador: "eTh[m]:",
     _DLim_painel_Controlador: "DTh[%]:",
     _OPmax_painel_Controlador: "OPmax[%]:",
@@ -295,9 +295,9 @@ let strings = [
     _controle_AD_painel_Controlador: "DIR",
 
     //Painel Motor
-    _titulo_painel_Motor: ["Linear Motor: Ideal", "Linear Motor: Non-ideal"],
+    _titulo_painel_Motor: ["Selected Linear Motor: Ideal", "Selected Linear Motor: Non-ideal"],
     _Fcmax_painel_Motor: "Fcmax[N]: ",
-    _atraso_transporte_Motor: "DeadT[ms]:",
+    _atraso_transporte_Motor: "Deadtime[ms]:",
     _Fcmax_inc_central: "Centerslope:",
     _Fcmax_histerese: "Deadspace[%]:",
     _modo_acao_motor: "DIR",
@@ -309,7 +309,7 @@ let strings = [
     _erro_Ind_Pos: "error[m]:",
 
     //Painel Perturbação
-    _titulo_painel_Pert: "Perturbation: ",
+    _titulo_painel_Pert: "Selected Perturbation: ",
     _tipo_Perturbacao: [
       "None",
       "Sine Wave",
@@ -328,7 +328,7 @@ let strings = [
     _aplica_perturbacao_painel_Pert: ["Start", "Turn Off"] ,
     
     //Painel Setpoint
-    _titulo_painel_Setpoint: "Setpoint: ",
+    _titulo_painel_Setpoint: "Selected Setpoint: ",
     _tipo_Setpoint: [
       "Manual Slider",
       "Sine Wave",

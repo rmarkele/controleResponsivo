@@ -389,7 +389,7 @@ function idiomaSelect() {
       strings[i]._tipo_Perturbacao[6],
       "ruído aleatório"
     ),
-    checkForUndefinedString(strings[i]._tipo_Perturbacao[8], "MANUAL"),
+    checkForUndefinedString(strings[i]._tipo_Perturbacao[7], "MANUAL"),
   ];
 
   strg.varPainelPert = [
