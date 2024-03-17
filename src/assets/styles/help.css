@@ -82,7 +82,11 @@
     } 
 
     .know-more{
-      font-size: 16px;
+      font-size: 18px;
     }
+
+    .know-more .notes{
+      font-size: 16px;
+     }
   
   }
