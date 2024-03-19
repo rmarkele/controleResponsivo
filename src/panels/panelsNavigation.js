@@ -9,7 +9,6 @@ document.querySelectorAll("#panels-nav ul li").forEach(elt=>{
         elt.classList.add('active');
         let id = elt.dataset.id;
         document.querySelector(`#panels-group-${id}`).classList.add('active');
-
         let Fmax, Fmin, Periodo, ton;
         if(id==3){
             
@@ -61,6 +60,8 @@ document.querySelectorAll("#panels-nav ul li").forEach(elt=>{
             );
             PerturbyTick = geraYAxisPreview(Fmin, Fmax);
             PerturbxTick = geraXAxisPreview(max(2 * Periodo, 10));
+            perturbSlider.pos = [perturbGraphPos[0] -20,  perturbGraphPos[1] - perturbGraphPos[3] * 0.5];
+            perturbSlider.size = [perturbGraphPos[2] + 10,  5];
             perturbSlider.range = [Fmin, Fmax];
             perturbSlider.value(constrain(perturbSlider.value(), Fmin, Fmax));
         }

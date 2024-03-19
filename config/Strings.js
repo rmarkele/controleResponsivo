@@ -145,7 +145,7 @@ let strings = [
      //Painel Setpoint
     _titulo_painel_Setpoint: "Setpoint Selecionado: ",
     _tipo_Setpoint: [
-      "Cursor Manual",
+      "MANUAL (mova o cursor sob o carro)",
       "Onda Senoidal",
       "Onda Quadrada",
       "Onda Triangular",
@@ -330,7 +330,7 @@ let strings = [
     //Painel Setpoint
     _titulo_painel_Setpoint: "Selected Setpoint: ",
     _tipo_Setpoint: [
-      "Manual Slider",
+      "MANUAL (move slider under the car)",
       "Sine Wave",
       "Step Wave",
       "Ramp Wave",
