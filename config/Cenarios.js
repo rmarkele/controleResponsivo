@@ -1851,8 +1851,8 @@ let cenarios = [
       m: 5000, //massa do carrinho em unidades SI
       K_mola: 1000, // constante da mola em unidades SI (pode ser negativa para simular pêndulo invertido)
       C_amortecedor: 1000, // coeficiente de amortecimento SI (pode ser negativa)
-      posicao_inicial: 13, // valor inicial da posição x do carrinho em relação à origem (unidades SI)
-      velocidade_inicial: 0.8, // velocidade inicial do carrinho (SI)
+      posicao_inicial: 14, // valor inicial da posição x do carrinho em relação à origem (unidades SI)
+      velocidade_inicial: 0, // velocidade inicial do carrinho (SI)
       perturbacao_Tipo: 2, // 0-nenhuma, 1-onda senoidal, 2-onda quadrada, 3-onda triangular, 4-dente de serra, 5-trem de impulsos, 6-ruido aleatório, 7-manual
       perturbacao_manual_inicial: -60, // habilitado no modo manual (% de Fcmax), limitado aos valores de perturbacao_Fmax e perturbacao_Fmin
       perturbacao_Fmax: 0, // valor máximo da perturbação (% de Fcmax)
@@ -1862,7 +1862,7 @@ let cenarios = [
       perturbacao_inicialmente_inibida: 1, 
   
       // parâmetros do indicador de posição
-      posicao_indicada_min: 4, // piso de escala de x indicada (unidades SI)
+      posicao_indicada_min: -16, // piso de escala de x indicada (unidades SI)
       posicao_indicada_max: 16, // teto de escala de x indicada (unidades SI)
   
       // parâmetros do controlador
@@ -1896,11 +1896,11 @@ let cenarios = [
 
   
       // parâmetros de tela e modo de exibição da régua
-      ocultar_sistema: 1, // 0: processo visível, 1: processo invisível
+      ocultar_sistema: 0, // 0: processo visível, 1: processo invisível
       exibe_banda_proporcional: 0, // 0-NÃO exibe a barra (cor verde) de banda proporcional , 1-exibe a barra de banda proporcional
       exibe_faixa_indicao: 0, // 0-NÃO exibe faixa de indicação (cor laranja), 1-exibe faixa de indicação
-      exibe_linha_setpoint: 0, // 0-NÃO exibe linha tracejada (cor azul) de setpoint, 1-exibe linha tracejada de setpoint
-      exibe_linha_posicao_real: 0, // 0-NÃO exibe linha tracejada (cor cinza) de posição real, 1-exibe linha tracejada de posição real
+      exibe_linha_setpoint: 1, // 0-NÃO exibe linha tracejada (cor azul) de setpoint, 1-exibe linha tracejada de setpoint
+      exibe_linha_posicao_real: 1, // 0-NÃO exibe linha tracejada (cor cinza) de posição real, 1-exibe linha tracejada de posição real
       // Ajustar a frame rate conforme o computador. 
       // Inicialmente ajustar em 40 fps, ler o FPS médio e ajustar um valor definitivo ligeiramente inferior 
       frameRate: 40, //taxa de frames por segundo
@@ -1931,9 +1931,9 @@ let cenarios = [
       posicao_inicial: 0, // valor inicial da posição x do carrinho em relação à origem (unidades SI)
       velocidade_inicial: 0, // velocidade inicial do carrinho (SI)
       perturbacao_Tipo: 7, // 0-nenhuma, 1-onda senoidal, 2-onda quadrada, 3-onda triangular, 4-dente de serra, 5-trem de impulsos, 6-ruido aleatório, 7-manual
-      perturbacao_manual_inicial: 20, // habilitado no modo manual (% de Fcmax), limitado aos valores de perturbacao_Fmax e perturbacao_Fmin
-      perturbacao_Fmax: 50.01, // valor máximo da perturbação (% de Fcmax)
-      perturbacao_Fmin: 50, // valor mínimo da perturbação (% de Fcmax)
+      perturbacao_manual_inicial: 50, // habilitado no modo manual (% de Fcmax), limitado aos valores de perturbacao_Fmax e perturbacao_Fmin
+      perturbacao_Fmax: 60, // valor máximo da perturbação (% de Fcmax)
+      perturbacao_Fmin: 40, // valor mínimo da perturbação (% de Fcmax)
       perturbacao_Periodo: 11, // periodo da perturbação (unidades SI)
       perturbacao_t_on: 50, // percentual do periodo da onda de perturbação em nível máximo (para onda quadrada)
       perturbacao_inicialmente_inibida: 1, 

@@ -1,30 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <title>Real Time PID Control Simulator</title>
-    <meta name="description" content="Teaching Simulator">
-    <meta property="og:title" content="Controle Malha Fechada - Simulador Tempo Real">
-    <meta property="og:description" content="Simulador Didático">
-    <meta name="classification" content="simulador didático controle malha fechada">
-    <meta name="keywords" content="pid control simulator,real time simulator">
-    <meta name="author" content="Renato Markele Ferreira Cândido e Claudio Cesar Bezerra Teles">
-    <meta property="og:image" content="https://proanuncio.com.br/sc2/scppeq.jpg">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
-    <link rel="stylesheet" type="text/css" href="src/assets/styles/langSelectorStyle.css">
-    <link rel="stylesheet" type="text/css" href="src/assets/styles/selectScenario.css">
-    <link rel="stylesheet" type="text/css" href="src/assets/styles/graphs.css">
-    <link rel="stylesheet" type="text/css" href="src/assets/styles/scale.css">
-    <link rel="stylesheet" type="text/css" href="src/assets/styles/panels.css">
-    <link rel="stylesheet" type="text/css" href="src/assets/styles/timer.css">
-    <link rel="stylesheet" type="text/css" href="src/assets/styles/help.css">
-    <link rel="stylesheet" type="text/css" href="src/assets/styles/player.css">
-    <link rel="stylesheet" href="./src/assets/styles/main.css">
-    <title>Document</title>
-    <script src="./src/p5/p5.js"></script>
-    <!-- <script src="./src/p5/p5.sound.min.js"></script> -->
-    <script src="src/variables/globalVariables.js"></script>
+  <title>Real Time PID Control Simulator</title>
+  <meta name="description" content="Teaching Simulator">
+  <meta property="og:title" content="Controle Malha Fechada - Tempo Real">
+  <meta property="og:description" content="Simulador Didático">
+  <meta name="classification" content="simulador didático controle malha fechada">
+  <meta name="keywords" content="pid control simulator,real time pid simulator">
+  <meta name="author" content="Renato Markele Ferreira Cândido e Claudio Cesar Bezerra Teles">
+  <meta property="og:image" content="https://proanuncio.com.br/sc2/scppeq.jpg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
+  <link rel="stylesheet" type="text/css" href="src/assets/styles/langSelectorStyle.css">
+  <link rel="stylesheet" type="text/css" href="src/assets/styles/selectScenario.css">
+  <link rel="stylesheet" type="text/css" href="src/assets/styles/graphs.css">
+  <link rel="stylesheet" type="text/css" href="src/assets/styles/scale.css">
+  <link rel="stylesheet" type="text/css" href="src/assets/styles/panels.css">
+  <link rel="stylesheet" type="text/css" href="src/assets/styles/timer.css">
+  <link rel="stylesheet" type="text/css" href="src/assets/styles/help.css">
+  <link rel="stylesheet" type="text/css" href="src/assets/styles/player.css">
+  <link rel="stylesheet" href="./src/assets/styles/main.css">
+  <script src="./src/p5/p5.js"></script>
+  <!-- <script src="./src/p5/p5.sound.min.js"></script> -->
+  <script src="src/variables/globalVariables.js"></script>
     
    
 </head>
@@ -202,7 +201,7 @@
                 </div>
 
                 <div id="hide-system" class="radio-panel">
-                  <input type="checkbox" name="DCL-mult" value="0" id="SystemView">
+                  <input type="checkbox" id="SystemView">
                   <label for="SystemView"></label>
                 </div>                
                 
