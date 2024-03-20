@@ -5,7 +5,7 @@ let strings = [
     //Descriçao do Simulador
     _titulo_Simulador_linha1: "CONTROLE MALHA",
     _titulo_Simulador_linha2: "FECHADA",
-    _comentario_Simulador_linha1: "Simulador Mk-2",//SIST. MASSA-MOLA-AMORTECEDOR
+    _comentario_Simulador_linha1: "Simulador MK-2",//SIST. MASSA-MOLA-AMORTECEDOR
     _comentario_Simulador_linha2: "",
     _botao_saiba_mais_Simulador: "SAIBA MAIS",
 
@@ -145,7 +145,7 @@ let strings = [
      //Painel Setpoint
     _titulo_painel_Setpoint: "Setpoint Selecionado: ",
     _tipo_Setpoint: [
-      "MANUAL (mova o cursor sob o carro)",
+      "Manual (mova o cursor sob o carro)",
       "Onda Senoidal",
       "Onda Quadrada",
       "Onda Triangular",
@@ -191,7 +191,7 @@ let strings = [
     //Descriçao do Simulador
     _titulo_Simulador_linha1: "CLOSED-LOOP",
     _titulo_Simulador_linha2: "CONTROL",
-    _comentario_Simulador_linha1: "Simulator Mk-2",//MASS-SPRING-DAMPER SYSTEM
+    _comentario_Simulador_linha1: "Simulator MK-2",//MASS-SPRING-DAMPER SYSTEM
     _comentario_Simulador_linha2: " ",//= free use for teaching =
     _botao_saiba_mais_Simulador: "LEARN MORE",
     
@@ -330,7 +330,7 @@ let strings = [
     //Painel Setpoint
     _titulo_painel_Setpoint: "Selected Setpoint: ",
     _tipo_Setpoint: [
-      "MANUAL (move slider under the car)",
+      "Manual (move slider under the car)",
       "Sine Wave",
       "Step Wave",
       "Ramp Wave",

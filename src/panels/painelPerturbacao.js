@@ -261,7 +261,7 @@ function mySelectEvent() {
 }
 
 function escrevePainelPerturb() {
-  if ( strg.tiposPert.indexOf(sel.value()) == 7 && mostraPerturbPrev) {
+  if ( strg.tiposPert.indexOf(sel.value()) == 7 && mostraPerturbPrev && showRightDiv) {
     
     perturbSlider.show();
     push();
