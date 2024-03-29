@@ -331,7 +331,7 @@ canvas {
   :root {
     --header-height: 30px;
     --scale-height: 115px;
-    --process-proportion: 0.16;
+    --process-proportion: 0.18;
   }
 
   * {
