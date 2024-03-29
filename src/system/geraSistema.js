@@ -5,7 +5,7 @@ function geraSistema(){
     let h = canvasBounds.bottom - canvasBounds.top;
     damper = new amortecedor(
         xref + 10, // posX,
-        2 * ((1.05 / 4) * yref), // posY
+        2 * ((0.85 / 4) * yref), // posY
         1.2 * H0, // altura
         1.2 * L0, // largura0
         L0, // largura
