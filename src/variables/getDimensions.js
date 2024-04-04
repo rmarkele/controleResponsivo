@@ -40,7 +40,7 @@ function getDimensions(){
             document.querySelector("#graph-PV-SP"),
             document.querySelector("#dynamometer")
         );
-        document.querySelector("#graph-PV-SP").style.height='25%';
+        document.querySelector("#graph-PV-SP").style.height='20%';
         document.querySelector("#graph-PV-SP").style.flex='none';
     } else if(showleftDiv){
         document.querySelector("#left").insertBefore(

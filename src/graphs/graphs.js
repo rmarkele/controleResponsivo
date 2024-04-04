@@ -27,11 +27,11 @@ function plotaGraficos() {
   constrainLength(atuadorPlot, graph2Pos[2], plotSkip);
   
   constrainLength(PerturbPlot, graph3Pos[2], plotSkip);
-    
+  const graph1offset = !showleftDiv?10:0;
   if(showleftDiv||(showCenterDiv && width<850)){
     createAxis({
       posx: graph1Pos[0],
-      posy: graph1Pos[1],
+      posy: graph1Pos[1] - graph1offset,
       w: graph1Pos[2],
       h: graph1Pos[3],
       xtick: [],
@@ -48,7 +48,7 @@ function plotaGraficos() {
     if(controlador < 3 && pidControlCheckBox.checked()){
       plot({
         posx: graph1Pos[0],
-        posy: graph1Pos[1],
+        posy: graph1Pos[1] - graph1offset,
         w: graph1Pos[2],
         h: graph1Pos[3],
         s1: setPointPlot,
@@ -60,7 +60,7 @@ function plotaGraficos() {
     else if(controlador == 3 && pidControlCheckBox.checked()){
       plot({
         posx: graph1Pos[0],
-        posy: graph1Pos[1],
+        posy: graph1Pos[1] - graph1offset,
         w: graph1Pos[2],
         h: graph1Pos[3],
         s1: setPointAltoPlot,
@@ -71,7 +71,7 @@ function plotaGraficos() {
       
       plot({
         posx: graph1Pos[0],
-        posy: graph1Pos[1],
+        posy: graph1Pos[1] - graph1offset,
         w: graph1Pos[2],
         h: graph1Pos[3],
         s1: setPointBaixoPlot,
@@ -83,7 +83,7 @@ function plotaGraficos() {
 
     plot({
       posx: graph1Pos[0],
-      posy: graph1Pos[1],
+      posy: graph1Pos[1] - graph1offset,
       w: graph1Pos[2],
       h: graph1Pos[3],
       s1: xPlot, 

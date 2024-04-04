@@ -18,7 +18,7 @@ function plotaPID(pos){
   push();
   textAlign(CENTER);
   textSize(txtSize);
-  let offy = 45;
+  let offy = 35;
   let linespace = (pos[3] - offy) / 4;
   text(
     [strg.saidaP_painelOpFc + nf(round(1000 * saidaP) / 1000, 0, 1) + "%"],
