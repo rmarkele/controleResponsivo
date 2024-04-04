@@ -55,16 +55,17 @@ function getDimensions(){
     dynamometerPos[3] -= 30;
 
     let posDinamometro = [dynamometerPos[0] + 0.5 * dynamometerPos[2] , dynamometerPos[1] - 0.4 * dynamometerPos[3]];
-    const scale = 0.4;
+    const scalex = 0.4;
+    const scaley = w<850?0.7:0.4;;
     if(typeof forces !== 'undefined'){
         forces.posx = posDinamometro[0];
-        forces.posy = posDinamometro[1];
-        forces.w = scale * dynamometerPos[2];
-        forces.h = scale * dynamometerPos[3];
+        forces.posy = posDinamometro[1] + 5;
+        forces.w = scalex * dynamometerPos[2];
+        forces.h = scaley * dynamometerPos[3];
     }
     if(typeof manualControl !== 'undefined'){
-        manualControl.pos = [ posDinamometro[0] -  scale * dynamometerPos[2],   posDinamometro[1] + scale * dynamometerPos[3] * 0.2 + 18];
-        manualControl.size = [dynamometerPos[2] * 2 * scale, 5];
+        manualControl.pos = [ posDinamometro[0] -  scalex * dynamometerPos[2],   posDinamometro[1] + scaley * dynamometerPos[3] * 0.2 + 24];
+        manualControl.size = [dynamometerPos[2] * 2 * scalex, 5];
     }
 
     panelProcessVariables = getDivPos('panel-process-variables');
