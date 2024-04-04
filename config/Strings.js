@@ -5,15 +5,15 @@ let strings = [
     //Descriçao do Simulador
     _titulo_Simulador_linha1: "CONTROLE MALHA",
     _titulo_Simulador_linha2: "FECHADA",
-    _comentario_Simulador_linha1: "Simulador MK-2",//SIST. MASSA-MOLA-AMORTECEDOR
+    _comentario_Simulador_linha1: "SIMULADOR MK-2",//SIST. MASSA-MOLA-AMORTECEDOR
     _comentario_Simulador_linha2: "",
     _botao_saiba_mais_Simulador: "SAIBA MAIS",
 
     //Sistema
     _motor_Linear: [
-      "M. LINEAR",
-      "(AUTO)",
-      "(MAN)",
+      "MotLin ",
+      "AUTO",
+      "MAN",
     ],
 
     _ocultar_Sistema: "Ocultar Animação",
@@ -176,8 +176,8 @@ let strings = [
     _opcoes_painel_Forcas_Atuantes: ["Ocultar", "x1", "x10", "x100"],
     
     // parâmetros de resolução de tela
-    _fps_Esperado: "FPS esperado",
-    _fps_medio: "FPS médio",
+    _fps_Esperado: "FPS esp",
+    _fps_medio: "FPS méd",
      
     
   },
@@ -191,16 +191,16 @@ let strings = [
     //Descriçao do Simulador
     _titulo_Simulador_linha1: "CLOSED-LOOP",
     _titulo_Simulador_linha2: "CONTROL",
-    _comentario_Simulador_linha1: "Simulator MK-2",//MASS-SPRING-DAMPER SYSTEM
+    _comentario_Simulador_linha1: "SIMULATOR MK-2",//MASS-SPRING-DAMPER SYSTEM
     _comentario_Simulador_linha2: " ",//= free use for teaching =
     _botao_saiba_mais_Simulador: "LEARN MORE",
     
 
     //Sistema
     _motor_Linear: [
-      "L. MOTOR",
-      "(AUTO)",
-      "(MAN)",
+      "LinMot",
+      "AUTO",
+      "MAN",
     ],
     _ocultar_Sistema: "Hide Animation",
 
@@ -361,8 +361,8 @@ let strings = [
     _opcoes_painel_Forcas_Atuantes: ["Hide", "x1", "x10", "x100"],
     
     // parâmetros de resolução de tela
-    _fps_Esperado: "Expected FPS",
-    _fps_medio: "Average FPS",
+    _fps_Esperado: "Exp FPS",
+    _fps_medio: "Avg FPS",
     
   },
 ];
