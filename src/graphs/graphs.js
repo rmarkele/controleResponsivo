@@ -28,7 +28,7 @@ function plotaGraficos() {
   
   constrainLength(PerturbPlot, graph3Pos[2], plotSkip);
     
-  if(showleftDiv){
+  if(showleftDiv||(showCenterDiv && width<850)){
     createAxis({
       posx: graph1Pos[0],
       posy: graph1Pos[1],
@@ -91,7 +91,8 @@ function plotaGraficos() {
       color: corPos,
       timeScale: plotSkip
     });
-  
+  }
+  if(showleftDiv){
     if (pidControlCheckBox.checked()) {
       createAxis({
         posx: graph2Pos[0],

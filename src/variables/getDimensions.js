@@ -33,9 +33,39 @@ function getDimensions(){
     }
 
 
+    
+
+    if(showCenterDiv && w < 850){
+        document.querySelector("#center").insertBefore(
+            document.querySelector("#graph-PV-SP"),
+            document.querySelector("#dynamometer")
+        );
+        document.querySelector("#graph-PV-SP").style.height='25%';
+        document.querySelector("#graph-PV-SP").style.flex='none';
+    } else if(showleftDiv){
+        document.querySelector("#left").insertBefore(
+            document.querySelector("#graph-PV-SP"),
+            document.querySelector("#graph-Fc-OP")
+        );
+        document.querySelector("#graph-PV-SP").style.flex=1;
+    }
+
     dynamometerPos =  getDivPos('dynamometer-container');
     dynamometerPos[1] -= 30;
     dynamometerPos[3] -= 30;
+
+    let posDinamometro = [dynamometerPos[0] + 0.5 * dynamometerPos[2] , dynamometerPos[1] - 0.4 * dynamometerPos[3]];
+    const scale = 0.4;
+    if(typeof forces !== 'undefined'){
+        forces.posx = posDinamometro[0];
+        forces.posy = posDinamometro[1];
+        forces.w = scale * dynamometerPos[2];
+        forces.h = scale * dynamometerPos[3];
+    }
+    if(typeof manualControl !== 'undefined'){
+        manualControl.pos = [ posDinamometro[0] -  scale * dynamometerPos[2],   posDinamometro[1] + scale * dynamometerPos[3] * 0.2 + 18];
+        manualControl.size = [dynamometerPos[2] * 2 * scale, 5];
+    }
 
     panelProcessVariables = getDivPos('panel-process-variables');
     panelProcessVariables[1] -= panelProcessVariables[3]

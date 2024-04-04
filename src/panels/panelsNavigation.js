@@ -84,7 +84,6 @@ document.querySelectorAll("#mobile-nav ul li").forEach(elt=>{
         let id = elt.dataset.id;
         document.querySelector(`#${id}`).classList.add('active');
 
-       getDimensions();
   
        if(id=='left'){
         showleftDiv = true;
@@ -106,5 +105,7 @@ document.querySelectorAll("#mobile-nav ul li").forEach(elt=>{
         showCenterDiv = false;
         showRightDiv = true;
        }
+       getDimensions();
+       
     })
 })

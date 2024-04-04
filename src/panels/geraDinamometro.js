@@ -13,8 +13,6 @@ function geraDinamômetro(pos) {
     titleDiv: 'dynamometer-title'
   });
 
-
-  let w = 2 * forces.raio;
   manualControl = new mySlider(
     [ pos[0] -  scale * dynamometerPos[2],   pos[1] + scale * dynamometerPos[3] * 0.2 + 18],
     [dynamometerPos[2] * 2 * scale, 5],
