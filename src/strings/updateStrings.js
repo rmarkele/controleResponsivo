@@ -1,70 +1,70 @@
 function atualizaStrings() {
   
-    tipoControlador.elt.innerHTML = [];
-    for (let i = 0; i < strg.titlePainelControlador.length; i++) {
-      tipoControlador.option(strg.titlePainelControlador[i]);
-    }
-    tipoControlador.selected(strg.titlePainelControlador[indOf._tipoControlador]);
+  tipoControlador.elt.innerHTML = [];
+  for (let i = 0; i < strg.titlePainelControlador.length; i++) {
+    tipoControlador.option(strg.titlePainelControlador[i]);
+  }
+  tipoControlador.selected(strg.titlePainelControlador[indOf._tipoControlador]);
   
-    tipoAtuador.elt.innerHTML = [];
-    for (let i = 0; i < strg.titlePainelMotor.length; i++) {
-      tipoAtuador.option(strg.titlePainelMotor[i]);
-    }
-    tipoAtuador.selected(strg.titlePainelMotor[indOf._tipoAtuador]);
+  tipoAtuador.elt.innerHTML = [];
+  for (let i = 0; i < strg.titlePainelMotor.length; i++) {
+    tipoAtuador.option(strg.titlePainelMotor[i]);
+  }
+  tipoAtuador.selected(strg.titlePainelMotor[indOf._tipoAtuador]);
   
-    sel.elt.innerHTML = [];
-    for (let i = 0; i < strg.tiposPert.length; i++) {
-      sel.option(strg.tiposPert[i]);
-    }
-    sel.selected(strg.tiposPert[indOf._tipoPert]);
+  sel.elt.innerHTML = [];
+  for (let i = 0; i < strg.tiposPert.length; i++) {
+    sel.option(strg.tiposPert[i]);
+  }
+  sel.selected(strg.tiposPert[indOf._tipoPert]);
   
-    selSet.elt.innerHTML = [];
-    for (let i = 0; i < strg.tiposSetpoint.length; i++) {
-      selSet.option(strg.tiposSetpoint[i]);
-    }
-    selSet.selected(strg.tiposSetpoint[indOf._tipoSet]);
-    cenarioLabel(strings[languageIndex].idioma);
-    
+  selSet.elt.innerHTML = [];
+  for (let i = 0; i < strg.tiposSetpoint.length; i++) {
+    selSet.option(strg.tiposSetpoint[i]);
+  }
+  selSet.selected(strg.tiposSetpoint[indOf._tipoSet]);
+  cenarioLabel(strings[languageIndex].idioma);
   
-    for (let i = 0; i < strg.labelCenario.length; i++) {
-      selPar.querySelectorAll("option").forEach((option, index)=>{
-        option.text =strg.labelCenario[index];
-      })
-      
-    }
-
-    //Menu mobile
-
-    document.querySelectorAll("#mobile-nav ul li").forEach((item, index)=>{
-      item.innerHTML = strg.menu_mobile[index];
+  
+  for (let i = 0; i < strg.labelCenario.length; i++) {
+    selPar.querySelectorAll("option").forEach((option, index)=>{
+      option.text =strg.labelCenario[index];
     })
-    document.querySelectorAll("#panels-nav ul li").forEach((item, index)=>{
-      item.innerHTML = strg.menu_paineis[index];
-    })
+    
+  }
   
-    //Titulos Painéis
-    document.querySelector(`#forces-multiplier h4`).innerHTML = strg.varPainelForcasAtuantes[0]+':';
-    let mults=[0, 1, 10, 100];
-    mults.forEach((mult,i) =>{
-      let opt=document.querySelector(`label[for=x${mult}]`);
-      opt.innerHTML=strg.varPainelForcasAtuantes[1][i];
-    })
+  //Menu mobile
   
-    document.querySelector(`label[for=SystemView]`).innerHTML = strg.SystemView;
+  document.querySelectorAll("#mobile-nav ul li").forEach((item, index)=>{
+    item.innerHTML = strg.menu_mobile[index];
+  })
+  document.querySelectorAll("#panels-nav ul li").forEach((item, index)=>{
+    item.innerHTML = strg.menu_paineis[index];
+  })
+  
+  //Titulos Painéis
+  document.querySelector(`#forces-multiplier h4`).innerHTML = strg.varPainelForcasAtuantes[0]+':';
+  let mults=[0, 1, 10, 100];
+  mults.forEach((mult,i) =>{
+    let opt=document.querySelector(`label[for=x${mult}]`);
+    opt.innerHTML=strg.varPainelForcasAtuantes[1][i];
+  })
+  
+  document.querySelector(`label[for=SystemView]`).innerHTML = strg.SystemView;
 
-    forces.title.innerHTML = strg.xlabelSaidaMotor;
-    
-    
-    processVariables[0][0].innerHTML =  strg.varPainelVarCont[0] ;
-    processVariables[1][0].innerHTML =  strg.varPainelVarCont[1] ;
-    processVariables[2][0].innerHTML =  strg.varPainelVarCont[2] ;
-    updatePanelTitle("process", strg.tituloPainelProcesso);
-    updatePanelTitle("envelope", strg.titlePainelenvelope);
-    updatePanelTitle("indicator", strg.titleIndPos);
+  forces.title.innerHTML = strg.xlabelSaidaMotor;
   
   
-    // processo
-      //m
+  processVariables[0][0].innerHTML =  strg.varPainelVarCont[0] ;
+  processVariables[1][0].innerHTML =  strg.varPainelVarCont[1] ;
+  processVariables[2][0].innerHTML =  strg.varPainelVarCont[2] ;
+  updatePanelTitle("process", strg.tituloPainelProcesso);
+  updatePanelTitle("envelope", strg.titlePainelenvelope);
+  updatePanelTitle("indicator", strg.titleIndPos);
+  
+  
+  // processo
+  //m
       updateVariableListText(strg.massa,0)
       //Ks
       updateVariableListText(strg.mola,1)
@@ -164,12 +164,12 @@ function atualizaStrings() {
   
     
     //Envelope   
-      //Envelope max
-      updateVariableListText(strg.varPainelEnvelope[0],29)
-      
+    //Envelope max
+    updateVariableListText(strg.varPainelEnvelope[0],29)
     
-      //Envelope min
-      updateVariableListText(strg.varPainelEnvelope[1],30)
+    
+    //Envelope min
+    updateVariableListText(strg.varPainelEnvelope[1],30)
     
   
     noControlCheckBox.elt.getElementsByTagName("label")[0].innerHTML =
@@ -201,12 +201,12 @@ function atualizaStrings() {
       " " + strg.configRegua[5];
     LinhaEnvelope.elt.getElementsByTagName("label")[0].innerHTML =
       " " + strg.configRegua[7];
-  
-  
+      
+      
     document.querySelector("#light-EV p").innerHTML = strg.configRegua[8];
-  
+    
     tipoPert.elt.innerHTML = strg.titlePert;
-
+    
     atualizaTiTd();
     aplicaPerturb.html(strg.buttonPainelPert[indOf._statusPert]);
   
@@ -224,7 +224,6 @@ function atualizaStrings() {
       strg.comentarioSimulador[0] + "<br>" + strg.comentarioSimulador[1];
   
     help.innerHTML = strg.btnSaibaMais;
-    
     // resetButton.html(strg.btnResetar);
     // pauseButton.html(strg.btnPausarIniciar[indOf._statusSim]);
   }

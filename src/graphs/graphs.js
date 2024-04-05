@@ -27,11 +27,76 @@ function plotaGraficos() {
   constrainLength(atuadorPlot, graph2Pos[2], plotSkip);
   
   constrainLength(PerturbPlot, graph3Pos[2], plotSkip);
-  const graph1offset = !showleftDiv?10:0;
-  if(showleftDiv||(showCenterDiv && width<850)){
+  if((showCenterDiv && width<850)){
+    const graph1offset = !showleftDiv?10:0;
+    const graph1h = 10;
     createAxis({
       posx: graph1Pos[0],
       posy: graph1Pos[1] - graph1offset,
+      w: graph1Pos[2],
+      h: graph1Pos[3] + graph1h,
+      xtick: [],
+      tick1: yTick,
+      title: "",
+      ylabel1: strg.xlabel1E,
+      color1: corPos,
+      xlabel: " ",
+      tick2: yTick,
+      ylabel2: strg.xlabel1D,
+      color2: corSP
+    });
+  
+    if(controlador < 3 && pidControlCheckBox.checked()){
+      plot({
+        posx: graph1Pos[0],
+        posy: graph1Pos[1] - graph1offset,
+        w: graph1Pos[2],
+        h: graph1Pos[3] + graph1h,
+        s1: setPointPlot,
+        tick1: yTick,
+        color: corSP,
+        timeScale: plotSkip
+      });    
+    }
+    else if(controlador == 3 && pidControlCheckBox.checked()){
+      plot({
+        posx: graph1Pos[0],
+        posy: graph1Pos[1] - graph1offset,
+        w: graph1Pos[2],
+        h: graph1Pos[3] + graph1h,
+        s1: setPointAltoPlot,
+        tick1: yTick,
+        color: corSP,
+        timeScale: plotSkip
+      }); 
+      
+      plot({
+        posx: graph1Pos[0],
+        posy: graph1Pos[1] - graph1offset,
+        w: graph1Pos[2],
+        h: graph1Pos[3] + graph1h,
+        s1: setPointBaixoPlot,
+        tick1: yTick,
+        color: corSP,
+        timeScale: plotSkip
+      }); 
+    }
+
+    plot({
+      posx: graph1Pos[0],
+      posy: graph1Pos[1] - graph1offset,
+      w: graph1Pos[2],
+      h: graph1Pos[3] + graph1h,
+      s1: xPlot, 
+      tick1: yTick, 
+      color: corPos,
+      timeScale: plotSkip
+    });
+  }
+  if(showleftDiv){
+    createAxis({
+      posx: graph1Pos[0],
+      posy: graph1Pos[1],
       w: graph1Pos[2],
       h: graph1Pos[3],
       xtick: [],
@@ -48,7 +113,7 @@ function plotaGraficos() {
     if(controlador < 3 && pidControlCheckBox.checked()){
       plot({
         posx: graph1Pos[0],
-        posy: graph1Pos[1] - graph1offset,
+        posy: graph1Pos[1],
         w: graph1Pos[2],
         h: graph1Pos[3],
         s1: setPointPlot,
@@ -60,7 +125,7 @@ function plotaGraficos() {
     else if(controlador == 3 && pidControlCheckBox.checked()){
       plot({
         posx: graph1Pos[0],
-        posy: graph1Pos[1] - graph1offset,
+        posy: graph1Pos[1],
         w: graph1Pos[2],
         h: graph1Pos[3],
         s1: setPointAltoPlot,
@@ -71,7 +136,7 @@ function plotaGraficos() {
       
       plot({
         posx: graph1Pos[0],
-        posy: graph1Pos[1] - graph1offset,
+        posy: graph1Pos[1],
         w: graph1Pos[2],
         h: graph1Pos[3],
         s1: setPointBaixoPlot,
@@ -83,7 +148,7 @@ function plotaGraficos() {
 
     plot({
       posx: graph1Pos[0],
-      posy: graph1Pos[1] - graph1offset,
+      posy: graph1Pos[1],
       w: graph1Pos[2],
       h: graph1Pos[3],
       s1: xPlot, 
@@ -91,8 +156,6 @@ function plotaGraficos() {
       color: corPos,
       timeScale: plotSkip
     });
-  }
-  if(showleftDiv){
     if (pidControlCheckBox.checked()) {
       createAxis({
         posx: graph2Pos[0],

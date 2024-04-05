@@ -1,6 +1,7 @@
 function setup() {
   
   getDimensions();
+  
   textSize(txtSize);
 
   let w = canvasBounds.right - canvasBounds.left;
@@ -42,10 +43,10 @@ function setup() {
     yTick[i] = -16 + i * 8;
     erroTick[i] = -32 + i * 16;
   }
-
+  
   geraIHM();
   updateIHM();
-
+  
   updateComponentes();
   
   //Diagrama de Corpo Livre
@@ -56,27 +57,26 @@ function setup() {
     Perturb[2],
     perturbFmax,
     corPert
-  );
-  Fpid = new forcaDiagrama(
-    xCar,
-    (1 / 4) * yref,
-    Lcar,
-    PID,
-    K_P * 12,
-    corAtuador
-  );
-  Fmol = new forcaDiagrama(xCar, spring.posY, Lcar, 0, K * 12, corMol);
-  Famo = new forcaDiagrama(xCar, damper.posY, Lcar, 0, C * 24, corAmo);
-
-  showIHM();
-
-  SetpointyTick = geraYAxisPreview(-16, 16);
-  calculaSPBI();
-  calculaSaidaBiestavel();
-  getIndexes();
-  atualizaStrings();
-  
-}
+    );
+    Fpid = new forcaDiagrama(
+      xCar,
+      (1 / 4) * yref,
+      Lcar,
+      PID,
+      K_P * 12,
+      corAtuador
+      );
+      Fmol = new forcaDiagrama(xCar, spring.posY, Lcar, 0, K * 12, corMol);
+      Famo = new forcaDiagrama(xCar, damper.posY, Lcar, 0, C * 24, corAmo);
+      
+      showIHM();
+      
+      SetpointyTick = geraYAxisPreview(-16, 16);
+      calculaSPBI();
+      calculaSaidaBiestavel();
+      getIndexes();
+      atualizaStrings();
+    }
 
 function draw() {
   background(220);

@@ -11,7 +11,7 @@ class dinamometro {
       this.txtAuto = document.createElement('div');
       this.title = document.createElement('div');
       this.txtMan = document.createElement('div');
-
+      this.title.innerHTML = "-"
       // this.txtAuto.style.color = `rgb(${corPID})`;
       // this.txtMan.style.color = `rgb(${corMan})`;
 
