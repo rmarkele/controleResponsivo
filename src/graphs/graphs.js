@@ -28,8 +28,8 @@ function plotaGraficos() {
   
   constrainLength(PerturbPlot, graph3Pos[2], plotSkip);
   if((showCenterDiv && width<850)){
-    const graph1offset = !showleftDiv?10:0;
-    const graph1h = 10;
+    const graph1offset = 5;
+    const graph1h = 20;
     createAxis({
       posx: graph1Pos[0],
       posy: graph1Pos[1] - graph1offset,
