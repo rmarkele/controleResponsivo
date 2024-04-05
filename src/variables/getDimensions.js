@@ -78,7 +78,7 @@ function getDimensions(){
     actuatorOutputsPos[1] -= actuatorOutputsPos[3]-25;
     actuatorOutputsPos[2] -= 20;
     actuatorOutputsPos[3] -= 40;
-
+    sigmoid2Fig(kSig, histSig);
 
 
 
