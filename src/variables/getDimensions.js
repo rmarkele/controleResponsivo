@@ -56,7 +56,7 @@ function getDimensions(){
 
     let posDinamometro = [dynamometerPos[0] + 0.5 * dynamometerPos[2] , dynamometerPos[1] - 0.4 * dynamometerPos[3]];
     const scalex = 0.4;
-    const scaley = w<850?0.7:0.4;
+    const scaley = w<850?1:0.4;
     if(typeof forces !== 'undefined'){
         forces.posx = posDinamometro[0];
         forces.posy = posDinamometro[1] + 5;
