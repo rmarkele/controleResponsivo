@@ -79,7 +79,7 @@ function geraShowPanel(pos){
   hideSystemDiv=document.querySelector("#hide-system");
   hideSystemCheckBox = document.querySelector("#SystemView");
   hideSystemCheckBox.addEventListener('click',(e)=>{
-    hideSystem=e.target.checked;
+    hideSystem=!e.target.checked;
     if(hideSystem){
       spring.showLabel(false);
       damper.showLabel(false);
@@ -89,7 +89,7 @@ function geraShowPanel(pos){
     }
   })
 
-  if(hideSystem){
+  if(!hideSystem){
     hideSystemCheckBox.checked = true;
   }else{
     hideSystemCheckBox.checked = false;

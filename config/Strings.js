@@ -16,7 +16,7 @@ let strings = [
       "MAN",
     ],
 
-    _ocultar_Sistema: "Ocultar Animação",
+    _ocultar_Sistema: "Animação",
 
     //Menu da versão mobile
     _menu_mobile: ["Gráficos", "Controle", "Config"],
@@ -169,12 +169,12 @@ let strings = [
     _linha_pos_real_config_regua: "Tracejado PV",
     _texto_slider_setpoint: "SP: ",
     _envelope_de_operacao: "Envelope Operação",
-    _texto_violacao_envelope:"Violação Envelope Operação",
-    _mostrar_grafico_PV: "Mostrar Gráfico PV no menu controle (mobile)",
+    _texto_violacao_envelope:"VIOLAÇÃO ENVELOPE",
+    _mostrar_grafico_PV: "Gráfico (menu Controle)",
 
     //Painel Forças Atuantes
     _titulo_painel_Forcas_Atuantes: "Forças",
-    _opcoes_painel_Forcas_Atuantes: ["Ocultar", 1, 2, 5, 10, 100],
+    _opcoes_painel_Forcas_Atuantes: ["x0 ", 1, 2, 5, 10],
     
     // parâmetros de resolução de tela
     _fps_Esperado: "FPS esp",
@@ -203,7 +203,7 @@ let strings = [
       "AUTO",
       "MAN",
     ],
-    _ocultar_Sistema: "Hide Animation",
+    _ocultar_Sistema: "Animation",
 
     //Menu da versão mobile
     _menu_mobile: ["Graphs", "Control", "Settings"],
@@ -355,12 +355,12 @@ let strings = [
     _linha_pos_real_config_regua: "PV Dashed Line",
     _texto_slider_setpoint: "SP: ",
     _envelope_de_operacao: "Operating Envelope",
-    _texto_violacao_envelope:"Operating Envelope Violation",
-    _mostrar_grafico_PV: "Show PV graph (mobile)",
+    _texto_violacao_envelope:"ENVELOPE VIOLATION",
+    _mostrar_grafico_PV: "Graph (menu Control)",
 
     //Painel Forças Atuantes
     _titulo_painel_Forcas_Atuantes: "Forces",
-    _opcoes_painel_Forcas_Atuantes: ["Hide", 1, 2, 5, 10, 100],
+    _opcoes_painel_Forcas_Atuantes: ["x0 ", 1, 2, 5, 10],
     
     // parâmetros de resolução de tela
     _fps_Esperado: "Exp FPS",

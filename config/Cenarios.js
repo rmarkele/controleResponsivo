@@ -571,7 +571,7 @@ let cenarios = [
     perturbacao_Periodo: 1, // periodo da perturbação (unidades SI)
     perturbacao_t_on: 93, // percentual do periodo da onda de perturbação em nível máximo (para onda quadrada)
     perturbacao_inicialmente_inibida: 1,
-    ocultar_sistema: 1, // 0: processo visível, 1: processo invisível
+    exibir_sistema: 0, // 1: processo visível, 0: processo invisível
 
     // parâmetros do indicador de posição
     posicao_indicada_min: -16, // piso de escala de x indicada (unidades SI)
@@ -1696,11 +1696,12 @@ let cenarios = [
     envelope_min: 5, // limite inferior para o envelope de operação em [m]
 
     // parâmetros de tela e modo de exibição da régua
-    ocultar_sistema: 1, // 0: processo visível, 1: processo invisível
+    exibir_sistema: 0, // 1: processo visível, 0: processo invisível
     exibe_banda_proporcional: 0, // 0-NÃO exibe a barra (cor verde) de banda proporcional , 1-exibe a barra de banda proporcional
     exibe_faixa_indicao: 0, // 0-NÃO exibe faixa de indicação (cor laranja), 1-exibe faixa de indicação
     exibe_linha_setpoint: 0, // 0-NÃO exibe linha tracejada (cor azul) de setpoint, 1-exibe linha tracejada de setpoint
     exibe_linha_posicao_real: 0, // 0-NÃO exibe linha tracejada (cor cinza) de posição real, 1-exibe linha tracejada de posição real
+    exibe_grafico_PV_SP: 0, //1 - mostra gráfico PVxSP no menu controle da versão mobile, 0 - não exibe o gráfico
     // Ajustar a frame rate conforme o computador.
     // Inicialmente ajustar em 40 fps, ler o FPS médio e ajustar um valor definitivo ligeiramente inferior
     frameRate: 40, //taxa de frames por segundo

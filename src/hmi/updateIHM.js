@@ -91,7 +91,7 @@ function updateIHM() {
       acaoDiretaMotor.checked(true);
     }
   
-    if(hideSystem){
+    if(!hideSystem){
       hideSystemCheckBox.checked = true;
     }else{
       hideSystemCheckBox.checked = false;

@@ -93,7 +93,7 @@ function cenarioSelectEvent() {
   modoAcaoMotor = checkForUndefined(cenarios[i].modo_acao_motor, 1);
 
   //oculta sistema
-  hideSystem = checkForUndefined(cenarios[i].ocultar_sistema, 0);
+  hideSystem = checkForUndefined(cenarios[i].exibir_sistema, 1)==1?false:true;
      
   //Perturbação
   sel0 = checkForUndefined(
