@@ -193,7 +193,6 @@ canvas {
   margin: 0;
   font-weight: bold;
   padding: 2px 5px;
-  /* font-size: 10px; */
 }
 
 .circle.red {
@@ -377,6 +376,10 @@ canvas {
   #right.active {
     width: 100% !important;
     display: flex;
+  }
+
+  .circle p {
+    font-size: 8px;
   }
 
   /* #center{

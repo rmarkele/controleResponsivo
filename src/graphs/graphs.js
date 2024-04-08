@@ -27,7 +27,7 @@ function plotaGraficos() {
   constrainLength(atuadorPlot, graph2Pos[2], plotSkip);
   
   constrainLength(PerturbPlot, graph3Pos[2], plotSkip);
-  if((showCenterDiv && width<850)){
+  if((showCenterDiv && width<850 && showPvGraph)){
     const graph1offset = 5;
     const graph1h = 20;
     createAxis({

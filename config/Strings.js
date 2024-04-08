@@ -170,10 +170,11 @@ let strings = [
     _texto_slider_setpoint: "SP: ",
     _envelope_de_operacao: "Envelope Operação",
     _texto_violacao_envelope:"Violação Envelope Operação",
+    _mostrar_grafico_PV: "Mostrar Gráfico PV no menu controle (mobile)",
 
     //Painel Forças Atuantes
     _titulo_painel_Forcas_Atuantes: "Forças",
-    _opcoes_painel_Forcas_Atuantes: ["Ocultar", "x1", "x10", "x100"],
+    _opcoes_painel_Forcas_Atuantes: ["Ocultar", 1, 2, 5, 10, 100],
     
     // parâmetros de resolução de tela
     _fps_Esperado: "FPS esp",
@@ -355,10 +356,11 @@ let strings = [
     _texto_slider_setpoint: "SP: ",
     _envelope_de_operacao: "Operating Envelope",
     _texto_violacao_envelope:"Operating Envelope Violation",
+    _mostrar_grafico_PV: "Show PV graph (mobile)",
 
     //Painel Forças Atuantes
     _titulo_painel_Forcas_Atuantes: "Forces",
-    _opcoes_painel_Forcas_Atuantes: ["Hide", "x1", "x10", "x100"],
+    _opcoes_painel_Forcas_Atuantes: ["Hide", 1, 2, 5, 10, 100],
     
     // parâmetros de resolução de tela
     _fps_Esperado: "Exp FPS",

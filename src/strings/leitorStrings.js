@@ -517,6 +517,12 @@ function idiomaSelect() {
       strings[i]._texto_violacao_envelope,
       "EV"
     ),
+
+    //9
+    checkForUndefinedString(
+      strings[i]._mostrar_grafico_PV,
+      "Mostrar Gráfico PV no menu controle (mobile)"
+    ),
     
   ]
   
@@ -528,7 +534,7 @@ function idiomaSelect() {
     ),
     checkForUndefinedString(
       strings[i]._opcoes_painel_Forcas_Atuantes,
-      ["Ocultar", "x1", "x100", "x1000"]
+      ["Ocultar", 1, 100, 1000]
     ),
   ];
 

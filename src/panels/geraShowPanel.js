@@ -45,9 +45,21 @@ function geraShowPanel(pos){
     mostraPosReal = LinhaPosReal.checked();
   });
 
+
   LinhaEnvelope = createCheckbox(" " +strg.configRegua[7], true);
   LinhaEnvelope.parent("panels-group-5");
   LinhaEnvelope.class("radio-panel");
+
+  ShowGraphPvCheck = createCheckbox(" " +strg.configRegua[9], true);
+  ShowGraphPvCheck.parent("panels-group-5");
+  ShowGraphPvCheck.class("radio-panel");
+  ShowGraphPvCheck.changed(() => {
+    showPvGraph = ShowGraphPvCheck.checked();
+  });
+
+  if(width>850){
+    ShowGraphPvCheck.hide();
+  }
 
   EVlight = document.querySelector('#light-EV')
   LinhaEnvelope.changed(() => {
@@ -114,6 +126,12 @@ function geraShowPanel(pos){
   } else {
     LinhaEnvelope.checked(false);
     EVlight.style.display='none';
+  }
+
+  if (showPvGraph){
+    ShowGraphPvCheck.checked(true)
+  } else {
+    ShowGraphPvCheck.checked(false)
   }
   
 }

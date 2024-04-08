@@ -66,9 +66,9 @@ function desenhaSistema() {
     // Desenha atuador
     if (!noControlCheckBox.checked()) {
     let [xPID, yPID, LPID, HPID] = [
-      width > 850? xref + 5 + (1.4 * L0) / 2: xref + 5 + (1.6 * L0) / 2,
+      xref + 10 + (1.2 * L0) / 2,
       (1 / 4) * yref,
-      width > 850? 1.4 * L0: 1.6 * L0,
+      1.2 * L0,
       Hpid,
     ];
     line(xref, yPID, xPID - LPID / 2, yPID); //linha parede atuador

@@ -136,6 +136,12 @@ function updateIHM() {
       LinhaEnvelope.checked(false);
       EVlight.style.display='none';
     }
+
+    if (showPvGraph){
+      ShowGraphPvCheck.checked(true)
+    } else {
+      ShowGraphPvCheck.checked(false)
+    }
   
   
   

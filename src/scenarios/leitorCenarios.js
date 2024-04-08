@@ -179,6 +179,10 @@ function cenarioSelectEvent() {
     }
   }
 
+  //exibição do gráfico PV_SP na versão mobile
+
+  showPvGraph = checkForUndefined(cenarios[i].exibe_grafico_PV_SP, 1)===1;
+
   // modo de exibição do painel Saída Controlador/Atuador
 
   selAtuadorPID =

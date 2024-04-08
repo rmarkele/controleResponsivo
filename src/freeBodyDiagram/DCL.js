@@ -35,7 +35,16 @@ function desenhaDCL() {
 }
 
 function geraPainelDCL(){
-
+  const forcesMult = document.querySelector('#forces-multiplier');
+  for(let i = 0; i < strg.varPainelForcasAtuantes[1].length; i++){
+    let label = strg.varPainelForcasAtuantes[1][i];
+    let value = i>0?strg.varPainelForcasAtuantes[1][i]:0;
+    let multOpt = document.createElement('div');
+    multOpt.innerHTML = `
+    <input type="radio" name="DCL-mult" value="${value}" id="x${value}">
+    <label for="x${value}">x${label}</label>`
+    forcesMult.appendChild(multOpt);
+  }
  
 
   let opts=document.querySelectorAll("input[name=DCL-mult]");

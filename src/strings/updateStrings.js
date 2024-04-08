@@ -44,11 +44,13 @@ function atualizaStrings() {
   
   //Titulos Painéis
   document.querySelector(`#forces-multiplier h4`).innerHTML = strg.varPainelForcasAtuantes[0]+':';
-  let mults=[0, 1, 10, 100];
-  mults.forEach((mult,i) =>{
-    let opt=document.querySelector(`label[for=x${mult}]`);
-    opt.innerHTML=strg.varPainelForcasAtuantes[1][i];
-  })
+
+  for(let i = 0; i < strg.varPainelForcasAtuantes[1].length; i++){
+    let label = i>0?`x${strg.varPainelForcasAtuantes[1][i]}`:strg.varPainelForcasAtuantes[1][i];
+    let value = i>0?strg.varPainelForcasAtuantes[1][i]:0;
+    let opt=document.querySelector(`label[for=x${value}]`);
+    opt.innerHTML=label;
+  }
   
   document.querySelector(`label[for=SystemView]`).innerHTML = strg.SystemView;
 
@@ -201,6 +203,8 @@ function atualizaStrings() {
       " " + strg.configRegua[5];
     LinhaEnvelope.elt.getElementsByTagName("label")[0].innerHTML =
       " " + strg.configRegua[7];
+    ShowGraphPvCheck.elt.getElementsByTagName("label")[0].innerHTML =
+    " " + strg.configRegua[9];
       
       
     document.querySelector("#light-EV p").innerHTML = strg.configRegua[8];
