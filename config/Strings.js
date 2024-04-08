@@ -11,8 +11,8 @@ let strings = [
 
     //Sistema
     _motor_Linear: [
-      "MotLin ",
-      "AUTO",
+      "MotLin",
+      "AUT",
       "MAN",
     ],
 
@@ -200,7 +200,7 @@ let strings = [
     //Sistema
     _motor_Linear: [
       "LinMot",
-      "AUTO",
+      "AUT",
       "MAN",
     ],
     _ocultar_Sistema: "Animation",
