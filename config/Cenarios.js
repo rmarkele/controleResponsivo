@@ -34,8 +34,8 @@ OP(t) = Kp[e(t)] + Ki[integral(e(t))] + Kd[derivada(e(t))] + OP0
 
 let cenarios = [
   {
-    label_ptBR: "Cenário Demonstração",
-    label_enUS: "Demo Scenario",
+    label_ptBR: "Cenário Selecionado: Demonstração",
+    label_enUS: "Selected Scenario: Demonstration",
     m: 5, //massa do carrinho em unidades SI
     posicao_indicada_min: -10, // piso de escala de x indicada (unidades SI)
     posicao_indicada_max: 10, // teto de escala de x indicada (unidades SI)
@@ -51,7 +51,7 @@ let cenarios = [
     perturbacao_Fmax: -40, // valor máximo da perturbAção (unidades SI)
     perturbacao_Fmin: 0, // valor mínimo da perturbAção (unidades SI)
     perturbacao_Periodo: 10, // período da perturbAção (unidades SI)
-    perturbacao_t_on: 95, // percentual do período da onda de perturbAção em nível máximo (para onda quadrada)
+    perturbacao_t_on: 90, // percentual do período da onda de perturbAção em nível máximo (para onda quadrada)
     setpoint_Vmin: -5, // valor mínimo que o setpoint pode assumir (unidades SI)
     setpoint_Vmax: 5, // valor máximo que o setpoint pode assumir (unidades SI)
     setpoint_Tipo: 2, // 0-MANUAL, 1-onda senoidal, 2-onda quadrada, 3-onda triangular, 4-dente de serra, 5-trem de impulsos, 6-ruido aleatório
@@ -64,7 +64,7 @@ let cenarios = [
     elimina_surto_derivativo: 1, // 0-função desabilitada, 1-função habilitada
     ativa_filtro_passa_baixa: 1, // 0-filtro desabilitado, 1-filtro habilitado
     frequencia_corte: 1, // frequencia de corte do filtro passa baixa. (em Hz)
-    multiplicador_forcas_atuantes: 1, // multiplicador para as forças atuantes no carrinho. Valores possíveis: 0, 1, 10 ou 100. Valores diferentes serão tratados como 1.
+    multiplicador_forcas_atuantes: 2, // multiplicador para as forças atuantes no carrinho. Valores possíveis: 0, 1, 10 ou 100. Valores diferentes serão tratados como 1.
     exibe_grafico_PV_SP: 1, //1 - mostra gráfico PVxSP no menu controle da versão mobile, 0 - não exibe o gráfico
   },
 

@@ -19,7 +19,7 @@ let strings = [
     _ocultar_Sistema: "Animação",
 
     //Menu da versão mobile
-    _menu_mobile: ["Gráficos", "Controle", "Config"],
+    _menu_mobile: ["GRÁFICOS", "CONTROLE", "CONFIG"],
 
     //Menu de navegação entre os painéis de entrada
     _menu_paineis:["Processo   IndPos   Env", "ModoContr   MotLin", "SP", "Perturb", "Exibir", "Sobre"],
@@ -31,16 +31,16 @@ let strings = [
     _massa_carro: "m[kg]",
 
     //Painel do Envelope de Operação
-    _titulo_painel_Envelope: "Envelope de Operação",
+    _titulo_painel_Envelope: "Envelope Operação",
     _Env_min: "min[m]",
     _Env_max: "max[m]",
     
     // Gráficos
-    _titulo_PV_e_SP: "Var. Controlada PV(t) e Setpoint SP(t)",
+    _titulo_PV_e_SP: "Var. Controlada PV(t) / Setpoint SP(t)",
     _eixo_y_esq_PV_e_SP: "PV[m]",
     _eixo_y_dir_PV_e_SP: "SP[m]",
 
-    _titulo_Fc_e_Op: "Var. Manipulada Fc(t) e Saída Controlador OP(t)",
+    _titulo_Fc_e_Op: "Var. Manipulada Fc(t) / Saída Controlador OP(t)",
     _eixo_y_esq_Fc_e_Op: "Fc[%Fcmax]",
     _eixo_y_dir_Fc_e_Op: "OP[%]",
 
@@ -145,7 +145,7 @@ let strings = [
      //Painel Setpoint
     _titulo_painel_Setpoint: "Setpoint Selecionado: ",
     _tipo_Setpoint: [
-      "Manual (mova o cursor sob o carro)",
+      "Manual (mova cursor sob carro)",
       "Onda Senoidal",
       "Onda Quadrada",
       "Onda Triangular",
@@ -170,7 +170,7 @@ let strings = [
     _texto_slider_setpoint: "SP: ",
     _envelope_de_operacao: "Envelope Operação",
     _texto_violacao_envelope:"VIOLAÇÃO ENVELOPE",
-    _mostrar_grafico_PV: "Gráfico (menu Controle)",
+    _mostrar_grafico_PV: "Gráfico (menu CONTROLE)",
 
     //Painel Forças Atuantes
     _titulo_painel_Forcas_Atuantes: "Forças",
@@ -206,7 +206,7 @@ let strings = [
     _ocultar_Sistema: "Animation",
 
     //Menu da versão mobile
-    _menu_mobile: ["Graphs", "Control", "Settings"],
+    _menu_mobile: ["GRAPHS", "CONTROL", "SETTINGS"],
 
     //Menu de navegação entre os painéis de entrada
     _menu_paineis:["Process   PosInd   Env", "ContrMode   LinMot", "SP", "Perturb", "Show", "About"],
@@ -298,9 +298,9 @@ let strings = [
     //Painel Motor
     _titulo_painel_Motor: ["Selected Linear Motor: Ideal", "Selected Linear Motor: Non-ideal"],
     _Fcmax_painel_Motor: "Fcmax[N]: ",
-    _atraso_transporte_Motor: "Deadtime[ms]:",
-    _Fcmax_inc_central: "Centerslope:",
-    _Fcmax_histerese: "Deadspace[%]:",
+    _atraso_transporte_Motor: "DeadTime[ms]:",
+    _Fcmax_inc_central: "CenterSlope:",
+    _Fcmax_histerese: "DeadSpace[%]:",
     _modo_acao_motor: "DIR",
 
     //Painel Indicador de Posição
@@ -331,7 +331,7 @@ let strings = [
     //Painel Setpoint
     _titulo_painel_Setpoint: "Selected Setpoint: ",
     _tipo_Setpoint: [
-      "Manual (move slider under the car)",
+      "Manual (move slider under car)",
       "Sine Wave",
       "Step Wave",
       "Ramp Wave",
@@ -349,14 +349,14 @@ let strings = [
     //Configurações da Régua
     _config_regua: "View",
     _banda_proporcional_config_regua: "Proportional Band",
-    _banda_morta_config_regua: "Deadband",
+    _banda_morta_config_regua: "DeadBand",
     _ind_pos_config_regua: "PV Indication Range",
     _linha_setpoint_config_regua: "SP Dashed Line",
     _linha_pos_real_config_regua: "PV Dashed Line",
     _texto_slider_setpoint: "SP: ",
     _envelope_de_operacao: "Operating Envelope",
     _texto_violacao_envelope:"ENVELOPE VIOLATION",
-    _mostrar_grafico_PV: "Graph (menu Control)",
+    _mostrar_grafico_PV: "Graph (menu CONTROL)",
 
     //Painel Forças Atuantes
     _titulo_painel_Forcas_Atuantes: "Forces",
