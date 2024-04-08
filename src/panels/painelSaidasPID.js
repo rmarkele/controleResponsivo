@@ -163,14 +163,16 @@ function plotaSigmoid(pos) {
 
   let lengAtuadorPlot = forcaAtuadorPlot.length;
   let yplot, xplot;
-  if(forcaAtuadorPlot[lengAtuadorPlot - 1][0]){
+
+  if(typeof forcaAtuadorPlot[lengAtuadorPlot - 1][0] !== 'undefined'){
     yplot = map(forcaAtuadorPlot[lengAtuadorPlot - 1][0], -100, 100, -0.05 * h, -0.95 * h);
     xplot = map(forcaAtuadorPlot[lengAtuadorPlot - 1][1], -100, 100, 0, w);
   }
   else{
-    xplot = 0;
-    yplot = 0;
+    yplot = map(0, -100, 100, -0.05 * h, -0.95 * h);
+    xplot = map(0, -100, 100, 0, w);
   }
+  
     fill(corAt);
     noStroke();
     ellipse(xplot, yplot, 10, 10);
