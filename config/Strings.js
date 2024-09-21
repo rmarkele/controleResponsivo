@@ -166,7 +166,7 @@ let strings = [
     _banda_morta_config_regua: "Banda Morta",
     _ind_pos_config_regua: "Faixa Indicação PV",
     _linha_setpoint_config_regua: "Tracejado SP",
-    _linha_pos_real_config_regua: "Tracejado PV",
+    _linha_pos_real_config_regua: "Tracejado Centro Carro",
     _texto_slider_setpoint: "SP: ",
     _envelope_de_operacao: "Envelope Operação",
     _texto_violacao_envelope:"VIOLAÇÃO ENVELOPE",
@@ -174,7 +174,7 @@ let strings = [
 
     //Painel Forças Atuantes
     _titulo_painel_Forcas_Atuantes: "Forças",
-    _opcoes_painel_Forcas_Atuantes: ["x0 ", 1, 2, 5, 10],
+    _opcoes_painel_Forcas_Atuantes: ["x0 ", 1, 2, 5, 10, 20],
     
     // parâmetros de resolução de tela
     _fps_Esperado: "FPS esp",
@@ -352,7 +352,7 @@ let strings = [
     _banda_morta_config_regua: "DeadBand",
     _ind_pos_config_regua: "PV Indication Range",
     _linha_setpoint_config_regua: "SP Dashed Line",
-    _linha_pos_real_config_regua: "PV Dashed Line",
+    _linha_pos_real_config_regua: "Car Center Dashed Line",
     _texto_slider_setpoint: "SP: ",
     _envelope_de_operacao: "Operating Envelope",
     _texto_violacao_envelope:"ENVELOPE VIOLATION",
@@ -360,7 +360,7 @@ let strings = [
 
     //Painel Forças Atuantes
     _titulo_painel_Forcas_Atuantes: "Forces",
-    _opcoes_painel_Forcas_Atuantes: ["x0 ", 1, 2, 5, 10],
+    _opcoes_painel_Forcas_Atuantes: ["x0 ", 1, 2, 5, 10, 20],
     
     // parâmetros de resolução de tela
     _fps_Esperado: "Exp FPS",

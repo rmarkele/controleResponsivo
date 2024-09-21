@@ -24,8 +24,6 @@ function atualizaStrings() {
   }
   selSet.selected(strg.tiposSetpoint[indOf._tipoSet]);
   cenarioLabel(strings[languageIndex].idioma);
-  
-  
   for (let i = 0; i < strg.labelCenario.length; i++) {
     selPar.querySelectorAll("option").forEach((option, index)=>{
       option.text =strg.labelCenario[index];

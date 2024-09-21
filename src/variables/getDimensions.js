@@ -3,6 +3,7 @@ function getDimensions(){
     fpsMean = document.querySelector('#fps-mean');
 
     let vh = window.innerHeight * 0.01;
+    // console.log(vh)
     // Configura o valor em --vh na raiz do documento
     document.documentElement.style.setProperty('--vh', `${vh}px`);
     
