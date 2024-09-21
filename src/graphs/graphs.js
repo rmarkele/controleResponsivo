@@ -42,7 +42,6 @@ function plotaGraficos() {
     });
 
     if (controlador < 3) {
-      console.log("teste")
       plot({
         posx: graph1Pos[0],
         posy: graph1Pos[1] - graph1offset,
@@ -53,7 +52,7 @@ function plotaGraficos() {
         color: corSP,
         timeScale: plotSkip,
       });
-    } else if (controlador == 3 ) {
+    } else if (controlador == 3) {
       plot({
         posx: graph1Pos[0],
         posy: graph1Pos[1] - graph1offset,
@@ -116,7 +115,7 @@ function plotaGraficos() {
         color: corSP,
         timeScale: plotSkip,
       });
-    } else if (controlador == 3 ) {
+    } else if (controlador == 3) {
       plot({
         posx: graph1Pos[0],
         posy: graph1Pos[1],
