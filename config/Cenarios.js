@@ -42,10 +42,10 @@ let cenarios = [
 
 
   {
-    label_ptBR: "Cenário Selecionado: Demonstração (Tm = 0,1s)",
-    label_enUS: "Selected Scenario: Demonstration (Td = 0.1s)",
+    label_ptBR: "Cenário Selecionado: Demonstração (Tm=10ms)",
+    label_enUS: "Selected Scenario: Demonstration (Td=10ms)",
     // parâmetros do motor linear
-    Fcmax: 30000, // valor absoluto da máxima força aplicável (tração/compressão) pelo motor linear (unidades SI)
+ 
 
     // parâmetros do processo a ser controlado
     m: 5000, //massa do carrinho em unidades SI
@@ -71,7 +71,7 @@ let cenarios = [
     setpoint_Vmin: -5, // valor mínimo que o setpoint pode assumir (unidades SI)
     setpoint_Vmax: 5, // valor máximo que o setpoint pode assumir (unidades SI)
     setpoint_Tipo: 2, // 0-MANUAL, 1-onda senoidal, 2-onda quadrada, 3-onda triangular, 4-dente de serra, 5-trem de impulsos, 6-ruido aleatório
-    setpoint_Periodo: 28, // período do setpoint se for selecionada uma onda (unidades SI)
+    setpoint_Periodo: 29, // período do setpoint se for selecionada uma onda (unidades SI)
     setpoint_t_on: 50, // percentual do período da onda do setpoint em nível máximo (onda quadrada)
     setpoint_manual_inicial: 10, // valor inicial do setpoint quando é selecionado o setpoint manual (unidades SI)
     Fc_manual_inicial: -100, // valor inicial % de OP (de -100 a 100) do modo MAN
@@ -85,11 +85,11 @@ let cenarios = [
     // parâmetros do motor linear
     tipo_atuador: 1, // 0- Motor Linear Ideal, 1- Motor Linear NÃO Ideal (sigmoid)
     modo_acao_motor: 1, // 0-Ação Reversa, 1- Ação Direta
-    Fcmax: 75000, // valor absoluto da máxima força aplicável (trAção/compress�o) pelo motor linear (unidades SI)
-    atraso_transporte_atuador: 100, //valor em milissegundos do atraso de transporte do atuador. O valor é
+    Fcmax: 65000, // valor absoluto da máxima força aplicável (trAção/compress�o) pelo motor linear (unidades SI)
+    atraso_transporte_atuador: 10, //valor em milissegundos do atraso de transporte do atuador. O valor é
     // aproximado pois foi utilizada uma aproximação de primeira ordem para a
     // função de transferência do atraso de transporte.
-    ganho_atuador: 2, // ganho/inclinação central da curva do atuador (aplicável somente para atuador NÃO ideal)
+    ganho_atuador: 1.5, // ganho/inclinação central da curva do atuador (aplicável somente para atuador NÃO ideal)
     histerese_atuador: 10, // "folga" do atuador em %
 
     // Forças Atuantes
@@ -106,8 +106,95 @@ let cenarios = [
     envelope_max: 11, // limite superior para o envelope de operação em [m]
     envelope_min: -11, // limite inferior para o envelope de operação em [m]
     exibe_grafico_PV_SP: 1, //1 - mostra gráfico PVxSP no menu controle da versão mobile, 0 - não exibe o gráfico
-    frameRate: 30, //taxa de frames por segundo
+    frameRate: 25, //taxa de frames por segundo
   },
+
+
+
+
+
+
+
+
+
+
+
+  {
+    label_ptBR: "Demonstração: Controle Manual",
+    label_enUS: "Demonstration: Manual Control",
+    // parâmetros do motor linear
+ 
+    // parâmetros do processo a ser controlado
+    m: 5000, //massa do carrinho em unidades SI
+    K_mola: 5000, // constante da mola em unidades SI (pode ser negativa para simular pêndulo invertido)
+    C_amortecedor: 5000, // coeficiente de amortecimento SI (pode ser negativa)
+
+
+    posicao_indicada_min: -16, // piso de escala de x indicada (unidades SI)
+    posicao_indicada_max: 16, // teto de escala de x indicada (unidades SI)
+
+    posicao_inicial: -16, // valor inicial da posição x do carrinho em relação à origem (unidades SI)
+    velocidade_inicial: 75, // velocidade inicial do carrinho (SI)
+    Kp: 1, // ganho da componente proporcional (adimensional) - Obs. Kp=0 desativa o PID sem inibir a pré-carga OP0
+    Ki: 1, // ganho da componente integral (adimensional) - Ki precisa ser nulo para habilitar a pré-carga OP0
+    Kd: 1, // ganho da componente derivativa (adimensional)
+    estado_inicial_controlador: 0, //0-DESL., 1-controle AUTO, 2-controle MANUAL
+    perturbacao_Tipo: 2, // 0-nenhuma, 1-onda senoidal, 2-onda quadrada, 3-onda triangular, 4-dente de serra, 5-trem de impulsos, 6-ruido aleatório, 7-manual
+    perturbacao_manual_inicial: 0, // habilitado no modo manual (% de Fcmax), limitado aos valores de perturbacao_Fmax e perturbacao_Fmin
+    perturbacao_Fmax: -50, // valor máximo da perturbAção (unidades SI)
+    perturbacao_Fmin: 0, // valor mínimo da perturbAção (unidades SI)
+    perturbacao_Periodo: 10, // período da perturbAção (unidades SI)
+    perturbacao_t_on: 90, // percentual do período da onda de perturbAção em nível máximo (para onda quadrada)
+    setpoint_Vmin: -5, // valor mínimo que o setpoint pode assumir (unidades SI)
+    setpoint_Vmax: 5, // valor máximo que o setpoint pode assumir (unidades SI)
+    setpoint_Tipo: 2, // 0-MANUAL, 1-onda senoidal, 2-onda quadrada, 3-onda triangular, 4-dente de serra, 5-trem de impulsos, 6-ruido aleatório
+    setpoint_Periodo: 29, // período do setpoint se for selecionada uma onda (unidades SI)
+    setpoint_t_on: 50, // percentual do período da onda do setpoint em nível máximo (onda quadrada)
+    setpoint_manual_inicial: 10, // valor inicial do setpoint quando é selecionado o setpoint manual (unidades SI)
+    Fc_manual_inicial: -100, // valor inicial % de OP (de -100 a 100) do modo MAN
+    eLim: 3, //limiar para integração no modo PD+I se erro<eLim
+    DLim: 10, //limiar para integração no modo PD+I se D<DLim
+    elimina_surto_derivativo: 1, // 0-função desabilitada, 1-função habilitada
+    ativa_filtro_passa_baixa: 1, // 0-filtro desabilitado, 1-filtro habilitado
+    frequencia_corte: 100, // frequencia de corte do filtro passa baixa. (em Hz)
+    multiplicador_forcas_atuantes: 2, // multiplicador para as forças atuantes no carrinho. Valores possíveis: 0, 1, 10 ou 100. Valores difs serão tratados como 1.
+
+    // parâmetros do motor linear
+    tipo_atuador: 1, // 0- Motor Linear Ideal, 1- Motor Linear NÃO Ideal (sigmoid)
+    modo_acao_motor: 1, // 0-Ação Reversa, 1- Ação Direta
+    Fcmax: 65000, // valor absoluto da máxima força aplicável (trAção/compress�o) pelo motor linear (unidades SI)
+    atraso_transporte_atuador: 100, //valor em milissegundos do atraso de transporte do atuador. O valor é
+    // aproximado pois foi utilizada uma aproximação de primeira ordem para a
+    // função de transferência do atraso de transporte.
+    ganho_atuador: 1.5, // ganho/inclinação central da curva do atuador (aplicável somente para atuador NÃO ideal)
+    histerese_atuador: 10, // "folga" do atuador em %
+
+    // Forças Atuantes
+    multiplicador_forcas_atuantes: 1, // multiplicador para as forças atuantes no carrinho. Valores possíveis: 0, 1, 10 ou 100. Valores difs serão tratados como 1.
+
+    // modo de exibição da régua
+    exibir_sistema: 0, // 1: processo visível, 0: processo invisível
+    exibe_banda_proporcional: 0, // 0-NÃO exibe a barra (cor verde) de banda proporcional (aplicável ao controlador PID somente), 1-exibe a barra de banda proporcional
+    exibe_banda_morta: 0, // 0-NÃO exibe a barra (cor verde) de banda morta (aplicável ao controlador Biestável somente), 1-exibe a barra de banda morta
+    exibe_faixa_indicao: 0, // 0-NÃO exibe faixa de indicAção (cor laranja), 1-exibe faixa de indicAção
+    exibe_linha_setpoint: 0, // 0-NÃO exibe linha tracejada (cor azul) de setpoint, 1-exibe linha tracejada de setpoint
+    exibe_linha_posicao_real: 0, // 0-NÃO exibe linha tracejada (cor cinza) de posição real, 1-exibe linha tracejada de posição real
+    exibe_envelope_operacao: 1, // 0-NÃO exibe linhas (cor vermelha) dos limites do envelope de operaçao, 1-exibe linhas dos limites do envelope de operaçao
+    // envelope de operação
+    envelope_max: 11, // limite superior para o envelope de operação em [m]
+    envelope_min: -11, // limite inferior para o envelope de operação em [m]
+    exibe_grafico_PV_SP: 1, //1 - mostra gráfico PVxSP no menu controle da versão mobile, 0 - não exibe o gráfico
+    frameRate: 25, //taxa de frames por segundo
+  },
+
+
+
+
+
+
+
+
+
 
 
 
@@ -200,7 +287,7 @@ let cenarios = [
     // parâmetros de resolu��o de tela
     // Ajustar a frame rate conforme o computador.
     // Inicialmente ajustar em 40 fps, ler o FPS m�dio e ajustar um valor definitivo ligeiramente inferior
-    frameRate: 30, //taxa de frames por segundo
+    frameRate: 25, //taxa de frames por segundo
   },
 
 
@@ -266,7 +353,7 @@ let cenarios = [
     exibe_linha_posicao_real: 1, // 0-NÃO exibe linha tracejada (cor cinza) de posição real, 1-exibe linha tracejada de posição real
     // Ajustar a frame rate conforme o computador.
     // Inicialmente ajustar em 40 fps, ler o FPS médio e ajustar um valor definitivo ligeiramente inferior
-    frameRate: 30, //taxa de frames por segundo
+    frameRate: 25, //taxa de frames por segundo
   },
 
 
@@ -331,7 +418,7 @@ let cenarios = [
     exibe_linha_posicao_real: 1, // 0-NÃO exibe linha tracejada (cor cinza) de posição real, 1-exibe linha tracejada de posição real
     // Ajustar a frame rate conforme o computador.
     // Inicialmente ajustar em 40 fps, ler o FPS médio e ajustar um valor definitivo ligeiramente inferior
-    frameRate: 30, //taxa de frames por segundo
+    frameRate: 25, //taxa de frames por segundo
   },
 
 
@@ -403,7 +490,7 @@ let cenarios = [
     exibe_linha_posicao_real: 1, // 0-NÃO exibe linha tracejada (cor cinza) de posição real, 1-exibe linha tracejada de posição real
     // Ajustar a frame rate conforme o computador.
     // Inicialmente ajustar em 40 fps, ler o FPS médio e ajustar um valor definitivo ligeiramente inferior
-    frameRate: 30, //taxa de frames por segundo
+    frameRate: 25, //taxa de frames por segundo
   },
 
 
@@ -476,7 +563,7 @@ let cenarios = [
     exibe_linha_posicao_real: 1, // 0-NÃO exibe linha tracejada (cor cinza) de posição real, 1-exibe linha tracejada de posição real
     // Ajustar a frame rate conforme o computador.
     // Inicialmente ajustar em 40 fps, ler o FPS médio e ajustar um valor definitivo ligeiramente inferior
-    frameRate: 30, //taxa de frames por segundo
+    frameRate: 25, //taxa de frames por segundo
   },
 
 
@@ -551,7 +638,7 @@ let cenarios = [
     exibe_linha_posicao_real: 1, // 0-NÃO exibe linha tracejada (cor cinza) de posição real, 1-exibe linha tracejada de posição real
     // Ajustar a frame rate conforme o computador.
     // Inicialmente ajustar em 40 fps, ler o FPS médio e ajustar um valor definitivo ligeiramente inferior
-    frameRate: 30, //taxa de frames por segundo
+    frameRate: 25, //taxa de frames por segundo
   },
 
 
@@ -624,7 +711,7 @@ let cenarios = [
     exibe_linha_posicao_real: 1, // 0-NÃO exibe linha tracejada (cor cinza) de posição real, 1-exibe linha tracejada de posição real
     // Ajustar a frame rate conforme o computador.
     // Inicialmente ajustar em 40 fps, ler o FPS médio e ajustar um valor definitivo ligeiramente inferior
-    frameRate: 30, //taxa de frames por segundo
+    frameRate: 25, //taxa de frames por segundo
   },
 
 
@@ -646,7 +733,7 @@ let cenarios = [
     // expressar valores decimais com ponto . em vez de vírgula ,
 
     // parâmetros do motor linear
-    Fcmax: 13e6, // valor absoluto da máxima força aplicável (tração/compressão) pelo motor linear (unidades SI)
+    Fcmax: 6e6, // valor absoluto da máxima força aplicável (tração/compressão) pelo motor linear (unidades SI)
 
     // parâmetros do processo a ser controlado
     m: 5000, //massa do carrinho em unidades SI
@@ -673,7 +760,7 @@ let cenarios = [
     estado_inicial_controlador: 1, //0-DESL., 1-controle AUTO, 2-controle MANUAL
     Kp: 1, // ganho da componente proporcional (adimensional) - Obs. Kp=0 desativa o PID sem inibir a pré-carga OP0
     Ki: 0, // ganho da componente integral (adimensional) - Ki precisa ser nulo para habilitar a pré-carga OP0
-    Kd: 0.121, // ganho da componente derivativa (adimensional)
+    Kd: 0.2, // ganho da componente derivativa (adimensional)
     OP0: 0, //pré-carga em % de OP (de -100 a 100) (adimensional)
     Imax: 0, //valor máximo em % da componente integral
     modo_acao_controlador: 0, // 0-Ação Reversa, 1- Ação Direta
@@ -693,7 +780,7 @@ let cenarios = [
     exibe_linha_posicao_real: 1, // 0-NÃO exibe linha tracejada (cor cinza) de posição real, 1-exibe linha tracejada de posição real
     // Ajustar a frame rate conforme o computador.
     // Inicialmente ajustar em 40 fps, ler o FPS médio e ajustar um valor definitivo ligeiramente inferior
-    frameRate: 30, //taxa de frames por segundo
+    frameRate: 25, //taxa de frames por segundo
   },
 
 
@@ -715,7 +802,7 @@ let cenarios = [
     // expressar valores decimais com ponto . em vez de vírgula ,
 
     // parâmetros do motor linear
-    Fcmax: 13e6, // valor absoluto da máxima força aplicável (tração/compressão) pelo motor linear (unidades SI)
+    Fcmax: 6e6, // valor absoluto da máxima força aplicável (tração/compressão) pelo motor linear (unidades SI)
 
     // parâmetros do processo a ser controlado
     m: 5000, //massa do carrinho em unidades SI
@@ -744,7 +831,7 @@ let cenarios = [
     estado_inicial_controlador: 1, //0-DESL., 1-controle AUTO, 2-controle MANUAL
     Kp: 1, // ganho da componente proporcional (adimensional) - Obs. Kp=0 desativa o PID sem inibir a pré-carga OP0
     Ki: 0, // ganho da componente integral (adimensional) - Ki precisa ser nulo para habilitar a pré-carga OP0
-    Kd: 0.121, // ganho da componente derivativa (adimensional)
+    Kd: 0.2, // ganho da componente derivativa (adimensional)
     OP0: 0, //pré-carga em % de OP (de -100 a 100) (adimensional)
     Imax: 0, //valor máximo em % da componente integral
     modo_acao_controlador: 0, // 0-Ação Reversa, 1- Ação Direta
@@ -771,7 +858,7 @@ let cenarios = [
 
     // Ajustar a frame rate conforme o computador.
     // Inicialmente ajustar em 40 fps, ler o FPS médio e ajustar um valor definitivo ligeiramente inferior
-    frameRate: 30, //taxa de frames por segundo
+    frameRate: 25, //taxa de frames por segundo
   },
 
 
@@ -845,7 +932,7 @@ let cenarios = [
     exibe_linha_posicao_real: 1, // 0-NÃO exibe linha tracejada (cor cinza) de posição real, 1-exibe linha tracejada de posição real
     // Ajustar a frame rate conforme o computador.
     // Inicialmente ajustar em 40 fps, ler o FPS médio e ajustar um valor definitivo ligeiramente inferior
-    frameRate: 30, //taxa de frames por segundo
+    frameRate: 25, //taxa de frames por segundo
   },
 
 
@@ -920,7 +1007,7 @@ let cenarios = [
     exibe_linha_posicao_real: 1, // 0-NÃO exibe linha tracejada (cor cinza) de posição real, 1-exibe linha tracejada de posição real
     // Ajustar a frame rate conforme o computador.
     // Inicialmente ajustar em 40 fps, ler o FPS médio e ajustar um valor definitivo ligeiramente inferior
-    frameRate: 30, //taxa de frames por segundo
+    frameRate: 25, //taxa de frames por segundo
   },
 
 
@@ -996,7 +1083,7 @@ let cenarios = [
 
     // Ajustar a frame rate conforme o computador.
     // Inicialmente ajustar em 40 fps, ler o FPS médio e ajustar um valor definitivo ligeiramente inferior
-    frameRate: 30, //taxa de frames por segundo
+    frameRate: 25, //taxa de frames por segundo
   },
 
 
@@ -1072,7 +1159,7 @@ let cenarios = [
     exibe_linha_posicao_real: 1, // 0-NÃO exibe linha tracejada (cor cinza) de posição real, 1-exibe linha tracejada de posição real
     // Ajustar a frame rate conforme o computador.
     // Inicialmente ajustar em 40 fps, ler o FPS médio e ajustar um valor definitivo ligeiramente inferior
-    frameRate: 30, //taxa de frames por segundo
+    frameRate: 25, //taxa de frames por segundo
   },
 
 
@@ -1148,7 +1235,7 @@ let cenarios = [
     exibe_linha_posicao_real: 1, // 0-NÃO exibe linha tracejada (cor cinza) de posição real, 1-exibe linha tracejada de posição real
     // Ajustar a frame rate conforme o computador.
     // Inicialmente ajustar em 40 fps, ler o FPS médio e ajustar um valor definitivo ligeiramente inferior
-    frameRate: 30, //taxa de frames por segundo
+    frameRate: 25, //taxa de frames por segundo
   },
 
 
@@ -1225,7 +1312,7 @@ let cenarios = [
     exibe_linha_posicao_real: 1, // 0-NÃO exibe linha tracejada (cor cinza) de posição real, 1-exibe linha tracejada de posição real
     // Ajustar a frame rate conforme o computador.
     // Inicialmente ajustar em 40 fps, ler o FPS médio e ajustar um valor definitivo ligeiramente inferior
-    frameRate: 30, //taxa de frames por segundo
+    frameRate: 25, //taxa de frames por segundo
   },
 
 
@@ -1300,7 +1387,7 @@ let cenarios = [
     exibe_linha_posicao_real: 1, // 0-NÃO exibe linha tracejada (cor cinza) de posição real, 1-exibe linha tracejada de posição real
     // Ajustar a frame rate conforme o computador.
     // Inicialmente ajustar em 40 fps, ler o FPS médio e ajustar um valor definitivo ligeiramente inferior
-    frameRate: 30, //taxa de frames por segundo
+    frameRate: 25, //taxa de frames por segundo
   },
 
 
@@ -1379,7 +1466,7 @@ let cenarios = [
     exibe_linha_posicao_real: 1, // 0-NÃO exibe linha tracejada (cor cinza) de posição real, 1-exibe linha tracejada de posição real
     // Ajustar a frame rate conforme o computador.
     // Inicialmente ajustar em 40 fps, ler o FPS médio e ajustar um valor definitivo ligeiramente inferior
-    frameRate: 30, //taxa de frames por segundo
+    frameRate: 25, //taxa de frames por segundo
   },
 
 
@@ -1455,7 +1542,7 @@ let cenarios = [
     exibe_linha_posicao_real: 1, // 0-NÃO exibe linha tracejada (cor cinza) de posição real, 1-exibe linha tracejada de posição real
     // Ajustar a frame rate conforme o computador.
     // Inicialmente ajustar em 40 fps, ler o FPS médio e ajustar um valor definitivo ligeiramente inferior
-    frameRate: 30, //taxa de frames por segundo
+    frameRate: 25, //taxa de frames por segundo
   },
 
 
@@ -1533,7 +1620,7 @@ let cenarios = [
     exibe_linha_posicao_real: 1, // 0-NÃO exibe linha tracejada (cor cinza) de posição real, 1-exibe linha tracejada de posição real
     // Ajustar a frame rate conforme o computador.
     // Inicialmente ajustar em 40 fps, ler o FPS médio e ajustar um valor definitivo ligeiramente inferior
-    frameRate: 30, //taxa de frames por segundo
+    frameRate: 25, //taxa de frames por segundo
   },
 
 
@@ -1608,7 +1695,7 @@ let cenarios = [
     exibe_linha_posicao_real: 1, // 0-NÃO exibe linha tracejada (cor cinza) de posição real, 1-exibe linha tracejada de posição real
     // Ajustar a frame rate conforme o computador.
     // Inicialmente ajustar em 40 fps, ler o FPS médio e ajustar um valor definitivo ligeiramente inferior
-    frameRate: 30, //taxa de frames por segundo
+    frameRate: 25, //taxa de frames por segundo
   },
 
 
@@ -1687,7 +1774,7 @@ let cenarios = [
     exibe_linha_posicao_real: 1, // 0-NÃO exibe linha tracejada (cor cinza) de posição real, 1-exibe linha tracejada de posição real
     // Ajustar a frame rate conforme o computador.
     // Inicialmente ajustar em 40 fps, ler o FPS médio e ajustar um valor definitivo ligeiramente inferior
-    frameRate: 30, //taxa de frames por segundo
+    frameRate: 25, //taxa de frames por segundo
   },
 
 
@@ -1768,7 +1855,7 @@ let cenarios = [
     exibe_linha_posicao_real: 1, // 0-NÃO exibe linha tracejada (cor cinza) de posição real, 1-exibe linha tracejada de posição real
     // Ajustar a frame rate conforme o computador.
     // Inicialmente ajustar em 40 fps, ler o FPS médio e ajustar um valor definitivo ligeiramente inferior
-    frameRate: 30, //taxa de frames por segundo
+    frameRate: 25, //taxa de frames por segundo
   },
 
 
@@ -1845,7 +1932,7 @@ let cenarios = [
     exibe_linha_posicao_real: 1, // 0-NÃO exibe linha tracejada (cor cinza) de posição real, 1-exibe linha tracejada de posição real
     // Ajustar a frame rate conforme o computador.
     // Inicialmente ajustar em 40 fps, ler o FPS médio e ajustar um valor definitivo ligeiramente inferior
-    frameRate: 30, //taxa de frames por segundo
+    frameRate: 25, //taxa de frames por segundo
   },
 
 
@@ -1917,7 +2004,7 @@ let cenarios = [
     exibe_linha_posicao_real: 1, // 0-NÃO exibe linha tracejada (cor cinza) de posição real, 1-exibe linha tracejada de posição real
     // Ajustar a frame rate conforme o computador.
     // Inicialmente ajustar em 40 fps, ler o FPS médio e ajustar um valor definitivo ligeiramente inferior
-    frameRate: 30, //taxa de frames por segundo
+    frameRate: 25, //taxa de frames por segundo
   },
 
 
@@ -1995,7 +2082,7 @@ let cenarios = [
     exibe_linha_posicao_real: 1, // 0-NÃO exibe linha tracejada (cor cinza) de posição real, 1-exibe linha tracejada de posição real
     // Ajustar a frame rate conforme o computador.
     // Inicialmente ajustar em 40 fps, ler o FPS médio e ajustar um valor definitivo ligeiramente inferior
-    frameRate: 30, //taxa de frames por segundo
+    frameRate: 25, //taxa de frames por segundo
   },
 
 
@@ -2071,7 +2158,7 @@ let cenarios = [
     exibe_grafico_PV_SP: 0, //1 - mostra gráfico PVxSP no menu controle da versão mobile, 0 - não exibe o gráfico
     // Ajustar a frame rate conforme o computador.
     // Inicialmente ajustar em 40 fps, ler o FPS médio e ajustar um valor definitivo ligeiramente inferior
-    frameRate: 30, //taxa de frames por segundo
+    frameRate: 25, //taxa de frames por segundo
   },
 
 
@@ -2150,7 +2237,7 @@ let cenarios = [
     exibe_linha_posicao_real: 1, // 0-NÃO exibe linha tracejada (cor cinza) de posição real, 1-exibe linha tracejada de posição real
     // Ajustar a frame rate conforme o computador.
     // Inicialmente ajustar em 40 fps, ler o FPS médio e ajustar um valor definitivo ligeiramente inferior
-    frameRate: 30, //taxa de frames por segundo
+    frameRate: 25, //taxa de frames por segundo
   },
 
 

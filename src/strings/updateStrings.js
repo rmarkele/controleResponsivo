@@ -228,6 +228,13 @@ function atualizaStrings() {
     help.innerHTML = strg.btnSaibaMais;
     // resetButton.html(strg.btnResetar);
     // pauseButton.html(strg.btnPausarIniciar[indOf._statusSim]);
+
+    const warningElementH2 = document.querySelector("#orientation-warning h2");
+  const warningElementP = document.querySelector("#orientation-warning p");
+  
+  warningElementH2.innerHTML = strg.orientationWarning[0];
+  warningElementP.innerHTML = strg.orientationWarning[1];
+  
   }
 
 

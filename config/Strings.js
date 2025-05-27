@@ -180,6 +180,8 @@ let strings = [
     _fps_Esperado: "FPS esp",
     _fps_medio: "FPS méd",
      
+    //Aviso Orientação do Celular
+    _aviso_mobile: ["Por favor gire sua tela para a posição vertical", "(modo retrato)"], 
     
   },
 
@@ -365,6 +367,9 @@ let strings = [
     // parâmetros de resolução de tela
     _fps_Esperado: "Exp FPS",
     _fps_medio: "Avg FPS",
+
+    //Aviso Orientação do Celular
+    _aviso_mobile: ["Please rotate your screen upright", "(portrait orientation)" ], 
     
   },
 ];

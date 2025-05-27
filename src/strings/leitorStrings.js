@@ -550,6 +550,10 @@ function idiomaSelect() {
       strings[i]._fps_medio,
       "FPS médio"
     );
+
+   //Aviso
+  strg.orientationWarning = 
+    checkForUndefinedString(strings[i]._aviso_mobile, ["📱 Por Favor, gire seu celular para a posição vertical!", "Este simulador funciona melhor no modo retrato."]);
   
 }
 
