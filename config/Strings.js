@@ -171,6 +171,7 @@ let strings = [
     _envelope_de_operacao: "Envelope Operação",
     _texto_violacao_envelope:"VIOLAÇÃO ENVELOPE",
     _mostrar_grafico_PV: "Gráfico (menu CONTROLE)",
+    _mostrar_graficos: "Gráficos <span style='font-size:12px; font-family:consola'>(PV/Sp × t, Fc/Op × t, Fp × t, Fc × Op)</span>",
 
     //Painel Forças Atuantes
     _titulo_painel_Forcas_Atuantes: "Forças",
@@ -359,6 +360,7 @@ let strings = [
     _envelope_de_operacao: "Operating Envelope",
     _texto_violacao_envelope:"ENVELOPE VIOLATION",
     _mostrar_grafico_PV: "Graph (menu CONTROL)",
+    _mostrar_graficos: "Graphs <span style='font-size:12px; font-family:consola'>(PV/Sp × t, Fc/Op × t, Fp × t, Fc × Op)</span>",
 
     //Painel Forças Atuantes
     _titulo_painel_Forcas_Atuantes: "Forces",

@@ -521,7 +521,13 @@ function idiomaSelect() {
     //9
     checkForUndefinedString(
       strings[i]._mostrar_grafico_PV,
-      "Mostrar Gráfico PV no menu controle (mobile)"
+      "Gráfico PV no menu controle (mobile)"
+    ),
+
+    //10
+    checkForUndefinedString(
+      strings[i]._mostrar_graficos,
+      "Gráficos"
     ),
     
   ]

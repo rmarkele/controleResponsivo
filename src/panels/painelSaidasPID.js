@@ -1,9 +1,9 @@
 function escrevePainelSaidaPID(pos) {
-  if ((controlador < 3 && pidControlCheckBox.checked())) {
+  if ((controlador < 3 && pidControlCheckBox.checked()) && showGraphs) {
     plotaPID(pos);
     
   } 
-  else if( controlador == 3 && pidControlCheckBox.checked()){
+  else if( controlador == 3 && pidControlCheckBox.checked() && showGraphs){
     plotaBiestavel(pos);       
   }
 }
@@ -104,6 +104,7 @@ function plotaBiestavel(pos){
     corBi = corPID.slice();
   }
 
+  
   createAxis({
     posx: pos[0] + 35,
     posy: pos[1] + pos[3] - 45,

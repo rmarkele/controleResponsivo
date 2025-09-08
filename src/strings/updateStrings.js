@@ -203,6 +203,8 @@ function atualizaStrings() {
       " " + strg.configRegua[7];
     ShowGraphPvCheck.elt.getElementsByTagName("label")[0].innerHTML =
     " " + strg.configRegua[9];
+    ShowGraphsCheck.elt.getElementsByTagName("label")[0].innerHTML =
+    " " + strg.configRegua[10];
       
       
     document.querySelector("#light-EV p").innerHTML = strg.configRegua[8];

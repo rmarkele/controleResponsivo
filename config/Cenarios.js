@@ -42,8 +42,8 @@ let cenarios = [
 
 
   {
-    label_ptBR: "Cenário Selecionado: Demonstração (Tm=10ms)",
-    label_enUS: "Selected Scenario: Demonstration (Td=10ms)",
+    label_ptBR: "Cenário Sel: Demonstração",
+    label_enUS: "Selected Scenario: Demo",
     // parâmetros do motor linear
  
 
@@ -86,7 +86,7 @@ let cenarios = [
     tipo_atuador: 1, // 0- Motor Linear Ideal, 1- Motor Linear NÃO Ideal (sigmoid)
     modo_acao_motor: 1, // 0-Ação Reversa, 1- Ação Direta
     Fcmax: 65000, // valor absoluto da máxima força aplicável (trAção/compress�o) pelo motor linear (unidades SI)
-    atraso_transporte_atuador: 10, //valor em milissegundos do atraso de transporte do atuador. O valor é
+    atraso_transporte_atuador: 0, //valor em milissegundos do atraso de transporte do atuador. O valor é
     // aproximado pois foi utilizada uma aproximação de primeira ordem para a
     // função de transferência do atraso de transporte.
     ganho_atuador: 1.5, // ganho/inclinação central da curva do atuador (aplicável somente para atuador NÃO ideal)
@@ -106,22 +106,15 @@ let cenarios = [
     envelope_max: 11, // limite superior para o envelope de operação em [m]
     envelope_min: -11, // limite inferior para o envelope de operação em [m]
     exibe_grafico_PV_SP: 1, //1 - mostra gráfico PVxSP no menu controle da versão mobile, 0 - não exibe o gráfico
+    exibe_graficos: 0, //1 - mostra gráficos em função do tempo e FcxOp
+    
     frameRate: 25, //taxa de frames por segundo
   },
 
 
-
-
-
-
-
-
-
-
-
   {
-    label_ptBR: "Demonstração: Controle Manual",
-    label_enUS: "Demonstration: Manual Control",
+    label_ptBR: "Tente Controle MAN",
+    label_enUS: "Try MAN Control",
     // parâmetros do motor linear
  
     // parâmetros do processo a ser controlado
@@ -137,7 +130,7 @@ let cenarios = [
     velocidade_inicial: 75, // velocidade inicial do carrinho (SI)
     Kp: 1, // ganho da componente proporcional (adimensional) - Obs. Kp=0 desativa o PID sem inibir a pré-carga OP0
     Ki: 1, // ganho da componente integral (adimensional) - Ki precisa ser nulo para habilitar a pré-carga OP0
-    Kd: 1, // ganho da componente derivativa (adimensional)
+    Kd: 5, // ganho da componente derivativa (adimensional)
     estado_inicial_controlador: 0, //0-DESL., 1-controle AUTO, 2-controle MANUAL
     perturbacao_Tipo: 2, // 0-nenhuma, 1-onda senoidal, 2-onda quadrada, 3-onda triangular, 4-dente de serra, 5-trem de impulsos, 6-ruido aleatório, 7-manual
     perturbacao_manual_inicial: 0, // habilitado no modo manual (% de Fcmax), limitado aos valores de perturbacao_Fmax e perturbacao_Fmin
@@ -147,10 +140,10 @@ let cenarios = [
     perturbacao_t_on: 90, // percentual do período da onda de perturbAção em nível máximo (para onda quadrada)
     setpoint_Vmin: -5, // valor mínimo que o setpoint pode assumir (unidades SI)
     setpoint_Vmax: 5, // valor máximo que o setpoint pode assumir (unidades SI)
-    setpoint_Tipo: 2, // 0-MANUAL, 1-onda senoidal, 2-onda quadrada, 3-onda triangular, 4-dente de serra, 5-trem de impulsos, 6-ruido aleatório
-    setpoint_Periodo: 29, // período do setpoint se for selecionada uma onda (unidades SI)
+    setpoint_Tipo: 0, // 0-MANUAL, 1-onda senoidal, 2-onda quadrada, 3-onda triangular, 4-dente de serra, 5-trem de impulsos, 6-ruido aleatório
+    setpoint_Periodo: 30, // período do setpoint se for selecionada uma onda (unidades SI)
     setpoint_t_on: 50, // percentual do período da onda do setpoint em nível máximo (onda quadrada)
-    setpoint_manual_inicial: 10, // valor inicial do setpoint quando é selecionado o setpoint manual (unidades SI)
+    setpoint_manual_inicial: 5, // valor inicial do setpoint quando é selecionado o setpoint manual (unidades SI)
     Fc_manual_inicial: -100, // valor inicial % de OP (de -100 a 100) do modo MAN
     eLim: 3, //limiar para integração no modo PD+I se erro<eLim
     DLim: 10, //limiar para integração no modo PD+I se D<DLim
@@ -160,7 +153,7 @@ let cenarios = [
     multiplicador_forcas_atuantes: 2, // multiplicador para as forças atuantes no carrinho. Valores possíveis: 0, 1, 10 ou 100. Valores difs serão tratados como 1.
 
     // parâmetros do motor linear
-    tipo_atuador: 1, // 0- Motor Linear Ideal, 1- Motor Linear NÃO Ideal (sigmoid)
+    tipo_atuador: 0, // 0- Motor Linear Ideal, 1- Motor Linear NÃO Ideal (sigmoid)
     modo_acao_motor: 1, // 0-Ação Reversa, 1- Ação Direta
     Fcmax: 65000, // valor absoluto da máxima força aplicável (trAção/compress�o) pelo motor linear (unidades SI)
     atraso_transporte_atuador: 100, //valor em milissegundos do atraso de transporte do atuador. O valor é
@@ -184,6 +177,8 @@ let cenarios = [
     envelope_max: 11, // limite superior para o envelope de operação em [m]
     envelope_min: -11, // limite inferior para o envelope de operação em [m]
     exibe_grafico_PV_SP: 1, //1 - mostra gráfico PVxSP no menu controle da versão mobile, 0 - não exibe o gráfico
+    exibe_graficos: 0, //1 - mostra gráficos em função do tempo e FcxOp
+
     frameRate: 25, //taxa de frames por segundo
   },
 
@@ -314,7 +309,7 @@ let cenarios = [
     K_mola: 0, // constante da mola em unidades SI (pode ser negativa para simular pêndulo invertido)
     C_amortecedor: 4280, // coeficiente de amortecimento SI (pode ser negativa)
     posicao_inicial: -16, // valor inicial da posição x do carrinho em relação à origem (unidades SI)
-    velocidade_inicial: 10, // velocidade inicial do carrinho (SI)
+    velocidade_inicial: 45, // velocidade inicial do carrinho (SI)
     perturbacao_Tipo: 2, // 0-nenhuma, 1-onda senoidal, 2-onda quadrada, 3-onda triangular, 4-dente de serra, 5-trem de impulsos, 6-ruido aleatório, 7-manual
     perturbacao_manual_inicial: -70, // habilitado no modo manual (% de Fcmax), limitado aos valores de perturbacao_Fmax e perturbacao_Fmin
     perturbacao_Fmax: 0, // valor máximo da perturbação (% de Fcmax)
@@ -449,7 +444,7 @@ let cenarios = [
     K_mola: 1000, // constante da mola em unidades SI (pode ser negativa para simular pêndulo invertido)
     C_amortecedor: 1000, // coeficiente de amortecimento SI (pode ser negativa)
     posicao_inicial: -12, // valor inicial da posição x do carrinho em relação à origem (unidades SI)
-    velocidade_inicial: 2, // velocidade inicial do carrinho (SI)
+    velocidade_inicial: 10, // velocidade inicial do carrinho (SI)
     perturbacao_Tipo: 2, // 0-nenhuma, 1-onda senoidal, 2-onda quadrada, 3-onda triangular, 4-dente de serra, 5-trem de impulsos, 6-ruido aleatório, 7-manual
     perturbacao_manual_inicial: -60, // habilitado no modo manual (% de Fcmax), limitado aos valores de perturbacao_Fmax e perturbacao_Fmin
     perturbacao_Fmax: 0, // valor máximo da perturbação (% de Fcmax)
@@ -744,8 +739,8 @@ let cenarios = [
     perturbacao_Tipo: 1, // 0-nenhuma, 1-onda senoidal, 2-onda quadrada, 3-onda triangular, 4-dente de serra, 5-trem de impulsos, 6-ruido aleatório, 7-manual
     perturbacao_manual_inicial: 0, // habilitado no modo manual (% de Fcmax), limitado aos valores de perturbacao_Fmax e perturbacao_Fmin
     perturbacao_Fmax: 0, // valor máximo da perturbação (% de Fcmax)
-    perturbacao_Fmin: -1, // valor mínimo da perturbação (% de Fcmax)
-    perturbacao_Periodo: 1, // periodo da perturbação (unidades SI)
+    perturbacao_Fmin: -5, // valor mínimo da perturbação (% de Fcmax)
+    perturbacao_Periodo: 5, // periodo da perturbação (unidades SI)
     perturbacao_t_on: 93, // percentual do periodo da onda de perturbação em nível máximo (para onda quadrada)
     perturbacao_inicialmente_inibida: 1,
 
@@ -778,6 +773,9 @@ let cenarios = [
     exibe_faixa_indicao: 1, // 0-NÃO exibe faixa de indicação (cor laranja), 1-exibe faixa de indicação
     exibe_linha_setpoint: 1, // 0-NÃO exibe linha tracejada (cor azul) de setpoint, 1-exibe linha tracejada de setpoint
     exibe_linha_posicao_real: 1, // 0-NÃO exibe linha tracejada (cor cinza) de posição real, 1-exibe linha tracejada de posição real
+    envelope_max: 15, // limite superior para o envelope de operação em [m]
+    envelope_min: -15, // limite inferior para o envelope de operação em [m]
+    exibe_envelope_operacao: 1, // 0-NÃO exibe linhas (cor vermelha) dos limites do envelope de operaçao, 1-exibe linhas dos limites do envelope de operaçao
     // Ajustar a frame rate conforme o computador.
     // Inicialmente ajustar em 40 fps, ler o FPS médio e ajustar um valor definitivo ligeiramente inferior
     frameRate: 25, //taxa de frames por segundo
@@ -797,8 +795,8 @@ let cenarios = [
 
 
   {
-    label_ptBR: "8B. Qual é a razão do alarme?", //nome do cenário
-    label_enUS: "8B. What is the alarm reason?", //nome do cenário em inglês US
+    label_ptBR: "8B. O que você faria?", //nome do cenário
+    label_enUS: "8B. What would you do?", //nome do cenário em inglês US
     // expressar valores decimais com ponto . em vez de vírgula ,
 
     // parâmetros do motor linear
@@ -822,7 +820,7 @@ let cenarios = [
     // parâmetros do indicador de posição
     posicao_indicada_min: -16, // piso de escala de x indicada (unidades SI)
     posicao_indicada_max: 16, // teto de escala de x indicada (unidades SI)
-    erro_indicador: -7, // erro no indicador de posição (unidade SI)
+    erro_indicador: -4, // erro no indicador de posição (unidade SI)
 
     // parâmetros do controlador
     // os dois parâmetros a seguir precisam ser coerentes com os parâmetros do indicador de posição
@@ -852,8 +850,8 @@ let cenarios = [
     exibe_linha_posicao_real: 1, // 0-NÃO exibe linha tracejada (cor cinza) de posição real, 1-exibe linha tracejada de posição real
 
     // envelope de operação
-    envelope_max: 16, // limite superior para o envelope de operação em [m]
-    envelope_min: -16, // limite inferior para o envelope de operação em [m]
+    envelope_max: 15, // limite superior para o envelope de operação em [m]
+    envelope_min: -15, // limite inferior para o envelope de operação em [m]
     exibe_envelope_operacao: 1, // 0-NÃO exibe linhas (cor vermelha) dos limites do envelope de operaçao, 1-exibe linhas dos limites do envelope de operaçao
 
     // Ajustar a frame rate conforme o computador.
@@ -1024,8 +1022,8 @@ let cenarios = [
 
 
   {
-    label_ptBR: "11. Comparação Biestável/Proporcional", //nome do cenário
-    label_enUS: "11. Bistable/Proportional Comparison", //nome do cenário em inglês US
+    label_ptBR: "11. Biestável x Proporcional", //nome do cenário
+    label_enUS: "11. Bistable vs Proportional", //nome do cenário em inglês US
     // expressar valores decimais com ponto . em vez de vírgula ,
 
     // parâmetros do motor linear
@@ -1100,8 +1098,8 @@ let cenarios = [
 
 
   {
-    label_ptBR: "12A. Sistema de Controle Desligado", //nome do cenário
-    label_enUS: "12A. Control System Off", //nome do cenário em inglês US
+    label_ptBR: "12A. Controle Desligado", //nome do cenário
+    label_enUS: "12A. Control Off", //nome do cenário em inglês US
     // expressar valores decimais com ponto . em vez de vírgula ,
 
     // parâmetros do motor linear
@@ -1636,8 +1634,8 @@ let cenarios = [
 
 
   {
-    label_ptBR: "12H. PD +I se |SP-PV| < 2m", //nome do cenário
-    label_enUS: "12H. PD +I if |SP-PV| < 2m", //nome do cenário em inglês US
+    label_ptBR: "12H. PD + I se |SP-PV| < 2m", //nome do cenário
+    label_enUS: "12H. PD + I if |SP-PV| < 2m", //nome do cenário em inglês US
     // expressar valores decimais com ponto . em vez de vírgula ,
 
     // parâmetros do motor linear
@@ -1715,8 +1713,8 @@ let cenarios = [
 
 
   {
-    label_ptBR: "12I. PD +I se |D| < 20%", //nome do cenário
-    label_enUS: "12I. PD +I if |D| < 20%", //nome do cenário em inglês US
+    label_ptBR: "12I. PD + I se |D| < 20%", //nome do cenário
+    label_enUS: "12I. PD + I if |D| < 20%", //nome do cenário em inglês US
     // expressar valores decimais com ponto . em vez de vírgula ,
 
     // parâmetros do motor linear
@@ -1788,76 +1786,6 @@ let cenarios = [
 
 
 
-  {
-    label_ptBR: "12J. PID c/ tempo morto = 0,5s", //nome do cenário
-    label_enUS: "12J. PID w/ dead time = 0.5s", //nome do cenário em inglês US
-    // expressar valores decimais com ponto . em vez de vírgula ,
-
-    // parâmetros do motor linear
-    Fcmax: 30000, // valor absoluto da máxima força aplicável (tração/compressão) pelo motor linear (unidades SI)
-    atraso_transporte_atuador: 500, //valor em milissegundos do atraso de transporte do atuador. O valor é
-    // aproximado pois foi utilizada uma aproximação de primeira ordem para a
-    // função de transferência do atraso de transporte.
-    /*
-      ganho_atuador: 2, // ganho/inclinação central da curva do atuador (aplicável somente para atuador NÃO ideal)
-      histerese_atuador: 0, // "folga" do atuador em %
-  */
-
-    // parâmetros do processo a ser controlado
-    m: 5000, //massa do carrinho em unidades SI
-    K_mola: 1000, // constante da mola em unidades SI (pode ser negativa para simular pêndulo invertido)
-    C_amortecedor: 2000, // coeficiente de amortecimento SI (pode ser negativa)
-    posicao_inicial: -12, // valor inicial da posição x do carrinho em relação à origem (unidades SI)
-    velocidade_inicial: 50, // velocidade inicial do carrinho (SI)
-    perturbacao_Tipo: 2, // 0-nenhuma, 1-onda senoidal, 2-onda quadrada, 3-onda triangular, 4-dente de serra, 5-trem de impulsos, 6-ruido aleatório, 7-manual
-    perturbacao_manual_inicial: -60, // habilitado no modo manual (% de Fcmax), limitado aos valores de perturbacao_Fmax e perturbacao_Fmin
-    perturbacao_Fmax: 20, // valor máximo da perturbação (% de Fcmax)
-    perturbacao_Fmin: -30, // valor mínimo da perturbação (% de Fcmax)
-    perturbacao_Periodo: 200, // periodo da perturbação (unidades SI)
-    perturbacao_t_on: 0, // percentual do periodo da onda de perturbação em nível máximo (para onda quadrada)
-    perturbacao_inicialmente_inibida: 0,
-
-    // parâmetros do indicador de posição
-    posicao_indicada_min: -16, // piso de escala de x indicada (unidades SI)
-    posicao_indicada_max: 16, // teto de escala de x indicada (unidades SI)
-
-    // parâmetros do controlador
-    // os dois parâmetros a seguir precisam ser coerentes com os parâmetros do indicador de posição
-    setpoint_Vmin: 4, // valor mínimo que o setpoint pode assumir (unidades SI)
-    setpoint_Vmax: 12, // valor máximo que o setpoint pode assumir (unidades SI)
-    tipo_controlador: 0, //0-Controlador PID, 1-Controlador PD + I se e<eLim, 2-Controlador PD + I se D<DLim, 3- Controlador Biestável
-    estado_inicial_controlador: 1, //0-DESL., 1-controle AUTO, 2-controle MANUAL
-    Kp: 8, // ganho da componente proporcional (adimensional) - Obs. Kp=0 desativa o PID sem inibir a pré-carga OP0
-    Ki: 2, // ganho da componente integral (adimensional) - Ki precisa ser nulo para habilitar a pré-carga OP0
-    Kd: 8, // ganho da componente derivativa (adimensional)
-    OP0: 0, //pré-carga em % de OP (de -100 a 100) (adimensional)
-    eLim: 3, //limiar para integração no modo PD+I se erro<eLim
-    DLim: 10, //limiar para integração no modo PD+I se D<DLim
-    modo_acao_controlador: 0, // 0-Ação Reversa, 1- Ação Direta
-    Fc_manual_inicial: -100, // valor inicial % de OP (de -100 a 100) do modo MAN
-    setpoint_Tipo: 2, // 0-MANUAL, 1-onda senoidal, 2-onda quadrada, 3-onda triangular, 4-dente de serra, 5-trem de impulsos, 6-ruido aleatório
-    setpoint_Periodo: 60, // periodo do setpoint se for selecionada uma onda (unidades SI)
-    setpoint_t_on: 50, // percentual do periodo da onda do setpoint em nível máximo (onda quadrada)
-    setpoint_manual_inicial: -8, // valor inicial do setpoint quando é selecionado o setpoint manual (unidades SI)
-    elimina_surto_derivativo: 1, // 0-função desabilitada, 1-função habilitada
-    ativa_filtro_passa_baixa: 1, // 0-filtro desabilitado, 1-filtro habilitado
-    frequencia_corte: 10, // frequencia de corte do filtro passa baixa. (em Hz)
-
-    //parâmetros do controlador Biestável
-    biestavel_OPmax: 100, // saída nivel alto do controlador, (% de Fcmax)
-    biestavel_OPmin: -100, // saída nivel alto do controlador, (% de Fcmax)
-    biestavel_banda_morta: 4, //banda morta do controlador Biestável (unidades SI)
-
-    // parâmetros de tela e modo de exibição da régua
-    exibe_banda_proporcional: 1, // 0-NÃO exibe a barra (cor verde) de banda proporcional , 1-exibe a barra de banda proporcional
-    exibe_faixa_indicao: 1, // 0-NÃO exibe faixa de indicação (cor laranja), 1-exibe faixa de indicação
-    exibe_linha_setpoint: 1, // 0-NÃO exibe linha tracejada (cor azul) de setpoint, 1-exibe linha tracejada de setpoint
-    exibe_linha_posicao_real: 1, // 0-NÃO exibe linha tracejada (cor cinza) de posição real, 1-exibe linha tracejada de posição real
-    // Ajustar a frame rate conforme o computador.
-    // Inicialmente ajustar em 40 fps, ler o FPS médio e ajustar um valor definitivo ligeiramente inferior
-    frameRate: 25, //taxa de frames por segundo
-  },
-
 
 
 
@@ -1865,8 +1793,8 @@ let cenarios = [
 
 
   {
-    label_ptBR: "12K. PID c/ 10% histerese motor linear", //nome do cenário
-    label_enUS: "12K. PID w/ 10% backlashed linear motor", //nome do cenário em inglês US
+    label_ptBR: "12J. PID 20% folga m. linear", //nome do cenário
+    label_enUS: "12J. PID 20% backlash l. motor", //nome do cenário em inglês US
     // expressar valores decimais com ponto . em vez de vírgula ,
 
     // parâmetros do motor linear
@@ -1875,8 +1803,8 @@ let cenarios = [
     // aproximado pois foi utilizada uma aproximação de primeira ordem para a
     // função de transferência do atraso de transporte.
     tipo_atuador: 1, // 0- Motor Linear Ideal, 1- Motor Linear NÃO Ideal (sigmoid)
-    ganho_atuador: 1, // ganho/inclinação central da curva do atuador (aplicável somente para atuador NÃO ideal)
-    histerese_atuador: 10, // "folga" do atuador em %
+    ganho_atuador: 1.5, // ganho/inclinação central da curva do atuador (aplicável somente para atuador NÃO ideal)
+    histerese_atuador: 20, // "folga" do atuador em %
     // modo de exibição do painel saída PID/Atuador
     exibe_saida_atuador: 1, // 0-exibe saída PID, 1-exibe saída Atuador x sinal de controle
 
@@ -2095,8 +2023,8 @@ let cenarios = [
 
 
   {
-    label_ptBR: "15. Em MAN mude PV p/ 6m e então p/ AUTO", //nome do cenário
-    label_enUS: "15. In MAN change PV to 6m and then to AUTO", //nome do cenário em inglês US
+    label_ptBR: "15. Mude PV p/ 6 dentro ENV", //nome do cenário
+    label_enUS: "15. Change PV to 6 within ENV", //nome do cenário em inglês US
     // expressar valores decimais com ponto . em vez de vírgula ,
 
     // parâmetros do motor linear
@@ -2129,7 +2057,7 @@ let cenarios = [
     Ki: 0.5, // ganho da componente integral (adimensional) - Ki precisa ser nulo para habilitar a pré-carga OP0
     Kd: 0.5, // ganho da componente derivativa (adimensional)
     OP0: 0, //pré-carga em % de OP (de -100 a 100) (adimensional)
-    modo_acao_controlador: 0, // 0-Ação Reversa, 1- Ação Direta
+    modo_acao_controlador: 1, // 0-Ação Reversa, 1- Ação Direta
     Fc_manual_inicial: -100, // valor inicial % de OP (de -100 a 100) do modo MAN
     setpoint_Tipo: 0, // 0-MANUAL, 1-onda senoidal, 2-onda quadrada, 3-onda triangular, 4-dente de serra, 5-trem de impulsos, 6-ruido aleatório
     setpoint_Periodo: 100, // periodo do setpoint se for selecionada uma onda (unidades SI)
@@ -2149,6 +2077,8 @@ let cenarios = [
     envelope_max: 15, // limite superior para o envelope de operação em [m]
     envelope_min: 5, // limite inferior para o envelope de operação em [m]
 
+    modo_acao_motor: 0, // 0-Ação Reversa, 1- Ação Direta
+
     // parâmetros de tela e modo de exibição da régua
     exibir_sistema: 0, // 1: processo visível, 0: processo invisível
     exibe_banda_proporcional: 0, // 0-NÃO exibe a barra (cor verde) de banda proporcional , 1-exibe a barra de banda proporcional
@@ -2158,6 +2088,8 @@ let cenarios = [
     exibe_grafico_PV_SP: 0, //1 - mostra gráfico PVxSP no menu controle da versão mobile, 0 - não exibe o gráfico
     // Ajustar a frame rate conforme o computador.
     // Inicialmente ajustar em 40 fps, ler o FPS médio e ajustar um valor definitivo ligeiramente inferior
+
+    
     frameRate: 25, //taxa de frames por segundo
   },
 
@@ -2239,6 +2171,241 @@ let cenarios = [
     // Inicialmente ajustar em 40 fps, ler o FPS médio e ajustar um valor definitivo ligeiramente inferior
     frameRate: 25, //taxa de frames por segundo
   },
+
+
+
+
+  {
+    label_ptBR: "17A. PID sem Tm", //nome do cenário
+    label_enUS: "17A. PID without Td", //nome do cenário em inglês US
+    // expressar valores decimais com ponto . em vez de vírgula ,
+
+    // parâmetros do motor linear
+    Fcmax: 30000, // valor absoluto da máxima força aplicável (tração/compressão) pelo motor linear (unidades SI)
+    atraso_transporte_atuador: 0, //valor em milissegundos do atraso de transporte do atuador. O valor é
+    // aproximado pois foi utilizada uma aproximação de primeira ordem para a
+    // função de transferência do atraso de transporte.
+    /*
+      ganho_atuador: 2, // ganho/inclinação central da curva do atuador (aplicável somente para atuador NÃO ideal)
+      histerese_atuador: 0, // "folga" do atuador em %
+  */
+
+    // parâmetros do processo a ser controlado
+    m: 5000, //massa do carrinho em unidades SI
+    K_mola: 1000, // constante da mola em unidades SI (pode ser negativa para simular pêndulo invertido)
+    C_amortecedor: 2000, // coeficiente de amortecimento SI (pode ser negativa)
+    posicao_inicial: -16, // valor inicial da posição x do carrinho em relação à origem (unidades SI)
+    velocidade_inicial: 0, // velocidade inicial do carrinho (SI)
+    perturbacao_Tipo: 1, // 0-nenhuma, 1-onda senoidal, 2-onda quadrada, 3-onda triangular, 4-dente de serra, 5-trem de impulsos, 6-ruido aleatório, 7-manual
+    perturbacao_manual_inicial: -60, // habilitado no modo manual (% de Fcmax), limitado aos valores de perturbacao_Fmax e perturbacao_Fmin
+    perturbacao_Fmax: 30, // valor máximo da perturbação (% de Fcmax)
+    perturbacao_Fmin: -30, // valor mínimo da perturbação (% de Fcmax)
+    perturbacao_Periodo: 3, // periodo da perturbação (unidades SI)
+    perturbacao_t_on: 0, // percentual do periodo da onda de perturbação em nível máximo (para onda quadrada)
+    perturbacao_inicialmente_inibida: 1,
+
+    // parâmetros do indicador de posição
+    posicao_indicada_min: -16, // piso de escala de x indicada (unidades SI)
+    posicao_indicada_max: 16, // teto de escala de x indicada (unidades SI)
+
+    // parâmetros do controlador
+    // os dois parâmetros a seguir precisam ser coerentes com os parâmetros do indicador de posição
+    setpoint_Vmin: 4, // valor mínimo que o setpoint pode assumir (unidades SI)
+    setpoint_Vmax: 12, // valor máximo que o setpoint pode assumir (unidades SI)
+    tipo_controlador: 0, //0-Controlador PID, 1-Controlador PD + I se e<eLim, 2-Controlador PD + I se D<DLim, 3- Controlador Biestável
+    estado_inicial_controlador: 1, //0-DESL., 1-controle AUTO, 2-controle MANUAL
+    Kp: 4, // ganho da componente proporcional (adimensional) - Obs. Kp=0 desativa o PID sem inibir a pré-carga OP0
+    Ki: 1, // ganho da componente integral (adimensional) - Ki precisa ser nulo para habilitar a pré-carga OP0
+    Kd: 8, // ganho da componente derivativa (adimensional)
+    OP0: 0, //pré-carga em % de OP (de -100 a 100) (adimensional)
+    eLim: 3, //limiar para integração no modo PD+I se erro<eLim
+    DLim: 10, //limiar para integração no modo PD+I se D<DLim
+    modo_acao_controlador: 0, // 0-Ação Reversa, 1- Ação Direta
+    Fc_manual_inicial: -100, // valor inicial % de OP (de -100 a 100) do modo MAN
+    setpoint_Tipo: 0, // 0-MANUAL, 1-onda senoidal, 2-onda quadrada, 3-onda triangular, 4-dente de serra, 5-trem de impulsos, 6-ruido aleatório
+    setpoint_Periodo: 60, // periodo do setpoint se for selecionada uma onda (unidades SI)
+    setpoint_t_on: 50, // percentual do periodo da onda do setpoint em nível máximo (onda quadrada)
+    setpoint_manual_inicial: 8, // valor inicial do setpoint quando é selecionado o setpoint manual (unidades SI)
+    elimina_surto_derivativo: 1, // 0-função desabilitada, 1-função habilitada
+    ativa_filtro_passa_baixa: 1, // 0-filtro desabilitado, 1-filtro habilitado
+    frequencia_corte: 10, // frequencia de corte do filtro passa baixa. (em Hz)
+
+    //parâmetros do controlador Biestável
+    biestavel_OPmax: 100, // saída nivel alto do controlador, (% de Fcmax)
+    biestavel_OPmin: -100, // saída nivel alto do controlador, (% de Fcmax)
+    biestavel_banda_morta: 4, //banda morta do controlador Biestável (unidades SI)
+
+    // parâmetros de tela e modo de exibição da régua
+    exibe_banda_proporcional: 1, // 0-NÃO exibe a barra (cor verde) de banda proporcional , 1-exibe a barra de banda proporcional
+    exibe_faixa_indicao: 1, // 0-NÃO exibe faixa de indicação (cor laranja), 1-exibe faixa de indicação
+    exibe_linha_setpoint: 1, // 0-NÃO exibe linha tracejada (cor azul) de setpoint, 1-exibe linha tracejada de setpoint
+    exibe_linha_posicao_real: 1, // 0-NÃO exibe linha tracejada (cor cinza) de posição real, 1-exibe linha tracejada de posição real
+    // Ajustar a frame rate conforme o computador.
+    // Inicialmente ajustar em 40 fps, ler o FPS médio e ajustar um valor definitivo ligeiramente inferior
+    frameRate: 25, //taxa de frames por segundo
+  },
+
+
+
+
+
+  {
+    label_ptBR: "17B. PID Tm=900ms", //nome do cenário
+    label_enUS: "17B. PID Td=900ms", //nome do cenário em inglês US
+    // expressar valores decimais com ponto . em vez de vírgula ,
+
+    // parâmetros do motor linear
+    Fcmax: 30000, // valor absoluto da máxima força aplicável (tração/compressão) pelo motor linear (unidades SI)
+    atraso_transporte_atuador: 900, //valor em milissegundos do atraso de transporte do atuador. O valor é
+    // aproximado pois foi utilizada uma aproximação de primeira ordem para a
+    // função de transferência do atraso de transporte.
+    /*
+      ganho_atuador: 2, // ganho/inclinação central da curva do atuador (aplicável somente para atuador NÃO ideal)
+      histerese_atuador: 0, // "folga" do atuador em %
+  */
+
+    // parâmetros do processo a ser controlado
+    m: 5000, //massa do carrinho em unidades SI
+    K_mola: 1000, // constante da mola em unidades SI (pode ser negativa para simular pêndulo invertido)
+    C_amortecedor: 2000, // coeficiente de amortecimento SI (pode ser negativa)
+    posicao_inicial: -16, // valor inicial da posição x do carrinho em relação à origem (unidades SI)
+    velocidade_inicial: 0, // velocidade inicial do carrinho (SI)
+    perturbacao_Tipo: 1, // 0-nenhuma, 1-onda senoidal, 2-onda quadrada, 3-onda triangular, 4-dente de serra, 5-trem de impulsos, 6-ruido aleatório, 7-manual
+    perturbacao_manual_inicial: -60, // habilitado no modo manual (% de Fcmax), limitado aos valores de perturbacao_Fmax e perturbacao_Fmin
+    perturbacao_Fmax: 30, // valor máximo da perturbação (% de Fcmax)
+    perturbacao_Fmin: -30, // valor mínimo da perturbação (% de Fcmax)
+    perturbacao_Periodo: 3, // periodo da perturbação (unidades SI)
+    perturbacao_t_on: 0, // percentual do periodo da onda de perturbação em nível máximo (para onda quadrada)
+    perturbacao_inicialmente_inibida: 1,
+
+    // parâmetros do indicador de posição
+    posicao_indicada_min: -16, // piso de escala de x indicada (unidades SI)
+    posicao_indicada_max: 16, // teto de escala de x indicada (unidades SI)
+
+    // parâmetros do controlador
+    // os dois parâmetros a seguir precisam ser coerentes com os parâmetros do indicador de posição
+    setpoint_Vmin: 4, // valor mínimo que o setpoint pode assumir (unidades SI)
+    setpoint_Vmax: 12, // valor máximo que o setpoint pode assumir (unidades SI)
+    tipo_controlador: 0, //0-Controlador PID, 1-Controlador PD + I se e<eLim, 2-Controlador PD + I se D<DLim, 3- Controlador Biestável
+    estado_inicial_controlador: 1, //0-DESL., 1-controle AUTO, 2-controle MANUAL
+    Kp: 4, // ganho da componente proporcional (adimensional) - Obs. Kp=0 desativa o PID sem inibir a pré-carga OP0
+    Ki: 1, // ganho da componente integral (adimensional) - Ki precisa ser nulo para habilitar a pré-carga OP0
+    Kd: 8, // ganho da componente derivativa (adimensional)
+    OP0: 0, //pré-carga em % de OP (de -100 a 100) (adimensional)
+    eLim: 3, //limiar para integração no modo PD+I se erro<eLim
+    DLim: 10, //limiar para integração no modo PD+I se D<DLim
+    modo_acao_controlador: 0, // 0-Ação Reversa, 1- Ação Direta
+    Fc_manual_inicial: -100, // valor inicial % de OP (de -100 a 100) do modo MAN
+    setpoint_Tipo: 0, // 0-MANUAL, 1-onda senoidal, 2-onda quadrada, 3-onda triangular, 4-dente de serra, 5-trem de impulsos, 6-ruido aleatório
+    setpoint_Periodo: 60, // periodo do setpoint se for selecionada uma onda (unidades SI)
+    setpoint_t_on: 50, // percentual do periodo da onda do setpoint em nível máximo (onda quadrada)
+    setpoint_manual_inicial: 8, // valor inicial do setpoint quando é selecionado o setpoint manual (unidades SI)
+    elimina_surto_derivativo: 1, // 0-função desabilitada, 1-função habilitada
+    ativa_filtro_passa_baixa: 1, // 0-filtro desabilitado, 1-filtro habilitado
+    frequencia_corte: 10, // frequencia de corte do filtro passa baixa. (em Hz)
+
+    //parâmetros do controlador Biestável
+    biestavel_OPmax: 100, // saída nivel alto do controlador, (% de Fcmax)
+    biestavel_OPmin: -100, // saída nivel alto do controlador, (% de Fcmax)
+    biestavel_banda_morta: 4, //banda morta do controlador Biestável (unidades SI)
+
+    // parâmetros de tela e modo de exibição da régua
+    exibe_banda_proporcional: 1, // 0-NÃO exibe a barra (cor verde) de banda proporcional , 1-exibe a barra de banda proporcional
+    exibe_faixa_indicao: 1, // 0-NÃO exibe faixa de indicação (cor laranja), 1-exibe faixa de indicação
+    exibe_linha_setpoint: 1, // 0-NÃO exibe linha tracejada (cor azul) de setpoint, 1-exibe linha tracejada de setpoint
+    exibe_linha_posicao_real: 1, // 0-NÃO exibe linha tracejada (cor cinza) de posição real, 1-exibe linha tracejada de posição real
+    // Ajustar a frame rate conforme o computador.
+    // Inicialmente ajustar em 40 fps, ler o FPS médio e ajustar um valor definitivo ligeiramente inferior
+    frameRate: 25, //taxa de frames por segundo
+  },
+
+
+
+
+  {
+    label_ptBR: "17C. PID Tm=900ms K↓", //nome do cenário
+    label_enUS: "17C. PID Td=900ms K↓", //nome do cenário em inglês US
+    // expressar valores decimais com ponto . em vez de vírgula ,
+
+    // parâmetros do motor linear
+    Fcmax: 30000, // valor absoluto da máxima força aplicável (tração/compressão) pelo motor linear (unidades SI)
+    atraso_transporte_atuador: 900, //valor em milissegundos do atraso de transporte do atuador. O valor é
+    // aproximado pois foi utilizada uma aproximação de primeira ordem para a
+    // função de transferência do atraso de transporte.
+    /*
+      ganho_atuador: 2, // ganho/inclinação central da curva do atuador (aplicável somente para atuador NÃO ideal)
+      histerese_atuador: 0, // "folga" do atuador em %
+  */
+
+    // parâmetros do processo a ser controlado
+    m: 5000, //massa do carrinho em unidades SI
+    K_mola: 1000, // constante da mola em unidades SI (pode ser negativa para simular pêndulo invertido)
+    C_amortecedor: 2000, // coeficiente de amortecimento SI (pode ser negativa)
+    posicao_inicial: -16, // valor inicial da posição x do carrinho em relação à origem (unidades SI)
+    velocidade_inicial: 0, // velocidade inicial do carrinho (SI)
+    perturbacao_Tipo: 1, // 0-nenhuma, 1-onda senoidal, 2-onda quadrada, 3-onda triangular, 4-dente de serra, 5-trem de impulsos, 6-ruido aleatório, 7-manual
+    perturbacao_manual_inicial: -60, // habilitado no modo manual (% de Fcmax), limitado aos valores de perturbacao_Fmax e perturbacao_Fmin
+    perturbacao_Fmax: 30, // valor máximo da perturbação (% de Fcmax)
+    perturbacao_Fmin: -30, // valor mínimo da perturbação (% de Fcmax)
+    perturbacao_Periodo: 3, // periodo da perturbação (unidades SI)
+    perturbacao_t_on: 0, // percentual do periodo da onda de perturbação em nível máximo (para onda quadrada)
+    perturbacao_inicialmente_inibida: 1,
+
+    // parâmetros do indicador de posição
+    posicao_indicada_min: -16, // piso de escala de x indicada (unidades SI)
+    posicao_indicada_max: 16, // teto de escala de x indicada (unidades SI)
+
+    // parâmetros do controlador
+    // os dois parâmetros a seguir precisam ser coerentes com os parâmetros do indicador de posição
+    setpoint_Vmin: 4, // valor mínimo que o setpoint pode assumir (unidades SI)
+    setpoint_Vmax: 12, // valor máximo que o setpoint pode assumir (unidades SI)
+    tipo_controlador: 0, //0-Controlador PID, 1-Controlador PD + I se e<eLim, 2-Controlador PD + I se D<DLim, 3- Controlador Biestável
+    estado_inicial_controlador: 1, //0-DESL., 1-controle AUTO, 2-controle MANUAL
+    Kp: 2, // ganho da componente proporcional (adimensional) - Obs. Kp=0 desativa o PID sem inibir a pré-carga OP0
+    Ki: 0.5, // ganho da componente integral (adimensional) - Ki precisa ser nulo para habilitar a pré-carga OP0
+    Kd: 2, // ganho da componente derivativa (adimensional)
+    OP0: 0, //pré-carga em % de OP (de -100 a 100) (adimensional)
+    eLim: 3, //limiar para integração no modo PD+I se erro<eLim
+    DLim: 10, //limiar para integração no modo PD+I se D<DLim
+    modo_acao_controlador: 0, // 0-Ação Reversa, 1- Ação Direta
+    Fc_manual_inicial: -100, // valor inicial % de OP (de -100 a 100) do modo MAN
+    setpoint_Tipo: 0, // 0-MANUAL, 1-onda senoidal, 2-onda quadrada, 3-onda triangular, 4-dente de serra, 5-trem de impulsos, 6-ruido aleatório
+    setpoint_Periodo: 60, // periodo do setpoint se for selecionada uma onda (unidades SI)
+    setpoint_t_on: 50, // percentual do periodo da onda do setpoint em nível máximo (onda quadrada)
+    setpoint_manual_inicial: 8, // valor inicial do setpoint quando é selecionado o setpoint manual (unidades SI)
+    elimina_surto_derivativo: 1, // 0-função desabilitada, 1-função habilitada
+    ativa_filtro_passa_baixa: 1, // 0-filtro desabilitado, 1-filtro habilitado
+    frequencia_corte: 10, // frequencia de corte do filtro passa baixa. (em Hz)
+
+    //parâmetros do controlador Biestável
+    biestavel_OPmax: 100, // saída nivel alto do controlador, (% de Fcmax)
+    biestavel_OPmin: -100, // saída nivel alto do controlador, (% de Fcmax)
+    biestavel_banda_morta: 4, //banda morta do controlador Biestável (unidades SI)
+
+    // parâmetros de tela e modo de exibição da régua
+    exibe_banda_proporcional: 1, // 0-NÃO exibe a barra (cor verde) de banda proporcional , 1-exibe a barra de banda proporcional
+    exibe_faixa_indicao: 1, // 0-NÃO exibe faixa de indicação (cor laranja), 1-exibe faixa de indicação
+    exibe_linha_setpoint: 1, // 0-NÃO exibe linha tracejada (cor azul) de setpoint, 1-exibe linha tracejada de setpoint
+    exibe_linha_posicao_real: 1, // 0-NÃO exibe linha tracejada (cor cinza) de posição real, 1-exibe linha tracejada de posição real
+    // Ajustar a frame rate conforme o computador.
+    // Inicialmente ajustar em 40 fps, ler o FPS médio e ajustar um valor definitivo ligeiramente inferior
+    frameRate: 25, //taxa de frames por segundo
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

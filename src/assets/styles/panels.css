@@ -81,9 +81,11 @@
     min-width: 95px;
   }
 
-  .process-variable label{
+  .process-variable label,
+  .process-variable p{
     font-weight: bold;
   }
+
 
 
 

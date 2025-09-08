@@ -24,6 +24,8 @@ let posicao_inicial0 = 0,
   modoAcaoMotor=1,
   eliminaSurto = 0;
 
+let showGraphs = true;
+
 // setup gráfico controlador/atuador
 let mostraBarGraph = true,
   mostraBiestavel = false,

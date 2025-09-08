@@ -102,7 +102,7 @@ function desenhaSistema() {
     push();
     drawingContext.setLineDash([5, 10]);
     stroke(255, 0, 0);
-    strokeWeight(strokeW + 1);
+    strokeWeight(strokeW + 2);
     line(envMin, 0.5 * yref, envMin, yref); // linha evelope inferior
     line(envMax, 0.5 * yref, envMax, yref); // linha evelope inferior
 

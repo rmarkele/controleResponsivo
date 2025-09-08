@@ -22,7 +22,10 @@ function plotaGraficos() {
   constrainLength(atuadorPlot, graph2Pos[2], plotSkip);
 
   constrainLength(PerturbPlot, graph3Pos[2], plotSkip);
-  if (showCenterDiv && width < 850 && showPvGraph) {
+
+
+
+  if (showCenterDiv && width < 850 && showPvGraph && showGraphs) {
     const graph1offset = 5;
     const graph1h = 20;
     createAxis({
@@ -87,7 +90,7 @@ function plotaGraficos() {
       timeScale: plotSkip,
     });
   }
-  if (showleftDiv) {
+  if (showleftDiv && showGraphs) {
     createAxis({
       posx: graph1Pos[0],
       posy: graph1Pos[1],

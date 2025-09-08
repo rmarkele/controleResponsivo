@@ -183,6 +183,10 @@ function cenarioSelectEvent() {
 
   showPvGraph = checkForUndefined(cenarios[i].exibe_grafico_PV_SP, 1)===1;
 
+  //exibição do gráficos em função do tempo e FcxOp
+
+  showGraphs = checkForUndefined(cenarios[i].exibe_graficos, 1)===1;
+
   // modo de exibição do painel Saída Controlador/Atuador
 
   selAtuadorPID =

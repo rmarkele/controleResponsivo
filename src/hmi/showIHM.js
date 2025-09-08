@@ -1,11 +1,10 @@
 function showIHM() {
   let yref = processSize[1];
   escrevePainelPVarSis();
-  // painelParPID.show();
-  
+  // painelParPID.show();const hideGraphs = true;
   if(showCenterDiv && showCenterDivGraphs){
     escrevePainelSaidaPID(controllerOutputsPos);
-    plotaSigmoid(actuatorOutputsPos);
+    if(showGraphs) plotaSigmoid(actuatorOutputsPos);
   }
   // painelParPerturb.show();
   // painelParSetpoint.show();

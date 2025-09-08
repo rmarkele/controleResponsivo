@@ -57,6 +57,13 @@ function geraShowPanel(pos){
     showPvGraph = ShowGraphPvCheck.checked();
   });
 
+  ShowGraphsCheck = createCheckbox(" " +strg.configRegua[10], true);
+  ShowGraphsCheck.parent("panels-group-5");
+  ShowGraphsCheck.class("radio-panel");
+  ShowGraphsCheck.changed(() => {
+    showGraphs = ShowGraphsCheck.checked();
+  });
+
   if(width>850){
     ShowGraphPvCheck.hide();
   }
@@ -132,6 +139,12 @@ function geraShowPanel(pos){
     ShowGraphPvCheck.checked(true)
   } else {
     ShowGraphPvCheck.checked(false)
+  }
+
+  if (showGraphs){
+    ShowGraphsCheck.checked(true)
+  } else {
+    ShowGraphsCheck.checked(false)
   }
   
 }
