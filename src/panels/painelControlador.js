@@ -95,6 +95,16 @@ function geraPainelControlador() {
   `;
 
     }
+
+    variablesList[104].inp.style.marginBottom = '-7px';
+    variablesList[104].inp.style.marginTop = '-7px';
+
+    if (Ti == "\u221E" && !isaMode) {
+      variablesList[104].inp.style.fontSize = '24px';
+    } else{
+      variablesList[104].inp.style.fontSize = '14px';
+    }
+
   });
 
   if (isaMode) {
@@ -171,10 +181,14 @@ function geraPainelControlador() {
 function atualizaTiTd() {
   if (K_I != 0 && K_P != 0) {
     Ti = formatToExponential(K_P / K_I, 0, 2)
+    variablesList[104].inp.style.fontSize = '14px';
   } else if (K_I == 0) {
     Ti = "\u221E";
+    // Ti = "∞";
+    variablesList[104].inp.style.fontSize = '24px';
   } else {
     Ti = "-";
+    variablesList[104].inp.style.fontSize = '14px';
   }
 
   if (K_P != 0 && K_D != 0) {
@@ -188,16 +202,16 @@ function atualizaTiTd() {
 
 function atualizaKiKd() {
   if (Ti != 0 && Ti != "-" && Ti != "\u221E" && K_P != 0) {
-    K_I = K_P / Ti;
+    K_I = (K_P / Ti).toFixed(4);
   } else if (Ti == "\u221E") {
-    K_I = 0;
-  } else if (Ti == 0)  {
-    Ti= formatToExponential(0.00000000001, 0, 2);
+    K_I = (0).toFixed(4);
+  } else if (Ti == 0) {
+    Ti = formatToExponential(0.00000000001, 0, 2);
     K_I = formatToExponential(K_P / Ti, 0, 2);
   }
 
   if (K_P != 0 && Td != "-") {
-    K_D = K_P * Td;
+    K_D = (K_P * Td).toFixed(4);
   } else {
     K_D = "-";
   }
