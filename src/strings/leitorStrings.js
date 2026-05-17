@@ -304,6 +304,12 @@ function idiomaSelect() {
       strings[i]._controle_AD_painel_Controlador,
       " AD"
     ),
+
+    //21
+    checkForUndefinedString(
+      strings[i]._pid_modo_ISA_painel_Controlador,
+      " ISA"
+    ),
   ];
 
   //Painel Envelope

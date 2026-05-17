@@ -5,12 +5,11 @@ function createPanel({ panelGroup, panelId, listOfVar }){
         
         inputs += `<div class="input-flex-col">`
         for(let j = 0; j < listOfVar[i].length; j++){
-            let {inputName, disabled} = listOfVar[i][j];
+            let {inputName, disabled, visibility} = listOfVar[i][j];
             inputs += 
-            `<div class="input-wrapper">
-                <label for="input-${inputName}" ${disabled?'class="disabled"':''}></label>
-                <input type="text" id="input-${inputName}" ${disabled?'disabled':''}
-                >
+            `<div class="input-wrapper ${visibility === 'hidden' ? 'hidden' : ''}"   >
+                <label for="input-${inputName}" class="${disabled?'disabled':''} "></label>
+                <input type="text" id="input-${inputName}" ${disabled?'disabled':''}>
             </div>
             `
         }

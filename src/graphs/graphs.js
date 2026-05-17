@@ -25,7 +25,7 @@ function plotaGraficos() {
 
 
 
-  if (showCenterDiv && width < 850 && showPvGraph && showGraphs) {
+  if (showCenterDiv && width < 850 && showPvGraph) {
     const graph1offset = 5;
     const graph1h = 20;
     createAxis({

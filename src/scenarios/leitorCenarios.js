@@ -44,11 +44,28 @@ function cenarioSelectEvent() {
   }
 
   modoAcao = checkForUndefined(cenarios[i].modo_acao_controlador, 0);
+  isaMode = checkForUndefined(cenarios[i].pid_modo_ISA, 0);
+
 
   //PID
   K_P = abs(checkForUndefined(cenarios[i].Kp, 1.5));
-  K_I = abs(checkForUndefined(cenarios[i].Ki, 0.8));
-  K_D = abs(checkForUndefined(cenarios[i].Kd, 1));
+  
+  if(!isaMode){
+    K_I = abs(checkForUndefined(cenarios[i].Ki, 0.8));
+    K_D = abs(checkForUndefined(cenarios[i].Kd, 1));
+    Ti = formatToExponential(K_P / K_I, 0, 2);
+    Td = formatToExponential(K_D / K_P, 0, 2);
+  } else{
+    Ti = formatToExponential(abs(checkForUndefined(cenarios[i].Ti, 1)), 0, 2);
+    Td = formatToExponential(abs(checkForUndefined(cenarios[i].Td, 0.5)), 0, 2);
+    K_I = K_P / Ti;
+    K_D = K_P * Td;
+  }
+
+
+
+
+
   Fc = checkForUndefined(cenarios[i].OP0, 0);
   Imax = checkForUndefined(cenarios[i].Imax, 100);
   Imax = constrain(Imax, -100, 100);

@@ -58,9 +58,17 @@ let cenarios = [
 
     posicao_inicial: -16, // valor inicial da posição x do carrinho em relação à origem (unidades SI)
     velocidade_inicial: 75, // velocidade inicial do carrinho (SI)
+    pid_modo_ISA: 1, // 0-modo paralelo, 1- modo ISA 
     Kp: 1, // ganho da componente proporcional (adimensional) - Obs. Kp=0 desativa o PID sem inibir a pré-carga OP0
-    Ki: 1, // ganho da componente integral (adimensional) - Ki precisa ser nulo para habilitar a pré-carga OP0
-    Kd: 1, // ganho da componente derivativa (adimensional)
+    //Ki: 1, // ganho da componente integral (adimensional) - Ki precisa ser nulo para habilitar a pré-carga OP0 - obs. Esse valor será ignorado se o modo ISA for selecionado, pois nesse modo Ki é calculado a partir de Kp e Ti
+    //Kd: 1, // ganho da componente derivativa (adimensional) obs. Esse valor será ignorado se o modo ISA for selecionado, pois nesse modo Ki é calculado a partir de Kp e Ti 
+    Ti: 1, // constante de tempo integral (unidades SI) - Obs. O modo ISA utiliza Ti e Td ao invés de Ki e Kd, sendo Ki=Kp/Ti e Kd=Kp*Td
+    Td: 1, // constante de tempo derivativa (unidades SI) - Obs. O modo ISA utiliza Ti e Td ao invés de Ki e Kd, sendo Ki=Kp/Ti e Kd=Kp*Td
+
+    estado_inicial_controlador: 1, //0-DESL., 1-controle AUTO, 2-controle MANUAL
+    modo_acao_controlador: 0, // 0-Ação Reversa, 1- Ação Direta
+    
+
 
     perturbacao_Tipo: 2, // 0-nenhuma, 1-onda senoidal, 2-onda quadrada, 3-onda triangular, 4-dente de serra, 5-trem de impulsos, 6-ruido aleatório, 7-manual
     perturbacao_manual_inicial: 0, // habilitado no modo manual (% de Fcmax), limitado aos valores de perturbacao_Fmax e perturbacao_Fmin
@@ -106,7 +114,7 @@ let cenarios = [
     envelope_max: 11, // limite superior para o envelope de operação em [m]
     envelope_min: -11, // limite inferior para o envelope de operação em [m]
     exibe_grafico_PV_SP: 1, //1 - mostra gráfico PVxSP no menu controle da versão mobile, 0 - não exibe o gráfico
-    exibe_graficos: 0, //1 - mostra gráficos em função do tempo e FcxOp
+    exibe_graficos: 1, //1 - mostra gráficos em função do tempo e FcxOp
     
     frameRate: 25, //taxa de frames por segundo
   },
@@ -132,6 +140,8 @@ let cenarios = [
     Ki: 1, // ganho da componente integral (adimensional) - Ki precisa ser nulo para habilitar a pré-carga OP0
     Kd: 5, // ganho da componente derivativa (adimensional)
     estado_inicial_controlador: 0, //0-DESL., 1-controle AUTO, 2-controle MANUAL
+    modo_acao_controlador: 0, // 0-Ação Reversa, 1- Ação Direta
+    pid_modo_ISA: 1, // 0-modo paralelo, 1- modo ISA 
     perturbacao_Tipo: 2, // 0-nenhuma, 1-onda senoidal, 2-onda quadrada, 3-onda triangular, 4-dente de serra, 5-trem de impulsos, 6-ruido aleatório, 7-manual
     perturbacao_manual_inicial: 0, // habilitado no modo manual (% de Fcmax), limitado aos valores de perturbacao_Fmax e perturbacao_Fmin
     perturbacao_Fmax: -50, // valor máximo da perturbAção (unidades SI)
@@ -228,6 +238,7 @@ let cenarios = [
     tipo_controlador: 0, //0-Controlador PID, 1-Controlador PD + I se e<eLim, 2-Controlador PD + I se D<DLim, 3- Controlador Biestável
     estado_inicial_controlador: 0, //0-DESL., 1-controle AUTO, 2-controle MANUAL
     modo_acao_controlador: 0, // 0-Ação Reversa, 1- Ação Direta
+    pid_modo_ISA: 0, // 0-modo paralelo, 1- modo ISA 
     Fc_manual_inicial: -20, // valor inicial % de OP (de -100 a 100) do modo MAN
     setpoint_Tipo: 0, // 0-MANUAL, 1-onda senoidal, 2-onda quadrada, 3-onda triangular, 4-dente de serra, 5-trem de impulsos, 6-ruido aleatório
     setpoint_Periodo: 100, // período do setpoint se for selecionada uma onda (unidades SI)
@@ -2034,7 +2045,7 @@ let cenarios = [
     m: 5000, //massa do carrinho em unidades SI
     K_mola: 1000, // constante da mola em unidades SI (pode ser negativa para simular pêndulo invertido)
     C_amortecedor: 1000, // coeficiente de amortecimento SI (pode ser negativa)
-    posicao_inicial: 14, // valor inicial da posição x do carrinho em relação à origem (unidades SI)
+    posicao_inicial: 12, // valor inicial da posição x do carrinho em relação à origem (unidades SI)
     velocidade_inicial: 0, // velocidade inicial do carrinho (SI)
     perturbacao_Tipo: 2, // 0-nenhuma, 1-onda senoidal, 2-onda quadrada, 3-onda triangular, 4-dente de serra, 5-trem de impulsos, 6-ruido aleatório, 7-manual
     perturbacao_manual_inicial: -60, // habilitado no modo manual (% de Fcmax), limitado aos valores de perturbacao_Fmax e perturbacao_Fmin
@@ -2085,11 +2096,12 @@ let cenarios = [
     exibe_faixa_indicao: 0, // 0-NÃO exibe faixa de indicação (cor laranja), 1-exibe faixa de indicação
     exibe_linha_setpoint: 0, // 0-NÃO exibe linha tracejada (cor azul) de setpoint, 1-exibe linha tracejada de setpoint
     exibe_linha_posicao_real: 0, // 0-NÃO exibe linha tracejada (cor cinza) de posição real, 1-exibe linha tracejada de posição real
+ 
     exibe_grafico_PV_SP: 0, //1 - mostra gráfico PVxSP no menu controle da versão mobile, 0 - não exibe o gráfico
+    exibe_graficos: 0, //1 - mostra gráficos em função do tempo e FcxOp
+
     // Ajustar a frame rate conforme o computador.
     // Inicialmente ajustar em 40 fps, ler o FPS médio e ajustar um valor definitivo ligeiramente inferior
-
-    
     frameRate: 25, //taxa de frames por segundo
   },
 

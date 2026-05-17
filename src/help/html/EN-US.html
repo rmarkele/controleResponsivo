@@ -19,7 +19,7 @@
 
     <main class="know-more"> 
         <div class="title">
-            <h2>CLOSED-LOOP CONTROL TEACHING SIMULATOR MK-2<br>VERSION 2024.04</h2>
+            <h2>CLOSED-LOOP CONTROL TEACHING SIMULATOR MK-2<br>VERSION 2025.08</h2>
      
         <hr />
             <h2>Real Time PID Control Simulator</h2>
@@ -41,7 +41,7 @@
             </li>
   
             <li>
-                To access the old simulator (MK-1) <a href="https://proanuncio.com.br/sc2" target="_blank">click here</a>
+                To access the older version of simulator (version MK-1) <a href="https://proanuncio.com.br/sc2" target="_blank">click here</a>
             </li>
      
             <li>
@@ -55,7 +55,7 @@
         mass-spring-damper type second-order system. The user can insert the 
         process parameters, that is, mass m, damping coefficient c and spring constant Ks. Values of c and Ks
         can be negative. Althouh animation shows a wheeled car, the simulation assumes the mass 
-        floats over the ground.
+        floats parallel to the ground.
         </p>
 
         <p>The process variable (controlled variable) PV(t) is the mass vertical axis position, that is
@@ -69,14 +69,14 @@
 
         <p>The controller presents the following characteristics:</p>
         <ul>
-            <li> Receives the setpoint SP(t) and the controlled variable PV(t);</li>
+            <li> Reads the setpoint SP(t) and the controlled variable PV(t);</li>
             <li> Computes the error e(t) = SP(t) - PV(t);</li>
             <li> Provides the output OP(t);</li>
             <li> Offers the user the following options:</li>
             <ul>
                 <li> Selecting the control mode (PID, Anti-windup PID or Bistable); </li>
                 <li> Directly adjusting the control force Fc(t) when in MANUAL mode; and </li>
-                <li> Selecting Direct Action (DIR) or Reverse Action. </li>
+                <li> Selecting Direct Action (DIR) or Reverse Action for the controller. </li>
             </ul>
         </ul>
 
@@ -93,7 +93,7 @@
         <p>The basic PID structure the controller employs is defined through the following equation: 
         <br>
         <br>
-        OP(t) = Kp &middot;e(t) + Ki &middot; <span>&int; </span>e(t)dt + Kd &middot; ė(t) + OPo. <br>
+        t) = Kp &middot;e(t) + Ki &mOP(iddot; <span>&int; </span>e(t)dt + Kd &middot; ė(t) + OPo. <br>
         <br>
         Where Ki = Kp/Ti and Kd = KpTd.</p>
 
@@ -123,16 +123,16 @@
         <p>By selecting the "PID" mode the user can:</p>
         <ul>
             <li> Adjust Imax to limit the integral component magnitude to a less-than-100% value; </li>
-            <li> Make the derivative to be computed over PV(t) instead of e(t); </li>
-            <li> Insert the derivating block output low-pass filter cutoff frequency (in Hz); and </li>
+            <li> Make the derivative component to be computed over PV(t) instead of e(t); </li>
+            <li> Insert the cutoff frequency (in Hz) of the low-pass filter applied over the derivative component; and </li>
             <li> Bypass the low-pass filter. </li>
         </ul>
 
         <p>By choosing the "PD + I if |e| &lt; eTh" mode the user can insert the error 
-        threshold magnitude eTh (in meters) that sets the integrator on. This condition is step-shaped.</p>
+        threshold magnitude eTh (in meters) that sets the integrator on.</p>
 
         <p>When choosing the "PD + I if |D| &lt; DTh" mode the user can enter the 
-        derivative threshold magnitude DTh (in %) which turns the integrator on. This condition is ramp-shaped.</p>
+        derivative threshold magnitude DTh (in %) which turns the integrator on.</p>
 
         <p>By selecting the "Bistable" mode the user can set the deadband (in meters) and the minimum
         and maximum values of OP(t).</p>
@@ -152,20 +152,20 @@
         the envelope limits.
 
         <p>
-        The linear motor receives the command OP(t) and converts it into the controlling force Fc(t) according to the motor response
+        The linear motor receives the command OP(t) and converts it into the controlling force Fc(t) according to the linear motor response
         curve M(t), which can be ideal or non-ideal. The value of Fc(t) is limited to vary between -Fcmax and Fcmax. The user
-        can enter the Fcmax value (in newtons) and choose motor curve type. When selecting non-ideal curve, the user can 
-        insert the central slope of the curve (sigmoid) and its deadspace (in %). The user can insert the motor dead time 
-        (in ms) and select Direct Action (DIR) or Reverse Action.
+        can enter the Fcmax value (in newtons) and choose the linear motor curve type. When selecting non-ideal curve, the user can 
+        insert the central slope of the curve (sigmoid) and its deadspace (in %). The user can insert the linear motor dead time 
+        (in ms) and select Direct Action (DIR) or Reverse Action for the linear motor.
         </p>
 
         <p>
         When the controller is switched on, the simulator activates a display that shows the OP components and another display that shows
-        Fc(t). Through the Fc(t) curve the user can see the shape of the motor response curve M(t).
+        Fc(t). Through the Fc(t) curve the user can see the shape of the linear motor response curve M(t).
         </p>
 
 
-        <p>Setpoint SP(t) can be constant or variable. There are several available SP(t) types. The user
+        <p>Setpoint SP(t) can be constant or variable. There are several available SP(t) options. The user
         can select an option and insert the limits SPmin and SPmax (in meters).</p>
 
         <p>Perturbation Fp(t) can be constant or variable. There are several available Fp(t) alternatives.

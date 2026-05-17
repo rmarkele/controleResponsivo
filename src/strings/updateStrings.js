@@ -180,6 +180,9 @@ function atualizaStrings() {
       " " + strg.varPainelControlador[19];
     acaoDireta.elt.getElementsByTagName("label")[0].innerHTML =
       " " + strg.varPainelControlador[20];
+
+    isaModeCheckBox.elt.getElementsByTagName("label")[0].innerHTML =
+      " " + strg.varPainelControlador[21];
   
     acaoDiretaMotor.elt.getElementsByTagName("label")[0].innerHTML =
       " " + strg.varPainelMotor[3];

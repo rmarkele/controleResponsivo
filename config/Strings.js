@@ -107,6 +107,7 @@ let strings = [
     _controle_AUTO_painel_Controlador: "AUTO",
     _controle_MAN_painel_Controlador: "MAN",
     _controle_AD_painel_Controlador: "DIR",
+    _pid_modo_ISA_painel_Controlador: "ISA",
 
     //Painel Motor
     _titulo_painel_Motor: ["Motor Linear Selecionado: Ideal", "Motor Linear Selecionado: Não-ideal"],
@@ -170,8 +171,9 @@ let strings = [
     _texto_slider_setpoint: "SP: ",
     _envelope_de_operacao: "Envelope Operação",
     _texto_violacao_envelope:"VIOLAÇÃO ENVELOPE",
-    _mostrar_grafico_PV: "Gráfico (menu CONTROLE)",
-    _mostrar_graficos: "Gráficos <span style='font-size:12px; font-family:consola'>(PV/Sp × t, Fc/Op × t, Fp × t, Fc × Op)</span>",
+    _mostrar_grafico_PV: "Gráfico PV/SP x t (menu CONTROLE)",
+    _mostrar_graficos: "Gráficos",
+//    _mostrar_graficos: "Gráficos <span style='font-size:12px; font-family:consola'>(PV/Sp × t, Fc/Op × t, Fp × t, Fc × Op)</span>",
 
     //Painel Forças Atuantes
     _titulo_painel_Forcas_Atuantes: "Forças",
@@ -297,6 +299,7 @@ let strings = [
     _controle_AUTO_painel_Controlador: "AUTO",
     _controle_MAN_painel_Controlador: "MAN",
     _controle_AD_painel_Controlador: "DIR",
+    _pid_modo_ISA_painel_Controlador: "ISA",
 
     //Painel Motor
     _titulo_painel_Motor: ["Selected Linear Motor: Ideal", "Selected Linear Motor: Non-ideal"],
@@ -305,6 +308,7 @@ let strings = [
     _Fcmax_inc_central: "CenterSlope:",
     _Fcmax_histerese: "DeadSpace[%]:",
     _modo_acao_motor: "DIR",
+
 
     //Painel Indicador de Posição
     _titulo_painel_Ind_Pos: "Position Indicator",
@@ -359,8 +363,9 @@ let strings = [
     _texto_slider_setpoint: "SP: ",
     _envelope_de_operacao: "Operating Envelope",
     _texto_violacao_envelope:"ENVELOPE VIOLATION",
-    _mostrar_grafico_PV: "Graph (menu CONTROL)",
-    _mostrar_graficos: "Graphs <span style='font-size:12px; font-family:consola'>(PV/Sp × t, Fc/Op × t, Fp × t, Fc × Op)</span>",
+    _mostrar_grafico_PV: "Graph PV/SP x t (menu CONTROL)",
+    _mostrar_graficos: "Graphs",
+//    _mostrar_graficos: "Graphs <span style='font-size:12px; font-family:consola'>(PV/Sp × t, Fc/Op × t, Fp × t, Fc × Op)</span>",
 
     //Painel Forças Atuantes
     _titulo_painel_Forcas_Atuantes: "Forces",

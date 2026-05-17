@@ -14,7 +14,7 @@ function calculaNovaPosicao() {
 
   const Num = Pn + 2 * Pn_1 + Pn_2 - Coef_B * xn_1 - Coef_C * xn_2;
 
-  const x_k = Num / Coef_A;
+  const x_k = max(min(Num / Coef_A, 1000), -1000);
 
   if((x_k < envelope[1] || x_k > envelope[0]) && mostraEnvelope){
     document.querySelector('#light-EV').classList.add('on');

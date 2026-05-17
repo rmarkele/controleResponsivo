@@ -51,6 +51,18 @@ function atualizaParametros(id) {
         updateInputValue(Ti,TiInp)
         updateInputValue(Td,TdInp)
         break;
+
+      case 104: //Ti
+        Ti = formatToExponential(abs(checkForNaN(variablesList[id].inp.value, 0)),0,2);
+        variablesList[id].inp.value = Ti;
+        saidaI = 0;
+        saidaD = 0;
+        atualizaKiKd();
+        updateInputValue(K_I,variablesList[4])
+        updateInputValue(K_D,variablesList[5])
+        updateInputValue(Ti,TiInp)
+        updateInputValue(Td,TdInp)
+        break;
         
       case 5: // Kd
         K_D = abs(checkForNaN(variablesList[id].inp.value, 0));
@@ -58,6 +70,17 @@ function atualizaParametros(id) {
         saidaI = 0;
         saidaD = 0;
         atualizaTiTd();
+        updateInputValue(Ti,TiInp)
+        updateInputValue(Td,TdInp)
+        break;
+      case 105: // Td
+        Td = formatToExponential(abs(checkForNaN(variablesList[id].inp.value, 0)),0,2);
+        variablesList[id].inp.value = Td;
+        saidaI = 0;
+        saidaD = 0;
+        atualizaKiKd();
+        updateInputValue(K_I,variablesList[4])
+        updateInputValue(K_D,variablewasList[5])
         updateInputValue(Ti,TiInp)
         updateInputValue(Td,TdInp)
         break;

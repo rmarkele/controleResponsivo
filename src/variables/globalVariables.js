@@ -22,6 +22,7 @@ let posicao_inicial0 = 0,
   perturbacao_manual_inicial0 = 0,
   modoAcao = 1,
   modoAcaoMotor=1,
+  isaMode=0,
   eliminaSurto = 0;
 
 let showGraphs = true;
@@ -251,4 +252,3 @@ let fpsMean;
 
 let vh = window.innerHeight * 0.01;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
-console.log(vh)

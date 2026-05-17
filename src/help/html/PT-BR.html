@@ -18,7 +18,7 @@
   
   <main class="know-more">
     <div class="title">
-      <h2>SIMULADOR DID&Aacute;TICO DE CONTROLE EM MALHA FECHADA MK-2<br>VERSÃO 2024.04</h2> 
+      <h2>SIMULADOR DID&Aacute;TICO DE CONTROLE EM MALHA FECHADA MK-2<br>VERSÃO 2025.08</h2> 
       <p> </p>
 <hr />
       <h2>Simulador Controle PID Tempo Real</h2>
@@ -40,7 +40,7 @@
       </li>
 
       <li>
-        Para acessar o simulador antigo (MK-1) <a href="https://proanuncio.com.br/sc2" target="_blank">clique aqui</a>
+        Para acessar a vers&atilde;o mais antiga do simulador antigo (vers&atilde;o MK-1) <a href="https://proanuncio.com.br/sc2" target="_blank">clique aqui</a>
       </li>
 
       <li>
@@ -48,7 +48,7 @@
       Internacional (SI)
       </li>
 
-      <li>Nos valores num&eacute;ricos emprega-se o ponto decimal em vez de v&iacute;rgula</li>
+      <li>Nos valores num&eacute;ricos emprega-se o ponto decimal em vez da v&iacute;rgula</li>
 </ul>
 
     </div>
@@ -62,7 +62,7 @@
     processo, ou seja, massa m, coeficiente de amortecimento c e constante
     da mola Ks. Os valores de c e Ks podem ser negativos. Embora a anima&ccedil;&atilde;o
     mostre um carro dotado de rodas, a simula&ccedil;&atilde;o assume que a massa flutua
-    sobre o solo.
+    paralela ao solo.
     </p>
 
     <p>
@@ -78,9 +78,9 @@
     da massa.
     </p>
 
-    <p>O controlador tem as seguintes caracter&iacute;sticas:</p>
+    <p>O controlador apresenta as seguintes caracter&iacute;sticas:</p>
     <ul>
-      <li>Recebe o <span style="font-style: italic;">setpoint</span> SP(t) e a vari&aacute;vel controlada PV(t);</li>
+      <li>L&ecirc; o <span style="font-style: italic;">setpoint</span> SP(t) e a vari&aacute;vel controlada PV(t);</li>
       <li>Calcula o erro e(t) = SP(t) - PV(t);</li>
       <li>Fornece a sa&iacute;da (<span style="font-style: italic;">output</span>) OP(t);</li>
       <li>Permite que o(a) utilizador(a):</li>
@@ -92,14 +92,13 @@
           Ajuste diretamente a for&ccedil;a de controle Fc(t) quando no modo MANUAL;
           e
         </li>
-        <li>Selecione A&ccedil;&atilde;o Direta (DIR) ou A&ccedil;&atilde;o Reversa.</li>
+        <li>Selecione A&ccedil;&atilde;o Direta (DIR) ou A&ccedil;&atilde;o Reversa para o controlador.</li>
       </ul>
     </ul>
 
 
     <p>
-    O diagrama abaixo mostra a intera&ccedil;&atilde;o entre processo, controle
-    e ambiente simulados.
+    O diagrama abaixo mostra a intera&ccedil;&atilde;o entre processo, controle e ambiente simulados.
     </p>
 
     <div class="help-img">
@@ -152,12 +151,11 @@
       valor inferior a 100%;
       </li>
       <li>
-      Fazer a derivada ser calculada sobre a PV(t) em vez de sobre o erro
+      Fazer a componente derivativa ser calculada sobre a PV(t) em vez de sobre o erro
       e(t);
       </li>
       <li>
-      Ajustar a frequ&ecirc;ncia de corte (em Hz) do filtro passa-baixa existente
-      na sa&iacute;da do c&aacute;lculo da componente derivativa; e
+      Ajustar a frequ&ecirc;ncia de corte (em Hz) do filtro passa-baixa aplicado sobre a componente derivativa; e
       </li>
       <li>Contornar o filtro passa-baixa.</li>
     </ul>
@@ -197,27 +195,26 @@
 
     <p>
     O motor linear recebe o comando OP(t) e o converte na for&ccedil;a controladora 
-    Fc(t) de acordo com a curva M(t) de resposta do motor, que pode ser
-    ideal ou n&atilde;o-ideal. O valor de Fc(t) &eacute; limitado a variar
+    Fc(t) de acordo com a curva M(t) de resposta do motor linear, que pode ser ideal ou n&atilde;o-ideal. O valor de Fc(t) &eacute; limitado a variar
     entre -Fcmax e Fcmax. O(A) utilizador(a)
     pode inserir o valor de Fcmax (em newtons) e selecionar o tipo de curva
-    do motor. Se escolher curva n&atilde;o-ideal, o(a) utilizador(a) pode
+    do motor linear. Se escolher curva n&atilde;o-ideal, o(a) utilizador(a) pode
     inserir a inclina&ccedil;&atilde;o central da curva (sigm&oacute;ide) e
     respectiva folga (em %). O(A) utilizador(a)
-    pode inserir o tempo morto do motor (em ms) e selecionar
-    A&ccedil;&atilde;o Direta (DIR) ou A&ccedil;&atilde;o Reversa.
+    pode inserir o tempo morto (em ms) do motor linear e selecionar
+    A&ccedil;&atilde;o Direta (DIR) ou A&ccedil;&atilde;o Reversa para o motor linear.
     </p>
 
     <p>
     Quando o controlador encontra-se ligado, o simulador ativa um display que
     mostra as componentes de OP e outro display que mostra Fc(t).
     Por meio da curva de Fc(t) o(a) utilizador(a) pode ver o
-    formato da resposta M(t) do motor.
+    formato da resposta M(t) do motor linear.
     </p>
 
 
     <p>
-    O <span style="font-style: italic;">setpoint</span> SP(t) pode ser constante ou vari&aacute;vel. H&aacute; diversos tipos de
+    O <span style="font-style: italic;">setpoint</span> SP(t) pode ser constante ou vari&aacute;vel. H&aacute; diversas op&ccedil;&otilde;es de
     SP(t) dispon&iacute;veis. O(A) utilizador(a) pode selecionar uma op&ccedil;&atilde;o e
     ajustar os limites SPmin e SPmax (em metros).
     </p>

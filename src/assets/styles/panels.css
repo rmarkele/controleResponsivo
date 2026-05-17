@@ -204,8 +204,18 @@ input[type=checkbox]{
   /* font-size: 14px; */
 }
 
+.controller-equation{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  color: #999;
+}
+
 .input-wrapper input{
-  width: 45px;
+  min-width: 45px;
+  max-width:55px;
   border: 0;
   border-bottom: 2px solid black;
   background: none;
@@ -219,9 +229,13 @@ input[type=checkbox]{
   border-color: transparent;
 }
 
-.input-wrapper input:disabled{
-  width: 50px;
+.input-wrapper.hidden{
+  display: none !important;
 }
+
+/* .input-wrapper input:disabled{
+  width: 50px;
+} */
 
 
 .panel-title select{
@@ -237,9 +251,9 @@ input[type=checkbox]{
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 5px 10px;
-  gap: 20px;
-
+  padding: 5px;
+  gap: 5px;
+  font-size: small!important;
 }
 
 /* label[for=input-freqCorte]{
@@ -286,7 +300,13 @@ input[type=checkbox]{
 
 #controllerCheckBoxes{
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
+  justify-content: space-between;
+}
+
+#controllerCheckBoxes>div{
+ min-width: 30%;
 }
 /* #controllerCheckBoxes label,
 #controllerCheckBoxes input{

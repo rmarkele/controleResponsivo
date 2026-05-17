@@ -24,7 +24,7 @@ switch (idioma) {
         strg.labelCenario[i] = checkForUndefinedString(
         cenarios[i].label_ptBR,
         "Cenário " + i + " (definir label)"
-        );g
+        );
     }
     break;
     case "EN-US":

@@ -10,6 +10,23 @@ function setVariableList(varName, id){
 function updateVariableListValue(value,id){
     variablesList[id].inp.value = value;
 }
+
+function updateVariableListOrder(value,id){
+    variablesList[id].inp.parentNode.style.order = value;
+}
+
+function disableVariableList(id){
+    variablesList[id].inp.parentNode.style.order = 99;
+    variablesList[id].inp.disabled = true;
+    variablesList[id].txt.classList.add("disabled");
+}
+
+function enableVariableList(id){
+    variablesList[id].inp.parentNode.style.order = 1;
+    variablesList[id].inp.disabled = false;
+    variablesList[id].txt.classList.remove("disabled");
+}
+
 function updateVariableListText(txt,id){
     variablesList[id].txt.innerHTML = txt;
 }
