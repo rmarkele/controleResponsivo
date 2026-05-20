@@ -1,96 +1,88 @@
-
-
-#dynamometer{
-    height: 40%;
-    width: 100%;
-    border-style: inset;
-    display: flex;
-    flex-direction: column;
-    max-height: 250px;
+#dynamometer {
+  height: 40%;
+  width: 100%;
+  border-style: inset;
+  display: flex;
+  flex-direction: column;
+  max-height: 250px;
 }
 
-#dynamometer-title{
+#dynamometer-title {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-#dynamometer-title div{
+#dynamometer-title div {
   flex: 1;
   padding: 2px;
   text-align: center;
   font-weight: bold;
 }
 
-
-#dynamometer-container{
+#dynamometer-container {
   flex: 1;
 }
 
-#controller-actuator-outputs{
-    flex: 1;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2px;
-    max-height: 250px;
+#controller-actuator-outputs {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2px;
+  max-height: 250px;
 }
 
 #controller-actuator-outputs div {
-    flex: 1;
-    border-style: inset;
-    height: 100%;
+  flex: 1;
+  border-style: inset;
+  height: 100%;
 }
 
-
-#auto-man-checkboxes{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    padding: 0px 10px 5px 10px;
+#auto-man-checkboxes {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0px 10px 5px 10px;
 }
-
 
 /* Painel Variáveis Process */
-#panel-process-variables{
-    /* border: 2px solid #555; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px; 
-    overflow: hidden;
-    width: 100%;
-    background-color: #fff;
-  }
+#panel-process-variables {
+  /* border: 2px solid #555; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  overflow: hidden;
+  width: 100%;
+  background-color: #fff;
+}
 
-  .variables-container{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    /* background-color: #aaa; */
-  }
+.variables-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* background-color: #aaa; */
+}
 
-  .process-variable{
-    display: flex;
-    align-items: center;
-    gap: 2px;
-    min-width: 95px;
-  }
+.process-variable {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  min-width: 95px;
+}
 
-  .process-variable label,
-  .process-variable p{
-    font-weight: bold;
-  }
+.process-variable label,
+.process-variable p {
+  font-weight: bold;
+}
 
-
-
-
-  /* inputs */
-.panels-wrapper{
+/* inputs */
+.panels-wrapper {
   display: none;
   flex-direction: column;
   justify-content: space-around;
@@ -98,23 +90,19 @@
   flex: 1;
   border-style: outset;
   border-top-width: 0px;
-  gap: 5px;
-
+  gap: 1px;
 }
 
-.panels-wrapper.active{
+.panels-wrapper.active {
   display: flex;
 }
 
-
-
-
-#panels-group-5{
+#panels-group-5 {
   padding-left: 10px;
   align-items: start;
 }
 
-.panel{
+.panel {
   border-radius: 5px;
   overflow: hidden;
   margin: 5px;
@@ -123,11 +111,11 @@
 }
 
 #panels-group-3 .panel,
-#panels-group-4 .panel{
+#panels-group-4 .panel {
   width: 95%;
 }
 
-.panel .panel-title{
+.panel .panel-title {
   display: flex;
   background-color: #999;
   justify-content: space-between;
@@ -138,25 +126,24 @@
   gap: 5px;
 }
 
-.panel-body{
-  background-color: #eee; 
+.panel-body {
+  background-color: #eee;
   display: flex;
   align-items: start;
   justify-content: space-between;
   padding: 2px;
   flex-wrap: wrap;
   /* font-size: 12px; */
- 
 }
 
 #setpoint-panel,
-#perturbation-panel{
+#perturbation-panel {
   flex: 1;
 }
 
 #setpoint-panel .panel-body,
-#perturbation-panel .panel-body{
-  background-color: transparent; 
+#perturbation-panel .panel-body {
+  background-color: transparent;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -164,38 +151,36 @@
 }
 
 #setpoint-panel .input-flex-col,
-#perturbation-panel .input-flex-col{
+#perturbation-panel .input-flex-col {
   background-color: #eee;
   height: 100%;
-} 
+}
 
 #setPointGraph,
-#perturbGraph{ 
-  flex:1;
+#perturbGraph {
+  flex: 1;
   background-color: none;
   height: 100%;
   /* background-color: red; */
-
-}.input-flex-row{
+}
+.input-flex-row {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.input-flex-col{
+.input-flex-col {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-
-input[type=checkbox]{
+input[type="checkbox"] {
   cursor: pointer;
-
 }
 
-.input-wrapper{
+.input-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -204,7 +189,7 @@ input[type=checkbox]{
   /* font-size: 14px; */
 }
 
-.controller-equation{
+.controller-equation {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -213,9 +198,9 @@ input[type=checkbox]{
   color: #999;
 }
 
-.input-wrapper input{
+.input-wrapper input {
   min-width: 45px;
-  max-width:55px;
+  max-width: 55px;
   border: 0;
   border-bottom: 2px solid black;
   background: none;
@@ -224,12 +209,12 @@ input[type=checkbox]{
 }
 
 .input-wrapper input:disabled,
-.input-wrapper label.disabled{
+.input-wrapper label.disabled {
   color: #888;
   border-color: transparent;
 }
 
-.input-wrapper.hidden{
+.input-wrapper.hidden {
   display: none !important;
 }
 
@@ -237,8 +222,7 @@ input[type=checkbox]{
   width: 50px;
 } */
 
-
-.panel-title select{
+.panel-title select {
   width: 100%;
   font-weight: bold;
   background-color: #999;
@@ -246,95 +230,102 @@ input[type=checkbox]{
   /* font-size: 14px; */
 }
 
-
-.panelCheckBoxes{
+.panelCheckBoxes {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   padding: 5px;
   gap: 5px;
-  font-size: small!important;
+  font-size: small !important;
 }
 
 /* label[for=input-freqCorte]{
   font-size: 10px;
 } */
 
-
-.variables-nav{
+.variables-nav {
   /* font-size: 12px; */
   width: 100%;
 }
-#mobile-nav{
+#mobile-nav {
   border-style: outset;
 }
 
-#panels-nav{
+#panels-nav {
   border-style: outset;
   border-bottom-width: 0px;
 }
 
-.variables-nav ul{
+.variables-nav ul {
   list-style: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #333;
-  padding: 2px 5px; 
+  padding: 2px 5px;
 }
 
-.variables-nav ul li{
+.variables-nav ul li {
   color: #aaa;
   border-bottom: 2px solid #333;
   cursor: pointer;
 }
 
-.variables-nav ul li:hover{
+.variables-nav ul li:hover {
   border-bottom: 2px solid #aaa;
 }
 
-.variables-nav ul li.active{
+.variables-nav ul li.active {
   color: #fff;
   border-bottom: 2px solid #fff;
 }
 
-#controllerCheckBoxes{
+#controllerCheckBoxes {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 }
 
-#controllerCheckBoxes>div{
- min-width: 30%;
+#controllerCheckBoxes > div {
+  min-width: 30%;
 }
 /* #controllerCheckBoxes label,
 #controllerCheckBoxes input{
   font-size: 10px;
 } */
 
-@media (max-width:850px) {
-  
-  
+.body-wrapper {
+  display: flex;
+  gap: 1px;
+  justify-content: center;
+  align-items: center;
+}
 
+@media (max-width: 850px) {
   /* #dynamometer{
     height: 30%;
     margin-top: 0px;
 
   } */
-  #controller-actuator-outputs{
-   flex: 1;
+  #controller-actuator-outputs {
+    flex: 1;
   }
 
-  #auto-man-checkboxes{
+  #auto-man-checkboxes {
     display: flex;
     justify-content: space-between;
     width: 100%;
     padding: 0px 2px 2px 2px;
   }
 
-  #dynamometer{
+  #dynamometer {
     height: 30%;
-}
+  }
 
+  .body-wrapper {
+ flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
 }

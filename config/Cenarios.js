@@ -48,7 +48,7 @@ let cenarios = [
  
 
     // parâmetros do processo a ser controlado
-    m: 5000, //massa do carrinho em unidades SI
+    m: 500, //massa do carrinho em unidades SI
     K_mola: 5000, // constante da mola em unidades SI (pode ser negativa para simular pêndulo invertido)
     C_amortecedor: 5000, // coeficiente de amortecimento SI (pode ser negativa)
 

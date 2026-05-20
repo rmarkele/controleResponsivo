@@ -30,6 +30,17 @@ function geraPainelAtuador(){
     acaoDiretaMotor.checked(true);
   }
 
+  bodyWrapper = document.createElement('div');
+  bodyWrapper.classList.add("body-wrapper");
+
+  document.querySelector("#actuator-panel").appendChild(bodyWrapper);
+
+  const panelBody = document.querySelector("#actuator-panel .panel-body");
+  const panelCheckBoxes = document.querySelector("#actuatorCheckBoxes");
+
+  document.querySelector("#actuator-panel .body-wrapper").appendChild(panelBody);
+  document.querySelector("#actuator-panel .body-wrapper").appendChild(panelCheckBoxes);
+
   
   tipoAtuador = createSelect();
   tipoAtuador.parent("actuator-panel-title");

@@ -7,7 +7,7 @@ let strings = [
     _titulo_Simulador_linha2: "FECHADA",
     _comentario_Simulador_linha1: "SIMULADOR MK-2",//SIST. MASSA-MOLA-AMORTECEDOR
     _comentario_Simulador_linha2: "",
-    _botao_saiba_mais_Simulador: "SAIBA MAIS",
+    _botao_saiba_mais_Simulador: "AJUDA",
 
     //Sistema
     _motor_Linear: [
@@ -199,7 +199,7 @@ let strings = [
     _titulo_Simulador_linha2: "CONTROL",
     _comentario_Simulador_linha1: "SIMULATOR MK-2",//MASS-SPRING-DAMPER SYSTEM
     _comentario_Simulador_linha2: " ",//= free use for teaching =
-    _botao_saiba_mais_Simulador: "LEARN MORE",
+    _botao_saiba_mais_Simulador: "HELP",
     
 
     //Sistema

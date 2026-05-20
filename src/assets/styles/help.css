@@ -76,6 +76,39 @@
     margin: auto;
   }
 
+  /* Correção específica para o motor WebKit do iOS não cortar os descenders */
+  mjx-container * {
+    box-sizing: content-box !important;
+  }
+
+  mjx-container:not([display="true"]) {
+    padding-top: 0.25em !important;
+    padding-bottom: 0.25em !important; /* Cria um respiro interno para a perna do 'p' */
+    overflow: visible !important;       /* Força o WebKit a exibir o que sair da caixa */
+    display: inline-block !important;   /* Alinha o contêiner como bloco inline, ajudando no cálculo de altura */
+    
+  }
+
+  mjx-container[display="true"] {
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    max-width: 100% !important;
+    /* Adiciona uma barra de rolagem suave no iOS/WebKit */
+    -webkit-overflow-scrolling: touch !important; 
+    padding-bottom: 5px !important; /* Espaço para a barra de rolagem não cobrir a equação */
+  }
+
+  /* Mantém as equações inline seguras dentro do fluxo do texto */
+  mjx-container:not([display="true"]) {
+    max-width: 100% !important;
+    overflow-x: visible !important;
+  }
+
+  /* Garante uma altura de linha ligeiramente maior para o parágrafo acomodar o padding extra */
+  /* .know-more p, .know-more li {
+    line-height: 1.6 !important;
+  } */
+
   @media (max-width:850px) {
     
 

@@ -53,15 +53,12 @@ function cenarioSelectEvent() {
   if(!isaMode){
     K_I = abs(checkForUndefined(cenarios[i].Ki, 0.8));
     K_D = abs(checkForUndefined(cenarios[i].Kd, 1));
-    Ti = formatToExponential(K_P / K_I, 0, 2);
-    Td = formatToExponential(K_D / K_P, 0, 2);
+      atualizaTiTd();
   } else{
     Ti = formatToExponential(abs(checkForUndefined(cenarios[i].Ti, 1)), 0, 2);
     Td = formatToExponential(abs(checkForUndefined(cenarios[i].Td, 0.5)), 0, 2);
-    K_I = K_P / Ti;
-    K_D = K_P * Td;
+     atualizaKiKd();
   }
-
 
 
 

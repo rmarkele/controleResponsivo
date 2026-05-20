@@ -14,12 +14,26 @@
     <title>Real Time PID Control Teaching Simulator</title>
     
     <link rel="stylesheet" href="../../assets/styles/help.css">
+
+    <!-- Configuração e Importação do MathJax v3 -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script id="MathJax-script" src="../../assets/mathjax/tex-mml-chtml.js" defer></script>
 </head>
 <body class="help-body">
 
     <main class="know-more"> 
         <div class="title">
-            <h2>CLOSED-LOOP CONTROL TEACHING SIMULATOR MK-2<br>VERSION 2025.08</h2>
+            <h1>CLOSED-LOOP CONTROL TEACHING SIMULATOR MK-2<br>VERSION 2026.04</h1>
      
         <hr />
             <h2>Real Time PID Control Simulator</h2>
@@ -39,11 +53,7 @@
             <li>
                 This simulator can be accessed at <a href="https://proanuncio.com.br/sc" target="_blank">https://proanuncio.com.br/sc</a>
             </li>
-  
-            <li>
-                To access the older version of simulator (version MK-1) <a href="https://proanuncio.com.br/sc2" target="_blank">click here</a>
-            </li>
-     
+       
             <li>
                Simulated quantities are expressed in units of the International System (SI)
             </li>
@@ -53,98 +63,95 @@
 <br>
         <p>The controlled process is an air-frictionless
         mass-spring-damper type second-order system. The user can insert the 
-        process parameters, that is, mass m, damping coefficient c and spring constant Ks. Values of c and Ks
-        can be negative. Althouh animation shows a wheeled car, the simulation assumes the mass 
+        process parameters, that is, mass $m$, damping coefficient $c$ and spring constant $K_s$. Values of $c$ and $K_s$
+        can be negative. Although the animation shows a wheeled car, the simulation assumes the mass 
         floats parallel to the ground.
         </p>
 
-        <p>The process variable (controlled variable) PV(t) is the mass vertical axis position, that is
-        measured in meters by a hidden position indicator. The indication range is from PVmin to PVmax.
+        <p>The process variable (controlled variable) $PV(t)$ is the mass vertical axis position, that is
+        measured in meters by a hidden position indicator. The indication range is from $PV_{min}$ to $PV_{max}$.
         The user can change these limits (in meters) and insert an error (in meters) in the indicated position. 
-        The process is subject to the perturbation force Fp(t). The manipulated
-        variable is the control force Fc(t) the final control element
+        The process is subject to the perturbation force $F_p(t)$. The manipulated
+        variable is the control force $F_c(t)$ the final control element
         (linear motor) exerts on the process. The simulation model assumes all forces are contained
         in the mass horizontal axis.
         </p>
 
         <p>The controller presents the following characteristics:</p>
         <ul>
-            <li> Reads the setpoint SP(t) and the controlled variable PV(t);</li>
-            <li> Computes the error e(t) = SP(t) - PV(t);</li>
-            <li> Provides the output OP(t);</li>
+            <li> Reads the setpoint $SP(t)$ and the controlled variable $PV(t)$;</li>
+            <li> Computes the error $e(t) = SP(t) - PV(t)$;</li>
+            <li> Provides the output $OP(t)$;</li>
             <li> Offers the user the following options:</li>
             <ul>
                 <li> Selecting the control mode (PID, Anti-windup PID or Bistable); </li>
-                <li> Directly adjusting the control force Fc(t) when in MANUAL mode; and </li>
+                <li> Directly adjusting the control force $F_c(t)$ when in MANUAL mode; and </li>
                 <li> Selecting Direct Action (DIR) or Reverse Action for the controller. </li>
             </ul>
         </ul>
 
-
-
         <p>The diagram below shows interaction between the simulated process, control and environment.
         </p>
-
 
         <div class="help-img">
             <img alt="" src="../../assets/images/esquema_en.jpeg">
         </div>
 
-        <p>The basic PID structure the controller employs is defined through the following equation: 
-        <br>
-        <br>
-        t) = Kp &middot;e(t) + Ki &mOP(iddot; <span>&int; </span>e(t)dt + Kd &middot; ė(t) + OPo. <br>
-        <br>
-        Where Ki = Kp/Ti and Kd = KpTd.</p>
-
-        <p>Gains Kp, Ki and Kd, output OP(t) and preload OPo are
-        dimensionless. SP(t), PV(t), e(t) and proportional band PB (= 1/Kp) are also dimensionless
-        but are expressed in meters for convenience. The user can insert Kp, Ki, Kd, OPo and SP(t) 
-        and watch the other variables. OP(t) can vary between -100% and 100%.
-        </p>
-
         <p>
-        The drawing below shows the simulator basic equations. M(t) represents the linear motor response curve.
-        Fcmax is the maximum magnitude the control force Fc(t) can achieve.
+        The drawing below shows the simulator basic equations. $M(t)$ represents the linear motor response.
+        $F_{c_{max}}$ is the maximum magnitude the control force $F_c(t)$ can achieve.
         </p>
 
         <div class="help-img">
-            <img alt="" src="../../assets/images/equacoes2.jpeg">
+            <img alt="" src="../../assets/images/equacoes-test.jpg">
         </div>
+
+        $$F_c + F_p - F_d - F_s = m\ddot{PV}$$
+        $$F_s=k_sPV \qquad F_d=c\dot{PV}  $$
+        $$e=SP-PV$$
+        $$OP=K_p\left(e+\frac{1}{T_i} \displaystyle\int e dt + T_d \dot{e} \right) + OP_o $$
+        $$F_c=(M)(OP) \qquad M_{ideal} = F_{c_{max}}$$
+        $$\frac{K_p}{T_i}=K_i \qquad K_pT_d=K_d$$
+        $$OP=K_pe+K_i\int e dt + K_d\dot{e} + OP_o$$
+
+        <p>Gains $K_p$, $K_i$ and $K_d$, output $OP(t)$ and preload $OP_o$ are
+        dimensionless. $SP(t)$, $PV(t)$, $e(t)$ and proportional band $PB = \frac{1}{K_p}$ are also dimensionless
+        but are expressed in meters for convenience. The user can insert $K_p$, $K_i$, $K_d$, $OP_o$ and $SP(t)$ and watch the other variables. If the user prefers to enter $T_i$ and $T_d$ instead of $K_i$ and $K_d$, they simply need to select the ISA mode. The values of $T_i$ and $T_d$ are expressed in seconds. The output $OP(t)$ can vary between $-100\%$ and $100\%$.
+        </p>
 
         <p>This version provides four closed-loop control modes:</p>
         <ul>
             <li> PID mode; </li>
-            <li> PD + I if |e| &lt; eTh Anti-windup mode; </li>
-            <li> PD + I if |D| &lt; DTh Anti-windup mode; and </li>
+            <li> PD + I if $|e| < e_{Th}$ Anti-windup mode; </li>
+            <li> PD + I if $|D| < D_{Th}$ Anti-windup mode; and </li>
             <li> Bistable mode. </li>
         </ul>
 
         <p>By selecting the "PID" mode the user can:</p>
         <ul>
-            <li> Adjust Imax to limit the integral component magnitude to a less-than-100% value; </li>
-            <li> Make the derivative component to be computed over PV(t) instead of e(t); </li>
+            <li> Adjust $I_{max}$ to limit the integral component magnitude to a less-than-100% value; </li>
+            <li> Make the derivative component to be computed over $PV(t)$ instead of $e(t)$; </li>
             <li> Insert the cutoff frequency (in Hz) of the low-pass filter applied over the derivative component; and </li>
             <li> Bypass the low-pass filter. </li>
         </ul>
 
-        <p>By choosing the "PD + I if |e| &lt; eTh" mode the user can insert the error 
-        threshold magnitude eTh (in meters) that sets the integrator on.</p>
+        <p>By choosing the "PD + I if $|e| < e_{Th}$" mode the user can insert the error 
+        threshold magnitude $e_{Th}$ (in meters) that sets the integrator on.</p>
 
-        <p>When choosing the "PD + I if |D| &lt; DTh" mode the user can enter the 
-        derivative threshold magnitude DTh (in %) which turns the integrator on.</p>
+        <p>When choosing the "PD + I if $|D| < D_{Th}$" mode the user can enter the 
+        derivative threshold magnitude $D_{Th}$ (in %) which turns the integrator on.</p>
 
         <p>By selecting the "Bistable" mode the user can set the deadband (in meters) and the minimum
-        and maximum values of OP(t).</p>
+        and maximum values of $OP(t)$.</p>
 
         <p>The user can turn on/off the following screen displays:</p>
         <ul>
             <li> Animation; </li>
             <li> Operating envelope limits - dashed/solid red lines; </li>
-            <li> PV(t) - dark teal dashed line; </li>
-            <li> PV(t) indication range - orange; </li>
-            <li> SP(t) - dashed blue line; and </li>
-            <li> Proportional Band PB - green.</li>
+            <li> $PV(t)$ - dark teal dashed line; </li>
+            <li> $PV(t)$ indication range - orange; </li>
+            <li> $SP(t)$ - dashed blue line; and </li>
+            <li> Proportional Band $PB$ - green.</li>
         </ul>
         The last three indications, as well as the SP manual slider,
         only appear when the controller is turned on. By activating 
@@ -152,27 +159,25 @@
         the envelope limits.
 
         <p>
-        The linear motor receives the command OP(t) and converts it into the controlling force Fc(t) according to the linear motor response
-        curve M(t), which can be ideal or non-ideal. The value of Fc(t) is limited to vary between -Fcmax and Fcmax. The user
-        can enter the Fcmax value (in newtons) and choose the linear motor curve type. When selecting non-ideal curve, the user can 
+        The linear motor receives the command $OP(t)$ and converts it into the controlling force $F_c(t)$ according to the linear motor response
+        curve $M(t)$, which can be ideal or non-ideal. The value of $F_c(t)$ is limited to vary between $-F_{c_{max}}$ and $F_{c_{max}}$. The user
+        can enter the $F_{c_{max}}$ value (in newtons) and choose the linear motor curve type. When selecting non-ideal curve, the user can 
         insert the central slope of the curve (sigmoid) and its deadspace (in %). The user can insert the linear motor dead time 
         (in ms) and select Direct Action (DIR) or Reverse Action for the linear motor.
         </p>
 
         <p>
-        When the controller is switched on, the simulator activates a display that shows the OP components and another display that shows
-        Fc(t). Through the Fc(t) curve the user can see the shape of the linear motor response curve M(t).
+        When the controller is switched on, the simulator activates a display that shows the $OP$ components and another display that shows
+        $F_c(t)$. Through the $F_c(t)$ curve the user can see the shape of the linear motor response curve $M(t)$.
         </p>
 
+        <p>Setpoint $SP(t)$ can be constant or variable. There are several available $SP(t)$ options. The user
+        can select an option and insert the limits $SP_{min}$ and $SP_{max}$ (in meters).</p>
 
-        <p>Setpoint SP(t) can be constant or variable. There are several available SP(t) options. The user
-        can select an option and insert the limits SPmin and SPmax (in meters).</p>
-
-        <p>Perturbation Fp(t) can be constant or variable. There are several available Fp(t) alternatives.
-        The user can choose a type and enter the limits Fpmin and Fpmax, which are expressed in percentage
-        of Fcmax.
+        <p>Perturbation $F_p(t)$ can be constant or variable. There are several available $F_p(t)$ alternatives.
+        The user can choose a type and enter the limits $F_{p_{min}}$ and $F_{p_{max}}$, which are expressed in percentage
+        of $F_{c_{max}}$.
         </p>
-
 
         <p>
         Through the screen upper right corner menu the user can choose a preset scenario. The user can also change 
@@ -190,4 +195,5 @@
         <p>Thank you!
         </p>
     </main>
-</body></html>
+</body>
+</html>
